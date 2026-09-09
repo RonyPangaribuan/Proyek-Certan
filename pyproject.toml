@@ -1,0 +1,22 @@
+[project]
+name = "proyek-certan"
+version = "0.1.0"
+description = "Final project for the Artificial Intelligence course at Institut Teknologi Del"
+readme = "README.md"
+authors = [
+    { name = "Rony Reynaldy Pangaribuan", email = "ronypangaribuan2505@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.4.6",
+    "pandas>=3.0.5",
+    "pytest>=9.1.1",
+    "scipy>=1.17.1",
+]
+
+[project.scripts]
+proyek-certan = "proyek_certan:main"
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
