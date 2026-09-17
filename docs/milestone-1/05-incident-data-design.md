@@ -1,4 +1,3 @@
-05-incident-data-design.md
 # Incident Data Design
 
 ## 1. Tujuan Data
@@ -303,9 +302,9 @@ Atribut dalam data dirancang untuk memberikan informasi yang diperlukan sistem d
 
 Insiden dengan urgency, impact, jumlah pengguna terdampak, dan service criticality yang tinggi dapat memiliki konsekuensi yang lebih besar apabila penanganannya ditunda. Selain itu, waiting time digunakan untuk mempertimbangkan laporan yang telah menunggu lebih lama sehingga tidak terus berada di belakang laporan lain.
 
-`estimated_handling_time_min` memberikan informasi tambahan mengenai perkiraan waktu yang diperlukan untuk menangani sebuah insiden dan dapat dipertimbangkan dalam rancangan cost.
+`estimated_handling_time_min` menentukan completion time dalam urutan penanganan. Importance score menggunakan bobot baseline `urgency = 0.30`, `impact = 0.25`, `service_criticality = 0.20`, `affected_users = 0.15`, dan `waiting_time = 0.10`. Bobot tersebut merupakan asumsi prototype, bukan hasil kalibrasi data operasional.
 
-Namun, pada tahap Milestone 1 belum ditetapkan bobot final untuk masing-masing atribut. Bobot dan formula path cost akan ditentukan setelah dilakukan review dan penyelarasan dengan formulasi search problem serta rancangan algoritma.
+Path cost menggunakan *weighted completion penalty*, yaitu `importance_score × completion_time` pada setiap langkah. Waktu tunggu berada di dalam importance score sebagai mekanisme *aging* agar laporan lama tidak terus tertunda.
 
 Dengan demikian, data berfungsi sebagai representasi kondisi insiden yang menjadi input bagi proses pencarian, bukan sebagai keputusan prioritas yang telah ditentukan sebelumnya.
 
@@ -313,4 +312,4 @@ Dengan demikian, data berfungsi sebagai representasi kondisi insiden yang menjad
 
 ## 9. Kesimpulan
 
-Desain data pada Milestone 1 menggunakan data sintetis untuk merepresentasikan laporan insiden jaringan kampus secara terstruktur. Sembilan atribut yang digunakan menggambarkan identitas, jenis, lokasi, urgensi, dampak, jumlah pengguna terdampak, kekritisan layanan, waktu tunggu, dan estimasi waktu penanganan. Data tersebut menjadi dasar bagi proses search dalam menentukan urutan penanganan insiden, sementara formula dan bobot cost masih dapat dikembangkan dan direview bersama tim.
+Desain data pada Milestone 1 menggunakan data sintetis untuk merepresentasikan laporan insiden jaringan kampus secara terstruktur. Sembilan atribut yang digunakan menggambarkan identitas, jenis, lokasi, urgensi, dampak, jumlah pengguna terdampak, kekritisan layanan, waktu tunggu, dan estimasi waktu penanganan. Data tersebut menjadi dasar Baseline Search UCS dalam mencari urutan dengan weighted-minute penalty minimum, sedangkan FIFO hanya menjadi metode pembanding tambahan non-search.

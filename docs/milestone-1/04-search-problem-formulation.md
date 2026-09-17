@@ -2,235 +2,143 @@
 
 ## A. Overview
 
-Masalah prioritisasi insiden jaringan kampus dapat direpresentasikan sebagai sebuah search problem. Sistem perlu menentukan urutan penanganan dari beberapa insiden berdasarkan karakteristik masing-masing insiden.
+Pada Milestone 1, prioritisasi insiden jaringan diformulasikan sebagai masalah
+pencarian urutan. **Uniform Cost Search (UCS)** merupakan Baseline Search resmi,
+sedangkan **First In, First Out (FIFO)** hanya menjadi metode pembanding tambahan
+non-search. A* tidak diimplementasikan pada tahap ini.
 
-Masalah ini tidak hanya berupa pengurutan sederhana karena terdapat beberapa kemungkinan urutan penanganan. Setiap urutan dapat menghasilkan kondisi dan cost yang berbeda. Oleh karena itu, proses penentuan urutan dapat dipandang sebagai proses pencarian pada state space.
+Sistem memproses satu batch atau snapshot data sintetis. Output merupakan
+rekomendasi urutan penanganan; keputusan akhir tetap berada pada administrator
+jaringan.
 
-Pada Milestone 1, formulasi search problem digunakan untuk menjelaskan struktur masalah sebelum dilakukan implementasi algoritma pencarian. Algoritma yang akan dianalisis adalah Uniform Cost Search (UCS) dan A*.
+## B. Incident Importance Score
 
-## B. State
+Untuk batch dengan maksimum jumlah pengguna `max_affected_users` dan maksimum
+waktu tunggu `max_waiting_time`, normalisasi ditetapkan sebagai:
 
-State menggambarkan kondisi proses prioritisasi pada suatu tahap pencarian.
+```text
+normalized_urgency     = urgency / 5
+normalized_impact      = impact / 5
+normalized_criticality = service_criticality / 5
+normalized_users       = affected_users / max_affected_users
+normalized_waiting     = waiting_time_min / max_waiting_time
+```
+
+Jika salah satu maksimum bernilai nol, nilai normalisasi komponen tersebut
+ditetapkan menjadi nol.
+
+```text
+importance_score =
+    0.30 × normalized_urgency
+  + 0.25 × normalized_impact
+  + 0.20 × normalized_criticality
+  + 0.15 × normalized_users
+  + 0.10 × normalized_waiting
+```
+
+Seluruh bobot nonnegatif dan berjumlah `1.0`. Bobot ini adalah asumsi baseline
+prototype, bukan hasil kalibrasi data operasional. `category` dan `location`
+menjadi konteks dan tidak masuk ke formula numerik.
+
+Waktu tunggu dimasukkan sebagai mekanisme *aging*. Dengan demikian, laporan
+yang sudah lama menunggu memperoleh tambahan tingkat kepentingan dan tidak
+terus tertunda oleh laporan baru.
+
+## C. Formulasi Formal (X, A, T, G, C)
+
+| Simbol | Definisi dalam proyek |
+|---|---|
+| `X` | State `(sequence, remaining, elapsed_time, total_cost)` yang merepresentasikan urutan parsial. |
+| `A(x)` | Memilih satu insiden dari `remaining` sebagai insiden berikutnya. |
+| `T(x, a)` | Menambahkan insiden terpilih ke `sequence`, menghapusnya dari `remaining`, lalu memperbarui elapsed time dan total cost. |
+| `G` | Goal tercapai ketika `remaining` kosong dan seluruh insiden berada dalam `sequence`. |
+| `C` | Jumlah `importance_score_i × completion_time_i` sepanjang jalur. |
+
+## D. State Space (X)
 
 Satu state terdiri dari:
 
-- daftar insiden yang belum dipilih untuk ditangani;
-- daftar insiden yang sudah dipilih;
-- urutan penanganan yang sudah terbentuk;
-- accumulated path cost dari urutan yang telah dipilih.
+- `sequence`: tuple ID insiden yang telah dipilih;
+- `remaining`: tuple ID insiden yang belum dipilih;
+- `elapsed_time`: total estimasi waktu penanganan dalam `sequence`;
+- `total_cost`: biaya kumulatif `sequence`.
 
-Contohnya, jika terdapat tiga insiden yaitu INC001, INC002, dan INC003, maka kondisi awal dapat direpresentasikan sebagai:
+State dibentuk menggunakan ID insiden yang terurut agar ekspansi deterministik.
+
+## E. Initial State
 
 ```text
-Unhandled = {INC001, INC002, INC003}
-Handled = {}
-Sequence = []
-Cost = 0
+sequence     = ()
+remaining    = seluruh incident_id
+elapsed_time = 0
+total_cost   = 0
+```
 
-Setelah satu insiden dipilih, kondisi state akan berubah sesuai dengan action yang dilakukan.
+## F. Action (A) dan Transition (T)
 
-## C. Initial State
+Action memilih satu insiden `i` dari `remaining` sebagai insiden berikutnya.
+Transition menghasilkan:
 
-Initial state merupakan kondisi ketika proses pencarian dimulai.
+```text
+new_sequence     = sequence + (i,)
+new_remaining    = remaining - {i}
+completion_time  = elapsed_time + estimated_handling_time_min_i
+step_cost        = importance_score_i × completion_time
+new_elapsed_time = completion_time
+new_total_cost   = total_cost + step_cost
+```
 
-Pada initial state:
+Importance score berada pada rentang 0–1 dan handling time bernilai positif,
+sehingga seluruh step cost nonnegatif.
 
-seluruh insiden belum dipilih;
-belum terdapat urutan penanganan;
-accumulated cost bernilai 0.
+## G. Goal Test (G)
 
-Contoh:
+Goal tercapai ketika `remaining` kosong dan seluruh insiden sudah berada dalam
+`sequence`. Sesuai UCS, goal test dilakukan ketika state dikeluarkan dari
+priority queue, bukan ketika state pertama kali dimasukkan.
 
-Unhandled = {INC001, INC002, INC003}
-Handled = {}
-Sequence = []
-Cost = 0
+## H. Path Cost (C)
 
-Initial state menjadi titik awal bagi algoritma pencarian untuk menentukan urutan penanganan.
+Untuk urutan insiden `π`, digunakan *weighted completion penalty*:
 
-D. Action
+```text
+C(π) = Σ importance_score_i × completion_time_i
+```
 
-Action merupakan pilihan yang dapat dilakukan pada suatu state.
+Completion time mencakup waktu penanganan seluruh insiden yang ditempatkan
+sebelum dan termasuk insiden `i`. Akibatnya, menempatkan insiden penting terlalu
+belakang menghasilkan penalti lebih besar. Nilai ini memiliki interpretasi
+*weighted-minute penalty* atau penalti menit terbobot, bukan biaya finansial.
 
-Pada setiap langkah, sistem memilih satu insiden yang masih berada dalam daftar unhandled untuk menjadi insiden berikutnya dalam urutan penanganan.
+## I. Dominance dan Determinisme
 
-Contoh action:
+Dua jalur yang mencapai himpunan `remaining` yang sama telah menangani himpunan
+insiden yang sama. Karena total handling time himpunan tersebut tidak bergantung
+pada urutannya, keduanya memiliki `elapsed_time` yang sama. Jalur dengan
+`total_cost` lebih tinggi terdominasi dan tidak perlu diperluas.
 
-Pilih INC002 sebagai insiden berikutnya.
+Implementasi menyimpan biaya terbaik untuk setiap tuple `remaining`, memakai
+counter sebagai tie-breaker heap, dan menghasilkan successor berdasarkan
+`incident_id`. Input yang sama karena itu menghasilkan urutan yang sama.
 
-Action tersebut dianggap valid selama INC002 masih berada dalam daftar insiden yang belum dipilih.
+## J. Pembanding FIFO (Non-search)
 
-E. Transition Model
+FIFO menempatkan laporan yang datang lebih awal terlebih dahulu. Karena
+`waiting_time_min` menyatakan lamanya laporan sudah menunggu, urutan FIFO adalah:
 
-Transition model menjelaskan perubahan state setelah suatu action dilakukan.
+1. `waiting_time_min` terbesar lebih dahulu;
+2. `incident_id` menaik sebagai tie-breaker.
 
-Ketika sebuah insiden dipilih, perubahan yang terjadi adalah:
+Biaya FIFO dihitung dengan fungsi weighted completion penalty yang sama dengan
+UCS agar perbandingan adil. FIFO tidak diposisikan sebagai algoritma pencarian
+atau pengganti Baseline Search UCS.
 
-Insiden dihapus dari daftar unhandled.
-Insiden ditambahkan ke daftar handled.
-Insiden ditambahkan ke sequence.
-Accumulated path cost diperbarui sesuai dengan cost dari keputusan tersebut.
+## K. Batasan Formulasi
 
-Contoh:
-
-State awal:
-
-Unhandled = {INC001, INC002, INC003}
-Handled = {}
-Sequence = []
-Cost = 0
-
-Action:
-
-Pilih INC002
-
-State berikutnya:
-
-Unhandled = {INC001, INC003}
-Handled = {INC002}
-Sequence = [INC002]
-Cost = cost dari langkah tersebut
-
-Proses tersebut dilakukan berulang sampai seluruh insiden memiliki posisi dalam urutan penanganan.
-
-F. Goal Test
-
-Goal test digunakan untuk menentukan apakah proses pencarian telah selesai.
-
-Goal tercapai apabila:
-
-tidak ada lagi insiden dalam daftar unhandled;
-seluruh insiden telah masuk ke dalam sequence;
-sequence telah membentuk urutan penanganan seluruh insiden.
-
-Contoh goal state:
-
-Unhandled = {}
-Handled = {INC001, INC002, INC003}
-Sequence = [INC002, INC001, INC003]
-
-Urutan tersebut kemudian dapat digunakan sebagai rekomendasi penanganan insiden.
-
-G. Path Cost
-
-Path cost digunakan untuk merepresentasikan penalty atau biaya dari keputusan urutan penanganan yang dipilih.
-
-Cost dalam masalah ini tidak hanya menunjukkan insiden mana yang dipilih, tetapi juga mempertimbangkan dampak dari posisi dan keterlambatan penanganan suatu insiden dalam urutan.
-
-Beberapa komponen yang dapat dipertimbangkan dalam path cost adalah:
-
-- `urgency`
-- `impact`
-- `affected_users`
-- `service_criticality`
-- `waiting_time_min`
-- `estimated_handling_time_min`
-
-Insiden dengan urgency, impact, jumlah pengguna terdampak, atau service criticality yang tinggi perlu diperhatikan agar tidak mengalami keterlambatan penanganan yang tidak sesuai.
-
-Waiting time juga dapat dipertimbangkan agar insiden yang sudah menunggu lebih lama tidak terus tertunda.
-
-Estimated handling time dapat digunakan sebagai informasi tambahan untuk melihat kebutuhan waktu penanganan dari suatu urutan.
-
-Pada tahap Milestone 1, komponen tersebut masih berupa kandidat dan belum ditetapkan menjadi rumus atau bobot final. Penentuan cost function final perlu direview lebih lanjut oleh tim.
-
-H. Example State Space
-
-Untuk menggambarkan state space, digunakan tiga contoh insiden:
-
-INC001
-INC002
-INC003
-
-Dari initial state tersebut, sistem memiliki beberapa pilihan action. Setiap pilihan akan menghasilkan state baru.
-
-Secara sederhana, state space dapat digambarkan sebagai:
-
-                    Initial
-              {INC001, INC002, INC003}
-                       |
-        +--------------+--------------+
-        |              |              |
-      INC001          INC002         INC003
-        |              |              |
-    +---+---+      +---+---+      +---+---+
-    |       |      |       |      |       |
-  INC002  INC003 INC001  INC003 INC001  INC002
-    |       |      |       |      |       |
-  INC003  INC002 INC003  INC001 INC002  INC001
-
-Dengan tiga insiden, terdapat enam kemungkinan urutan penanganan:
-
-INC001 → INC002 → INC003
-INC001 → INC003 → INC002
-INC002 → INC001 → INC003
-INC002 → INC003 → INC001
-INC003 → INC001 → INC002
-INC003 → INC002 → INC001
-
-Setiap kemungkinan urutan dapat memiliki path cost yang berbeda berdasarkan karakteristik dan posisi penanganan insiden.
-
-I. Uniform Cost Search (UCS)
-
-Uniform Cost Search (UCS) merupakan algoritma pencarian yang memilih state berdasarkan cumulative path cost terendah.
-
-Dalam masalah prioritisasi insiden, UCS dapat digunakan untuk mengevaluasi berbagai kemungkinan urutan penanganan berdasarkan total cost yang telah terbentuk.
-
-Secara konseptual, proses UCS adalah:
-
-1. Mulai dari initial state.
-2. Menghasilkan beberapa kemungkinan action.
-3. Menghasilkan state baru dari setiap action.
-4. Menghitung cumulative path cost setiap state.
-5. Memilih state dengan cumulative path cost paling rendah untuk dikembangkan berikutnya.
-6. Mengulangi proses sampai goal state ditemukan.
-
-UCS tidak menggunakan heuristic. Pemilihan state didasarkan pada cost yang telah diperoleh dari initial state sampai state saat ini.
-
-J. A* Search
-
-A* merupakan algoritma pencarian yang menggunakan cumulative cost dan estimasi cost menuju goal.
-
-Fungsi evaluasi A* dapat dituliskan sebagai:
-
-f(n) = g(n) + h(n)
-
-Keterangan:
-
-g(n) adalah cumulative cost dari initial state menuju state saat ini.
-h(n) adalah estimasi cost dari state saat ini menuju goal.
-f(n) adalah nilai evaluasi yang digunakan untuk memilih state.
-
-Pada masalah prioritisasi insiden, heuristic dapat digunakan untuk memperkirakan penalty yang masih mungkin terjadi dari insiden yang belum masuk ke dalam urutan.
-
-Namun, pada Milestone 1 heuristic A* belum ditentukan secara final. Heuristic perlu dirancang dan direview terlebih dahulu agar sesuai dengan karakteristik masalah.
-
-K. Perbandingan Awal UCS vs A*
-Aspek	UCS	A*
-Menggunakan path cost	Ya	Ya
-Membutuhkan heuristic	Tidak	Ya
-Dasar pemilihan state	Cumulative cost	Cumulative cost + heuristic
-Kompleksitas perancangan	Lebih sederhana	Lebih kompleks karena membutuhkan heuristic
-Penggunaan pada proyek	Dapat digunakan sebagai baseline	Dapat digunakan jika heuristic tersedia
-
-Pada tahap ini belum ditentukan algoritma final yang akan digunakan. Pemilihan antara UCS dan A* dapat dilakukan setelah cost function dan heuristic direview.
-
-L. Relation to Project Output
-
-Search problem formulation menjadi dasar bagi sistem untuk menghasilkan rekomendasi urutan prioritas penanganan insiden jaringan.
-
-State menggambarkan kondisi urutan yang sedang dibangun, action menentukan insiden berikutnya, transition menjelaskan perubahan state, dan goal menunjukkan bahwa seluruh insiden telah memiliki urutan penanganan.
-
-Path cost digunakan untuk merepresentasikan penalty dari keputusan urutan penanganan. Dengan struktur tersebut, UCS atau A* dapat digunakan untuk mencari urutan yang sesuai dengan tujuan prioritisasi.
-
-Output dari proses pencarian berupa rekomendasi urutan penanganan insiden. Rekomendasi tersebut dapat membantu pihak yang bertanggung jawab dalam menentukan insiden yang perlu ditangani terlebih dahulu.
-
-M. Conclusion
-
-Masalah prioritisasi insiden jaringan kampus dapat direpresentasikan sebagai search problem karena terdapat beberapa kemungkinan urutan penanganan yang dapat dipilih.
-
-Formulasi search problem terdiri dari state, initial state, action, transition model, goal test, dan path cost. State menggambarkan urutan yang sedang dibangun, action memilih insiden berikutnya, dan goal tercapai ketika seluruh insiden telah memiliki urutan.
-
-Path cost digunakan untuk merepresentasikan penalty dari keputusan urutan penanganan. UCS dapat digunakan berdasarkan cumulative path cost, sedangkan A* menggunakan cumulative path cost dan heuristic.
-
-Pada Milestone 1, UCS dan A* masih berada pada tahap analisis. Cost function final dan heuristic A* final belum ditentukan. Keduanya akan dipilih setelah komponen cost dan heuristic direview oleh tim.
+- Data bersifat sintetis dan statis selama pencarian.
+- Penanganan dimodelkan sebagai satu antrean tanpa paralelisme atau penugasan
+  teknisi.
+- UCS mempunyai kompleksitas eksponensial terhadap jumlah insiden; dominance
+  mengurangi state efektif menjadi kombinasi subset, tetapi tidak mengubah
+  batasan skalabilitas dasarnya.
+- Sistem tidak melakukan diagnosis atau tindakan perbaikan jaringan.
