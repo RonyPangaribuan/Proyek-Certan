@@ -14,15 +14,16 @@ Sistem memberikan rekomendasi urutan insiden yang perlu ditangani terlebih dahul
 
 ## C. Performance Measure
 
-Kinerja sistem diukur berdasarkan kemampuan sistem dalam memberikan rekomendasi prioritas yang sesuai dengan karakteristik insiden. Beberapa hal yang diperhatikan adalah:
+Kinerja sistem diukur menggunakan indikator yang terhubung langsung dengan implementasi Milestone 1:
 
-- Insiden dengan dampak tinggi tidak terlambat mendapatkan perhatian.
-- Insiden dengan tingkat urgensi tinggi mendapatkan prioritas yang sesuai.
-- Tingkat kritisitas layanan dipertimbangkan dalam menentukan prioritas.
-- Jumlah pengguna yang terdampak ikut dipertimbangkan.
-- Waktu tunggu insiden diperhatikan dalam proses prioritisasi.
-- Sistem memberikan hasil yang konsisten ketika diberikan kondisi input yang sama.
-- Urutan prioritas yang dihasilkan dapat dijelaskan berdasarkan karakteristik insiden.
+- total *weighted-minute penalty* UCS diminimalkan untuk satu batch insiden;
+- total penalty UCS tidak lebih besar daripada metode pembanding FIFO pada batch yang sama;
+- `importance_score` setiap insiden berada pada rentang 0–1 dan dapat dijelaskan melalui kontribusi urgency, impact, service criticality, affected users, dan waiting time;
+- input dan bobot yang sama menghasilkan urutan, total penalty, dan jumlah state yang diperluas secara konsisten;
+- jumlah state yang diperluas dan waktu eksekusi UCS dilaporkan sebagai statistik pencarian; dan
+- completion time serta step cost setiap insiden ditampilkan agar rekomendasi dapat ditelusuri.
+
+Istilah *weighted-minute penalty* menyatakan penalti menit terbobot, bukan biaya finansial. FIFO hanya digunakan sebagai metode pembanding non-search, sedangkan UCS merupakan Baseline Search resmi Milestone 1.
 
 ## D. Environment
 
@@ -74,7 +75,7 @@ Informasi yang digunakan meliputi:
 
 | Komponen | Deskripsi |
 |---|---|
-| **Performance Measure** | Prioritas sesuai tingkat urgensi, dampak, kritisitas layanan, jumlah pengguna terdampak, dan waktu tunggu. Hasil harus konsisten dan dapat dijelaskan. |
+| **Performance Measure** | Meminimalkan total weighted-minute penalty; biaya UCS tidak melebihi FIFO; importance score berada pada 0–1 dan dapat dijelaskan; hasil deterministik; serta jumlah state, waktu eksekusi, completion time, dan step cost dilaporkan. |
 | **Environment** | Kumpulan laporan insiden jaringan kampus yang berisi karakteristik setiap insiden. Pada Milestone 1, data diproses sebagai snapshot dan belum secara real-time. |
 | **Actuators** | Menghasilkan tingkat prioritas, rekomendasi urutan penanganan, dan informasi faktor yang memengaruhi prioritas. |
 | **Sensors** | `category`, `location`, `urgency`, `impact`, `affected_users`, `service_criticality`, `waiting_time_min`, dan `estimated_handling_time_min`. |

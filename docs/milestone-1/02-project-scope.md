@@ -40,7 +40,7 @@ Masalah prioritisasi akan direpresentasikan sebagai search problem yang memiliki
 - goal state;
 - path cost.
 
-Algoritma seperti **Uniform Cost Search (UCS)** dan/atau **A\*** akan dianalisis untuk menentukan pendekatan yang sesuai.
+Milestone 1 menggunakan **Uniform Cost Search (UCS)** sebagai Baseline Search resmi dan **First In, First Out (FIFO)** sebagai metode pembanding tambahan non-search. A* tidak diimplementasikan pada tahap ini.
 
 ### 2.4 Data Awal
 

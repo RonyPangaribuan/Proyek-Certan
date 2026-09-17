@@ -1,0 +1,134 @@
+[
+  {
+    "incident_id": "INC001",
+    "category": "wifi_slow",
+    "location": "Ruang Kelas",
+    "urgency": 2,
+    "impact": 2,
+    "affected_users": 15,
+    "service_criticality": 2,
+    "waiting_time_min": 35,
+    "estimated_handling_time_min": 20
+  },
+  {
+    "incident_id": "INC002",
+    "category": "network_down",
+    "location": "Laboratorium",
+    "urgency": 4,
+    "impact": 4,
+    "affected_users": 40,
+    "service_criticality": 4,
+    "waiting_time_min": 15,
+    "estimated_handling_time_min": 30
+  },
+  {
+    "incident_id": "INC003",
+    "category": "network_down",
+    "location": "Layanan Akademik",
+    "urgency": 5,
+    "impact": 5,
+    "affected_users": 120,
+    "service_criticality": 5,
+    "waiting_time_min": 10,
+    "estimated_handling_time_min": 40
+  },
+  {
+    "incident_id": "INC004",
+    "category": "unstable_connection",
+    "location": "Perpustakaan",
+    "urgency": 3,
+    "impact": 3,
+    "affected_users": 25,
+    "service_criticality": 3,
+    "waiting_time_min": 180,
+    "estimated_handling_time_min": 25
+  },
+  {
+    "incident_id": "INC005",
+    "category": "access_point_failure",
+    "location": "Asrama",
+    "urgency": 4,
+    "impact": 3,
+    "affected_users": 60,
+    "service_criticality": 3,
+    "waiting_time_min": 45,
+    "estimated_handling_time_min": 35
+  },
+  {
+    "incident_id": "INC006",
+    "category": "dns_issue",
+    "location": "Ruang Administrasi",
+    "urgency": 3,
+    "impact": 2,
+    "affected_users": 30,
+    "service_criticality": 4,
+    "waiting_time_min": 70,
+    "estimated_handling_time_min": 20
+  },
+  {
+    "incident_id": "INC007",
+    "category": "wifi_down",
+    "location": "Gedung Perkuliahan",
+    "urgency": 4,
+    "impact": 5,
+    "affected_users": 80,
+    "service_criticality": 4,
+    "waiting_time_min": 25,
+    "estimated_handling_time_min": 45
+  },
+  {
+    "incident_id": "INC008",
+    "category": "router_failure",
+    "location": "Laboratorium",
+    "urgency": 5,
+    "impact": 4,
+    "affected_users": 20,
+    "service_criticality": 4,
+    "waiting_time_min": 5,
+    "estimated_handling_time_min": 35
+  },
+  {
+    "incident_id": "INC009",
+    "category": "gateway_unreachable",
+    "location": "Layanan Akademik",
+    "urgency": 5,
+    "impact": 5,
+    "affected_users": 55,
+    "service_criticality": 5,
+    "waiting_time_min": 20,
+    "estimated_handling_time_min": 50
+  },
+  {
+    "incident_id": "INC010",
+    "category": "wifi_slow",
+    "location": "Perpustakaan",
+    "urgency": 2,
+    "impact": 2,
+    "affected_users": 50,
+    "service_criticality": 2,
+    "waiting_time_min": 150,
+    "estimated_handling_time_min": 25
+  },
+  {
+    "incident_id": "INC011",
+    "category": "unstable_connection",
+    "location": "Ruang Kelas",
+    "urgency": 3,
+    "impact": 4,
+    "affected_users": 10,
+    "service_criticality": 2,
+    "waiting_time_min": 90,
+    "estimated_handling_time_min": 15
+  },
+  {
+    "incident_id": "INC012",
+    "category": "wifi_down",
+    "location": "Asrama",
+    "urgency": 4,
+    "impact": 3,
+    "affected_users": 100,
+    "service_criticality": 3,
+    "waiting_time_min": 60,
+    "estimated_handling_time_min": 40
+  }
+]
