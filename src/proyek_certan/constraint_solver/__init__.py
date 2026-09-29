@@ -16,6 +16,12 @@ from proyek_certan.constraint_solver.backtracking import (
     select_unassigned_variable,
 )
 from proyek_certan.constraint_solver.csp import CSP, ConstraintFunction
+from proyek_certan.constraint_solver.solver import (
+    SolverResult,
+    SolverStats,
+    SolverStatus,
+    solve,
+)
 
 __all__ = [
     "AC3Result",
@@ -25,10 +31,14 @@ __all__ = [
     "CSP",
     "ConstraintFunction",
     "ReviseResult",
+    "SolverResult",
+    "SolverStats",
+    "SolverStatus",
     "ac3",
     "backtracking_search",
     "is_consistent",
     "order_domain_values",
     "revise",
     "select_unassigned_variable",
+    "solve",
 ]
