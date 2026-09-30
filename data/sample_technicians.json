@@ -1,0 +1,63 @@
+[
+  {
+    "technician_id": "TECH001",
+    "skills": [
+      "wifi_down",
+      "access_point_failure",
+      "unstable_connection"
+    ],
+    "available_slots": [
+      "SLOT_1",
+      "SLOT_2"
+    ]
+  },
+  {
+    "technician_id": "TECH002",
+    "skills": [
+      "network_down",
+      "router_failure",
+      "gateway_unreachable"
+    ],
+    "available_slots": [
+      "SLOT_1",
+      "SLOT_3"
+    ]
+  },
+  {
+    "technician_id": "TECH003",
+    "skills": [
+      "dns_issue",
+      "gateway_unreachable",
+      "network_down"
+    ],
+    "available_slots": [
+      "SLOT_2",
+      "SLOT_3"
+    ]
+  },
+  {
+    "technician_id": "TECH004",
+    "skills": [
+      "wifi_slow",
+      "wifi_down",
+      "unstable_connection"
+    ],
+    "available_slots": [
+      "SLOT_1",
+      "SLOT_2",
+      "SLOT_3"
+    ]
+  },
+  {
+    "technician_id": "TECH005",
+    "skills": [
+      "router_failure",
+      "access_point_failure",
+      "wifi_down"
+    ],
+    "available_slots": [
+      "SLOT_2",
+      "SLOT_3"
+    ]
+  }
+]
