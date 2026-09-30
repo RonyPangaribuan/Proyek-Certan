@@ -31,6 +31,33 @@ def test_mrv_selects_smallest_domain_and_uses_variable_order_for_ties() -> None:
     assert second == "C"
 
 
+def test_mrv_counts_values_legal_under_the_current_assignment() -> None:
+    csp = CSP(
+        ("A", "D", "B", "C"),
+        {
+            "A": [1],
+            "D": [2],
+            "B": [1, 2],
+            "C": [1, 2, 3],
+        },
+        {
+            "A": ["C"],
+            "D": ["C"],
+            "B": [],
+            "C": ["A", "D"],
+        },
+        different,
+    )
+
+    selected = select_unassigned_variable(
+        csp,
+        {"A": 1, "D": 2},
+        csp.domains,
+    )
+
+    assert selected == "C"
+
+
 def test_lcv_orders_values_by_fewest_neighbor_eliminations() -> None:
     csp = CSP(
         ("X", "Y"),
@@ -42,6 +69,24 @@ def test_lcv_orders_values_by_fewest_neighbor_eliminations() -> None:
     ordered_values = order_domain_values(csp, "X", {}, csp.domains)
 
     assert ordered_values == [3, 1, 2]
+
+
+def test_lcv_only_counts_neighbor_values_legal_under_current_assignment() -> None:
+    csp = CSP(
+        ("Z", "X", "Y"),
+        {"Z": [1], "X": [2, 1], "Y": [1, 2, 3]},
+        {"Z": ["Y"], "X": ["Y"], "Y": ["Z", "X"]},
+        different,
+    )
+
+    ordered_values = order_domain_values(
+        csp,
+        "X",
+        {"Z": 1},
+        csp.domains,
+    )
+
+    assert ordered_values == [1, 2]
 
 
 def test_consistency_checks_assigned_neighbors() -> None:

@@ -297,7 +297,11 @@ INC001, INC002, INC003, INC004,
 INC005, INC006, INC007, INC008,
 INC009, INC010, INC011, INC012
 
-Setiap pasangan insiden perlu diperiksa apabila keduanya mendapatkan assignment. Pemeriksaan dilakukan untuk memastikan tidak terjadi konflik teknisi dan slot.
+Edge dibuat hanya untuk dua insiden yang domainnya memiliki minimal satu pasangan
+teknisi-slot yang sama. Hubungan neighbor dibuat simetris sehingga jika `INC001`
+bertetangga dengan `INC010`, maka `INC010` juga bertetangga dengan `INC001`.
+Pasangan insiden dengan domain yang tidak beririsan tidak memerlukan edge karena
+tidak mungkin menggunakan resource teknisi-slot yang sama.
 
 ## 7. Partial Assignment
 

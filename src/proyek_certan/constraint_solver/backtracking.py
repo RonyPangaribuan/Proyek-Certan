@@ -85,14 +85,21 @@ def select_unassigned_variable(
     assignment: Mapping[VariableT, ValueT],
     domains: Mapping[VariableT, Sequence[ValueT]],
 ) -> VariableT:
-    """Select an unassigned variable by MRV and declared variable order."""
+    """Select by currently legal values, then declared variable order."""
 
     candidates = [
         variable for variable in csp.variables if variable not in assignment
     ]
     if not candidates:
         raise ValueError("cannot select a variable from a complete assignment")
-    return min(candidates, key=lambda variable: len(domains[variable]))
+
+    def legal_value_count(variable: VariableT) -> int:
+        return sum(
+            is_consistent(csp, variable, value, assignment)
+            for value in domains[variable]
+        )
+
+    return min(candidates, key=legal_value_count)
 
 
 def order_domain_values(
@@ -119,9 +126,16 @@ def order_domain_values(
             not _pair_is_consistent(csp, variable, value, other, other_value)
             for other in related_unassigned
             for other_value in domains[other]
+            if is_consistent(csp, other, other_value, assignment)
         )
 
-    return sorted(domains[variable], key=eliminated_values)
+    return sorted(
+        domains[variable],
+        key=lambda value: (
+            not is_consistent(csp, variable, value, assignment),
+            eliminated_values(value),
+        ),
+    )
 
 
 def backtracking_search(
