@@ -170,6 +170,7 @@ def test_sample_dataset_solves_to_a_complete_valid_assignment() -> None:
     assert len(set(result.assignment.values())) == 12
     assert result.validation is not None
     assert result.validation.valid is True
+    assert result.stats.backtracking.forward_checks > 0
     assert validate_solution(
         result.assignment, incidents, technicians
     ).valid is True
@@ -277,4 +278,6 @@ def test_assignment_cli_prints_solution_validation_and_stats(capsys) -> None:
     assert "nodes_expanded:" in output.out
     assert "assignments_tried:" in output.out
     assert "backtracks:" in output.out
+    assert "Forward Checking:" in output.out
+    assert "checks:" in output.out
     assert output.err == ""

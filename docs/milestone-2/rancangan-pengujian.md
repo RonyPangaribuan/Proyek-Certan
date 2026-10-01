@@ -204,6 +204,16 @@ Hal yang diamati:
 5. Jumlah backtrack.
 6. Status akhir apakah masalah berhasil diselesaikan atau tidak.
 
+### 5.1 Pengujian Forward Checking
+
+Forward Checking diuji setelah sebuah variable memperoleh assignment sementara.
+Pengujian memastikan bahwa:
+
+1. Nilai yang tidak compatible dihapus dari domain variable tetangga.
+2. Domain kosong menyebabkan cabang pencarian dihentikan lebih awal.
+3. Domain kembali ke kondisi sebelum cabang ketika Backtracking mencoba nilai lain.
+4. Jumlah pemeriksaan dan nilai yang dipangkas dapat dicatat.
+
 ## 6. Pengujian MRV
 
 MRV digunakan untuk memilih variable dengan jumlah nilai domain paling sedikit.
@@ -280,7 +290,12 @@ Semakin banyak nilai domain yang dihapus, semakin besar jumlah pruning yang dila
 
 Jumlah backtrack menunjukkan berapa kali algoritma Backtracking harus kembali ke assignment sebelumnya karena pilihan yang dicoba tidak dapat menghasilkan solusi.
 
-### 9.4 Status Penyelesaian
+### 9.4 Statistik Forward Checking
+
+Statistik ini mencatat jumlah Forward Checking yang dijalankan dan jumlah nilai
+domain tetangga yang dipangkas selama pencarian.
+
+### 9.5 Status Penyelesaian
 
 Status digunakan untuk menunjukkan apakah CSP berhasil diselesaikan atau tidak.
 
@@ -291,13 +306,14 @@ Contoh:
 
 ## 10. Tabel Rancangan Sensitivity Analysis
 
-| Ukuran | Jumlah Insiden | Runtime | AC-3 Revisions/Pruning | Backtracks | Status |
-|--------|----------------|---------|-------------------------|------------|--------|
-| Kecil | 4 | dicatat saat pengujian | dicatat | dicatat | dicatat |
-| Sedang | 8 | dicatat saat pengujian | dicatat | dicatat | dicatat |
-| Besar | 12 | dicatat saat pengujian | dicatat | dicatat | dicatat |
+| Ukuran | Jumlah Insiden | Runtime | AC-3 Revisions/Pruning | Backtracks | FC Checks/Pruned | Status |
+|--------|----------------|---------|-------------------------|------------|------------------|--------|
+| Kecil | 4 | dicatat saat pengujian | dicatat | dicatat | dicatat | dicatat |
+| Sedang | 8 | dicatat saat pengujian | dicatat | dicatat | dicatat | dicatat |
+| Besar | 12 | dicatat saat pengujian | dicatat | dicatat | dicatat | dicatat |
 
-Nilai runtime, jumlah pruning, dan jumlah backtrack diisi berdasarkan hasil eksekusi program.
+Nilai runtime, pruning, backtrack, dan statistik Forward Checking diisi
+berdasarkan hasil eksekusi program.
 
 ## 11. Ringkasan Skenario Pengujian
 
@@ -310,6 +326,7 @@ Nilai runtime, jumlah pruning, dan jumlah backtrack diisi berdasarkan hasil ekse
 | 5 | Domain berkurang setelah AC-3 | Menguji pruning | Domain dapat berkurang |
 | 6 | Domain kosong | Menguji empty domain | Kondisi gagal terdeteksi |
 | 7 | Tidak memiliki solusi | Menguji unsatisfiable CSP | Sistem menyatakan tidak ada solusi |
+| 8 | Forward Checking | Menguji pruning cabang dan pemulihan domain | Domain tetangga dipangkas tanpa bocor ke cabang lain |
 
 ## 12. Kriteria Keberhasilan
 
@@ -325,12 +342,17 @@ Pengujian dianggap berhasil apabila:
 8. Backtracking dapat mencari complete assignment ketika solusi tersedia.
 9. MRV dapat memilih variable berdasarkan domain yang paling sedikit.
 10. LCV dapat digunakan untuk menentukan urutan nilai yang dicoba.
-11. Metrik runtime, jumlah pruning/revisi AC-3, jumlah backtrack, dan status penyelesaian dapat dicatat untuk sensitivity analysis.
+11. Forward Checking dapat memangkas domain tetangga dan mendeteksi domain kosong.
+12. Domain hasil pruning dapat dipulihkan ketika Backtracking mencoba cabang lain.
+13. Metrik runtime, pruning AC-3, backtrack, Forward Checking, dan status penyelesaian dapat dicatat untuk sensitivity analysis.
 
 ## 13. Kesimpulan
 
-Rancangan pengujian Milestone 2 mencakup pengujian kondisi normal, pelanggaran skill, ketidaktersediaan teknisi, konflik teknisi-slot, pruning menggunakan AC-3, domain kosong, dan kondisi CSP yang tidak memiliki solusi.
+Rancangan pengujian Milestone 2 mencakup kondisi normal, pelanggaran constraint,
+pruning menggunakan AC-3 dan Forward Checking, pemulihan domain setelah
+backtrack, domain kosong, dan kondisi CSP yang tidak memiliki solusi.
 
-Selain pengujian fungsional, dilakukan sensitivity analysis dengan beberapa ukuran masalah untuk mengamati runtime, jumlah revisi atau pruning AC-3, jumlah backtrack, dan status penyelesaian.
+Selain pengujian fungsional, sensitivity analysis mengamati runtime, pruning
+AC-3, jumlah backtrack, statistik Forward Checking, dan status penyelesaian.
 
 Hasil pengujian nantinya digunakan untuk memastikan bahwa formulasi CSP dan algoritma yang digunakan dapat menghasilkan assignment teknisi dan slot yang memenuhi constraint yang telah ditentukan.

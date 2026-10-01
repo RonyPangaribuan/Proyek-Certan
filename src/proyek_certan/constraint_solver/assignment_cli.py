@@ -60,6 +60,9 @@ def format_result(result: IncidentAssignmentResult) -> str:
             f"  nodes_expanded: {result.stats.backtracking.nodes_expanded}",
             f"  assignments_tried: {result.stats.backtracking.assignments_tried}",
             f"  backtracks: {result.stats.backtracking.backtracks}",
+            "Forward Checking:",
+            f"  checks: {result.stats.backtracking.forward_checks}",
+            f"  values_pruned: {result.stats.backtracking.fc_values_pruned}",
         )
     )
     return "\n".join(lines)

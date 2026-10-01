@@ -409,6 +409,17 @@ Jika tidak ada nilai yang valid → backtrack
 
 Backtracking digunakan karena assignment yang melanggar constraint dapat dihentikan lebih awal.
 
+### 12.1 Forward Checking
+
+Forward Checking dilakukan selama Backtracking setelah sebuah variable diberi
+nilai sementara. Teknik ini menghapus nilai yang tidak compatible dari domain
+variable tetangga yang belum memperoleh assignment.
+
+Jika domain salah satu tetangga menjadi kosong, cabang pencarian dihentikan
+lebih awal dan Backtracking mencoba nilai lain. Setiap cabang menggunakan
+salinan domain sendiri sehingga pruning dari cabang yang gagal tidak memengaruhi
+cabang berikutnya.
+
 ## 13. MRV
 
 MRV atau Minimum Remaining Values digunakan untuk menentukan variable yang akan dipilih terlebih dahulu.
@@ -433,9 +444,9 @@ Nilai yang paling sedikit membatasi pilihan variable lain dicoba terlebih dahulu
 
 Dengan demikian, LCV membantu Backtracking mencoba nilai yang masih memberikan banyak kemungkinan kepada variable lain.
 
-## 15. Hubungan AC-3, Backtracking, MRV, dan LCV
+## 15. Hubungan AC-3, Backtracking, MRV, LCV, dan Forward Checking
 
-Keempat metode digunakan secara berurutan dalam proses penyelesaian CSP.
+Kelima metode digunakan secara berurutan dalam proses penyelesaian CSP.
 
 Data Insiden
 ↓
@@ -453,6 +464,10 @@ MRV → memilih variable
 ↓
 LCV → memilih urutan nilai
 ↓
+Pilih assignment sementara
+↓
+Forward Checking → pruning domain tetangga
+↓
 Complete Assignment
 ↓
 Assignment Teknisi + Slot
@@ -461,7 +476,9 @@ AC-3 berfungsi mengurangi kemungkinan yang tidak valid dari domain.
 
 Backtracking kemudian digunakan untuk mencari solusi lengkap.
 
-MRV membantu memilih variable yang akan diproses terlebih dahulu, sedangkan LCV membantu menentukan nilai yang dicoba terlebih dahulu.
+MRV membantu memilih variable berdasarkan domain aktif pada cabang pencarian,
+sedangkan LCV membantu menentukan nilai yang dicoba terlebih dahulu. Forward
+Checking memangkas domain tetangga setelah assignment sementara dibuat.
 
 ## 16. Hubungan dengan Milestone 1
 
@@ -481,7 +498,7 @@ Pembentukan Domain CSP
 ↓
 AC-3
 ↓
-Backtracking + MRV + LCV
+Backtracking + MRV + LCV + Forward Checking
 ↓
 Assignment Teknisi dan Slot
 
@@ -501,6 +518,7 @@ Constraint utama yang digunakan adalah:
 2. Teknisi harus tersedia pada slot yang dipilih.
 3. Satu teknisi tidak boleh menangani dua insiden pada slot yang sama.
 
-AC-3 digunakan untuk melakukan pruning domain. Setelah itu, Backtracking digunakan untuk mencari complete assignment dengan bantuan MRV dan LCV.
+AC-3 digunakan untuk melakukan pruning awal. Setelah itu, Backtracking mencari
+complete assignment dengan bantuan MRV, LCV, dan Forward Checking.
 
 Dengan formulasi ini, sistem dapat menghasilkan assignment teknisi dan slot yang memenuhi constraint yang telah ditentukan pada Milestone 2.

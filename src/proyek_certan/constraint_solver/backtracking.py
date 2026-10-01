@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
+from typing import Generic
 
 from proyek_certan.constraint_solver.csp import CSP, DomainMap, ValueT, VariableT
 
@@ -18,6 +19,17 @@ class BacktrackingStats:
     nodes_expanded: int = 0
     assignments_tried: int = 0
     backtracks: int = 0
+    forward_checks: int = 0
+    fc_values_pruned: int = 0
+
+
+@dataclass(frozen=True, slots=True)
+class ForwardCheckResult(Generic[VariableT, ValueT]):
+    """Branch-local domains produced by one forward-checking step."""
+
+    success: bool
+    domains: DomainMap[VariableT, ValueT]
+    values_pruned: int
 
 
 @dataclass(frozen=True, slots=True)
@@ -77,6 +89,55 @@ def is_consistent(
             csp, variable, value, other, assignment[other]
         )
         for other in csp.variables
+    )
+
+
+def forward_check(
+    csp: CSP[VariableT, ValueT],
+    variable: VariableT,
+    value: ValueT,
+    assignment: Mapping[VariableT, ValueT],
+    domains: Mapping[VariableT, Sequence[ValueT]],
+) -> ForwardCheckResult[VariableT, ValueT]:
+    """Prune incompatible values from unassigned neighboring domains."""
+
+    branch_domains = _copy_domains(csp, domains)
+    values_pruned = 0
+
+    for other in csp.variables:
+        if other == variable or other in assignment:
+            continue
+        if (
+            other not in csp.neighbors[variable]
+            and variable not in csp.neighbors[other]
+        ):
+            continue
+
+        original_values = branch_domains[other]
+        supported_values = [
+            other_value
+            for other_value in original_values
+            if _pair_is_consistent(
+                csp,
+                variable,
+                value,
+                other,
+                other_value,
+            )
+        ]
+        values_pruned += len(original_values) - len(supported_values)
+        branch_domains[other] = supported_values
+        if not supported_values:
+            return ForwardCheckResult(
+                success=False,
+                domains=branch_domains,
+                values_pruned=values_pruned,
+            )
+
+    return ForwardCheckResult(
+        success=True,
+        domains=branch_domains,
+        values_pruned=values_pruned,
     )
 
 
@@ -142,39 +203,54 @@ def backtracking_search(
     csp: CSP[VariableT, ValueT],
     domains: Mapping[VariableT, Sequence[ValueT]] | None = None,
 ) -> BacktrackingResult:
-    """Find one complete assignment using backtracking, MRV, and LCV."""
+    """Find an assignment with MRV, LCV, and branch-local forward checking."""
 
     working_domains = _copy_domains(csp, domains)
     assignment: Assignment[VariableT, ValueT] = {}
     nodes_expanded = 0
     assignments_tried = 0
     backtracks = 0
+    forward_checks = 0
+    fc_values_pruned = 0
 
-    def search() -> Assignment[VariableT, ValueT] | None:
+    def search(
+        current_domains: Mapping[VariableT, Sequence[ValueT]],
+    ) -> Assignment[VariableT, ValueT] | None:
         nonlocal nodes_expanded, assignments_tried, backtracks
+        nonlocal forward_checks, fc_values_pruned
 
         if len(assignment) == len(csp.variables):
             return dict(assignment)
 
-        variable = select_unassigned_variable(csp, assignment, working_domains)
+        variable = select_unassigned_variable(csp, assignment, current_domains)
         nodes_expanded += 1
         for value in order_domain_values(
-            csp, variable, assignment, working_domains
+            csp, variable, assignment, current_domains
         ):
             assignments_tried += 1
             if not is_consistent(csp, variable, value, assignment):
                 continue
 
             assignment[variable] = value
-            solution = search()
-            if solution is not None:
-                return solution
+            forward_checks += 1
+            check = forward_check(
+                csp,
+                variable,
+                value,
+                assignment,
+                current_domains,
+            )
+            fc_values_pruned += check.values_pruned
+            if check.success:
+                solution = search(check.domains)
+                if solution is not None:
+                    return solution
             del assignment[variable]
 
         backtracks += 1
         return None
 
-    solution = search()
+    solution = search(working_domains)
     ordered_solution = (
         {variable: solution[variable] for variable in csp.variables}
         if solution is not None
@@ -182,5 +258,11 @@ def backtracking_search(
     )
     return BacktrackingResult(
         ordered_solution,
-        BacktrackingStats(nodes_expanded, assignments_tried, backtracks),
+        BacktrackingStats(
+            nodes_expanded=nodes_expanded,
+            assignments_tried=assignments_tried,
+            backtracks=backtracks,
+            forward_checks=forward_checks,
+            fc_values_pruned=fc_values_pruned,
+        ),
     )
