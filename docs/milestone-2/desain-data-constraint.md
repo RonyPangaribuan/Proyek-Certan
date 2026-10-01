@@ -83,13 +83,13 @@ Jika:
 
 ```text
 Incident = INC001
-Category = wifi_down
+Category = wifi_slow
 ```
 
 maka teknisi yang dipilih harus memiliki:
 
 ```text
-wifi_down
+wifi_slow
 ```
 
 di dalam daftar `skills`.
@@ -97,10 +97,10 @@ di dalam daftar `skills`.
 **Assignment valid:**
 
 ```text
-INC001 → TECH001
+INC001 → TECH004
 ```
 
-jika `TECH001` memiliki skill `wifi_down`.
+jika `TECH004` memiliki skill `wifi_slow`.
 
 **Assignment tidak valid:**
 
@@ -108,7 +108,7 @@ jika `TECH001` memiliki skill `wifi_down`.
 INC001 → TECH002
 ```
 
-jika `TECH002` tidak memiliki skill `wifi_down`.
+jika `TECH002` tidak memiliki skill `wifi_slow`.
 
 Constraint ini memastikan teknisi yang diberikan kepada suatu insiden mempunyai kemampuan yang sesuai dengan jenis masalah tersebut.
 
@@ -122,13 +122,13 @@ Contoh:
 
 ```text
 TECH001
-available_slots = [SLOT_1, SLOT_3]
+available_slots = [SLOT_1, SLOT_2]
 ```
 
 Maka:
 
 ```text
-INC001 → (TECH001, SLOT_1)
+INC004 → (TECH001, SLOT_1)
 ```
 
 merupakan assignment valid.
@@ -136,10 +136,10 @@ merupakan assignment valid.
 Sedangkan:
 
 ```text
-INC001 → (TECH001, SLOT_2)
+INC004 → (TECH001, SLOT_3)
 ```
 
-merupakan assignment tidak valid karena `TECH001` tidak tersedia pada `SLOT_2`.
+merupakan assignment tidak valid karena `TECH001` tidak tersedia pada `SLOT_3`.
 
 ---
 
@@ -150,8 +150,8 @@ Satu teknisi tidak boleh menangani dua insiden pada slot yang sama.
 Contoh assignment:
 
 ```text
-INC001 → (TECH001, SLOT_1)
-INC002 → (TECH001, SLOT_1)
+INC004 → (TECH001, SLOT_1)
+INC011 → (TECH001, SLOT_1)
 ```
 
 merupakan assignment tidak valid karena `TECH001` mendapatkan dua insiden pada slot yang sama.
@@ -159,8 +159,8 @@ merupakan assignment tidak valid karena `TECH001` mendapatkan dua insiden pada s
 Sebaliknya:
 
 ```text
-INC001 → (TECH001, SLOT_1)
-INC002 → (TECH001, SLOT_2)
+INC004 → (TECH001, SLOT_1)
+INC011 → (TECH001, SLOT_2)
 ```
 
 dapat menjadi assignment valid karena teknisi yang sama berada pada slot yang berbeda.
@@ -174,17 +174,17 @@ Constraint ini digunakan untuk mencegah satu teknisi mendapatkan dua tugas yang 
 Berikut contoh assignment yang memenuhi constraint:
 
 ```text
-INC001 → (TECH001, SLOT_1)
+INC001 → (TECH004, SLOT_1)
 INC002 → (TECH002, SLOT_1)
-INC003 → (TECH001, SLOT_2)
+INC003 → (TECH003, SLOT_2)
 ```
 
 Assignment tersebut valid apabila:
 
-1. `TECH001` memiliki skill yang sesuai dengan `INC001` dan `INC003`.
+1. `TECH004` memiliki skill yang sesuai dengan `INC001`.
 2. `TECH002` memiliki skill yang sesuai dengan `INC002`.
-3. `TECH001` tersedia pada `SLOT_1` dan `SLOT_2`.
-4. `TECH002` tersedia pada `SLOT_1`.
+3. `TECH003` memiliki skill yang sesuai dengan `INC003`.
+4. Setiap teknisi tersedia pada slot yang dipilih.
 5. Tidak ada teknisi yang mendapatkan dua insiden pada slot yang sama.
 
 ---
@@ -204,18 +204,18 @@ Tidak valid apabila `TECH002` tidak memiliki skill yang sesuai dengan kategori `
 ### Kasus 2 – Teknisi Tidak Tersedia
 
 ```text
-INC001 → (TECH001, SLOT_2)
+INC004 → (TECH001, SLOT_3)
 ```
 
-Tidak valid apabila `SLOT_2` tidak terdapat pada `available_slots` milik `TECH001`.
+Tidak valid karena `TECH001` memiliki skill `unstable_connection`, tetapi `SLOT_3` tidak terdapat pada `available_slots` miliknya.
 
 ---
 
 ### Kasus 3 – Konflik Teknisi dan Slot
 
 ```text
-INC001 → (TECH001, SLOT_1)
-INC002 → (TECH001, SLOT_1)
+INC004 → (TECH001, SLOT_1)
+INC011 → (TECH001, SLOT_1)
 ```
 
 Tidak valid karena `TECH001` ditugaskan kepada dua insiden pada slot yang sama.
@@ -239,9 +239,9 @@ Contoh:
 ```text
 INC001:
 [
-  (TECH001, SLOT_1),
-  (TECH001, SLOT_3),
-  (TECH003, SLOT_2)
+  (TECH004, SLOT_1),
+  (TECH004, SLOT_2),
+  (TECH004, SLOT_3)
 ]
 ```
 
