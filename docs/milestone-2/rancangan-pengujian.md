@@ -4,7 +4,7 @@
 
 Pengujian pada Milestone 2 dilakukan untuk memastikan bahwa proses penugasan teknisi dan slot waktu menggunakan CSP dapat berjalan sesuai dengan constraint yang telah ditentukan.
 
-Pengujian juga digunakan untuk melihat bagaimana AC-3 dan Backtracking dengan MRV dan LCV bekerja pada beberapa kondisi assignment.
+Pengujian juga digunakan untuk melihat bagaimana AC-3 dan Backtracking dengan MRV, LCV, dan Forward Checking bekerja pada beberapa kondisi assignment.
 
 Data pengujian menggunakan data insiden dan data teknisi sintetis yang telah digunakan pada Milestone 2.
 
@@ -301,8 +301,8 @@ Status digunakan untuk menunjukkan apakah CSP berhasil diselesaikan atau tidak.
 
 Contoh:
 
-    SOLVED
-    UNSATISFIABLE
+    solved
+    no-solution
 
 ## 10. Tabel Rancangan Sensitivity Analysis
 
