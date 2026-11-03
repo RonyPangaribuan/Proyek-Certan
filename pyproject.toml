@@ -9,7 +9,11 @@ authors = [
     { name = "Rony Reynaldy Pangaribuan", email = "ronypangaribuan2505@gmail.com" }
 ]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "chromadb>=1.5.9",
+    "pypdf>=6.21.4",
+    "sentence-transformers>=6.2.0",
+]
 
 [dependency-groups]
 dev = [

@@ -17,7 +17,7 @@ urgensi, dampak, jumlah pengguna terdampak, waktu tunggu, kebutuhan skill, dan
 waktu penanganan yang berbeda. Ketersediaan teknisi dan slot waktu juga perlu
 diperhitungkan.
 
-Repository ini mencakup dua milestone:
+Repository ini mencakup tiga milestone:
 
 - **Milestone 1 - Prioritisasi insiden.** Sistem menghitung *importance score*,
   mencari urutan penanganan dengan Uniform Cost Search (UCS), dan
@@ -29,6 +29,10 @@ Repository ini mencakup dua milestone:
   Minimum Remaining Values (MRV), Least Constraining Value (LCV), dan Forward
   Checking. Milestone ini menjawab pertanyaan: "Teknisi mana dan slot waktu
   mana yang dapat digunakan untuk menangani insiden secara valid?"
+- **Milestone 3 - Basis pengetahuan dan semantic search.** Pipeline embedding
+  multilingual dan persistent ChromaDB menerima hasil chunking lalu mengambil
+  SOP yang relevan terhadap kueri bahasa alami. Pengujian awal memakai chunk
+  sintetis; integrasi korpus nyata masih menjadi pekerjaan tim.
 
 Hubungan kedua milestone bersifat konseptual: Milestone 1 memberikan konteks
 prioritas insiden, sedangkan Milestone 2 menangani kelayakan penugasan teknisi
@@ -73,10 +77,13 @@ flowchart TD
 | Search Milestone 2 | Backtracking |
 | Heuristik | MRV dan LCV |
 | Pruning saat pencarian | Forward Checking |
-| Data | Insiden dan teknisi sintetis dalam JSON |
+| Milestone 3 | Dense embeddings dan persistent semantic search |
+| Embedding | Multilingual MiniLM, 384 dimensi, ternormalisasi |
+| Vector store | ChromaDB persisten, cosine distance, upsert |
+| Data | Insiden, teknisi, dan chunk pengetahuan sintetis dalam JSON |
 | Teknologi | Python 3.11 dan Astral `uv` |
 | Lisensi | MIT |
-| Status | Milestone 2 completed |
+| Status | Milestone 1-2 completed; pipeline T03 dengan data sintetis |
 
 UCS dipilih pada Milestone 1 karena seluruh biaya langkah nonnegatif dan dapat
 menemukan urutan dengan *weighted-minute penalty* minimum tanpa heuristic. A*
@@ -358,10 +365,12 @@ memiliki:
 ```text
 data/
 |-- sample_incidents.json
-`-- sample_technicians.json
+|-- sample_technicians.json
+`-- sample_knowledge_chunks.json
 docs/
 |-- milestone-1/
-`-- milestone-2/
+|-- milestone-2/
+`-- milestone-3/
 src/proyek_certan/
 |-- __init__.py
 |-- __main__.py
@@ -374,6 +383,13 @@ src/proyek_certan/
 |   `-- fifo.py
 |-- search/
 |   `-- ucs.py
+|-- knowledge/
+|   |-- __init__.py
+|   |-- embeddings.py
+|   |-- models.py
+|   |-- vector_store.py
+|   |-- retrieval.py
+|   `-- cli.py
 `-- constraint_solver/
     |-- __init__.py
     |-- csp.py
@@ -394,10 +410,31 @@ tests/
 |-- test_backtracking.py
 |-- test_solver.py
 |-- test_incident_assignment.py
+|-- knowledge/
 `-- test_benchmark.py
 ```
 
 </details>
+
+## Milestone 3: Semantic Search
+
+Modul T03 berada di [src/proyek_certan/knowledge](src/proyek_certan/knowledge).
+CLI ini terpisah dari Milestone 1 dan 2:
+
+```bash
+uv run --locked python -m proyek_certan.knowledge.cli index --input data/sample_knowledge_chunks.json
+uv run --locked python -m proyek_certan.knowledge.cli search --query "Kabel LAN putus dan port switch bermasalah" --top-k 3
+```
+
+Model awal adalah `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`
+dengan embedding ternormalisasi 384 dimensi. Database default `.local/chroma`
+dan cache model `.cache/models` diabaikan Git. Pemakaian pertama memerlukan
+unduhan model. Korpus contoh terpisah di
+[data/sample_knowledge_chunks.json](data/sample_knowledge_chunks.json).
+
+Lihat [panduan T03](docs/milestone-3/semantic-search.md) untuk kontrak integrasi
+chunking, API Python, konfigurasi database/threshold, pengujian model asli,
+serta pekerjaan lanjutan untuk korpus dan evaluasi retrieval.
 
 ## Batasan
 
@@ -418,7 +455,7 @@ tests/
 
 ## Status Proyek
 
-**Status: Milestone 2 completed.** Repository telah mencakup prioritisasi
-insiden serta penugasan teknisi-slot berbasis CSP. Pernyataan ini tidak berarti
-seluruh proyek akhir telah selesai; pengembangan milestone lanjutan masih dapat
-dilakukan.
+**Status: Milestone 1-2 completed; pipeline teknis T03 tersedia dengan data
+sintetis.** Repository mencakup prioritisasi insiden, penugasan teknisi-slot
+berbasis CSP, serta embedding dan persistent semantic search. Korpus nyata dan
+evaluasi retrieval T03 masih perlu diselesaikan bersama tim.

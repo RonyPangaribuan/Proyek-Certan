@@ -27,3 +27,11 @@ Thumbs.db
 build/
 dist/
 *.egg-info/
+
+# Milestone 3: local vector database and downloaded model artifacts
+.local/
+.cache/
+chroma_db/
+chroma_data/
+**/chroma.sqlite3*
+**/models--*/
