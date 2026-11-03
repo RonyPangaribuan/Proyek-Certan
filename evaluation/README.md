@@ -71,5 +71,57 @@ memerlukan `CERTAN_RUN_MODEL_TESTS=1`; tidak diaktifkan untuk tugas validasi PDF
 
 Panduan metrik, konfigurasi, flag kualitas, dan exit code tersedia pada
 [dokumentasi validator](../docs/milestone-3/corpus-validation.md).
-Kode Milestone 1/2, embedding, vector store, retrieval, dependensi, lockfile, serta
-PDF sumber tidak diubah. Tidak dilakukan commit atau push.
+Pada tahap validasi PDF awal, kode Milestone 1/2, embedding, vector store,
+retrieval, dependensi, lockfile, serta PDF sumber tidak diubah.
+
+## Tindak lanjut: persiapan teks korpus
+
+Laporan terkini tersedia pada [corpus_processing.json](./corpus_processing.json),
+dengan metadata dan URL resmi pada
+[corpus_manifest.json](../data/corpus/corpus_manifest.json). Berkas hasil berada
+di [data/corpus/processed/](../data/corpus/processed/). Tahap ini menghasilkan
+**14 dari 15 dokumen**, total **122.302 karakter**: 12 dari HTML resmi, 2 dari
+`pypdf`. DOC-06 memerlukan tindakan manual. Tidak ada OCR atau perubahan PDF asli.
+
+| ID | Panjang teks | Metode | Status | Catatan |
+|---|---:|---|---|---|
+| DOC01 | 4.367 | HTML Microsoft Learn | processed | |
+| DOC02 | 13.940 | HTML Microsoft Learn | processed | |
+| DOC03 | 9.372 | HTML Microsoft Learn | processed | |
+| DOC04 | 1.814 | HTML Microsoft Learn | processed | |
+| DOC05 | 15.004 | HTML Microsoft Learn | processed | |
+| DOC06 | 0 | — | manual_required | Ketentuan reproduksi Cisco perlu dipastikan |
+| DOC07 | 8.103 | HTML Microsoft Learn | processed | |
+| DOC08 | 5.766 | HTML Microsoft Learn | processed | |
+| DOC09 | 7.611 | HTML DTSI UHB | processed | Sumber berstatus DRAFT |
+| DOC10 | 4.600 | HTML DTSI UHB | processed | Sumber berstatus DRAFT |
+| DOC11 | 30.280 | pypdf PDF asli | processed | |
+| DOC12 | 4.178 | HTML University of Utah | processed | |
+| DOC13 | 8.996 | pypdf PDF asli | processed | |
+| DOC14 | 5.712 | HTML Western Michigan University | processed | |
+| DOC15 | 2.559 | HTML Indiana University Bloomington | processed | |
+
+Skrip menggunakan satu request per halaman HTML yang ditetapkan dalam manifest,
+memeriksa `robots.txt`, dan menolak URL redirect, halaman terlalu pendek, atau
+respons yang bukan HTML. Pembersihan membuang navigasi, footer, cookie,
+komentar template, dan widget lain; heading, langkah, kode, serta tabel dasar
+dipertahankan. Setiap file diuji sebagai UTF-8 dan dicocokkan panjang teks serta
+SHA-256-nya dengan laporan. Teks halaman HTML dapat berbeda dari tampilan PDF
+yang dicetak sebelumnya jika sumber berubah; peninjauan isi sebelum chunking
+tetap diperlukan.
+
+Sumber Microsoft Learn didokumentasikan dengan atribusi dan
+[lisensi CC BY 4.0](https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/LICENSE)
+pada manifest. DOC-06 ditunda karena
+[ketentuan reproduksi Cisco](https://www.cisco.com/c/en/us/about/brand-center/copyright-use.html)
+tidak memberikan izin yang jelas untuk menaruh salinan teks penuh dalam korpus
+repository ini. Tindakan manual: pastikan izin atau sediakan teks alternatif
+resmi yang boleh disimpan dan diproses. Jangan mengisi file DOC-06 dengan teks
+hasil tebakan.
+
+Panduan menjalankan ulang dan batasan ekstraksi ada pada
+[dokumentasi persiapan korpus](../docs/milestone-3/corpus-preparation.md).
+Dependensi langsung `requests` dan `beautifulsoup4` ditambahkan melalui `uv`.
+Pengujian akhir: `155 passed, 2 skipped`; `uv lock --check` lulus. Hash seluruh
+15 PDF asli tetap sama dengan laporan validasi awal.
+Tidak ada commit atau push.
