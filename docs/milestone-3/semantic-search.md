@@ -3,8 +3,9 @@
 Pipeline yang tersedia: **chunk teks → embedding ternormalisasi → persistent
 ChromaDB → pencarian semantik**. Ingestion dan word-aware chunking dari 15
 dokumen nyata kini tersedia melalui [panduan korpus](./corpus-ingestion.md).
-Contoh pengujian indexing di bawah masih menggunakan data sintetis; chunk
-korpus nyata belum diindex atau diuji relevansinya. Generation, Gemini,
+Contoh pengujian awal di bawah menggunakan data sintetis. Integrasi korpus
+nyata kini memiliki [indeks eksperimen](./real-corpus-search.md) yang belum
+lolos pemeriksaan kesiapan produksi. Generation, Gemini,
 FastMCP, dan Gradio belum diimplementasikan.
 
 ## Struktur dan environment
@@ -26,6 +27,7 @@ Tidak perlu menjalankan `uv init` atau menambahkan dependensi yang sama.
 | [cli.py](../../src/proyek_certan/knowledge/cli.py) | Perintah index/search terpisah dari CLI milestone sebelumnya |
 | [sample_knowledge_chunks.json](../../data/sample_knowledge_chunks.json) | Lima contoh chunk insiden sintetis, terpisah dari modul produksi |
 | [knowledge_chunks.json](../../data/corpus/processed/knowledge_chunks.json) | Chunk korpus nyata hasil ingestion dan audit 15 TXT |
+| [real-corpus-search.md](./real-corpus-search.md) | Indexing eksperimen 130 chunk, hasil kueri, batas token, dan tindakan manual |
 | [tests/knowledge](../../tests/knowledge) | Pengujian offline dengan Chroma asli dan integrasi model asli |
 
 ## Menjalankan dengan uv
@@ -226,11 +228,10 @@ relevansi pada korpus operasional.
 
 ## Pekerjaan lanjutan T03
 
-1. Tinjau flag kualitas pada
-   [audit korpus](../../evaluation/corpus_chunking.json), lalu tentukan
-   dokumen yang layak diindex untuk penggunaan produksi.
-2. Ukur panjang chunk terhadap batas token model agar encoding tidak memotong
-   konteks penting; ukuran 250 kata dan overlap 40 kata saat ini bersifat eksperimen.
+1. Tinjau lima dokumen berflag pada
+   [audit korpus](../../evaluation/corpus_chunking.json) sebelum indexing final.
+2. Ulangi chunking sesuai batas 128 token model dan evaluasi ulang hasilnya;
+   115 dari 130 chunk eksperimen saat ini melampaui batas tersebut.
 3. Siapkan kueri evaluasi berlabel dan relevansi rujukan dari kasus jaringan kampus.
    Ukur Recall@k/MRR atau metrik retrieval yang disepakati.
 4. Kalibrasi top-k dan threshold dari evaluasi tersebut. Lima teks sintetis hanya

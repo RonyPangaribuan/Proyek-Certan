@@ -100,3 +100,18 @@ indexing produksi. Temuan dan batas metode dijelaskan pada
 [panduan ingestion](../docs/milestone-3/corpus-ingestion.md).
 Pengujian penuh setelah tahap ini: `164 passed, 2 skipped`. Seluruh chunk
 lulus kontrak metadata dan rekonstruksi urutan kata 15 dokumen.
+
+## Indeks dan pencarian semantik eksperimen
+
+Seluruh 130 chunk telah diindeks pada database Chroma persisten baru di
+`.local/chroma-corpus-m3` dengan model multilingual berdimensi 384.
+Pemeriksaan dari proses baru memastikan jumlah, ID, teks, metadata, dan
+cakupan 15 dokumen. Lima kueri Indonesia serta hasil top-k tersedia di
+[real_corpus_search.json](./real_corpus_search.json) dan dijelaskan pada
+[panduan integrasi](../docs/milestone-3/real-corpus-search.md).
+
+**Belum siap untuk indexing produksi:** 115 chunk melampaui batas input
+128 token model, sehingga bagian akhir chunk dapat terpotong saat embedding.
+DOC-06, DOC-09, DOC-10, DOC-11, dan DOC-13 juga masih membutuhkan review isi;
+status DRAFT DOC-09/10 dipertahankan pada metadata indeks.
+Suite penuh dengan model nyata setelah integrasi ini: **168 passed**.

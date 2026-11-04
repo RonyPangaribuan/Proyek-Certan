@@ -116,7 +116,7 @@ def build_chunks(root: Path, size: int = 250, overlap: int = 40) -> tuple[list[K
         raise ValueError("require size > 0 and 0 <= overlap < size")
     loaded, audits = load_corpus(root)
     chunks: list[KnowledgeChunk] = []
-    for item in loaded:
+    for item, audit in zip(loaded, audits, strict=True):
         document = item["manifest"]
         produced = chunk_document(
             item["text"],
@@ -126,6 +126,8 @@ def build_chunks(root: Path, size: int = 250, overlap: int = 40) -> tuple[list[K
             source_url=document["source_url"],
             size=size,
             overlap=overlap,
+            review_required=audit["review_required"],
+            publication_status=document.get("publication_status"),
         )
         if not produced:
             raise ValueError(f"{document['document_id']}: no chunks produced")

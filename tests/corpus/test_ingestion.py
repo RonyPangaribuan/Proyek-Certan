@@ -72,8 +72,21 @@ def test_short_document_has_one_unique_index_ready_chunk():
     assert chunks[0].metadata == {
         "document_id": "DOC99", "source": "DOC99.pdf", "title": "Short",
         "section": "Short", "chunk_index": 0, "source_url": "https://example.org/doc",
+        "review_required": False,
     }
     assert validate_chunks([asdict(chunk) for chunk in chunks]) == chunks
+
+
+def test_draft_status_is_flat_metadata_on_every_chunk():
+    chunks = chunk_document(
+        "# Procedure\n" + "Check the network. " * 35,
+        document_id="DOC09", source="DOC09.pdf", title="Procedure",
+        source_url="https://example.org/draft", size=30, overlap=5,
+        review_required=True, publication_status="DRAFT menurut halaman sumber",
+    )
+    assert len(chunks) > 1
+    assert all(chunk.metadata["publication_status"].startswith("DRAFT") for chunk in chunks)
+    assert all(chunk.metadata["review_required"] is True for chunk in chunks)
 
 
 def test_manifest_ingestion_checks_sha_and_produces_unique_ids(tmp_path: Path):

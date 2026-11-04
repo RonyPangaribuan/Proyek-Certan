@@ -112,21 +112,26 @@ def chunk_section(section: Section, size: int = 250, overlap: int = 40) -> list[
 def chunk_document(
     text: str, *, document_id: str, source: str, title: str,
     source_url: str, size: int = 250, overlap: int = 40,
+    review_required: bool = False, publication_status: str | None = None,
 ) -> list[KnowledgeChunk]:
     chunks = []
     for section in group_short_sections(split_sections(text, title), size):
         for part in chunk_section(section, size, overlap):
             index = len(chunks)
+            metadata = {
+                "document_id": document_id,
+                "source": source,
+                "title": title,
+                "section": section.title,
+                "chunk_index": index,
+                "source_url": source_url,
+                "review_required": review_required,
+            }
+            if publication_status:
+                metadata["publication_status"] = publication_status
             chunks.append(KnowledgeChunk(
                 chunk_id=f"{document_id}-{index:04d}",
                 text=part,
-                metadata={
-                    "document_id": document_id,
-                    "source": source,
-                    "title": title,
-                    "section": section.title,
-                    "chunk_index": index,
-                    "source_url": source_url,
-                },
+                metadata=metadata,
             ))
     return chunks

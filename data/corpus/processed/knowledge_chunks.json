@@ -8,7 +8,8 @@
       "title": "Wireless technology troubleshooting guidance",
       "section": "Wireless technology troubleshooting guidance / Emerging and known issues / Troubleshooting a WIFI connection that fails to establish",
       "chunk_index": 0,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-wireless-technologies"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-wireless-technologies",
+      "review_required": false
     }
   },
   {
@@ -20,7 +21,8 @@
       "title": "Wireless technology troubleshooting guidance",
       "section": "Step 1: Identify the type of failure",
       "chunk_index": 1,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-wireless-technologies"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-wireless-technologies",
+      "review_required": false
     }
   },
   {
@@ -32,7 +34,8 @@
       "title": "Wireless technology troubleshooting guidance",
       "section": "Step 2: Rule out common causes of connection failures / Troubleshooting an 802.1X authentication failure",
       "chunk_index": 2,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-wireless-technologies"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-wireless-technologies",
+      "review_required": false
     }
   },
   {
@@ -44,7 +47,8 @@
       "title": "Wireless technology troubleshooting guidance",
       "section": "3. Does the 802.1X policy require user or computer authentication?",
       "chunk_index": 3,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-wireless-technologies"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-wireless-technologies",
+      "review_required": false
     }
   },
   {
@@ -56,7 +60,8 @@
       "title": "Wireless technology troubleshooting guidance",
       "section": "References",
       "chunk_index": 4,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-wireless-technologies"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-wireless-technologies",
+      "review_required": false
     }
   },
   {
@@ -68,7 +73,8 @@
       "title": "DNS troubleshooting guidance",
       "section": "DNS troubleshooting guidance / Summary / Troubleshooting checklist / Server-side issues / Client-side issues / Common issues and solutions / Support policy for DNS client-side caching on DNS clients",
       "chunk_index": 0,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+      "review_required": false
     }
   },
   {
@@ -80,7 +86,8 @@
       "title": "DNS troubleshooting guidance",
       "section": "DNS records are missing in a DNS zone / DNS scavenging is misconfigured",
       "chunk_index": 1,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+      "review_required": false
     }
   },
   {
@@ -92,7 +99,8 @@
       "title": "DNS troubleshooting guidance",
       "section": "Host \"A\" record is deleted when the IP address is changed",
       "chunk_index": 2,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+      "review_required": false
     }
   },
   {
@@ -104,7 +112,8 @@
       "title": "DNS troubleshooting guidance",
       "section": "DHCP clients that use DHCP Option 81 unregister host \"A\" records during host \"AAAA\" registration",
       "chunk_index": 3,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+      "review_required": false
     }
   },
   {
@@ -116,7 +125,8 @@
       "title": "DNS troubleshooting guidance",
       "section": "The DNS Dynamic Update Protocol update to existing DNS records fails",
       "chunk_index": 4,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+      "review_required": false
     }
   },
   {
@@ -128,7 +138,8 @@
       "title": "DNS troubleshooting guidance",
       "section": "Converting an active dynamic lease to a reservation deletes the \"A\" and PTR records for that client / Avoid registering unwanted network adapters in DNS",
       "chunk_index": 5,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+      "review_required": false
     }
   },
   {
@@ -140,7 +151,8 @@
       "title": "DNS troubleshooting guidance",
       "section": "DNS query response delays / Event ID 4004 and event ID 4013",
       "chunk_index": 6,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+      "review_required": false
     }
   },
   {
@@ -152,7 +164,8 @@
       "title": "DNS troubleshooting guidance",
       "section": "DNS Server geo-location policy doesn't work as expected",
       "chunk_index": 7,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+      "review_required": false
     }
   },
   {
@@ -164,7 +177,8 @@
       "title": "DNS troubleshooting guidance",
       "section": "Forwarded DNS name resolution fails for dual-stacked queries",
       "chunk_index": 8,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+      "review_required": false
     }
   },
   {
@@ -176,7 +190,8 @@
       "title": "DNS troubleshooting guidance",
       "section": "DNS Server loses its NIC Teaming configuration",
       "chunk_index": 9,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+      "review_required": false
     }
   },
   {
@@ -188,7 +203,8 @@
       "title": "DNS troubleshooting guidance",
       "section": "DNS record registration behavior if the DHCP server manages dynamic DNS updates",
       "chunk_index": 10,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+      "review_required": false
     }
   },
   {
@@ -200,7 +216,8 @@
       "title": "DNS troubleshooting guidance",
       "section": "Data collection / Prerequisites",
       "chunk_index": 11,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+      "review_required": false
     }
   },
   {
@@ -212,7 +229,8 @@
       "title": "DNS troubleshooting guidance",
       "section": "Gather key information before contacting Microsoft support",
       "chunk_index": 12,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+      "review_required": false
     }
   },
   {
@@ -224,7 +242,8 @@
       "title": "DNS troubleshooting guidance",
       "section": "References",
       "chunk_index": 13,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+      "review_required": false
     }
   },
   {
@@ -236,7 +255,8 @@
       "title": "DHCP troubleshooting guidance",
       "section": "DHCP troubleshooting guidance",
       "chunk_index": 0,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+      "review_required": false
     }
   },
   {
@@ -248,7 +268,8 @@
       "title": "DHCP troubleshooting guidance",
       "section": "Troubleshooting checklist",
       "chunk_index": 1,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+      "review_required": false
     }
   },
   {
@@ -260,7 +281,8 @@
       "title": "DHCP troubleshooting guidance",
       "section": "Troubleshoot DHCP servers",
       "chunk_index": 2,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+      "review_required": false
     }
   },
   {
@@ -272,7 +294,8 @@
       "title": "DHCP troubleshooting guidance",
       "section": "Troubleshoot DHCP servers",
       "chunk_index": 3,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+      "review_required": false
     }
   },
   {
@@ -284,7 +307,8 @@
       "title": "DHCP troubleshooting guidance",
       "section": "Troubleshoot DHCP clients / Using network trace to troubleshoot DHCP",
       "chunk_index": 4,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+      "review_required": false
     }
   },
   {
@@ -296,7 +320,8 @@
       "title": "DHCP troubleshooting guidance",
       "section": "Steps to collect a network trace / 8. Apply a DHCP filter to view DHCP transactions:",
       "chunk_index": 5,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+      "review_required": false
     }
   },
   {
@@ -308,7 +333,8 @@
       "title": "DHCP troubleshooting guidance",
       "section": "9. Analyze DHCP transactions: / 10. Identify network drops. Look for these indicators of network drops:",
       "chunk_index": 6,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+      "review_required": false
     }
   },
   {
@@ -320,7 +346,8 @@
       "title": "DHCP troubleshooting guidance",
       "section": "Data collection / Prerequisites",
       "chunk_index": 7,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+      "review_required": false
     }
   },
   {
@@ -332,7 +359,8 @@
       "title": "DHCP troubleshooting guidance",
       "section": "Gather key information before contacting Microsoft support",
       "chunk_index": 8,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+      "review_required": false
     }
   },
   {
@@ -344,7 +372,8 @@
       "title": "DHCP troubleshooting guidance",
       "section": "Reference / Event logs / DHCP Server log",
       "chunk_index": 9,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+      "review_required": false
     }
   },
   {
@@ -356,7 +385,8 @@
       "title": "Troubleshoot problems on the DHCP client",
       "section": "Troubleshoot problems on the DHCP client / Troubleshooting checklist / Event logs",
       "chunk_index": 0,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-problems-dhcp-client"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-problems-dhcp-client",
+      "review_required": false
     }
   },
   {
@@ -368,7 +398,8 @@
       "title": "Troubleshoot problems on the DHCP client",
       "section": "Data collection",
       "chunk_index": 1,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-problems-dhcp-client"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-problems-dhcp-client",
+      "review_required": false
     }
   },
   {
@@ -380,7 +411,8 @@
       "title": "TCP/IP communication troubleshooting guidance",
       "section": "TCP/IP communication troubleshooting guidance / Summary / Troubleshooting tools",
       "chunk_index": 0,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance",
+      "review_required": false
     }
   },
   {
@@ -392,7 +424,8 @@
       "title": "TCP/IP communication troubleshooting guidance",
       "section": "Troubleshooting checklist / Step 1: Capture a network diagram / Step 2: Networking traces",
       "chunk_index": 1,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance",
+      "review_required": false
     }
   },
   {
@@ -404,7 +437,8 @@
       "title": "TCP/IP communication troubleshooting guidance",
       "section": "Step 3: Ping the computer's local IP address",
       "chunk_index": 2,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance",
+      "review_required": false
     }
   },
   {
@@ -416,7 +450,8 @@
       "title": "TCP/IP communication troubleshooting guidance",
       "section": "Step 3: Ping the computer's local IP address",
       "chunk_index": 3,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance",
+      "review_required": false
     }
   },
   {
@@ -428,7 +463,8 @@
       "title": "TCP/IP communication troubleshooting guidance",
       "section": "Step 3: Ping the computer's local IP address",
       "chunk_index": 4,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance",
+      "review_required": false
     }
   },
   {
@@ -440,7 +476,8 @@
       "title": "TCP/IP communication troubleshooting guidance",
       "section": "Step 4: Troubleshoot error messages that occurs during the ping or telnet test",
       "chunk_index": 5,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance",
+      "review_required": false
     }
   },
   {
@@ -452,7 +489,8 @@
       "title": "TCP/IP communication troubleshooting guidance",
       "section": "Step 4: Troubleshoot error messages that occurs during the ping or telnet test",
       "chunk_index": 6,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance",
+      "review_required": false
     }
   },
   {
@@ -464,7 +502,8 @@
       "title": "TCP/IP communication troubleshooting guidance",
       "section": "Step 5: Ping or Telnet to the default gateway / Step 6: Check issues that affect the specific destination node",
       "chunk_index": 7,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance",
+      "review_required": false
     }
   },
   {
@@ -476,7 +515,8 @@
       "title": "TCP/IP communication troubleshooting guidance",
       "section": "2. If the connection to the specific port isn't successful:",
       "chunk_index": 8,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance",
+      "review_required": false
     }
   },
   {
@@ -488,7 +528,8 @@
       "title": "TCP/IP communication troubleshooting guidance",
       "section": "Common issues and solutions / TCP/IP connection to a host appears to have stopped / Long connect times when using Lmhosts for name resolution",
       "chunk_index": 9,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance",
+      "review_required": false
     }
   },
   {
@@ -500,7 +541,8 @@
       "title": "TCP/IP communication troubleshooting guidance",
       "section": "System error 53 occurred / Can't connect to a specific server",
       "chunk_index": 10,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance",
+      "review_required": false
     }
   },
   {
@@ -512,7 +554,8 @@
       "title": "TCP/IP communication troubleshooting guidance",
       "section": "Unable to add a default gateway / Data collection",
       "chunk_index": 11,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance",
+      "review_required": false
     }
   },
   {
@@ -524,7 +567,8 @@
       "title": "TCP/IP communication troubleshooting guidance",
       "section": "Prerequisites",
       "chunk_index": 12,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance",
+      "review_required": false
     }
   },
   {
@@ -536,7 +580,8 @@
       "title": "TCP/IP communication troubleshooting guidance",
       "section": "Gather key information before contacting Microsoft support",
       "chunk_index": 13,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance",
+      "review_required": false
     }
   },
   {
@@ -548,7 +593,8 @@
       "title": "TCP/IP communication troubleshooting guidance",
       "section": "Reference",
       "chunk_index": 14,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance",
+      "review_required": false
     }
   },
   {
@@ -560,7 +606,8 @@
       "title": "Open vSwitch VLAN Troubleshooting FAQ",
       "section": "VLANs / What’s a VLAN?",
       "chunk_index": 0,
-      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/"
+      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+      "review_required": true
     }
   },
   {
@@ -572,7 +619,8 @@
       "title": "Open vSwitch VLAN Troubleshooting FAQ",
       "section": "VLANs / What’s a VLAN?",
       "chunk_index": 1,
-      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/"
+      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+      "review_required": true
     }
   },
   {
@@ -584,7 +632,8 @@
       "title": "Open vSwitch VLAN Troubleshooting FAQ",
       "section": "VLANs / What’s a VLAN?",
       "chunk_index": 2,
-      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/"
+      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+      "review_required": true
     }
   },
   {
@@ -596,7 +645,8 @@
       "title": "Open vSwitch VLAN Troubleshooting FAQ",
       "section": "VLANs don’t work. / Outgoing VLAN-tagged traffic goes through OVS to my physical switch and to its destination host, but OVS seems to drop incoming return traffic.",
       "chunk_index": 3,
-      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/"
+      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+      "review_required": true
     }
   },
   {
@@ -608,7 +658,8 @@
       "title": "Open vSwitch VLAN Troubleshooting FAQ",
       "section": "I added a pair of VMs on different VLANs, like this:",
       "chunk_index": 4,
-      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/"
+      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+      "review_required": true
     }
   },
   {
@@ -620,7 +671,8 @@
       "title": "Open vSwitch VLAN Troubleshooting FAQ",
       "section": "I added a pair of VMs on the same VLAN, like this: / Can I configure an IP address on a VLAN?",
       "chunk_index": 5,
-      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/"
+      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+      "review_required": true
     }
   },
   {
@@ -632,7 +684,8 @@
       "title": "Open vSwitch VLAN Troubleshooting FAQ",
       "section": "I configured one IP address on VLAN 0 and another on VLAN 9, like this:",
       "chunk_index": 6,
-      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/"
+      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+      "review_required": true
     }
   },
   {
@@ -644,7 +697,8 @@
       "title": "Open vSwitch VLAN Troubleshooting FAQ",
       "section": "I configured one IP address on VLAN 0 and another on VLAN 9, like this:",
       "chunk_index": 7,
-      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/"
+      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+      "review_required": true
     }
   },
   {
@@ -656,7 +710,8 @@
       "title": "Open vSwitch VLAN Troubleshooting FAQ",
       "section": "My OpenFlow controller doesn’t see the VLANs that I expect.",
       "chunk_index": 8,
-      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/"
+      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+      "review_required": true
     }
   },
   {
@@ -668,7 +723,8 @@
       "title": "Open vSwitch VLAN Troubleshooting FAQ",
       "section": "I configured ports on a bridge as access ports with different VLAN tags, like this: / How MAC learning works with VLANs?",
       "chunk_index": 9,
-      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/"
+      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+      "review_required": true
     }
   },
   {
@@ -680,7 +736,8 @@
       "title": "Diagnose packet loss",
       "section": "Diagnose packet loss",
       "chunk_index": 0,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/diagnose-packet-loss"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/diagnose-packet-loss",
+      "review_required": false
     }
   },
   {
@@ -692,7 +749,8 @@
       "title": "Diagnose packet loss",
       "section": "Capture and diagnose packet loss",
       "chunk_index": 1,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/diagnose-packet-loss"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/diagnose-packet-loss",
+      "review_required": false
     }
   },
   {
@@ -704,7 +762,8 @@
       "title": "Diagnose packet loss",
       "section": "Common causes of local packet loss",
       "chunk_index": 2,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/diagnose-packet-loss"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/diagnose-packet-loss",
+      "review_required": false
     }
   },
   {
@@ -716,7 +775,8 @@
       "title": "Diagnose packet loss",
       "section": "Common causes of remote packet loss",
       "chunk_index": 3,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/diagnose-packet-loss"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/diagnose-packet-loss",
+      "review_required": false
     }
   },
   {
@@ -728,7 +788,8 @@
       "title": "Diagnose packet loss",
       "section": "Common causes of remote packet loss",
       "chunk_index": 4,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/diagnose-packet-loss"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/diagnose-packet-loss",
+      "review_required": false
     }
   },
   {
@@ -740,7 +801,8 @@
       "title": "Diagnose packet loss",
       "section": "Example of Packet Monitor traces",
       "chunk_index": 5,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/diagnose-packet-loss"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/diagnose-packet-loss",
+      "review_required": false
     }
   },
   {
@@ -752,7 +814,8 @@
       "title": "Diagnose packet loss",
       "section": "Example of Network Shell traces",
       "chunk_index": 6,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/diagnose-packet-loss"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/diagnose-packet-loss",
+      "review_required": false
     }
   },
   {
@@ -764,7 +827,8 @@
       "title": "Diagnose packet loss",
       "section": "Example of Network Shell traces",
       "chunk_index": 7,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/diagnose-packet-loss"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/diagnose-packet-loss",
+      "review_required": false
     }
   },
   {
@@ -776,7 +840,8 @@
       "title": "Diagnose packet loss",
       "section": "More information",
       "chunk_index": 8,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/diagnose-packet-loss"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/diagnose-packet-loss",
+      "review_required": false
     }
   },
   {
@@ -788,7 +853,8 @@
       "title": "Advanced troubleshooting 802.1X authentication",
       "section": "Advanced troubleshooting 802.1X authentication / Overview / Scenarios",
       "chunk_index": 0,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+      "review_required": false
     }
   },
   {
@@ -800,7 +866,8 @@
       "title": "Advanced troubleshooting 802.1X authentication",
       "section": "Known issues / Data collection / Troubleshooting",
       "chunk_index": 1,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+      "review_required": false
     }
   },
   {
@@ -812,7 +879,8 @@
       "title": "Advanced troubleshooting 802.1X authentication",
       "section": "Known issues / Data collection / Troubleshooting",
       "chunk_index": 2,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+      "review_required": false
     }
   },
   {
@@ -824,7 +892,8 @@
       "title": "Advanced troubleshooting 802.1X authentication",
       "section": "Known issues / Data collection / Troubleshooting",
       "chunk_index": 3,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+      "review_required": false
     }
   },
   {
@@ -836,7 +905,8 @@
       "title": "Advanced troubleshooting 802.1X authentication",
       "section": "Audit policy",
       "chunk_index": 4,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+      "review_required": false
     }
   },
   {
@@ -848,7 +918,8 @@
       "title": "Advanced troubleshooting 802.1X authentication",
       "section": "More information",
       "chunk_index": 5,
-      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting"
+      "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
+      "review_required": false
     }
   },
   {
@@ -860,7 +931,9 @@
       "title": "OPS-01 Service desk, eskalasi, dan komunikasi ke pengguna",
       "section": "Service desk, eskalasi, dan komunikasi ke pengguna / 1. Tujuan / 2. Ruang lingkup",
       "chunk_index": 0,
-      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/"
+      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/",
+      "review_required": true,
+      "publication_status": "DRAFT menurut halaman sumber"
     }
   },
   {
@@ -872,7 +945,9 @@
       "title": "OPS-01 Service desk, eskalasi, dan komunikasi ke pengguna",
       "section": "3. Dokumen terkait / 4. Definisi / 5. Saluran layanan resmi",
       "chunk_index": 1,
-      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/"
+      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/",
+      "review_required": true,
+      "publication_status": "DRAFT menurut halaman sumber"
     }
   },
   {
@@ -884,7 +959,9 @@
       "title": "OPS-01 Service desk, eskalasi, dan komunikasi ke pengguna",
       "section": "6. Peran dan tanggung jawab / 7. Matriks prioritas (indikatif)",
       "chunk_index": 2,
-      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/"
+      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/",
+      "review_required": true,
+      "publication_status": "DRAFT menurut halaman sumber"
     }
   },
   {
@@ -896,7 +973,9 @@
       "title": "OPS-01 Service desk, eskalasi, dan komunikasi ke pengguna",
       "section": "8. Prosedur operasional / 8.1 Penerimaan dan pencatatan / 8.2 Triage dan perutean",
       "chunk_index": 3,
-      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/"
+      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/",
+      "review_required": true,
+      "publication_status": "DRAFT menurut halaman sumber"
     }
   },
   {
@@ -908,7 +987,9 @@
       "title": "OPS-01 Service desk, eskalasi, dan komunikasi ke pengguna",
       "section": "8.3 Penanganan L1 dan eskalasi / 8.4 Penutupan",
       "chunk_index": 4,
-      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/"
+      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/",
+      "review_required": true,
+      "publication_status": "DRAFT menurut halaman sumber"
     }
   },
   {
@@ -920,7 +1001,9 @@
       "title": "OPS-01 Service desk, eskalasi, dan komunikasi ke pengguna",
       "section": "8.5 Pelaporan / Diagram alur — ringkasan eskalasi / 9. Rujukan ISO (indikatif) / 10. Rekaman wajib",
       "chunk_index": 5,
-      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/"
+      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/",
+      "review_required": true,
+      "publication_status": "DRAFT menurut halaman sumber"
     }
   },
   {
@@ -932,7 +1015,9 @@
       "title": "OPS-01 Service desk, eskalasi, dan komunikasi ke pengguna",
       "section": "11. Indikator kinerja / 12. Tinjauan dokumen",
       "chunk_index": 6,
-      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/"
+      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/",
+      "review_required": true,
+      "publication_status": "DRAFT menurut halaman sumber"
     }
   },
   {
@@ -944,7 +1029,9 @@
       "title": "INC-02 Insiden gangguan layanan TI (operasional)",
       "section": "Insiden gangguan layanan TI (operasional) / 1. Tujuan / 2. Ruang lingkup",
       "chunk_index": 0,
-      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-inc-02/"
+      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-inc-02/",
+      "review_required": true,
+      "publication_status": "DRAFT menurut halaman sumber"
     }
   },
   {
@@ -956,7 +1043,9 @@
       "title": "INC-02 Insiden gangguan layanan TI (operasional)",
       "section": "3. Dokumen terkait / 4. Definisi / 5. Tingkat keparahan (diselaraskan OPS-01) / 6. Peran dan tanggung jawab",
       "chunk_index": 1,
-      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-inc-02/"
+      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-inc-02/",
+      "review_required": true,
+      "publication_status": "DRAFT menurut halaman sumber"
     }
   },
   {
@@ -968,7 +1057,9 @@
       "title": "INC-02 Insiden gangguan layanan TI (operasional)",
       "section": "7. Prosedur / 7.1 Deteksi dan log / 7.2 Klasifikasi dan diagnosa awal / 7.3 Komunikasi / 7.4 Pemulihan",
       "chunk_index": 2,
-      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-inc-02/"
+      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-inc-02/",
+      "review_required": true,
+      "publication_status": "DRAFT menurut halaman sumber"
     }
   },
   {
@@ -980,7 +1071,9 @@
       "title": "INC-02 Insiden gangguan layanan TI (operasional)",
       "section": "7.5 Penutupan / 7.6 Pascainsiden ringkas / Diagram alur / 8. Rujukan ISO (indikatif) / 9. Rekaman wajib",
       "chunk_index": 3,
-      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-inc-02/"
+      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-inc-02/",
+      "review_required": true,
+      "publication_status": "DRAFT menurut halaman sumber"
     }
   },
   {
@@ -992,7 +1085,9 @@
       "title": "INC-02 Insiden gangguan layanan TI (operasional)",
       "section": "10. Indikator kinerja / 11. Tinjauan dokumen",
       "chunk_index": 4,
-      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-inc-02/"
+      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-inc-02/",
+      "review_required": true,
+      "publication_status": "DRAFT menurut halaman sumber"
     }
   },
   {
@@ -1004,7 +1099,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "UCF IT Incident Management Policy & Procedure",
       "chunk_index": 0,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1016,7 +1112,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "UCF IT Incident Management Policy & Procedure",
       "chunk_index": 1,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1028,7 +1125,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "I. DOCUMENT CONTROL AND APPROVALS / II. OBJECTIVES",
       "chunk_index": 2,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1040,7 +1138,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "III. DEFINITIONS",
       "chunk_index": 3,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1052,7 +1151,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "III. DEFINITIONS",
       "chunk_index": 4,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1064,7 +1164,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "III. DEFINITIONS",
       "chunk_index": 5,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1076,7 +1177,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "IV. POLICY",
       "chunk_index": 6,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1088,7 +1190,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "V. PROCEDURES",
       "chunk_index": 7,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1100,7 +1203,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "V. PROCEDURES",
       "chunk_index": 8,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1112,7 +1216,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "V. PROCEDURES",
       "chunk_index": 9,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1124,7 +1229,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "V. PROCEDURES",
       "chunk_index": 10,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1136,7 +1242,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "V. PROCEDURES",
       "chunk_index": 11,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1148,7 +1255,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "V. PROCEDURES",
       "chunk_index": 12,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1160,7 +1268,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "V. PROCEDURES",
       "chunk_index": 13,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1172,7 +1281,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "V. PROCEDURES",
       "chunk_index": 14,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1184,7 +1294,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "V. PROCEDURES",
       "chunk_index": 15,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1196,7 +1307,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "V. PROCEDURES",
       "chunk_index": 16,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1208,7 +1320,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "V. PROCEDURES",
       "chunk_index": 17,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1220,7 +1333,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "V. PROCEDURES",
       "chunk_index": 18,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1232,7 +1346,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "V. PROCEDURES",
       "chunk_index": 19,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1244,7 +1359,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "V. PROCEDURES",
       "chunk_index": 20,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1256,7 +1372,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "VI. ADDITIONAL CONSIDERATIONS",
       "chunk_index": 21,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1268,7 +1385,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "VII. APPENDIX",
       "chunk_index": 22,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1280,7 +1398,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "VII. APPENDIX",
       "chunk_index": 23,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1292,7 +1411,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "VII. APPENDIX",
       "chunk_index": 24,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1304,7 +1424,8 @@
       "title": "UCF IT Incident Management Policy & Procedure",
       "section": "VII. APPENDIX",
       "chunk_index": 25,
-      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf"
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "review_required": true
     }
   },
   {
@@ -1316,7 +1437,8 @@
       "title": "Procedure P4-004N: IT Security Incident Management",
       "section": "Procedure P4-004N: IT Security Incident Management / Revision 0. Effective date: November 6, 2024 / 1. Purpose and Scope / 2. Definitions / 3. Procedure / 4. Policies/ Rules, Procedures, Guidelines, Forms and other Related Resources / 5. References / 6. Contacts / 7. History / 1. Purpose and Scope",
       "chunk_index": 0,
-      "source_url": "https://regulations.utah.edu/it/Procedures/p4-004n.php"
+      "source_url": "https://regulations.utah.edu/it/Procedures/p4-004n.php",
+      "review_required": false
     }
   },
   {
@@ -1328,7 +1450,8 @@
       "title": "Procedure P4-004N: IT Security Incident Management",
       "section": "3. Procedure",
       "chunk_index": 1,
-      "source_url": "https://regulations.utah.edu/it/Procedures/p4-004n.php"
+      "source_url": "https://regulations.utah.edu/it/Procedures/p4-004n.php",
+      "review_required": false
     }
   },
   {
@@ -1340,7 +1463,8 @@
       "title": "Procedure P4-004N: IT Security Incident Management",
       "section": "3. Procedure",
       "chunk_index": 2,
-      "source_url": "https://regulations.utah.edu/it/Procedures/p4-004n.php"
+      "source_url": "https://regulations.utah.edu/it/Procedures/p4-004n.php",
+      "review_required": false
     }
   },
   {
@@ -1352,7 +1476,8 @@
       "title": "Procedure P4-004N: IT Security Incident Management",
       "section": "4. Policies/ Rules, Procedures, Guidelines, Forms and other Related Resources / 5. References [ reserved ] / 6. Contacts The designated contact officials for this Regulation are:",
       "chunk_index": 3,
-      "source_url": "https://regulations.utah.edu/it/Procedures/p4-004n.php"
+      "source_url": "https://regulations.utah.edu/it/Procedures/p4-004n.php",
+      "review_required": false
     }
   },
   {
@@ -1364,7 +1489,8 @@
       "title": "University Network Administration, Policy 08-010",
       "section": "University Network Administration, Policy 08-010 / 1. Policy Statement / 2. Reason for Policy",
       "chunk_index": 0,
-      "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf"
+      "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf",
+      "review_required": true
     }
   },
   {
@@ -1376,7 +1502,8 @@
       "title": "University Network Administration, Policy 08-010",
       "section": "3. Scope & Audience / 4. Definitions",
       "chunk_index": 1,
-      "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf"
+      "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf",
+      "review_required": true
     }
   },
   {
@@ -1388,7 +1515,8 @@
       "title": "University Network Administration, Policy 08-010",
       "section": "4.3. Internet: An electronic communications network that connects computer networks / 4.7. University Network: The infrastructure and equipment that connects computing",
       "chunk_index": 2,
-      "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf"
+      "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf",
+      "review_required": true
     }
   },
   {
@@ -1400,7 +1528,8 @@
       "title": "University Network Administration, Policy 08-010",
       "section": "5. Responsibilities & Procedures / 5.1. General",
       "chunk_index": 3,
-      "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf"
+      "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf",
+      "review_required": true
     }
   },
   {
@@ -1412,7 +1541,8 @@
       "title": "University Network Administration, Policy 08-010",
       "section": "5.1.3. UIT will: / 5.2. Wired University Network Resources",
       "chunk_index": 4,
-      "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf"
+      "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf",
+      "review_required": true
     }
   },
   {
@@ -1424,7 +1554,8 @@
       "title": "University Network Administration, Policy 08-010",
       "section": "5.2.3. All wired University Network hardware and software must meet defined / 5.3. Wi-Fi (Wireless) University Network Resources",
       "chunk_index": 5,
-      "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf"
+      "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf",
+      "review_required": true
     }
   },
   {
@@ -1436,7 +1567,8 @@
       "title": "University Network Administration, Policy 08-010",
       "section": "5.4. Devices and Systems Connected to the University Network",
       "chunk_index": 6,
-      "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf"
+      "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf",
+      "review_required": true
     }
   },
   {
@@ -1448,7 +1580,8 @@
       "title": "University Network Administration, Policy 08-010",
       "section": "5.5. Exceptions / 6. Related Policies, Procedures, or Information",
       "chunk_index": 7,
-      "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf"
+      "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf",
+      "review_required": true
     }
   },
   {
@@ -1460,7 +1593,8 @@
       "title": "Network Acceptable Use Policy",
       "section": "Network Acceptable Use Policy / Statement of policy / Summary of contents/major changes",
       "chunk_index": 0,
-      "source_url": "https://wmich.edu/policies/network-acceptable-use"
+      "source_url": "https://wmich.edu/policies/network-acceptable-use",
+      "review_required": false
     }
   },
   {
@@ -1472,7 +1606,8 @@
       "title": "Network Acceptable Use Policy",
       "section": "3. Key Definitions",
       "chunk_index": 1,
-      "source_url": "https://wmich.edu/policies/network-acceptable-use"
+      "source_url": "https://wmich.edu/policies/network-acceptable-use",
+      "review_required": false
     }
   },
   {
@@ -1484,7 +1619,8 @@
       "title": "Network Acceptable Use Policy",
       "section": "4. Full Policy Details",
       "chunk_index": 2,
-      "source_url": "https://wmich.edu/policies/network-acceptable-use"
+      "source_url": "https://wmich.edu/policies/network-acceptable-use",
+      "review_required": false
     }
   },
   {
@@ -1496,7 +1632,8 @@
       "title": "Network Acceptable Use Policy",
       "section": "4. Full Policy Details",
       "chunk_index": 3,
-      "source_url": "https://wmich.edu/policies/network-acceptable-use"
+      "source_url": "https://wmich.edu/policies/network-acceptable-use",
+      "review_required": false
     }
   },
   {
@@ -1508,7 +1645,8 @@
       "title": "Network Acceptable Use Policy",
       "section": "4. Full Policy Details",
       "chunk_index": 4,
-      "source_url": "https://wmich.edu/policies/network-acceptable-use"
+      "source_url": "https://wmich.edu/policies/network-acceptable-use",
+      "review_required": false
     }
   },
   {
@@ -1520,7 +1658,8 @@
       "title": "Network Acceptable Use Policy",
       "section": "6. Related Procedures and Guidelines / 7. Additional Information N/A / 8. FAQs",
       "chunk_index": 5,
-      "source_url": "https://wmich.edu/policies/network-acceptable-use"
+      "source_url": "https://wmich.edu/policies/network-acceptable-use",
+      "review_required": false
     }
   },
   {
@@ -1532,7 +1671,8 @@
       "title": "Network Management",
       "section": "Network Management / About this requirement / Requirement Contact: / Date of last update: / Requirement Statement",
       "chunk_index": 0,
-      "source_url": "https://cispo.college.indiana.edu/it-requirements/network-management.html"
+      "source_url": "https://cispo.college.indiana.edu/it-requirements/network-management.html",
+      "review_required": false
     }
   },
   {
@@ -1544,7 +1684,8 @@
       "title": "Network Management",
       "section": "Network Management / About this requirement / Requirement Contact: / Date of last update: / Requirement Statement",
       "chunk_index": 1,
-      "source_url": "https://cispo.college.indiana.edu/it-requirements/network-management.html"
+      "source_url": "https://cispo.college.indiana.edu/it-requirements/network-management.html",
+      "review_required": false
     }
   },
   {
@@ -1556,7 +1697,8 @@
       "title": "Network Management",
       "section": "Exceptions to Requirement / Procedures / References:",
       "chunk_index": 2,
-      "source_url": "https://cispo.college.indiana.edu/it-requirements/network-management.html"
+      "source_url": "https://cispo.college.indiana.edu/it-requirements/network-management.html",
+      "review_required": false
     }
   }
 ]
