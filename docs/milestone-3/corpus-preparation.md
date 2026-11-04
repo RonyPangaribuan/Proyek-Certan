@@ -6,7 +6,9 @@ Korpus sumber dan metadata resmi didaftarkan dalam
 [processed/](../../data/corpus/processed/) dan status per dokumen ke
 [corpus_processing.json](../../evaluation/corpus_processing.json).
 PDF pada [raw/](../../data/corpus/raw/) dibaca untuk validasi hash atau
-ekstraksi DOC-11/DOC-13, tetapi tidak ditulis ulang. Pipeline embedding,
+ekstraksi DOC-11/DOC-13, tetapi tidak ditulis ulang. DOC-06 menggunakan
+[FAQ VLAN Open vSwitch](https://docs.openvswitch.org/en/stable/faq/vlan/)
+karena PDF cetaknya tidak menghasilkan teks pada `pypdf`. Pipeline embedding,
 vector store, retrieval, ingestion, dan chunking tidak dipanggil.
 
 Jalankan dari root repository dengan environment yang sudah ada:
@@ -16,8 +18,9 @@ uv run --frozen --no-sync python -m proyek_certan.corpus.prepare
 ```
 
 Exit code `0` berarti semua dokumen berhasil disiapkan. Exit code `1` berarti
-masih ada dokumen `manual_required`; laporan tetap dibuat. File hasil akan
-ditimpa oleh hasil terbaru saat perintah dijalankan ulang.
+masih ada dokumen `manual_required`; laporan tetap dibuat. File hasil lama
+digunakan ulang bila hash PDF dan teks, URL sumber, serta panjang teks cocok
+dengan laporan sebelumnya. File yang tidak cocok akan diproses ulang.
 
 ## Provenance dan akses
 
@@ -38,11 +41,12 @@ ditimpa oleh hasil terbaru saat perintah dijalankan ulang.
 - DOC-09/10 dari DTSI Universitas Harapan Bangsa adalah **DRAFT** pada halaman
   resmi. Keduanya dapat dipakai sebagai bahan uji dengan label status itu,
   tetapi jangan diperlakukan sebagai SOP institusi yang sudah disahkan.
-- DOC-06 dari Cisco ditandai `manual_required`. [Kebijakan penggunaan hak
-  cipta Cisco](https://www.cisco.com/c/en/us/about/brand-center/copyright-use.html)
-  memberi izin terbatas untuk jenis penggunaan tertentu; izin untuk membuat
-  dan menyimpan salinan teks penuh sebagai bagian dari korpus repository ini
-  belum jelas. Sumber tetap tercatat dalam manifest, tanpa file teks DOC-06.
+- DOC-06 kini berasal dari Open vSwitch Project, kategori troubleshooting VLAN.
+  Sumber [FAQ VLAN resmi](https://docs.openvswitch.org/en/stable/faq/vlan/)
+  dapat diakses dan `robots.txt` mengizinkan pengambilan halaman tersebut.
+  [File sumber FAQ](https://github.com/openvswitch/ovs/blob/main/Documentation/faq/vlan.rst)
+  memuat lisensi Apache-2.0. Manifest mencatat lisensi, sumber HTML, serta
+  transformasi ke UTF-8 plain text untuk atribusi.
 
 ## Pembersihan dan batasnya
 
@@ -54,9 +58,12 @@ kosong akan menahan dokumen tersebut untuk review manual. Teks sumber tidak
 diterjemahkan atau ditambah dengan instruksi buatan.
 
 Laporan menyimpan metode, URL sumber, panjang teks, jumlah kata, heading,
-item daftar, dan SHA-256 setiap file. Semua PDF sumber dibandingkan dengan
-SHA-256 pada [laporan validasi awal](../../evaluation/pdf_validation.json),
-agar PDF yang berubah tidak diam-diam diproses dengan metadata lama.
+item daftar, SHA-256 setiap file teks, dan SHA-256 PDF yang menjadi acuan
+hasilnya. Semua PDF sumber dibandingkan dengan SHA-256 pada
+[laporan validasi terbaru](../../evaluation/pdf_validation.json). PDF DOC-06
+yang baru memiliki hash berbeda dari PDF Cisco lama sehingga hasil sebelumnya
+tidak pernah digunakan ulang. PDF lain dan 14 teks lama diverifikasi sebelum
+digunakan ulang.
 
 Pembersihan otomatis tidak menjamin urutan baca tabel kompleks, isi diagram,
 atau kesamaan sempurna antara HTML saat ini dan PDF yang semula dicetak.

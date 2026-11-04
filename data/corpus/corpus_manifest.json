@@ -70,14 +70,18 @@
     {
       "document_id": "DOC06",
       "filename": "DOC06_LAN_Switch.pdf",
-      "title": "Troubleshoot LAN Switching Environments",
-      "category": "lan_switch_troubleshooting",
-      "publisher": "Cisco",
-      "source_url": "https://www.cisco.com/c/en/us/support/docs/lan-switching/ethernet/12006-chapter22.html",
+      "title": "Open vSwitch VLAN Troubleshooting FAQ",
+      "category": "vlan_troubleshooting",
+      "publisher": "Open vSwitch Project",
+      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
       "language": "en",
-      "source_status": "manual_required",
-      "automatic_extraction_allowed": false,
-      "manual_reason": "Ketentuan reproduksi Cisco perlu dipastikan sebelum membuat salinan teks penuh; tidak diambil otomatis."
+      "format": "pdf",
+      "text_source_format": "html",
+      "source_status": "processed_official_html",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openvswitch/ovs/blob/main/Documentation/faq/vlan.rst",
+      "transformation": "Official HTML FAQ body to cleaned UTF-8 plain text",
+      "text_file": "data/corpus/processed/DOC06_LAN_Switch.txt"
     },
     {
       "document_id": "DOC07",

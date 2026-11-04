@@ -3,6 +3,10 @@
 Validator berada pada [modul corpus](../../src/proyek_certan/corpus/validation.py).
 Modul ini hanya membaca PDF: tidak menjalankan OCR, ingestion, chunking,
 embedding, atau akses vector store. Tidak ada dependensi baru.
+Pada validasi ulang setelah pergantian DOC-06 ke Open vSwitch, hasil PDF tetap
+13 `no_text` dan 2 `success`; jumlah halaman kini 68. Kelima belas
+**dokumen teks olahan** tersedia melalui persiapan korpus, memakai HTML resmi
+untuk PDF tanpa teks. Lihat [hasil aktual](../../evaluation/README.md).
 
 ## Menjalankan ulang
 

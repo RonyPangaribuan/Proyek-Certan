@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-03T13:28:17.816539+00:00",
+  "generated_at_utc": "2026-11-04T01:30:00.121372+00:00",
   "input_directory": "data/corpus/raw",
   "pypdf_version": "6.21.4",
   "method": {
@@ -16,10 +16,10 @@
     "document_count": 15,
     "expected_document_count": 15,
     "document_count_matches": true,
-    "page_count": 95,
+    "page_count": 68,
     "documents_with_unknown_page_count": 0,
     "character_count": 40890,
-    "empty_page_count": 74,
+    "empty_page_count": 47,
     "failed_page_count": 0,
     "extraction_status_counts": {
       "no_text": 13,
@@ -399,41 +399,14 @@
     {
       "filename": "DOC06_LAN_Switch.pdf",
       "relative_path": "DOC06_LAN_Switch.pdf",
-      "sha256": "42ba84720c65e13df412863fefa1334c112786ea8c9c81c0b4687516ff8270ac",
-      "page_count": 30,
+      "sha256": "970ae7af0b0dce2d78d7c73887b4a873d2064942d82bd70ca642317f67455222",
+      "page_count": 3,
       "character_count": 0,
-      "empty_page_count": 30,
+      "empty_page_count": 3,
       "empty_page_numbers": [
         1,
         2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20,
-        21,
-        22,
-        23,
-        24,
-        25,
-        26,
-        27,
-        28,
-        29,
-        30
+        3
       ],
       "failed_page_numbers": [],
       "extraction_status": "no_text",
@@ -442,34 +415,7 @@
         "empty_text": [
           1,
           2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          18,
-          19,
-          20,
-          21,
-          22,
-          23,
-          24,
-          25,
-          26,
-          27,
-          28,
-          29,
-          30
+          3
         ]
       },
       "parser_warnings": [],
@@ -499,303 +445,6 @@
         },
         {
           "page_number": 3,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 4,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 5,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 6,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 7,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 8,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 9,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 10,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 11,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 12,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 13,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 14,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 15,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 16,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 17,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 18,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 19,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 20,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 21,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 22,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 23,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 24,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 25,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 26,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 27,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 28,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 29,
-          "character_count": 0,
-          "non_whitespace_characters": 0,
-          "is_empty": true,
-          "quality_issues": [
-            "empty_text"
-          ],
-          "text_preview": "",
-          "error": null
-        },
-        {
-          "page_number": 30,
           "character_count": 0,
           "non_whitespace_characters": 0,
           "is_empty": true,

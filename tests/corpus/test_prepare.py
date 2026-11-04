@@ -8,7 +8,8 @@ from types import SimpleNamespace
 import pytest
 
 from proyek_certan.corpus.prepare import (
-    SourceUnavailable, _origin, clean_text, extract_html_text, process_corpus, robots_allows,
+    SourceUnavailable, _origin, _reusable_text, clean_text, extract_html_text,
+    process_corpus, robots_allows,
 )
 
 
@@ -62,6 +63,44 @@ def test_dtsi_article_excludes_navigation_and_keeps_sop_table():
     assert "Beranda menu" not in text
 
 
+def test_openvswitch_faq_keeps_questions_answers_and_commands_without_navigation():
+    html = b"""<main id="content"><nav>Navigation</nav><section id="vlans">
+      <h1>VLANs<a class="headerlink" href="#vlans">&#182;</a></h1>
+      <p>Q: Why is VLAN 9 not isolated?</p><blockquote><div>
+      <p>A: Check the controller and whether NORMAL switching is active. Review
+      the configured access port and trunk port before changing flows.</p>
+      <pre>$ ovs-vsctl add-br br0\n$ ovs-vsctl add-port br0 tap0 tag=9</pre>
+      <ul><li>Inspect port tags</li><li>Check OpenFlow actions</li></ul>
+      <p>Compare the expected VLAN tag with the observed packet capture and
+      document any mismatch. Repeat the connectivity test after the correction.</p>
+      </div></blockquote></section><footer>Copyright banner</footer></main>"""
+    text = extract_html_text(html, "Open vSwitch Project")
+    assert text.startswith("# VLANs\n")
+    assert "Q: Why is VLAN 9 not isolated?" in text
+    assert "A: Check the controller" in text
+    assert "$ ovs-vsctl add-port br0 tap0 tag=9" in text
+    assert "- Inspect port tags" in text
+    assert "Navigation" not in text and "Copyright banner" not in text and "¶" not in text
+
+
+def test_existing_text_reused_only_with_matching_source_pdf_and_output_hash(tmp_path: Path):
+    outfile = tmp_path / "DOC01_WiFi.txt"
+    text = "# Existing output\n" + "Verified corpus text. " * 20
+    outfile.write_text(text, encoding="utf-8")
+    digest = hashlib.sha256(outfile.read_bytes()).hexdigest()
+    previous = {
+        "status": "processed", "source_url": "https://example.org/article",
+        "source_pdf_sha256": "new-raw-hash", "text_file": f"data/corpus/processed/{outfile.name}",
+        "sha256": digest, "character_count": len(text),
+    }
+    document = {"source_url": previous["source_url"]}
+    assert _reusable_text(previous, document, "new-raw-hash", outfile) == text
+    assert _reusable_text(previous, document, "old-raw-hash", outfile) is None
+    assert _reusable_text(previous, {"source_url": "https://example.org/other"}, "new-raw-hash", outfile) is None
+    outfile.write_text(text + "tampered", encoding="utf-8")
+    assert _reusable_text(previous, document, "new-raw-hash", outfile) is None
+
+
 def test_short_or_challenge_html_never_becomes_corpus_text():
     with pytest.raises(SourceUnavailable, match="terlalu pendek"):
         extract_html_text(b"<main><div class='content'><h1>Login</h1></div></main>", "Microsoft Learn")
@@ -77,6 +116,8 @@ def test_unapproved_http_or_host_is_rejected():
         _origin("http://learn.microsoft.com/page")
     with pytest.raises(SourceUnavailable):
         _origin("https://example.invalid/page")
+    with pytest.raises(SourceUnavailable):
+        _origin("https://www.cisco.com/doc")
 
 
 def test_invisible_template_characters_are_removed():

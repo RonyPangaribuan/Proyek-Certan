@@ -24,9 +24,9 @@ from pypdf import PdfReader
 
 USER_AGENT = "CERTAN-CorpusAudit/1.0 (academic, one-page-per-document)"
 ALLOWED_HOSTS = {
-    "learn.microsoft.com", "www.cisco.com", "docs.dtsi.uhb.ac.id",
+    "learn.microsoft.com", "docs.dtsi.uhb.ac.id",
     "regulations.utah.edu", "wmich.edu", "cispo.college.indiana.edu",
-    "it.ucf.edu", "policy.oregonstate.edu",
+    "it.ucf.edu", "policy.oregonstate.edu", "docs.openvswitch.org",
 }
 MAX_HTML_BYTES = 2_000_000
 MIN_TEXT_CHARACTERS = 300
@@ -179,6 +179,9 @@ def extract_html_text(html: bytes, publisher: str) -> str:
     elif publisher == "The University of Utah":
         root = soup.select_one("main section.uu-section")
         heading = None
+    elif publisher == "Open vSwitch Project":
+        root = soup.select_one("main#content section#vlans")
+        heading = None
     else:
         root = soup.select_one("main article") or soup.select_one("main")
         heading = None
@@ -187,7 +190,8 @@ def extract_html_text(html: bytes, publisher: str) -> str:
     for unwanted in root.select(
         "nav, footer, aside, script, style, form, button, .breadcrumb, .breadcrumbs, "
         "[class*='cookie'], [id*='cookie'], [class*='feedback'], [id*='feedback'], "
-        "[class*='sidebar'], [class*='navigation'], [class*='table-of-contents']"
+        "[class*='sidebar'], [class*='navigation'], [class*='table-of-contents'], "
+        "a.headerlink"
     ):
         unwanted.decompose()
     lines = []
@@ -225,11 +229,41 @@ def _sha256(path: Path) -> str:
         return hashlib.file_digest(stream, "sha256").hexdigest()
 
 
+def _previous_results(root: Path) -> dict[str, dict]:
+    path = root / "evaluation/corpus_processing.json"
+    if not path.is_file():
+        return {}
+    report = json.loads(path.read_text(encoding="utf-8"))
+    return {item["document_id"]: item for item in report["documents"]}
+
+
+def _reusable_text(previous: dict | None, document: dict, pdf_hash: str, outfile: Path) -> str | None:
+    """Reuse only a verified output from the same source and identical raw PDF."""
+    if not previous or previous.get("status") != "processed":
+        return None
+    if previous.get("source_url") != document["source_url"]:
+        return None
+    if previous.get("source_pdf_sha256") != pdf_hash:
+        return None
+    if previous.get("text_file") != f"data/corpus/processed/{outfile.name}":
+        return None
+    if not outfile.is_file() or _sha256(outfile) != previous.get("sha256"):
+        return None
+    try:
+        text = outfile.read_text(encoding="utf-8")
+    except UnicodeError:
+        return None
+    if len(text) != previous.get("character_count") or len(text.strip()) < MIN_TEXT_CHARACTERS:
+        return None
+    return text
+
+
 def process_corpus(root: Path, session: requests.Session | None = None) -> dict:
     manifest_path = root / "data/corpus/corpus_manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     validation = json.loads((root / "evaluation/pdf_validation.json").read_text(encoding="utf-8"))
     expected = {item["filename"]: item for item in validation["documents"]}
+    previous_results = _previous_results(root)
     documents = manifest["documents"]
     if len(documents) != len(expected) or {item["filename"] for item in documents} != set(expected):
         raise ValueError("Manifest dan laporan validasi harus memuat 15 PDF yang sama")
@@ -254,14 +288,23 @@ def process_corpus(root: Path, session: requests.Session | None = None) -> dict:
                 "status": "manual_required", "text_file": None,
                 "character_count": 0, "word_count": 0, "heading_count": 0,
                 "list_item_count": 0, "sha256": None, "reason": None,
+                "source_pdf_sha256": None, "reused_existing": False,
             }
             try:
                 if not pdf.is_file() or _sha256(pdf) != expected[filename]["sha256"]:
                     raise SourceUnavailable("PDF asli hilang atau SHA-256 berbeda dari laporan validasi")
+                entry["source_pdf_sha256"] = expected[filename]["sha256"]
                 if document.get("automatic_extraction_allowed") is False:
                     reason = document.get("manual_reason", "Ekstraksi otomatis tidak diizinkan")
                     raise SourceUnavailable(reason.removeprefix("SourceUnavailable: "))
-                if expected[filename]["extraction_status"] == "success":
+                previous = previous_results.get(document["document_id"])
+                reused = _reusable_text(previous, document, entry["source_pdf_sha256"], outfile)
+                if reused is not None:
+                    text = reused
+                    method = previous["method"]
+                    entry.update({key: value for key, value in previous.items() if key not in entry})
+                    entry["reused_existing"] = True
+                elif expected[filename]["extraction_status"] == "success":
                     text = extract_pdf_text(pdf, document["title"])
                     method = "pypdf"
                 elif expected[filename]["extraction_status"] == "no_text":
@@ -285,7 +328,8 @@ def process_corpus(root: Path, session: requests.Session | None = None) -> dict:
                         document["transformation"] = entry["transformation"]
                 else:
                     raise SourceUnavailable("Status PDF awal tidak didukung untuk ekstraksi otomatis")
-                outfile.write_text(text, encoding="utf-8", newline="\n")
+                if not entry["reused_existing"]:
+                    outfile.write_text(text, encoding="utf-8", newline="\n")
                 entry.update({
                     "method": method, "status": "processed", "text_file": outfile.relative_to(root).as_posix(),
                     "character_count": len(text), "word_count": len(text.split()),
@@ -312,7 +356,7 @@ def process_corpus(root: Path, session: requests.Session | None = None) -> dict:
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     report = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
-        "method": "One official HTML page per no_text document; pypdf for DOC11/DOC13; no OCR",
+        "method": "One official HTML page per no_text document; pypdf for extractable PDFs; verified existing outputs reused; no OCR",
         "summary": {
             "document_count": len(results),
             "processed_count": sum(item["status"] == "processed" for item in results),

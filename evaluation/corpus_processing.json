@@ -1,10 +1,10 @@
 {
-  "generated_at_utc": "2026-11-03T14:08:06.902066+00:00",
-  "method": "One official HTML page per no_text document; pypdf for DOC11/DOC13; no OCR",
+  "generated_at_utc": "2026-11-04T01:30:42.632231+00:00",
+  "method": "One official HTML page per no_text document; pypdf for extractable PDFs; verified existing outputs reused; no OCR",
   "summary": {
     "document_count": 15,
-    "processed_count": 14,
-    "manual_required_count": 1
+    "processed_count": 15,
+    "manual_required_count": 0
   },
   "documents": [
     {
@@ -20,6 +20,8 @@
       "list_item_count": 20,
       "sha256": "bc0748163ea5e6488519dd08dbc9ca8958f0f40cb019ecf3db52ab402b7acab5",
       "reason": null,
+      "source_pdf_sha256": "1c8ccebc81c47363a4a010eda1e88ee5e51588db41189f988a9db77068d13708",
+      "reused_existing": true,
       "robots_note": "robots.txt tersedia",
       "final_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-wireless-technologies",
       "license_url": "https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/LICENSE",
@@ -39,6 +41,8 @@
       "list_item_count": 46,
       "sha256": "eb38ae31b76575d18ae5bcc1244ffd3fe8b600d19eb16687d32e56a712f76165",
       "reason": null,
+      "source_pdf_sha256": "673729ac208fa3e6eabe5030bb0e2a97da4ec0ff323cac5dbcc104acc460c9c1",
+      "reused_existing": true,
       "robots_note": "robots.txt tersedia",
       "final_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
       "license_url": "https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/LICENSE",
@@ -58,6 +62,8 @@
       "list_item_count": 70,
       "sha256": "650ab846dd59f60663249988a6c5bf0c0fe41a836dced6b9b0a43a50fb43c841",
       "reason": null,
+      "source_pdf_sha256": "d78c706905cfebdf28ba54d713e3a538dbc1b90f9c1c1c78bb007994cde91805",
+      "reused_existing": true,
       "robots_note": "robots.txt tersedia",
       "final_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
       "license_url": "https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/LICENSE",
@@ -77,6 +83,8 @@
       "list_item_count": 6,
       "sha256": "5a27b9bc955e1da495f7bd6c45d7685c14e9288d990a2ad444017e33e6ede7f4",
       "reason": null,
+      "source_pdf_sha256": "0ed9837165f2710b873f3e79aba10de00c59cb6d0b5f34607775bbad71ba1390",
+      "reused_existing": true,
       "robots_note": "robots.txt tersedia",
       "final_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-problems-dhcp-client",
       "license_url": "https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/LICENSE",
@@ -96,6 +104,8 @@
       "list_item_count": 57,
       "sha256": "2154294c2de49d8887a4f263c1152413dea86301db6b99b39603dfb27c738911",
       "reason": null,
+      "source_pdf_sha256": "809fbf682e5fba839f282986a2110da9736a49ff609be0b3f89b591d5cdef598",
+      "reused_existing": true,
       "robots_note": "robots.txt tersedia",
       "final_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance",
       "license_url": "https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/LICENSE",
@@ -105,16 +115,21 @@
     {
       "document_id": "DOC06",
       "filename": "DOC06_LAN_Switch.pdf",
-      "source_url": "https://www.cisco.com/c/en/us/support/docs/lan-switching/ethernet/12006-chapter22.html",
-      "method": null,
-      "status": "manual_required",
-      "text_file": null,
-      "character_count": 0,
-      "word_count": 0,
-      "heading_count": 0,
-      "list_item_count": 0,
-      "sha256": null,
-      "reason": "SourceUnavailable: Ketentuan reproduksi Cisco perlu dipastikan sebelum membuat salinan teks penuh; tidak diambil otomatis."
+      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+      "method": "official_html",
+      "status": "processed",
+      "text_file": "data/corpus/processed/DOC06_LAN_Switch.txt",
+      "character_count": 9771,
+      "word_count": 1748,
+      "heading_count": 1,
+      "list_item_count": 6,
+      "sha256": "152557ef0e2c84a38aa790a1854f376d070d2d028dff55f644a45f859e7afd45",
+      "reason": null,
+      "source_pdf_sha256": "970ae7af0b0dce2d78d7c73887b4a873d2064942d82bd70ca642317f67455222",
+      "reused_existing": false,
+      "robots_note": "robots.txt tersedia",
+      "final_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+      "quality_flags": []
     },
     {
       "document_id": "DOC07",
@@ -129,6 +144,8 @@
       "list_item_count": 14,
       "sha256": "9afb81660495e941e8fb8b30cc9b0b8c6cd7c8d6c84dccfc5c99cab61ce0c6de",
       "reason": null,
+      "source_pdf_sha256": "04c09cf34c1b501a88fe306179882a3f55cb9e62964f3e2f64101246c461926b",
+      "reused_existing": true,
       "robots_note": "robots.txt tersedia",
       "final_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/diagnose-packet-loss",
       "license_url": "https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/LICENSE",
@@ -148,6 +165,8 @@
       "list_item_count": 2,
       "sha256": "4b15cac8363240a485e95ed940ba8d227f07fab20af7a2ffc033581f26d22940",
       "reason": null,
+      "source_pdf_sha256": "f910dd58532b455fc440d163631b988c53bd8623d8b7e4ce4e04734d1f2fc80c",
+      "reused_existing": true,
       "robots_note": "robots.txt tersedia",
       "final_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/networking/802-1x-authentication-issues-troubleshooting",
       "license_url": "https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/LICENSE",
@@ -167,6 +186,8 @@
       "list_item_count": 24,
       "sha256": "7854d75360a290dc005d54c7f44f54358af9ea754f3aa22532229f5349e7c138",
       "reason": null,
+      "source_pdf_sha256": "f763b27263d158ed682d852cd7cab9780770800875321746ba01d1fb70a13028",
+      "reused_existing": true,
       "robots_note": "robots.txt tidak tersedia (HTTP 404)",
       "final_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/",
       "quality_flags": [
@@ -186,6 +207,8 @@
       "list_item_count": 24,
       "sha256": "7e32c158abd0acdf3956717e88515c10cfd95c6c8e37ecde9e7980e0cd352159",
       "reason": null,
+      "source_pdf_sha256": "3b0d47080e5f9551544042374945bdce1887db8747eefb9e9325d52182c93b1c",
+      "reused_existing": true,
       "robots_note": "robots.txt tidak tersedia (HTTP 404)",
       "final_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-inc-02/",
       "quality_flags": [
@@ -205,6 +228,8 @@
       "list_item_count": 12,
       "sha256": "8d25e54c648757c1566db11b5e11e2d9d227fdf17b4f1084902fe5bce702b96c",
       "reason": null,
+      "source_pdf_sha256": "ca7182adc465ec161b11f850403c478fd78980a24473f5d22fca03a33cb88e76",
+      "reused_existing": true,
       "quality_flags": []
     },
     {
@@ -220,6 +245,8 @@
       "list_item_count": 45,
       "sha256": "ccb9334315a00c769d9bac0a925aecf95740c1ec6590f4cff9425e3360321901",
       "reason": null,
+      "source_pdf_sha256": "b0d85534647efbfa20e21f2fcb81ebe94e5d5742f8dada1add9f764727f0f67f",
+      "reused_existing": true,
       "robots_note": "robots.txt tersedia",
       "final_url": "https://regulations.utah.edu/it/Procedures/p4-004n.php",
       "quality_flags": []
@@ -237,6 +264,8 @@
       "list_item_count": 6,
       "sha256": "d4a1d98141609444310a912188f1ab8e1a8185a9174e6a6c871180fe4a15631b",
       "reason": null,
+      "source_pdf_sha256": "c17af26e0d0766d10933884de9f44ba92b456949409a88c4b467afb504c9d7b3",
+      "reused_existing": true,
       "quality_flags": []
     },
     {
@@ -252,6 +281,8 @@
       "list_item_count": 42,
       "sha256": "e9b41395a00d0415507337b9f520a30aa34570920cb646fa1510ae6b59b23886",
       "reason": null,
+      "source_pdf_sha256": "3472c8a5651f83ce2de2598a621ed285d5316e2d201a4434bac78d1a8d88a511",
+      "reused_existing": true,
       "robots_note": "robots.txt tersedia",
       "final_url": "https://wmich.edu/policies/network-acceptable-use",
       "quality_flags": []
@@ -269,6 +300,8 @@
       "list_item_count": 11,
       "sha256": "c6593c8ea3fc213935484b57fbe8a46c1a778d294f3218689a460737c0573394",
       "reason": null,
+      "source_pdf_sha256": "2c50d2dba260388580f2d0d98a938559274c97bfe4ed50e6dc70c954ad927f18",
+      "reused_existing": true,
       "robots_note": "robots.txt tersedia",
       "final_url": "https://cispo.college.indiana.edu/it-requirements/network-management.html",
       "quality_flags": []
