@@ -1,8 +1,11 @@
 # T03: Dense Embeddings dan Persistent Semantic Search
 
 Pipeline yang tersedia: **chunk teks → embedding ternormalisasi → persistent
-ChromaDB → pencarian semantik**. Data awal masih sintetis. Modul ini belum
-mengimplementasikan ingestion, chunking, generation, Gemini, FastMCP, atau Gradio.
+ChromaDB → pencarian semantik**. Ingestion dan word-aware chunking dari 15
+dokumen nyata kini tersedia melalui [panduan korpus](./corpus-ingestion.md).
+Contoh pengujian indexing di bawah masih menggunakan data sintetis; chunk
+korpus nyata belum diindex atau diuji relevansinya. Generation, Gemini,
+FastMCP, dan Gradio belum diimplementasikan.
 
 ## Struktur dan environment
 
@@ -22,6 +25,7 @@ Tidak perlu menjalankan `uv init` atau menambahkan dependensi yang sama.
 | [retrieval.py](../../src/proyek_certan/knowledge/retrieval.py) | Indexing hasil chunking dan pencarian bahasa alami dengan encoder yang sama |
 | [cli.py](../../src/proyek_certan/knowledge/cli.py) | Perintah index/search terpisah dari CLI milestone sebelumnya |
 | [sample_knowledge_chunks.json](../../data/sample_knowledge_chunks.json) | Lima contoh chunk insiden sintetis, terpisah dari modul produksi |
+| [knowledge_chunks.json](../../data/corpus/processed/knowledge_chunks.json) | Chunk korpus nyata hasil ingestion dan audit 15 TXT |
 | [tests/knowledge](../../tests/knowledge) | Pengujian offline dengan Chroma asli dan integrasi model asli |
 
 ## Menjalankan dengan uv
@@ -222,10 +226,11 @@ relevansi pada korpus operasional.
 
 ## Pekerjaan lanjutan T03
 
-1. Integrasikan korpus nyata, ekstraksi, dan chunking dari anggota tim menggunakan
-   kontrak di atas; pastikan izin sumber dan metadata dapat dilacak.
+1. Tinjau flag kualitas pada
+   [audit korpus](../../evaluation/corpus_chunking.json), lalu tentukan
+   dokumen yang layak diindex untuk penggunaan produksi.
 2. Ukur panjang chunk terhadap batas token model agar encoding tidak memotong
-   konteks penting; tentukan ukuran/overlap pada modul chunking.
+   konteks penting; ukuran 250 kata dan overlap 40 kata saat ini bersifat eksperimen.
 3. Siapkan kueri evaluasi berlabel dan relevansi rujukan dari kasus jaringan kampus.
    Ukur Recall@k/MRR atau metrik retrieval yang disepakati.
 4. Kalibrasi top-k dan threshold dari evaluasi tersebut. Lima teks sintetis hanya

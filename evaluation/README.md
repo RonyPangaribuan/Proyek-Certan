@@ -88,3 +88,15 @@ Pengujian ulang: `uv run --frozen --no-sync python -m pytest -q` menghasilkan
 Validator PDF mengembalikan exit code `1` sesuai definisi karena masih ada
 13 PDF `blocked/no_text`, sedangkan persiapan korpus mengembalikan exit code
 `0` untuk 15 dokumen teks yang berhasil.
+
+## Audit dan chunking
+
+Ingestion dari manifest menghasilkan
+[knowledge_chunks.json](../data/corpus/processed/knowledge_chunks.json)
+dan [laporan audit](./corpus_chunking.json). Dengan parameter awal 250 kata,
+overlap 40 kata, 15 TXT menghasilkan **130 chunk**. Median panjangnya
+169 kata, maksimum 250 kata; 5 dokumen memerlukan review isi sebelum
+indexing produksi. Temuan dan batas metode dijelaskan pada
+[panduan ingestion](../docs/milestone-3/corpus-ingestion.md).
+Pengujian penuh setelah tahap ini: `164 passed, 2 skipped`. Seluruh chunk
+lulus kontrak metadata dan rekonstruksi urutan kata 15 dokumen.
