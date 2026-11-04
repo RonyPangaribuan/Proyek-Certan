@@ -1,0 +1,266 @@
+{
+  "profile": "t120_w12",
+  "model_name": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "database_path": ".local/chroma-corpus-m3-t120_w12",
+  "stored_count": 374,
+  "queries": {
+    "wifi": {
+      "query": "WiFi kampus tersambung tetapi internet tidak dapat diakses. Bagaimana memeriksa koneksi nirkabel dan access point?",
+      "top_k": 3,
+      "results": [
+        {
+          "chunk_id": "DOC13-0011",
+          "text": "monitor all hardware and software on the\nUniversity Network for security purposes.\n5.3. Wi-Fi (Wireless) University Network Resources\n5.3.1. No Wi-Fi infrastructure is permitted to connect to the University Network\nunless it is approved and installed by the UIT Network Operations Center.\nInstalling unauthorized Wi-Fi access points is prohibited to avoid possible\ninterference with the university Wi-Fi network, unnecessary impact to the\nwired University Network, and to minimize security risks to the university.",
+          "source": "DOC13_Network_Administration.pdf",
+          "metadata": {
+            "title": "University Network Administration, Policy 08-010",
+            "section": "5.2.3. All wired University Network hardware and software must meet defined / 5.3. Wi-Fi (Wireless) University Network Resources",
+            "document_id": "DOC13",
+            "source": "DOC13_Network_Administration.pdf",
+            "review_required": true,
+            "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf",
+            "chunk_index": 11
+          },
+          "similarity": 0.7479307651519775
+        },
+        {
+          "chunk_id": "DOC13-0009",
+          "text": "the wired University Network must meet\nminimum automated authorization requirements regarding minimum\nconfiguration and security Standards of Care to provide for the protection and\navailability of the University Network.\n5.2.2. All devices physically connected to the University Network must be named\naccording to device naming conventions and logged in with a university user\naccount to receive an IP address through the university’s central IP address\nmanagement system administered by UIT. This may be accomplished by direct\nregistration with UIT or by automated data feeds from a college or division\ndatabase.",
+          "source": "DOC13_Network_Administration.pdf",
+          "metadata": {
+            "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf",
+            "title": "University Network Administration, Policy 08-010",
+            "chunk_index": 9,
+            "section": "5.1.3. UIT will: / 5.2. Wired University Network Resources",
+            "review_required": true,
+            "document_id": "DOC13",
+            "source": "DOC13_Network_Administration.pdf"
+          },
+          "similarity": 0.61207515001297
+        },
+        {
+          "chunk_id": "DOC13-0013",
+          "text": "5.4. Devices and Systems Connected to the University Network\n\nUniversity Policy 08-010 University Network Administration\n5.4.1. Only devices authenticated via an official university account, registered by a\nUniversity User, or provided through an approved exception will be allowed to\nconnect to the University Network.\na. Access to the eduroam Wi-Fi segment using InCommon Federation for\nauthentication is an official university account for the purposes of this\npolicy.\n5.4.2. UIT will regularly monitor University Network activity and will notify users of\nany interfering devices that have the potential to impact the University",
+          "source": "DOC13_Network_Administration.pdf",
+          "metadata": {
+            "document_id": "DOC13",
+            "source": "DOC13_Network_Administration.pdf",
+            "review_required": true,
+            "title": "University Network Administration, Policy 08-010",
+            "chunk_index": 13,
+            "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf",
+            "section": "5.4. Devices and Systems Connected to the University Network"
+          },
+          "similarity": 0.5967972874641418
+        }
+      ]
+    },
+    "dns": {
+      "query": "Nama domain gagal di-resolve. Bagaimana memeriksa DNS server dan konfigurasi klien?",
+      "top_k": 3,
+      "results": [
+        {
+          "chunk_id": "DOC02-0024",
+          "text": "### Forwarded DNS name resolution fails for dual-stacked queries\nYou're using a third-party DNS server solution, and you can't consistently resolve names when you use conditional forwarding.\nThe local DNS server (10.100.100.70) can connect to the DNS server that's configured as a conditional forwarder (10.133.3.250). The first request from the DNS server to the conditional forwarder successfully resolves a name (for example, nbob1.contoso.com). After some time, name",
+          "source": "DOC02_DNS.pdf",
+          "metadata": {
+            "title": "DNS troubleshooting guidance",
+            "chunk_index": 24,
+            "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+            "source": "DOC02_DNS.pdf",
+            "section": "Forwarded DNS name resolution fails for dual-stacked queries",
+            "review_required": false,
+            "document_id": "DOC02"
+          },
+          "similarity": 0.6851407289505005
+        },
+        {
+          "chunk_id": "DOC02-0023",
+          "text": "hosted in the default zone scope (contoso.com). For example, clients can't resolve hostA.contoso.com . When the DNS server receives such requests, it returns a \"Server Failure\" message.\nTo troubleshoot this issue, see DNS server geo-location policy doesn't work as expected .",
+          "source": "DOC02_DNS.pdf",
+          "metadata": {
+            "title": "DNS troubleshooting guidance",
+            "section": "DNS Server geo-location policy doesn't work as expected",
+            "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+            "chunk_index": 23,
+            "document_id": "DOC02",
+            "review_required": false,
+            "source": "DOC02_DNS.pdf"
+          },
+          "similarity": 0.6826794147491455
+        },
+        {
+          "chunk_id": "DOC02-0000",
+          "text": "# DNS troubleshooting guidance\n## Summary\nDomain Name System (DNS) is a critical component of Windows Server networking. When DNS issues occur, they can affect name resolution, Active Directory functionality, and network connectivity. Use this guide to troubleshoot common DNS issues in Windows Server. The guide covers both server-side issues (such as zone transfers and recursion) and client-side issues (such as IP configuration and network connectivity).\n## Troubleshooting checklist\n### Server-side issues\n- IP configuration\n- DNS server",
+          "source": "DOC02_DNS.pdf",
+          "metadata": {
+            "chunk_index": 0,
+            "section": "DNS troubleshooting guidance / Summary / Troubleshooting checklist / Server-side issues / Client-side issues / Common issues and solutions / Support policy for DNS client-side caching on DNS clients",
+            "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+            "review_required": false,
+            "source": "DOC02_DNS.pdf",
+            "title": "DNS troubleshooting guidance",
+            "document_id": "DOC02"
+          },
+          "similarity": 0.6748941540718079
+        }
+      ]
+    },
+    "dhcp": {
+      "query": "Komputer klien tidak mendapatkan alamat IP dari DHCP server. Apa langkah troubleshooting?",
+      "top_k": 3,
+      "results": [
+        {
+          "chunk_id": "DOC03-0000",
+          "text": "# DHCP troubleshooting guidance\nDevices must be assigned an IP address to be able to operate in a network. You can assign an IP address manually or automatically. The automatic assignment is handled by the Dynamic Host Configuration Protocol (DHCP) service (Microsoft or third-party server).",
+          "source": "DOC03_DHCP_Server.pdf",
+          "metadata": {
+            "section": "DHCP troubleshooting guidance",
+            "review_required": false,
+            "document_id": "DOC03",
+            "title": "DHCP troubleshooting guidance",
+            "chunk_index": 0,
+            "source": "DOC03_DHCP_Server.pdf",
+            "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance"
+          },
+          "similarity": 0.7319258451461792
+        },
+        {
+          "chunk_id": "DOC03-0013",
+          "text": "no firewall blocking ports 67 and 68 UDP on the client computer.\n## Using network trace to troubleshoot DHCP\nOnce you've confirmed the settings on both the DHCP client and server, you can use Wireshark to check whether the DHCP DORA process has completed successfully or if any packet drops are preventing DHCP clients from obtaining an IP address from the server.",
+          "source": "DOC03_DHCP_Server.pdf",
+          "metadata": {
+            "review_required": false,
+            "section": "Troubleshoot DHCP clients / Using network trace to troubleshoot DHCP",
+            "chunk_index": 13,
+            "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+            "document_id": "DOC03",
+            "title": "DHCP troubleshooting guidance",
+            "source": "DOC03_DHCP_Server.pdf"
+          },
+          "similarity": 0.7008063197135925
+        },
+        {
+          "chunk_id": "DOC02-0032",
+          "text": "and the DHCP client can't update records that the DHCP server creates.\nTo troubleshoot this issue, see DNS record registration behavior when the DHCP server is set to \"Always dynamically update DNS records\" .",
+          "source": "DOC02_DNS.pdf",
+          "metadata": {
+            "chunk_index": 32,
+            "document_id": "DOC02",
+            "source": "DOC02_DNS.pdf",
+            "title": "DNS troubleshooting guidance",
+            "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+            "section": "DNS record registration behavior if the DHCP server manages dynamic DNS updates",
+            "review_required": false
+          },
+          "similarity": 0.6736440658569336
+        }
+      ]
+    },
+    "vlan": {
+      "query": "VLAN 9 pada Open vSwitch tidak terisolasi. Bagaimana memeriksa port trunk dan aturan OpenFlow?",
+      "top_k": 3,
+      "results": [
+        {
+          "chunk_id": "DOC06-0024",
+          "text": "Q: My OpenFlow controller doesn’t see the VLANs that I expect.\nA: The configuration for VLANs in the Open vSwitch database (e.g. via ovs-vsctl) only affects traffic that goes through Open vSwitch’s implementation of the OpenFlow “normal switching” action. By default, when Open vSwitch isn’t connected to a controller and nothing has been manually configured in the flow table, all traffic goes through the “normal switching” action. But, if you",
+          "source": "DOC06_LAN_Switch.pdf",
+          "metadata": {
+            "document_id": "DOC06",
+            "title": "Open vSwitch VLAN Troubleshooting FAQ",
+            "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+            "chunk_index": 24,
+            "section": "My OpenFlow controller doesn’t see the VLANs that I expect.",
+            "review_required": true,
+            "source": "DOC06_LAN_Switch.pdf"
+          },
+          "similarity": 0.7552165985107422
+        },
+        {
+          "chunk_id": "DOC06-0005",
+          "text": "received on a trunk port carry a VLAN header that says what VLAN the packet belongs to, so that only two ports total are required to connect the switches, regardless of the number of VLANs in use. Normally, only switches (either physical or virtual) are connected to a trunk port, not individual hosts, because individual hosts don’t expect to see a VLAN header in the traffic that they receive.",
+          "source": "DOC06_LAN_Switch.pdf",
+          "metadata": {
+            "document_id": "DOC06",
+            "chunk_index": 5,
+            "title": "Open vSwitch VLAN Troubleshooting FAQ",
+            "section": "VLANs / What’s a VLAN?",
+            "review_required": true,
+            "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+            "source": "DOC06_LAN_Switch.pdf"
+          },
+          "similarity": 0.7424991130828857
+        },
+        {
+          "chunk_id": "DOC06-0019",
+          "text": "up\n$ ovs-vsctl add-port br0 vlan9 tag=9 -- set interface vlan9 type=internal\n$ ip addr add 192.168.0.9/24 dev vlan9\n$ ip link set vlan9 up\nbut other hosts that are only on VLAN 0 can reach the IP address configured on VLAN 9. What’s going on?\nA: RFC 1122 section 3.3.4.2 “Multihoming Requirements” describes two approaches to IP address handling in Internet hosts:",
+          "source": "DOC06_LAN_Switch.pdf",
+          "metadata": {
+            "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+            "chunk_index": 19,
+            "source": "DOC06_LAN_Switch.pdf",
+            "section": "I configured one IP address on VLAN 0 and another on VLAN 9, like this:",
+            "document_id": "DOC06",
+            "title": "Open vSwitch VLAN Troubleshooting FAQ",
+            "review_required": true
+          },
+          "similarity": 0.7290180921554565
+        }
+      ]
+    },
+    "escalation": {
+      "query": "Insiden jaringan prioritas P1 perlu eskalasi dan komunikasi kepada pengguna. Bagaimana prosedurnya?",
+      "top_k": 3,
+      "results": [
+        {
+          "chunk_id": "DOC10-0005",
+          "text": "OPS-01)\nGunakan prioritas P1–P4 yang sama dengan DTSI-SOP-OPS-01 . Insiden P1 memicu:\n- Tim tanggap terpusat (war room virtual) jika diperlukan.\n- Eskalasi ke Kepala DTSI dalam [Diisi: mis. 30 menit] .\n- Update ke pemilik layanan bisnis terdampak.\n## 6. Peran dan tanggung jawab\nPeran | Tanggung jawab\nIncident Manager (bisa Manajer layanan) | Mengkoordinasikan P1/P2, komunikasi, memastikan penutupan.",
+          "source": "DOC10_Incident_Handling.pdf",
+          "metadata": {
+            "chunk_index": 5,
+            "publication_status": "DRAFT menurut halaman sumber",
+            "source": "DOC10_Incident_Handling.pdf",
+            "title": "INC-02 Insiden gangguan layanan TI (operasional)",
+            "document_id": "DOC10",
+            "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-inc-02/",
+            "section": "3. Dokumen terkait / 4. Definisi / 5. Tingkat keparahan (diselaraskan OPS-01) / 6. Peran dan tanggung jawab",
+            "review_required": true
+          },
+          "similarity": 0.6388254165649414
+        },
+        {
+          "chunk_id": "DOC09-0010",
+          "text": "sebagai Lampiran A setelah daftar layanan disahkan.\n## 7. Matriks prioritas (indikatif)\nPrioritas ditetapkan berdasarkan dampak (berapa banyak pengguna/fungsi kritikal) dan urgensi . Kepala DTSI menyetujui definisi final; contoh:\nPrioritas | Dampak | Contoh | Target respons pertama (indikatif)\nP1 — Kritis | Layanan utama universitas lumpuh total | SIAKAD/LMS down seluruh kampus | ≤ 15 menit",
+          "source": "DOC09_Service_Desk.pdf",
+          "metadata": {
+            "chunk_index": 10,
+            "publication_status": "DRAFT menurut halaman sumber",
+            "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/",
+            "document_id": "DOC09",
+            "section": "6. Peran dan tanggung jawab / 7. Matriks prioritas (indikatif)",
+            "source": "DOC09_Service_Desk.pdf",
+            "title": "OPS-01 Service desk, eskalasi, dan komunikasi ke pengguna",
+            "review_required": true
+          },
+          "similarity": 0.5524983406066895
+        },
+        {
+          "chunk_id": "DOC10-0008",
+          "text": "### 7.2 Klasifikasi dan diagnosa awal\n1. Tetapkan prioritas; alokasikan resolver utama.\n2. Jika ada indikasi kebocoran data, malware, defacement, credential leak → aktifkan DTSI-SOP-INC-01 paralel.\n### 7.3 Komunikasi\n1. Untuk P1/P2, aktifkan template komunikasi (email/pengumuman portal) yang disetujui [Diisi institusi] .\n2. Jangan menyebutkan detail teknis sensitif ke publik luas.\n3. Catat setiap komunikasi keluar di tiket.\n### 7.4 Pemulihan",
+          "source": "DOC10_Incident_Handling.pdf",
+          "metadata": {
+            "section": "7. Prosedur / 7.1 Deteksi dan log / 7.2 Klasifikasi dan diagnosa awal / 7.3 Komunikasi / 7.4 Pemulihan",
+            "source": "DOC10_Incident_Handling.pdf",
+            "review_required": true,
+            "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-inc-02/",
+            "document_id": "DOC10",
+            "chunk_index": 8,
+            "publication_status": "DRAFT menurut halaman sumber",
+            "title": "INC-02 Insiden gangguan layanan TI (operasional)"
+          },
+          "similarity": 0.5388445854187012
+        }
+      ]
+    }
+  }
+}

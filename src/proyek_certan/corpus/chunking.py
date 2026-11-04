@@ -5,6 +5,7 @@ from __future__ import annotations
 from bisect import bisect_right
 from dataclasses import dataclass
 import re
+from collections.abc import Callable
 
 from proyek_certan.knowledge.models import KnowledgeChunk
 
@@ -78,9 +79,16 @@ def group_short_sections(sections: list[Section], size: int) -> list[Section]:
     return groups
 
 
-def chunk_section(section: Section, size: int = 250, overlap: int = 40) -> list[str]:
+def chunk_section(
+    section: Section, size: int = 250, overlap: int = 40,
+    *, token_count: Callable[[str], int] | None = None, max_tokens: int | None = None,
+) -> list[str]:
     if size <= 0 or overlap < 0 or overlap >= size:
         raise ValueError("require size > 0 and 0 <= overlap < size")
+    if (token_count is None) != (max_tokens is None):
+        raise ValueError("token_count and max_tokens must be supplied together")
+    if max_tokens is not None and max_tokens <= 0:
+        raise ValueError("max_tokens must be positive")
     words = list(WORD.finditer(section.text))
     if not words:
         return []
@@ -93,19 +101,43 @@ def chunk_section(section: Section, size: int = 250, overlap: int = 40) -> list[
     start = previous_end = 0
     while start < len(words):
         target = min(start + size, len(words))
+        if token_count is not None and max_tokens is not None:
+            # Search word boundaries using the model's full input length,
+            # including its special tokens. Never ask the encoder to truncate.
+            low, high = start + 1, target
+            safe_end = start
+            while low <= high:
+                middle = (low + high) // 2
+                candidate = section.text[words[start].start():words[middle - 1].end()]
+                if token_count(candidate) <= max_tokens:
+                    safe_end = middle
+                    low = middle + 1
+                else:
+                    high = middle - 1
+            if safe_end == start:
+                if start < previous_end:
+                    start = previous_end
+                    continue
+                raise ValueError(f"single word exceeds the {max_tokens}-token limit in {section.title!r}")
+            if safe_end <= previous_end:
+                # A long word after an overlap can leave no room for new text.
+                # Drop only the overlap; the preceding chunk already has it.
+                start = previous_end
+                continue
+            target = safe_end
         if target == len(words):
             end = target
         else:
             preferred = [
                 boundary for boundary in boundaries
-                if max(previous_end, start + size // 2) < boundary <= target
+                if max(previous_end, start + (target - start) // 2) < boundary <= target
             ]
             end = preferred[-1] if preferred else target
         chunks.append(section.text[words[start].start():words[end - 1].end()])
         if end == len(words):
             break
         previous_end = end
-        start = end - overlap
+        start = max(start + 1, end - overlap)
     return chunks
 
 
@@ -113,10 +145,13 @@ def chunk_document(
     text: str, *, document_id: str, source: str, title: str,
     source_url: str, size: int = 250, overlap: int = 40,
     review_required: bool = False, publication_status: str | None = None,
+    token_count: Callable[[str], int] | None = None, max_tokens: int | None = None,
 ) -> list[KnowledgeChunk]:
     chunks = []
     for section in group_short_sections(split_sections(text, title), size):
-        for part in chunk_section(section, size, overlap):
+        for part in chunk_section(
+            section, size, overlap, token_count=token_count, max_tokens=max_tokens,
+        ):
             index = len(chunks)
             metadata = {
                 "document_id": document_id,

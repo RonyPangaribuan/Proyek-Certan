@@ -55,6 +55,10 @@ tersimpan di Chroma, tetapi sebagian isi mungkin tidak terwakili oleh vektornya.
 Perlu eksperimen ulang dengan chunk yang mengikuti batas token model, kemudian
 reindexing ke database terpisah dan evaluasi retrieval berlabel.
 
+Eksperimen chunking berbatas token tersebut kini tersedia pada
+[laporan berikutnya](./token-aware-chunking.md), dengan dua database baru.
+Baseline 130 chunk di halaman ini tetap disimpan untuk pembanding.
+
 Lima dokumen berikut juga memerlukan review isi sebelum indexing final:
 
 | Dokumen | Temuan | Tindakan manual |

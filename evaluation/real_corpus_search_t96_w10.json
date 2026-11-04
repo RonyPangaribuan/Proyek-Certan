@@ -1,0 +1,264 @@
+{
+  "profile": "t96_w10",
+  "model_name": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "database_path": ".local/chroma-corpus-m3-t96_w10",
+  "stored_count": 484,
+  "queries": {
+    "wifi": {
+      "query": "WiFi kampus tersambung tetapi internet tidak dapat diakses. Bagaimana memeriksa koneksi nirkabel dan access point?",
+      "top_k": 3,
+      "results": [
+        {
+          "chunk_id": "DOC13-0008",
+          "text": "the Internet, with the world. The University Network includes both\nphysically wired and wireless (Wi-Fi) networks and the Cable Plant\n4.8. Wi-Fi: A wireless LAN that uses radio waves to connect devices to the University\nNetwork and the Internet.",
+          "source": "DOC13_Network_Administration.pdf",
+          "metadata": {
+            "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf",
+            "title": "University Network Administration, Policy 08-010",
+            "review_required": true,
+            "source": "DOC13_Network_Administration.pdf",
+            "section": "4.3. Internet: An electronic communications network that connects computer networks / 4.7. University Network: The infrastructure and equipment that connects computing",
+            "chunk_index": 8,
+            "document_id": "DOC13"
+          },
+          "similarity": 0.7374293804168701
+        },
+        {
+          "chunk_id": "DOC13-0017",
+          "text": "Wi-Fi infrastructure is permitted to connect to the University Network\nunless it is approved and installed by the UIT Network Operations Center.\nInstalling unauthorized Wi-Fi access points is prohibited to avoid possible\ninterference with the university Wi-Fi network, unnecessary impact to the\nwired University Network, and to minimize security risks to the university.",
+          "source": "DOC13_Network_Administration.pdf",
+          "metadata": {
+            "source": "DOC13_Network_Administration.pdf",
+            "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf",
+            "chunk_index": 17,
+            "document_id": "DOC13",
+            "review_required": true,
+            "section": "5.2.3. All wired University Network hardware and software must meet defined / 5.3. Wi-Fi (Wireless) University Network Resources",
+            "title": "University Network Administration, Policy 08-010"
+          },
+          "similarity": 0.7372890710830688
+        },
+        {
+          "chunk_id": "DOC13-0013",
+          "text": "to use the University Network.\n5.2. Wired University Network Resources\n5.2.1. All systems physically connected to the wired University Network must meet\nminimum automated authorization requirements regarding minimum\nconfiguration and security Standards of Care to provide for the protection and\navailability of the University Network.\n5.2.2. All devices physically connected to the University Network must be named\naccording to device naming conventions and logged in with a university user",
+          "source": "DOC13_Network_Administration.pdf",
+          "metadata": {
+            "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf",
+            "review_required": true,
+            "source": "DOC13_Network_Administration.pdf",
+            "chunk_index": 13,
+            "title": "University Network Administration, Policy 08-010",
+            "section": "5.1.3. UIT will: / 5.2. Wired University Network Resources",
+            "document_id": "DOC13"
+          },
+          "similarity": 0.6427986025810242
+        }
+      ]
+    },
+    "dns": {
+      "query": "Nama domain gagal di-resolve. Bagaimana memeriksa DNS server dan konfigurasi klien?",
+      "top_k": 3,
+      "results": [
+        {
+          "chunk_id": "DOC02-0008",
+          "text": "to register its \"A\" record to the new DNS server.\nThe trouble occurs in Active Directory-integrated zones. Issues occur when the DNS Server IP address is changed on the client. When the IP address changes, the client sends a registration request to the new server, and sends a deletion request to the previous server. Because both servers are already synced, the records aren't registered. On the previous server, the DNS",
+          "source": "DOC02_DNS.pdf",
+          "metadata": {
+            "source": "DOC02_DNS.pdf",
+            "title": "DNS troubleshooting guidance",
+            "review_required": false,
+            "section": "Host \"A\" record is deleted when the IP address is changed",
+            "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+            "chunk_index": 8,
+            "document_id": "DOC02"
+          },
+          "similarity": 0.7089999318122864
+        },
+        {
+          "chunk_id": "DOC02-0000",
+          "text": "# DNS troubleshooting guidance\n## Summary\nDomain Name System (DNS) is a critical component of Windows Server networking. When DNS issues occur, they can affect name resolution, Active Directory functionality, and network connectivity. Use this guide to troubleshoot common DNS issues in Windows Server. The guide covers both server-side issues (such as zone transfers and recursion) and client-side issues (such as IP configuration and network",
+          "source": "DOC02_DNS.pdf",
+          "metadata": {
+            "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+            "review_required": false,
+            "document_id": "DOC02",
+            "chunk_index": 0,
+            "source": "DOC02_DNS.pdf",
+            "section": "DNS troubleshooting guidance / Summary / Troubleshooting checklist / Server-side issues / Client-side issues / Common issues and solutions / Support policy for DNS client-side caching on DNS clients",
+            "title": "DNS troubleshooting guidance"
+          },
+          "similarity": 0.6774548888206482
+        },
+        {
+          "chunk_id": "DOC02-0026",
+          "text": "DNS server is still waiting for the directory to start.\nTo troubleshoot this issue, see Troubleshoot AD DS and restart the DNS Server service .",
+          "source": "DOC02_DNS.pdf",
+          "metadata": {
+            "title": "DNS troubleshooting guidance",
+            "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+            "review_required": false,
+            "document_id": "DOC02",
+            "source": "DOC02_DNS.pdf",
+            "section": "DNS query response delays / Event ID 4004 and event ID 4013",
+            "chunk_index": 26
+          },
+          "similarity": 0.6753919124603271
+        }
+      ]
+    },
+    "dhcp": {
+      "query": "Komputer klien tidak mendapatkan alamat IP dari DHCP server. Apa langkah troubleshooting?",
+      "top_k": 3,
+      "results": [
+        {
+          "chunk_id": "DOC03-0014",
+          "text": "or if any packet drops are preventing DHCP clients from obtaining an IP address from the server.",
+          "source": "DOC03_DHCP_Server.pdf",
+          "metadata": {
+            "review_required": false,
+            "title": "DHCP troubleshooting guidance",
+            "document_id": "DOC03",
+            "chunk_index": 14,
+            "source": "DOC03_DHCP_Server.pdf",
+            "section": "Troubleshoot DHCP clients / Using network trace to troubleshoot DHCP",
+            "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance"
+          },
+          "similarity": 0.746868371963501
+        },
+        {
+          "chunk_id": "DOC03-0000",
+          "text": "# DHCP troubleshooting guidance\nDevices must be assigned an IP address to be able to operate in a network. You can assign an IP address manually or automatically. The automatic assignment is handled by the Dynamic Host Configuration Protocol (DHCP) service (Microsoft or third-party server).",
+          "source": "DOC03_DHCP_Server.pdf",
+          "metadata": {
+            "chunk_index": 0,
+            "document_id": "DOC03",
+            "source": "DOC03_DHCP_Server.pdf",
+            "section": "DHCP troubleshooting guidance",
+            "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+            "title": "DHCP troubleshooting guidance",
+            "review_required": false
+          },
+          "similarity": 0.7319258451461792
+        },
+        {
+          "chunk_id": "DOC03-0013",
+          "text": "run the net start command, and look for DHCP Client.\n- There is no firewall blocking ports 67 and 68 UDP on the client computer.\n## Using network trace to troubleshoot DHCP\nOnce you've confirmed the settings on both the DHCP client and server, you can use Wireshark to check whether the DHCP DORA process has completed successfully or if any packet drops are preventing DHCP clients from",
+          "source": "DOC03_DHCP_Server.pdf",
+          "metadata": {
+            "source": "DOC03_DHCP_Server.pdf",
+            "section": "Troubleshoot DHCP clients / Using network trace to troubleshoot DHCP",
+            "document_id": "DOC03",
+            "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dhcp-guidance",
+            "chunk_index": 13,
+            "review_required": false,
+            "title": "DHCP troubleshooting guidance"
+          },
+          "similarity": 0.682084321975708
+        }
+      ]
+    },
+    "vlan": {
+      "query": "VLAN 9 pada Open vSwitch tidak terisolasi. Bagaimana memeriksa port trunk dan aturan OpenFlow?",
+      "top_k": 3,
+      "results": [
+        {
+          "chunk_id": "DOC06-0019",
+          "text": "add-port br0 tap0 tag=9\n$ ovs-vsctl add-port br0 tap1 tag=9\nThe VMs can access each other, but not the external network or the Internet.\nA: It seems likely that the machines you are trying to access in the external network are not on VLAN 9 and that the Internet is not available on VLAN 9. Also, ensure VLAN 9 is set up as an allowed trunk VLAN",
+          "source": "DOC06_LAN_Switch.pdf",
+          "metadata": {
+            "section": "I added a pair of VMs on the same VLAN, like this: / Can I configure an IP address on a VLAN?",
+            "document_id": "DOC06",
+            "source": "DOC06_LAN_Switch.pdf",
+            "review_required": true,
+            "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+            "chunk_index": 19,
+            "title": "Open vSwitch VLAN Troubleshooting FAQ"
+          },
+          "similarity": 0.781694769859314
+        },
+        {
+          "chunk_id": "DOC06-0030",
+          "text": "Q: My OpenFlow controller doesn’t see the VLANs that I expect.\nA: The configuration for VLANs in the Open vSwitch database (e.g. via ovs-vsctl) only affects traffic that goes through Open vSwitch’s implementation of the OpenFlow “normal switching” action. By default, when Open vSwitch isn’t connected to a controller and nothing has been",
+          "source": "DOC06_LAN_Switch.pdf",
+          "metadata": {
+            "section": "My OpenFlow controller doesn’t see the VLANs that I expect.",
+            "title": "Open vSwitch VLAN Troubleshooting FAQ",
+            "chunk_index": 30,
+            "document_id": "DOC06",
+            "source": "DOC06_LAN_Switch.pdf",
+            "review_required": true,
+            "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/"
+          },
+          "similarity": 0.7665929794311523
+        },
+        {
+          "chunk_id": "DOC06-0020",
+          "text": "VLAN 9 is set up as an allowed trunk VLAN on the upstream switch port to which eth0 is connected.\nQ: Can I configure an IP address on a VLAN?\nA: Yes. Use an “internal port” configured as an access port. For example, the following configures IP address 192.168.0.7 on VLAN 9. That is, OVS will forward packets from eth0 to 192.168.0.7",
+          "source": "DOC06_LAN_Switch.pdf",
+          "metadata": {
+            "section": "I added a pair of VMs on the same VLAN, like this: / Can I configure an IP address on a VLAN?",
+            "source": "DOC06_LAN_Switch.pdf",
+            "chunk_index": 20,
+            "title": "Open vSwitch VLAN Troubleshooting FAQ",
+            "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+            "review_required": true,
+            "document_id": "DOC06"
+          },
+          "similarity": 0.7471896409988403
+        }
+      ]
+    },
+    "escalation": {
+      "query": "Insiden jaringan prioritas P1 perlu eskalasi dan komunikasi kepada pengguna. Bagaimana prosedurnya?",
+      "top_k": 3,
+      "results": [
+        {
+          "chunk_id": "DOC10-0006",
+          "text": "Workaround | Solusi sementara mengurangi dampak tanpa menghilangkan akar masalah.\nResolusi | Pemulihan layanan (bisa sementara atau permanen).\n## 5. Tingkat keparahan (diselaraskan OPS-01)\nGunakan prioritas P1–P4 yang sama dengan DTSI-SOP-OPS-01 . Insiden P1 memicu:\n- Tim tanggap terpusat (war room virtual) jika diperlukan.",
+          "source": "DOC10_Incident_Handling.pdf",
+          "metadata": {
+            "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-inc-02/",
+            "publication_status": "DRAFT menurut halaman sumber",
+            "title": "INC-02 Insiden gangguan layanan TI (operasional)",
+            "source": "DOC10_Incident_Handling.pdf",
+            "section": "3. Dokumen terkait / 4. Definisi / 5. Tingkat keparahan (diselaraskan OPS-01) / 6. Peran dan tanggung jawab",
+            "review_required": true,
+            "document_id": "DOC10",
+            "chunk_index": 6
+          },
+          "similarity": 0.5546380281448364
+        },
+        {
+          "chunk_id": "DOC05-0027",
+          "text": "points to an issue that affects the specific destination node.\n1. Try to Telnet or PsPing to the specific port that the application is listening on (for example, TCP port 445 for SMB). If the connection is successful, then basic application-level connectivity can be confirmed. In this situation, you'll have to contact the application vendor to help investigate why the application doesn't connect. Note The application vendor",
+          "source": "DOC05_TCP_IP.pdf",
+          "metadata": {
+            "section": "Step 5: Ping or Telnet to the default gateway / Step 6: Check issues that affect the specific destination node",
+            "title": "TCP/IP communication troubleshooting guidance",
+            "review_required": false,
+            "chunk_index": 27,
+            "document_id": "DOC05",
+            "source": "DOC05_TCP_IP.pdf",
+            "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance"
+          },
+          "similarity": 0.496102511882782
+        },
+        {
+          "chunk_id": "DOC04-0004",
+          "text": "## Data collection\nWe recommend that you collect data simultaneously on both the DHCP client and server side when the problem occurs. However, depending on the actual problem, you can also start your investigation by using a single data set on either the DHCP client or DHCP server.",
+          "source": "DOC04_DHCP_Client.pdf",
+          "metadata": {
+            "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-problems-dhcp-client",
+            "document_id": "DOC04",
+            "title": "Troubleshoot problems on the DHCP client",
+            "source": "DOC04_DHCP_Client.pdf",
+            "chunk_index": 4,
+            "section": "Data collection",
+            "review_required": false
+          },
+          "similarity": 0.4956128001213074
+        }
+      ]
+    }
+  }
+}

@@ -115,3 +115,14 @@ cakupan 15 dokumen. Lima kueri Indonesia serta hasil top-k tersedia di
 DOC-06, DOC-09, DOC-10, DOC-11, dan DOC-13 juga masih membutuhkan review isi;
 status DRAFT DOC-09/10 dipertahankan pada metadata indeks.
 Suite penuh dengan model nyata setelah integrasi ini: **168 passed**.
+
+## Eksperimen batas token
+
+Tokenizer model memakai dua special token dalam batas 128 token. Dua profil
+eksperimen menghasilkan 374 chunk (maksimum 120 token) dan 484 chunk (maksimum
+96 token), masing-masing tanpa pelanggaran batas dan dengan cakupan seluruh
+15 dokumen. Database eksperimen terpisah dari baseline 130 chunk; hasil
+lengkap tersedia di [perbandingan token](./token_chunking_comparison.json),
+[smoke test 120 token](./real_corpus_search_t120_w12.json), dan
+[smoke test 96 token](./real_corpus_search_t96_w10.json). Interpretasi serta
+catatan review ada pada [panduan eksperimen](../docs/milestone-3/token-aware-chunking.md).

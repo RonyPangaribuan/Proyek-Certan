@@ -1,0 +1,145 @@
+{
+  "generated_at_utc": "2026-11-04T02:40:04.259594+00:00",
+  "status": "experimental_not_production_approved",
+  "model_name": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "model_max_sequence_tokens": 128,
+  "tokenizer_max_length": 128,
+  "special_tokens_per_single_input": 2,
+  "maximum_content_tokens": 126,
+  "embedding_dimension": 384,
+  "baseline": {
+    "chunks": 130,
+    "over_limit": 115,
+    "database_path": ".local/chroma-corpus-m3",
+    "stored_count_before": 130,
+    "stored_count_after": 130
+  },
+  "profiles": {
+    "t120_w12": {
+      "profile": "t120_w12",
+      "max_total_tokens": 120,
+      "max_content_tokens": 118,
+      "word_ceiling": 250,
+      "overlap_words_requested": 12,
+      "boundary_priority": "section, then paragraph/line, then word",
+      "overlap_scope": "within section; reduced only when needed for progress",
+      "chunk_count": 374,
+      "document_count": 15,
+      "chunks_per_document": {
+        "DOC01": 12,
+        "DOC02": 40,
+        "DOC03": 29,
+        "DOC04": 5,
+        "DOC05": 45,
+        "DOC06": 32,
+        "DOC07": 31,
+        "DOC08": 16,
+        "DOC09": 26,
+        "DOC10": 15,
+        "DOC11": 74,
+        "DOC12": 10,
+        "DOC13": 19,
+        "DOC14": 13,
+        "DOC15": 7
+      },
+      "token_lengths": {
+        "min": 20,
+        "median": 109.0,
+        "max": 120,
+        "mean": 100.42,
+        "distribution": {
+          "1-32": 4,
+          "33-64": 29,
+          "65-96": 90,
+          "97-112": 95,
+          "113-120": 156,
+          "121-128": 0
+        },
+        "over_model_limit": 0
+      },
+      "word_lengths": {
+        "min": 13,
+        "median": 66.0,
+        "max": 98
+      },
+      "source_word_coverage_verified": true,
+      "unique_ids_verified": true,
+      "stored_ids_text_metadata_verified": true,
+      "database_path": ".local/chroma-corpus-m3-t120_w12",
+      "chunk_file": "data/corpus/processed/knowledge_chunks_t120_w12.json",
+      "chunk_file_sha256": "23bdbbf27d70bc5329c4f0570c55e713f18b1ff3adddfcf940987452c3f77ace",
+      "index_duration_seconds": 53.199,
+      "stored_count": 374,
+      "review_required_documents": [
+        "DOC06",
+        "DOC09",
+        "DOC10",
+        "DOC11",
+        "DOC13"
+      ]
+    },
+    "t96_w10": {
+      "profile": "t96_w10",
+      "max_total_tokens": 96,
+      "max_content_tokens": 94,
+      "word_ceiling": 250,
+      "overlap_words_requested": 10,
+      "boundary_priority": "section, then paragraph/line, then word",
+      "overlap_scope": "within section; reduced only when needed for progress",
+      "chunk_count": 484,
+      "document_count": 15,
+      "chunks_per_document": {
+        "DOC01": 14,
+        "DOC02": 50,
+        "DOC03": 35,
+        "DOC04": 7,
+        "DOC05": 57,
+        "DOC06": 40,
+        "DOC07": 39,
+        "DOC08": 21,
+        "DOC09": 35,
+        "DOC10": 21,
+        "DOC11": 98,
+        "DOC12": 14,
+        "DOC13": 27,
+        "DOC14": 18,
+        "DOC15": 8
+      },
+      "token_lengths": {
+        "min": 22,
+        "median": 84.5,
+        "max": 96,
+        "mean": 80.18,
+        "distribution": {
+          "1-32": 9,
+          "33-64": 66,
+          "65-96": 409,
+          "97-112": 0,
+          "113-120": 0,
+          "121-128": 0
+        },
+        "over_model_limit": 0
+      },
+      "word_lengths": {
+        "min": 12,
+        "median": 53.0,
+        "max": 78
+      },
+      "source_word_coverage_verified": true,
+      "unique_ids_verified": true,
+      "stored_ids_text_metadata_verified": true,
+      "database_path": ".local/chroma-corpus-m3-t96_w10",
+      "chunk_file": "data/corpus/processed/knowledge_chunks_t96_w10.json",
+      "chunk_file_sha256": "6e2d055fd4020bd338be630b7e190874163780b6e2b094e4183eaf3d50b7c677",
+      "index_duration_seconds": 59.513,
+      "stored_count": 484,
+      "review_required_documents": [
+        "DOC06",
+        "DOC09",
+        "DOC10",
+        "DOC11",
+        "DOC13"
+      ]
+    }
+  }
+}
