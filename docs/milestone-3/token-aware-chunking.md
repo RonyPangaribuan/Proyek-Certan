@@ -55,8 +55,9 @@ Profil 120 token memakai lebih sedikit chunk, sehingga penyimpanan dan
 pencarian lebih hemat serta konteks tiap hasil lebih panjang. Profil 96 token
 memberi margin truncation lebih besar dan potongan lebih terfokus, dengan
 tambahan 110 record dan lebih banyak batas antarchunk. Keduanya layak sebagai
-dasar evaluasi retrieval T03; pilihan final membutuhkan label relevansi dan
-review isi. DOC06, DOC09, DOC10, DOC11, dan DOC13 tetap memiliki flag review.
+dasar evaluasi retrieval T03; [benchmark berlabel](./semantic-retrieval-benchmark.md)
+telah membandingkan kualitas dan biaya lalu memilih `t96_w10` untuk eksperimen.
+Review isi tetap diperlukan. DOC06, DOC09, DOC10, DOC11, dan DOC13 tetap memiliki flag review.
 Status `DRAFT` pada DOC09/10 tetap ada di metadata. Eksperimen ini belum
 menyetujui indeks untuk produksi.
 

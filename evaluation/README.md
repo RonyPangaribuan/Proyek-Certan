@@ -126,3 +126,14 @@ lengkap tersedia di [perbandingan token](./token_chunking_comparison.json),
 [smoke test 120 token](./real_corpus_search_t120_w12.json), dan
 [smoke test 96 token](./real_corpus_search_t96_w10.json). Interpretasi serta
 catatan review ada pada [panduan eksperimen](../docs/milestone-3/token-aware-chunking.md).
+
+## Benchmark retrieval berlabel
+
+[Ground truth](./semantic_retrieval_ground_truth.json) memuat 15 kueri Indonesia,
+label dokumen relevan, dan dasar penilaian dari teks sumber. [Hasil ranking dan
+metrik](./semantic_retrieval_benchmark.json) berisi 100 chunk teratas per kueri
+untuk kedua profil, ranking dokumen, Recall@1/3/5, Precision@1/3/5, MRR, dan
+analisis threshold. [Skrip benchmark](./benchmark_semantic_retrieval.py) dapat
+dijalankan ulang dengan model embedding asli dan kedua indeks persisten.
+Interpretasi, keterbatasan DRAFT, serta rekomendasi profil ada dalam
+[laporan benchmark](../docs/milestone-3/semantic-retrieval-benchmark.md).

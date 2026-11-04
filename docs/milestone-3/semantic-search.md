@@ -7,6 +7,8 @@ Contoh pengujian awal di bawah menggunakan data sintetis. Integrasi korpus
 nyata kini memiliki [indeks eksperimen](./real-corpus-search.md) yang belum
 lolos pemeriksaan kesiapan produksi. Generation, Gemini,
 FastMCP, dan Gradio belum diimplementasikan.
+Evaluasi dua profil token-aware dengan 15 kueri berlabel dan model asli kini ada
+di [benchmark semantic retrieval](./semantic-retrieval-benchmark.md).
 
 ## Struktur dan environment
 
@@ -232,9 +234,10 @@ relevansi pada korpus operasional.
    [audit korpus](../../evaluation/corpus_chunking.json) sebelum indexing final.
 2. Ulangi chunking sesuai batas 128 token model dan evaluasi ulang hasilnya;
    115 dari 130 chunk eksperimen saat ini melampaui batas tersebut.
-3. Siapkan kueri evaluasi berlabel dan relevansi rujukan dari kasus jaringan kampus.
-   Ukur Recall@k/MRR atau metrik retrieval yang disepakati.
-4. Kalibrasi top-k dan threshold dari evaluasi tersebut. Lima teks sintetis hanya
-   membuktikan pipeline teknis, belum membuktikan kualitas retrieval pada korpus nyata.
+3. Perluas benchmark berlabel dengan kasus nyata dan lebih banyak OOD. Benchmark
+   awal sudah mengukur Recall@k, Precision@k, dan MRR pada 15 kueri.
+4. Validasi ulang top-k dan threshold pada set yang lebih besar; threshold 0,5
+   hanya menolak tiga OOD dalam benchmark awal dan masih menerima empat Top-1
+   yang salah pada kueri relevan.
 5. Sepakati versi korpus/model, indexing ulang, dan rekonsiliasi chunk usang.
 6. Lengkapi laporan dan bukti evaluasi sesuai rubrik T03 mata kuliah.
