@@ -1,6 +1,6 @@
 """Run the frozen document-level retrieval benchmark against both persistent indexes.
 
-From repository root: .venv/Scripts/python evaluation/benchmark_semantic_retrieval.py
+From repository root: uv run --frozen --no-sync python evaluation/benchmark_semantic_retrieval.py
 The label file is hand-authored from the processed corpus and is never rewritten here.
 """
 

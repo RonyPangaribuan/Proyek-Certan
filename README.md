@@ -1,11 +1,12 @@
 # Sistem Pendukung Keputusan Berbasis AI untuk Prioritisasi dan Penanganan Insiden Jaringan Kampus
 
-> Prototype akademik untuk memprioritaskan insiden jaringan serta menentukan
-> penugasan teknisi dan slot waktu yang memenuhi constraint.
+> Prototipe akademik untuk memprioritaskan insiden, menentukan penugasan
+> teknisi dan slot, serta mencari dokumen pengetahuan jaringan secara semantik.
 
 Proyek ini dikembangkan sebagai proyek akhir mata kuliah Kecerdasan Buatan
 (10S3001), Program Studi Sarjana Sistem Informasi, Institut Teknologi Del. Data
-yang digunakan masih sintetis. Hasil sistem merupakan rekomendasi dan
+insiden dan teknisi yang digunakan masih sintetis; Milestone 3 menggunakan
+15 dokumen korpus eksternal. Hasil sistem merupakan rekomendasi dan
 assignment yang layak, sedangkan keputusan akhir tetap berada pada
 administrator jaringan.
 
@@ -30,9 +31,9 @@ Repository ini mencakup tiga milestone:
   Checking. Milestone ini menjawab pertanyaan: "Teknisi mana dan slot waktu
   mana yang dapat digunakan untuk menangani insiden secara valid?"
 - **Milestone 3 - Basis pengetahuan dan semantic search.** Pipeline embedding
-  multilingual dan persistent ChromaDB menerima hasil chunking lalu mengambil
-  SOP yang relevan terhadap kueri bahasa alami. Pengujian awal memakai chunk
-  sintetis; integrasi korpus nyata masih menjadi pekerjaan tim.
+  multilingual dan persistent ChromaDB menerima hasil chunking 15 dokumen
+  lalu mengambil rujukan yang relevan terhadap kueri bahasa alami. Profil
+  `t96_w10` dipilih untuk eksperimen berdasarkan benchmark berlabel.
 
 Hubungan kedua milestone bersifat konseptual: Milestone 1 memberikan konteks
 prioritas insiden, sedangkan Milestone 2 menangani kelayakan penugasan teknisi
@@ -80,10 +81,10 @@ flowchart TD
 | Milestone 3 | Dense embeddings dan persistent semantic search |
 | Embedding | Multilingual MiniLM, 384 dimensi, ternormalisasi |
 | Vector store | ChromaDB persisten, cosine distance, upsert |
-| Data | Insiden, teknisi, dan chunk pengetahuan sintetis dalam JSON |
+| Data | Insiden/teknisi sintetis dan 15 dokumen jaringan eksternal |
 | Teknologi | Python 3.11 dan Astral `uv` |
 | Lisensi | MIT |
-| Status | Milestone 1-2 completed; pipeline T03 dengan data sintetis |
+| Status | Milestone 1-2 selesai; T03 prototipe retrieval berlabel, belum siap produksi |
 
 UCS dipilih pada Milestone 1 karena seluruh biaya langkah nonnegatif dan dapat
 menemukan urutan dengan *weighted-minute penalty* minimum tanpa heuristic. A*
@@ -155,6 +156,41 @@ uv run python -m proyek_certan.constraint_solver.benchmark \
 ```bash
 uv run python -m pytest -v
 ```
+
+### 6. Jalankan Milestone 3 (T03)
+
+Dari root repository, `uv sync --locked` memasang dependensi yang tercatat
+di lockfile. Lima belas TXT dan tiga file chunk sudah tersedia di repository.
+Untuk membuat indeks final terpisah dari baseline serta eksperimen:
+
+```bash
+uv run --frozen --no-sync python -m proyek_certan.knowledge.cli index --input data/corpus/processed/knowledge_chunks_t96_w10.json --db .local/chroma-corpus-m3-final
+uv run --frozen --no-sync python -m proyek_certan.knowledge.cli search --db .local/chroma-corpus-m3-final --query "Nama domain gagal di-resolve; periksa DNS server dan klien" --top-k 5
+```
+
+Untuk mengulang pembuatan baseline dan dua indeks **eksperimen** pada checkout
+baru dengan direktori `.local/chroma-corpus-m3*` yang belum ada:
+
+```bash
+uv run --frozen --no-sync python -m proyek_certan.corpus.ingestion
+uv run --frozen --no-sync python -m proyek_certan.knowledge.cli index --input data/corpus/processed/knowledge_chunks.json --db .local/chroma-corpus-m3
+uv run --frozen --no-sync python -m proyek_certan.corpus.token_experiment
+uv run --frozen --no-sync python evaluation/audit_milestone3.py
+uv run --frozen --no-sync python evaluation/benchmark_semantic_retrieval.py
+```
+
+Skrip eksperimen sengaja menolak database eksperimen yang sudah ada agar hasil
+tidak bercampur. Audit dan benchmark memerlukan kedua database eksperimen.
+Alur dan batasannya dijelaskan di [dokumentasi T03](docs/milestone-3/semantic-search.md),
+[eksperimen chunking](docs/milestone-3/token-aware-chunking.md), dan
+[benchmark](docs/milestone-3/semantic-retrieval-benchmark.md).
+
+Profil `t96_w10` memiliki 484 chunk, batas maksimum 96 token termasuk special
+tokens, Recall@3 0,875, dan MRR 0,8056 pada 12 kueri relevan. Tiga kueri
+out-of-domain menguji abstention. Kueri diagnosis WiFi masih mengangkat dokumen
+kebijakan DOC-13 sebelum panduan DOC-01; DOC-09/10 berstatus DRAFT dari
+Universitas Harapan Bangsa. Hasil retrieval bukan SOP resmi IT Del dan sistem
+ini belum siap digunakan untuk keputusan operasional otomatis.
 
 ## Hasil Milestone 1
 
@@ -433,12 +469,14 @@ unduhan model. Korpus contoh terpisah di
 [data/sample_knowledge_chunks.json](data/sample_knowledge_chunks.json).
 
 Lihat [panduan T03](docs/milestone-3/semantic-search.md) untuk kontrak integrasi
-chunking, API Python, konfigurasi database/threshold, pengujian model asli,
-serta pekerjaan lanjutan untuk korpus dan evaluasi retrieval.
+chunking, API Python, konfigurasi database/threshold, dan pengujian model asli.
+[Laporan finalisasi](docs/milestone-3/final-audit.md) memuat hasil audit serta
+masalah sumber dan retrieval yang belum selesai.
 
 ## Batasan
 
-- Seluruh data masih sintetis dan belum menggunakan data operasional IT Del.
+- Insiden dan teknisi masih sintetis; korpus T03 memakai sumber eksternal dan
+  bukan data operasional atau SOP resmi IT Del.
 - Pengujian utama saat ini mencakup maksimum 12 insiden.
 - Kemampuan dan availability teknisi dianggap tetap selama satu proses solve.
 - CSP hanya menangani kecocokan skill, availability, dan konflik
@@ -455,7 +493,8 @@ serta pekerjaan lanjutan untuk korpus dan evaluasi retrieval.
 
 ## Status Proyek
 
-**Status: Milestone 1-2 completed; pipeline teknis T03 tersedia dengan data
-sintetis.** Repository mencakup prioritisasi insiden, penugasan teknisi-slot
-berbasis CSP, serta embedding dan persistent semantic search. Korpus nyata dan
-evaluasi retrieval T03 masih perlu diselesaikan bersama tim.
+**Status: Milestone 1-2 selesai; T03 siap difinalisasi sebagai prototipe
+akademik.** Repository mencakup prioritisasi insiden, penugasan teknisi-slot
+berbasis CSP, serta semantic retrieval dari 15 dokumen eksternal. Benchmark
+berlabel sudah tersedia; kualitas sumber dan kesalahan retrieval WiFi tetap
+memerlukan tindak lanjut sebelum penggunaan operasional.

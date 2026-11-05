@@ -9,6 +9,8 @@ lolos pemeriksaan kesiapan produksi. Generation, Gemini,
 FastMCP, dan Gradio belum diimplementasikan.
 Evaluasi dua profil token-aware dengan 15 kueri berlabel dan model asli kini ada
 di [benchmark semantic retrieval](./semantic-retrieval-benchmark.md).
+[Audit final T03](./final-audit.md) merangkum integritas indeks, hasil tes,
+dan keterbatasan sumber.
 
 ## Struktur dan environment
 

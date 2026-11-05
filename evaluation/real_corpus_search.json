@@ -7,7 +7,7 @@
   "embedding_dimension": 384,
   "max_sequence_tokens": 128,
   "input_chunk_count": 130,
-  "input_sha256": "584698bd57c1e1215ea7062b117c8b0272510f07e15def8679e8981c07fd4502",
+  "input_sha256": "685735bd7947e3b92a2491da1c72ead2ed9389bb3daaa8c4f3888e6b2bbacc71",
   "stored_count": 130,
   "document_coverage": [
     "DOC01",

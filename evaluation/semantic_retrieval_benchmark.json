@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-04T07:33:14.858028+00:00",
+  "generated_at_utc": "2026-11-04T08:45:35.713202+00:00",
   "ground_truth_file": "evaluation/semantic_retrieval_ground_truth.json",
   "ground_truth_sha256": "4d87a26a24bcc433d9ded4970c89fe3b7d332ef80486feb8cab82d29ce2fc25b",
   "model_name": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
@@ -20267,6 +20267,15 @@
             },
             {
               "rank": 58,
+              "chunk_id": "DOC11-0051",
+              "document_id": "DOC11",
+              "similarity": 0.41616320610046387,
+              "section": "V. PROCEDURES",
+              "review_required": true,
+              "publication_status": null
+            },
+            {
+              "rank": 59,
               "chunk_id": "DOC05-0007",
               "document_id": "DOC05",
               "similarity": 0.41472673416137695,
@@ -20275,7 +20284,7 @@
               "publication_status": null
             },
             {
-              "rank": 59,
+              "rank": 60,
               "chunk_id": "DOC05-0045",
               "document_id": "DOC05",
               "similarity": 0.41260826587677,
@@ -20284,7 +20293,7 @@
               "publication_status": null
             },
             {
-              "rank": 60,
+              "rank": 61,
               "chunk_id": "DOC13-0025",
               "document_id": "DOC13",
               "similarity": 0.41242265701293945,
@@ -20293,7 +20302,7 @@
               "publication_status": null
             },
             {
-              "rank": 61,
+              "rank": 62,
               "chunk_id": "DOC05-0024",
               "document_id": "DOC05",
               "similarity": 0.41152578592300415,
@@ -20302,7 +20311,7 @@
               "publication_status": null
             },
             {
-              "rank": 62,
+              "rank": 63,
               "chunk_id": "DOC03-0014",
               "document_id": "DOC03",
               "similarity": 0.4115220904350281,
@@ -20311,7 +20320,7 @@
               "publication_status": null
             },
             {
-              "rank": 63,
+              "rank": 64,
               "chunk_id": "DOC06-0028",
               "document_id": "DOC06",
               "similarity": 0.41052043437957764,
@@ -20320,7 +20329,7 @@
               "publication_status": null
             },
             {
-              "rank": 64,
+              "rank": 65,
               "chunk_id": "DOC05-0046",
               "document_id": "DOC05",
               "similarity": 0.41034549474716187,
@@ -20329,7 +20338,7 @@
               "publication_status": null
             },
             {
-              "rank": 65,
+              "rank": 66,
               "chunk_id": "DOC13-0017",
               "document_id": "DOC13",
               "similarity": 0.4083728790283203,
@@ -20338,7 +20347,7 @@
               "publication_status": null
             },
             {
-              "rank": 66,
+              "rank": 67,
               "chunk_id": "DOC06-0020",
               "document_id": "DOC06",
               "similarity": 0.4082680940628052,
@@ -20347,7 +20356,7 @@
               "publication_status": null
             },
             {
-              "rank": 67,
+              "rank": 68,
               "chunk_id": "DOC01-0012",
               "document_id": "DOC01",
               "similarity": 0.4079703688621521,
@@ -20356,7 +20365,7 @@
               "publication_status": null
             },
             {
-              "rank": 68,
+              "rank": 69,
               "chunk_id": "DOC07-0015",
               "document_id": "DOC07",
               "similarity": 0.407845675945282,
@@ -20365,7 +20374,7 @@
               "publication_status": null
             },
             {
-              "rank": 69,
+              "rank": 70,
               "chunk_id": "DOC05-0042",
               "document_id": "DOC05",
               "similarity": 0.40696609020233154,
@@ -20374,7 +20383,7 @@
               "publication_status": null
             },
             {
-              "rank": 70,
+              "rank": 71,
               "chunk_id": "DOC13-0011",
               "document_id": "DOC13",
               "similarity": 0.40640342235565186,
@@ -20383,7 +20392,7 @@
               "publication_status": null
             },
             {
-              "rank": 71,
+              "rank": 72,
               "chunk_id": "DOC14-0015",
               "document_id": "DOC14",
               "similarity": 0.40485602617263794,
@@ -20392,7 +20401,7 @@
               "publication_status": null
             },
             {
-              "rank": 72,
+              "rank": 73,
               "chunk_id": "DOC05-0037",
               "document_id": "DOC05",
               "similarity": 0.40473705530166626,
@@ -20401,7 +20410,7 @@
               "publication_status": null
             },
             {
-              "rank": 73,
+              "rank": 74,
               "chunk_id": "DOC06-0023",
               "document_id": "DOC06",
               "similarity": 0.40333056449890137,
@@ -20410,7 +20419,7 @@
               "publication_status": null
             },
             {
-              "rank": 74,
+              "rank": 75,
               "chunk_id": "DOC10-0000",
               "document_id": "DOC10",
               "similarity": 0.4023735523223877,
@@ -20419,7 +20428,7 @@
               "publication_status": "DRAFT menurut halaman sumber"
             },
             {
-              "rank": 75,
+              "rank": 76,
               "chunk_id": "DOC11-0065",
               "document_id": "DOC11",
               "similarity": 0.40228307247161865,
@@ -20428,7 +20437,7 @@
               "publication_status": null
             },
             {
-              "rank": 76,
+              "rank": 77,
               "chunk_id": "DOC07-0032",
               "document_id": "DOC07",
               "similarity": 0.4020459055900574,
@@ -20437,7 +20446,7 @@
               "publication_status": null
             },
             {
-              "rank": 77,
+              "rank": 78,
               "chunk_id": "DOC07-0026",
               "document_id": "DOC07",
               "similarity": 0.40123796463012695,
@@ -20446,7 +20455,7 @@
               "publication_status": null
             },
             {
-              "rank": 78,
+              "rank": 79,
               "chunk_id": "DOC09-0007",
               "document_id": "DOC09",
               "similarity": 0.4003864526748657,
@@ -20455,7 +20464,7 @@
               "publication_status": "DRAFT menurut halaman sumber"
             },
             {
-              "rank": 79,
+              "rank": 80,
               "chunk_id": "DOC15-0004",
               "document_id": "DOC15",
               "similarity": 0.39971280097961426,
@@ -20464,7 +20473,7 @@
               "publication_status": null
             },
             {
-              "rank": 80,
+              "rank": 81,
               "chunk_id": "DOC08-0020",
               "document_id": "DOC08",
               "similarity": 0.39620357751846313,
@@ -20473,7 +20482,7 @@
               "publication_status": null
             },
             {
-              "rank": 81,
+              "rank": 82,
               "chunk_id": "DOC06-0008",
               "document_id": "DOC06",
               "similarity": 0.39091068506240845,
@@ -20482,7 +20491,7 @@
               "publication_status": null
             },
             {
-              "rank": 82,
+              "rank": 83,
               "chunk_id": "DOC05-0025",
               "document_id": "DOC05",
               "similarity": 0.3908567428588867,
@@ -20491,7 +20500,7 @@
               "publication_status": null
             },
             {
-              "rank": 83,
+              "rank": 84,
               "chunk_id": "DOC05-0028",
               "document_id": "DOC05",
               "similarity": 0.38908302783966064,
@@ -20500,7 +20509,7 @@
               "publication_status": null
             },
             {
-              "rank": 84,
+              "rank": 85,
               "chunk_id": "DOC01-0004",
               "document_id": "DOC01",
               "similarity": 0.388735830783844,
@@ -20509,7 +20518,7 @@
               "publication_status": null
             },
             {
-              "rank": 85,
+              "rank": 86,
               "chunk_id": "DOC05-0003",
               "document_id": "DOC05",
               "similarity": 0.3882002830505371,
@@ -20518,7 +20527,7 @@
               "publication_status": null
             },
             {
-              "rank": 86,
+              "rank": 87,
               "chunk_id": "DOC02-0012",
               "document_id": "DOC02",
               "similarity": 0.38641422986984253,
@@ -20527,7 +20536,7 @@
               "publication_status": null
             },
             {
-              "rank": 87,
+              "rank": 88,
               "chunk_id": "DOC05-0043",
               "document_id": "DOC05",
               "similarity": 0.38565611839294434,
@@ -20536,7 +20545,7 @@
               "publication_status": null
             },
             {
-              "rank": 88,
+              "rank": 89,
               "chunk_id": "DOC05-0055",
               "document_id": "DOC05",
               "similarity": 0.38540518283843994,
@@ -20545,7 +20554,7 @@
               "publication_status": null
             },
             {
-              "rank": 89,
+              "rank": 90,
               "chunk_id": "DOC06-0017",
               "document_id": "DOC06",
               "similarity": 0.3847995400428772,
@@ -20554,7 +20563,7 @@
               "publication_status": null
             },
             {
-              "rank": 90,
+              "rank": 91,
               "chunk_id": "DOC06-0019",
               "document_id": "DOC06",
               "similarity": 0.3839690685272217,
@@ -20563,7 +20572,7 @@
               "publication_status": null
             },
             {
-              "rank": 91,
+              "rank": 92,
               "chunk_id": "DOC07-0006",
               "document_id": "DOC07",
               "similarity": 0.38396012783050537,
@@ -20572,7 +20581,7 @@
               "publication_status": null
             },
             {
-              "rank": 92,
+              "rank": 93,
               "chunk_id": "DOC04-0002",
               "document_id": "DOC04",
               "similarity": 0.38382506370544434,
@@ -20581,7 +20590,7 @@
               "publication_status": null
             },
             {
-              "rank": 93,
+              "rank": 94,
               "chunk_id": "DOC05-0022",
               "document_id": "DOC05",
               "similarity": 0.3831806182861328,
@@ -20590,7 +20599,7 @@
               "publication_status": null
             },
             {
-              "rank": 94,
+              "rank": 95,
               "chunk_id": "DOC06-0029",
               "document_id": "DOC06",
               "similarity": 0.38249796628952026,
@@ -20599,7 +20608,7 @@
               "publication_status": null
             },
             {
-              "rank": 95,
+              "rank": 96,
               "chunk_id": "DOC13-0020",
               "document_id": "DOC13",
               "similarity": 0.38208603858947754,
@@ -20608,7 +20617,7 @@
               "publication_status": null
             },
             {
-              "rank": 96,
+              "rank": 97,
               "chunk_id": "DOC11-0074",
               "document_id": "DOC11",
               "similarity": 0.38092732429504395,
@@ -20617,7 +20626,7 @@
               "publication_status": null
             },
             {
-              "rank": 97,
+              "rank": 98,
               "chunk_id": "DOC03-0002",
               "document_id": "DOC03",
               "similarity": 0.3806987404823303,
@@ -20626,7 +20635,7 @@
               "publication_status": null
             },
             {
-              "rank": 98,
+              "rank": 99,
               "chunk_id": "DOC05-0009",
               "document_id": "DOC05",
               "similarity": 0.3805350661277771,
@@ -20635,20 +20644,11 @@
               "publication_status": null
             },
             {
-              "rank": 99,
+              "rank": 100,
               "chunk_id": "DOC07-0025",
               "document_id": "DOC07",
               "similarity": 0.37907981872558594,
               "section": "Example of Network Shell traces",
-              "review_required": false,
-              "publication_status": null
-            },
-            {
-              "rank": 100,
-              "chunk_id": "DOC01-0006",
-              "document_id": "DOC01",
-              "similarity": 0.3771464228630066,
-              "section": "Step 2: Rule out common causes of connection failures / Troubleshooting an 802.1X authentication failure",
               "review_required": false,
               "publication_status": null
             }
@@ -22485,6 +22485,15 @@
             },
             {
               "rank": 96,
+              "chunk_id": "DOC05-0037",
+              "document_id": "DOC05",
+              "similarity": 0.37133073806762695,
+              "section": "Common issues and solutions / TCP/IP connection to a host appears to have stopped / Long connect times when using Lmhosts for name resolution",
+              "review_required": false,
+              "publication_status": null
+            },
+            {
+              "rank": 97,
               "chunk_id": "DOC13-0002",
               "document_id": "DOC13",
               "similarity": 0.37021517753601074,
@@ -22493,7 +22502,7 @@
               "publication_status": null
             },
             {
-              "rank": 97,
+              "rank": 98,
               "chunk_id": "DOC08-0006",
               "document_id": "DOC08",
               "similarity": 0.3695946931838989,
@@ -22502,7 +22511,7 @@
               "publication_status": null
             },
             {
-              "rank": 98,
+              "rank": 99,
               "chunk_id": "DOC11-0059",
               "document_id": "DOC11",
               "similarity": 0.3693775534629822,
@@ -22511,22 +22520,13 @@
               "publication_status": null
             },
             {
-              "rank": 99,
+              "rank": 100,
               "chunk_id": "DOC07-0010",
               "document_id": "DOC07",
               "similarity": 0.3693355917930603,
               "section": "Common causes of local packet loss",
               "review_required": false,
               "publication_status": null
-            },
-            {
-              "rank": 100,
-              "chunk_id": "DOC09-0034",
-              "document_id": "DOC09",
-              "similarity": 0.3689241409301758,
-              "section": "11. Indikator kinerja / 12. Tinjauan dokumen",
-              "review_required": true,
-              "publication_status": "DRAFT menurut halaman sumber"
             }
           ],
           "distinct_document_ranking": [
@@ -26154,6 +26154,15 @@
             },
             {
               "rank": 89,
+              "chunk_id": "DOC05-0037",
+              "document_id": "DOC05",
+              "similarity": 0.12390851974487305,
+              "section": "Common issues and solutions / TCP/IP connection to a host appears to have stopped / Long connect times when using Lmhosts for name resolution",
+              "review_required": false,
+              "publication_status": null
+            },
+            {
+              "rank": 90,
               "chunk_id": "DOC11-0038",
               "document_id": "DOC11",
               "similarity": 0.12337172031402588,
@@ -26162,7 +26171,7 @@
               "publication_status": null
             },
             {
-              "rank": 90,
+              "rank": 91,
               "chunk_id": "DOC11-0003",
               "document_id": "DOC11",
               "similarity": 0.12180805206298828,
@@ -26171,7 +26180,7 @@
               "publication_status": null
             },
             {
-              "rank": 91,
+              "rank": 92,
               "chunk_id": "DOC10-0014",
               "document_id": "DOC10",
               "similarity": 0.12082022428512573,
@@ -26180,7 +26189,7 @@
               "publication_status": "DRAFT menurut halaman sumber"
             },
             {
-              "rank": 92,
+              "rank": 93,
               "chunk_id": "DOC13-0014",
               "document_id": "DOC13",
               "similarity": 0.120533287525177,
@@ -26189,7 +26198,7 @@
               "publication_status": null
             },
             {
-              "rank": 93,
+              "rank": 94,
               "chunk_id": "DOC13-0023",
               "document_id": "DOC13",
               "similarity": 0.12024801969528198,
@@ -26198,7 +26207,7 @@
               "publication_status": null
             },
             {
-              "rank": 94,
+              "rank": 95,
               "chunk_id": "DOC13-0002",
               "document_id": "DOC13",
               "similarity": 0.11989003419876099,
@@ -26207,7 +26216,7 @@
               "publication_status": null
             },
             {
-              "rank": 95,
+              "rank": 96,
               "chunk_id": "DOC11-0011",
               "document_id": "DOC11",
               "similarity": 0.11977159976959229,
@@ -26216,7 +26225,7 @@
               "publication_status": null
             },
             {
-              "rank": 96,
+              "rank": 97,
               "chunk_id": "DOC11-0034",
               "document_id": "DOC11",
               "similarity": 0.11873656511306763,
@@ -26225,7 +26234,7 @@
               "publication_status": null
             },
             {
-              "rank": 97,
+              "rank": 98,
               "chunk_id": "DOC11-0068",
               "document_id": "DOC11",
               "similarity": 0.11801362037658691,
@@ -26234,7 +26243,7 @@
               "publication_status": null
             },
             {
-              "rank": 98,
+              "rank": 99,
               "chunk_id": "DOC07-0035",
               "document_id": "DOC07",
               "similarity": 0.11650127172470093,
@@ -26243,22 +26252,13 @@
               "publication_status": null
             },
             {
-              "rank": 99,
+              "rank": 100,
               "chunk_id": "DOC09-0024",
               "document_id": "DOC09",
               "similarity": 0.11647236347198486,
               "section": "8.3 Penanganan L1 dan eskalasi / 8.4 Penutupan",
               "review_required": true,
               "publication_status": "DRAFT menurut halaman sumber"
-            },
-            {
-              "rank": 100,
-              "chunk_id": "DOC11-0007",
-              "document_id": "DOC11",
-              "similarity": 0.11643296480178833,
-              "section": "UCF IT Incident Management Policy & Procedure",
-              "review_required": true,
-              "publication_status": null
             }
           ],
           "distinct_document_ranking": [
@@ -26831,6 +26831,15 @@
             },
             {
               "rank": 61,
+              "chunk_id": "DOC11-0085",
+              "document_id": "DOC11",
+              "similarity": 0.10180515050888062,
+              "section": "VII. APPENDIX",
+              "review_required": true,
+              "publication_status": null
+            },
+            {
+              "rank": 62,
               "chunk_id": "DOC14-0016",
               "document_id": "DOC14",
               "similarity": 0.1003459095954895,
@@ -26839,7 +26848,7 @@
               "publication_status": null
             },
             {
-              "rank": 62,
+              "rank": 63,
               "chunk_id": "DOC12-0009",
               "document_id": "DOC12",
               "similarity": 0.10000181198120117,
@@ -26848,7 +26857,7 @@
               "publication_status": null
             },
             {
-              "rank": 63,
+              "rank": 64,
               "chunk_id": "DOC07-0030",
               "document_id": "DOC07",
               "similarity": 0.098441481590271,
@@ -26857,7 +26866,7 @@
               "publication_status": null
             },
             {
-              "rank": 64,
+              "rank": 65,
               "chunk_id": "DOC11-0035",
               "document_id": "DOC11",
               "similarity": 0.0984039306640625,
@@ -26866,7 +26875,7 @@
               "publication_status": null
             },
             {
-              "rank": 65,
+              "rank": 66,
               "chunk_id": "DOC07-0038",
               "document_id": "DOC07",
               "similarity": 0.09714275598526001,
@@ -26875,7 +26884,7 @@
               "publication_status": null
             },
             {
-              "rank": 66,
+              "rank": 67,
               "chunk_id": "DOC05-0024",
               "document_id": "DOC05",
               "similarity": 0.09607589244842529,
@@ -26884,7 +26893,7 @@
               "publication_status": null
             },
             {
-              "rank": 67,
+              "rank": 68,
               "chunk_id": "DOC15-0000",
               "document_id": "DOC15",
               "similarity": 0.09531557559967041,
@@ -26893,7 +26902,7 @@
               "publication_status": null
             },
             {
-              "rank": 68,
+              "rank": 69,
               "chunk_id": "DOC14-0007",
               "document_id": "DOC14",
               "similarity": 0.09511137008666992,
@@ -26902,7 +26911,7 @@
               "publication_status": null
             },
             {
-              "rank": 69,
+              "rank": 70,
               "chunk_id": "DOC14-0000",
               "document_id": "DOC14",
               "similarity": 0.0949089527130127,
@@ -26911,7 +26920,7 @@
               "publication_status": null
             },
             {
-              "rank": 70,
+              "rank": 71,
               "chunk_id": "DOC05-0034",
               "document_id": "DOC05",
               "similarity": 0.09376013278961182,
@@ -26920,7 +26929,7 @@
               "publication_status": null
             },
             {
-              "rank": 71,
+              "rank": 72,
               "chunk_id": "DOC07-0001",
               "document_id": "DOC07",
               "similarity": 0.09347009658813477,
@@ -26929,7 +26938,7 @@
               "publication_status": null
             },
             {
-              "rank": 72,
+              "rank": 73,
               "chunk_id": "DOC10-0002",
               "document_id": "DOC10",
               "similarity": 0.0930747389793396,
@@ -26938,7 +26947,7 @@
               "publication_status": "DRAFT menurut halaman sumber"
             },
             {
-              "rank": 73,
+              "rank": 74,
               "chunk_id": "DOC09-0000",
               "document_id": "DOC09",
               "similarity": 0.09267640113830566,
@@ -26947,7 +26956,7 @@
               "publication_status": "DRAFT menurut halaman sumber"
             },
             {
-              "rank": 74,
+              "rank": 75,
               "chunk_id": "DOC07-0004",
               "document_id": "DOC07",
               "similarity": 0.09202665090560913,
@@ -26956,7 +26965,7 @@
               "publication_status": null
             },
             {
-              "rank": 75,
+              "rank": 76,
               "chunk_id": "DOC05-0004",
               "document_id": "DOC05",
               "similarity": 0.09191852807998657,
@@ -26965,7 +26974,7 @@
               "publication_status": null
             },
             {
-              "rank": 76,
+              "rank": 77,
               "chunk_id": "DOC02-0005",
               "document_id": "DOC02",
               "similarity": 0.09119588136672974,
@@ -26974,7 +26983,7 @@
               "publication_status": null
             },
             {
-              "rank": 77,
+              "rank": 78,
               "chunk_id": "DOC07-0023",
               "document_id": "DOC07",
               "similarity": 0.09009093046188354,
@@ -26983,7 +26992,7 @@
               "publication_status": null
             },
             {
-              "rank": 78,
+              "rank": 79,
               "chunk_id": "DOC13-0012",
               "document_id": "DOC13",
               "similarity": 0.08948546648025513,
@@ -26992,20 +27001,11 @@
               "publication_status": null
             },
             {
-              "rank": 79,
+              "rank": 80,
               "chunk_id": "DOC03-0004",
               "document_id": "DOC03",
               "similarity": 0.08890759944915771,
               "section": "Troubleshooting checklist",
-              "review_required": false,
-              "publication_status": null
-            },
-            {
-              "rank": 80,
-              "chunk_id": "DOC01-0001",
-              "document_id": "DOC01",
-              "similarity": 0.0881691575050354,
-              "section": "Wireless technology troubleshooting guidance / Emerging and known issues / Troubleshooting a WIFI connection that fails to establish",
               "review_required": false,
               "publication_status": null
             },
@@ -27202,8 +27202,8 @@
             "DOC12",
             "DOC15",
             "DOC02",
-            "DOC01",
             "DOC08",
+            "DOC01",
             "DOC06"
           ],
           "metrics": {

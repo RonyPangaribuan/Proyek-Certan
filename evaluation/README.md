@@ -137,3 +137,6 @@ analisis threshold. [Skrip benchmark](./benchmark_semantic_retrieval.py) dapat
 dijalankan ulang dengan model embedding asli dan kedua indeks persisten.
 Interpretasi, keterbatasan DRAFT, serta rekomendasi profil ada dalam
 [laporan benchmark](../docs/milestone-3/semantic-retrieval-benchmark.md).
+Verifikasi akhir atas hash sumber, chunk deterministik, batas token, dan isi
+indeks dapat dijalankan dengan [skrip audit](./audit_milestone3.py); hasil
+serta catatan review ada di [laporan finalisasi](../docs/milestone-3/final-audit.md).
