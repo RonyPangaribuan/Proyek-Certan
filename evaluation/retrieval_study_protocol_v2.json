@@ -1,0 +1,73 @@
+{
+  "frozen_at_utc": "2026-11-05T09:13:43.291500+00:00",
+  "labels_sha256": "1462ab2ca12a4c887f1b2217d18aeb3518324b4c81f9fcc95267ba9bdfc05e4d",
+  "frozen_baseline_sha256": {
+    "evaluation/semantic_retrieval_ground_truth.json": "4d87a26a24bcc433d9ded4970c89fe3b7d332ef80486feb8cab82d29ce2fc25b",
+    "evaluation/semantic_retrieval_benchmark.json": "7086cedccd41046ab9ff2b9bdd40ab4ed245a3a243af622e4a499b2af45e4802",
+    "evaluation/token_chunking_comparison.json": "4c12f063b8980f18d6e19373bf581a1b12ab42b35645df6a1544da897b92f0d3",
+    "data/corpus/processed/knowledge_chunks.json": "685735bd7947e3b92a2491da1c72ead2ed9389bb3daaa8c4f3888e6b2bbacc71",
+    "data/corpus/processed/knowledge_chunks_t96_w10.json": "6e2d055fd4020bd338be630b7e190874163780b6e2b094e4183eaf3d50b7c677",
+    "data/corpus/processed/knowledge_chunks_t120_w12.json": "23bdbbf27d70bc5329c4f0570c55e713f18b1ff3adddfcf940987452c3f77ace",
+    "data/corpus/processed/DOC01_WiFi.txt": "bc0748163ea5e6488519dd08dbc9ca8958f0f40cb019ecf3db52ab402b7acab5",
+    "data/corpus/processed/DOC02_DNS.txt": "eb38ae31b76575d18ae5bcc1244ffd3fe8b600d19eb16687d32e56a712f76165",
+    "data/corpus/processed/DOC03_DHCP_Server.txt": "650ab846dd59f60663249988a6c5bf0c0fe41a836dced6b9b0a43a50fb43c841",
+    "data/corpus/processed/DOC04_DHCP_Client.txt": "5a27b9bc955e1da495f7bd6c45d7685c14e9288d990a2ad444017e33e6ede7f4",
+    "data/corpus/processed/DOC05_TCP_IP.txt": "2154294c2de49d8887a4f263c1152413dea86301db6b99b39603dfb27c738911",
+    "data/corpus/processed/DOC06_LAN_Switch.txt": "152557ef0e2c84a38aa790a1854f376d070d2d028dff55f644a45f859e7afd45",
+    "data/corpus/processed/DOC07_Packet_Loss.txt": "9afb81660495e941e8fb8b30cc9b0b8c6cd7c8d6c84dccfc5c99cab61ce0c6de",
+    "data/corpus/processed/DOC08_Authentication.txt": "4b15cac8363240a485e95ed940ba8d227f07fab20af7a2ffc033581f26d22940",
+    "data/corpus/processed/DOC09_Service_Desk.txt": "7854d75360a290dc005d54c7f44f54358af9ea754f3aa22532229f5349e7c138",
+    "data/corpus/processed/DOC10_Incident_Handling.txt": "7e32c158abd0acdf3956717e88515c10cfd95c6c8e37ecde9e7980e0cd352159",
+    "data/corpus/processed/DOC11_Incident_Management_UCF.txt": "8d25e54c648757c1566db11b5e11e2d9d227fdf17b4f1084902fe5bce702b96c",
+    "data/corpus/processed/DOC12_Security_Incident.txt": "ccb9334315a00c769d9bac0a925aecf95740c1ec6590f4cff9425e3360321901",
+    "data/corpus/processed/DOC13_Network_Administration.txt": "d4a1d98141609444310a912188f1ab8e1a8185a9174e6a6c871180fe4a15631b",
+    "data/corpus/processed/DOC14_Acceptable_Use.txt": "e9b41395a00d0415507337b9f520a30aa34570920cb646fa1510ae6b59b23886",
+    "data/corpus/processed/DOC15_Network_Management.txt": "c6593c8ea3fc213935484b57fbe8a46c1a778d294f3218689a460737c0573394"
+  },
+  "raw_depth": 100,
+  "k_values": [
+    1,
+    3,
+    5
+  ],
+  "threshold_grid": [
+    0.0,
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9
+  ],
+  "threshold_selection": "Development only: minimise (false acceptance rate + false rejection rate)/2; ties minimise false acceptance, then choose lower threshold. Gate on selected document's RAW cosine, never the ranking bonus.",
+  "profiles": [
+    "v1_t96_w10",
+    "v2_t96_w10",
+    "v2_t120_w12",
+    "v2_t96_w0"
+  ],
+  "selected_profile": "v2_t96_w10 fixed in advance; other profiles are ablations, not selected on evaluation results",
+  "candidate": {
+    "name": "metadata_intent_bonus",
+    "bonus": 0.1,
+    "rules_file": "src/proyek_certan/knowledge/intent_experiment.py",
+    "rules_sha256": "3da2a460b876cdfcf77916a5e4be324102847793046ef77e716687f3fdf23576",
+    "metadata_rule_file": "src/proyek_certan/corpus/revision.py",
+    "metadata_rule_sha256": "d5f81cac4f39b937388f69402209331e2de91cca68fccce2209e00107d4f7595"
+  },
+  "adoption_rule": "Adopt only if development AND held-out evaluation paired bootstrap 95% lower bounds for both delta Recall@3 and delta MRR are >0, and OOD false acceptance and positive false rejection do not increase. Otherwise keep semantic default; retain experimental evidence only.",
+  "uncertainty": "Paired query bootstrap, 10000 resamples, seed 20261105, positive queries only. Wilson 95% intervals for error rates. Synthetic same-author evaluation is not a blinded human study.",
+  "pre_run_source_verification": "Corrected three query/evidence formulations after checking source text, before any new retrieval run. No changes to document relevance sets or split assignments."
+}

@@ -1,0 +1,209 @@
+{
+  "generated_at_utc": "2026-11-05T13:17:33.693036+00:00",
+  "corpus_report_sha256": "87602c67ebec1c8e22e1e8915d3e0fc12f0ddd7b653467b2438069a9793f7b21",
+  "scope": "Five flagged sources, deterministic safe corrections, no source replacement.",
+  "visual_limitations": "No full local PDF visual certification: Poppler unavailable and prior PyMuPDF DLL blocked. Text/page-boundary checks do not establish table/diagram reading order.",
+  "documents": [
+    {
+      "document_id": "DOC06",
+      "source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+      "verified_source_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+      "original_text_sha256": "152557ef0e2c84a38aa790a1854f376d070d2d028dff55f644a45f859e7afd45",
+      "revised_text_sha256": "4f3698611359d3a470b4599f143d3dbdc169b69dacbfb24d8ed45f76196c7988",
+      "source_pdf_sha256": "970ae7af0b0dce2d78d7c73887b4a873d2064942d82bd70ca642317f67455222",
+      "operations": {
+        "changed": true,
+        "operations": {
+          "command_example_line_breaks": 3
+        }
+      },
+      "review_required": false,
+      "unresolved": null,
+      "source_evidence": {
+        "format": "official_html_snapshot",
+        "html_sha256": "7a6aed9fe31c4f5d42f34a5813a50b633120b248e1eb8157ee574680c9f8e95c",
+        "extraction_equals_original": true,
+        "snapshot_time_known": false,
+        "scope": "Article body; figures and code presentation require separate interpretation."
+      },
+      "current_source": {
+        "checked_at_utc": "2026-11-05T13:17:19.382642+00:00",
+        "robots": "robots.txt tersedia",
+        "final_url": "https://docs.openvswitch.org/en/stable/faq/vlan/",
+        "content_type": "text/html; charset=utf-8",
+        "downloaded_sha256": "7a6aed9fe31c4f5d42f34a5813a50b633120b248e1eb8157ee574680c9f8e95c",
+        "snapshot": ".local/corpus-review-v2-current/DOC06.html",
+        "extraction_equals_original": true,
+        "status": "same_text"
+      }
+    },
+    {
+      "document_id": "DOC09",
+      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/",
+      "verified_source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/",
+      "original_text_sha256": "7854d75360a290dc005d54c7f44f54358af9ea754f3aa22532229f5349e7c138",
+      "revised_text_sha256": "7854d75360a290dc005d54c7f44f54358af9ea754f3aa22532229f5349e7c138",
+      "source_pdf_sha256": "f763b27263d158ed682d852cd7cab9780770800875321746ba01d1fb70a13028",
+      "operations": {
+        "changed": false,
+        "operations": {}
+      },
+      "review_required": true,
+      "unresolved": "DRAFT, institutional placeholders and indicative SLA; requires source-owner approval, no local CERTAN authority.",
+      "source_evidence": {
+        "format": "official_html_snapshot",
+        "html_sha256": "9bc29747ae09a30d81140a124264821c9063c17729de5a59e87e27cb77f0be53",
+        "extraction_equals_original": true,
+        "snapshot_time_known": false,
+        "scope": "Article body; figures and code presentation require separate interpretation."
+      },
+      "draft_and_placeholders_preserved": true,
+      "current_source": {
+        "checked_at_utc": "2026-11-05T13:17:21.039768+00:00",
+        "robots": "robots.txt tidak tersedia (HTTP 404)",
+        "final_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/",
+        "content_type": "text/html; charset=utf-8",
+        "downloaded_sha256": "9bc29747ae09a30d81140a124264821c9063c17729de5a59e87e27cb77f0be53",
+        "snapshot": ".local/corpus-review-v2-current/DOC09.html",
+        "extraction_equals_original": true,
+        "status": "same_text"
+      }
+    },
+    {
+      "document_id": "DOC10",
+      "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-inc-02/",
+      "verified_source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-inc-02/",
+      "original_text_sha256": "7e32c158abd0acdf3956717e88515c10cfd95c6c8e37ecde9e7980e0cd352159",
+      "revised_text_sha256": "7e32c158abd0acdf3956717e88515c10cfd95c6c8e37ecde9e7980e0cd352159",
+      "source_pdf_sha256": "3b0d47080e5f9551544042374945bdce1887db8747eefb9e9325d52182c93b1c",
+      "operations": {
+        "changed": false,
+        "operations": {}
+      },
+      "review_required": true,
+      "unresolved": "DRAFT, institutional placeholders and indicative deadlines; requires source-owner approval.",
+      "source_evidence": {
+        "format": "official_html_snapshot",
+        "html_sha256": "611fa0c5f2d8f0cce2dfd65f0209b58d82d616a095a9cfdab7b7f17708b5b0bc",
+        "extraction_equals_original": true,
+        "snapshot_time_known": false,
+        "scope": "Article body; figures and code presentation require separate interpretation."
+      },
+      "draft_and_placeholders_preserved": true,
+      "current_source": {
+        "checked_at_utc": "2026-11-05T13:17:23.195893+00:00",
+        "robots": "robots.txt tidak tersedia (HTTP 404)",
+        "final_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-inc-02/",
+        "content_type": "text/html; charset=utf-8",
+        "downloaded_sha256": "611fa0c5f2d8f0cce2dfd65f0209b58d82d616a095a9cfdab7b7f17708b5b0bc",
+        "snapshot": ".local/corpus-review-v2-current/DOC10.html",
+        "extraction_equals_original": true,
+        "status": "same_text"
+      }
+    },
+    {
+      "document_id": "DOC11",
+      "source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "verified_source_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+      "original_text_sha256": "8d25e54c648757c1566db11b5e11e2d9d227fdf17b4f1084902fe5bce702b96c",
+      "revised_text_sha256": "08f31e3592e05f103e9895caec27807e4d966c7053f5fad977997825e9a1490a",
+      "source_pdf_sha256": "ca7182adc465ec161b11f850403c478fd78980a24473f5d22fca03a33cb88e76",
+      "operations": {
+        "changed": true,
+        "operations": {
+          "page_folios_removed": 16
+        }
+      },
+      "review_required": true,
+      "unresolved": "Hard wraps, TOC leaders, multi-column Figure 1.1 SLA table and diagrams remain. No semantic table reconstruction attempted; source distribution/control notice preserved.",
+      "source_evidence": {
+        "format": "original_local_pdf",
+        "pages": 16,
+        "extraction_equals_original": true,
+        "page_anchors": {
+          "document_control": {
+            "page": 1,
+            "present": true
+          },
+          "figure_1_1": {
+            "page": 5,
+            "present": true
+          },
+          "sla_workflow": {
+            "page": 6,
+            "present": true
+          }
+        },
+        "visual_layout_certified": false
+      },
+      "current_source": {
+        "checked_at_utc": "2026-11-05T13:17:26.055855+00:00",
+        "robots": "robots.txt tersedia",
+        "final_url": "https://it.ucf.edu/wp-content/uploads/sites/7/2022/01/UCF-IT-Incident-Management-Policy-Procedure_01_19_22.pdf",
+        "content_type": "application/pdf",
+        "downloaded_sha256": "ca7182adc465ec161b11f850403c478fd78980a24473f5d22fca03a33cb88e76",
+        "snapshot": ".local/corpus-review-v2-current/DOC11.pdf",
+        "pdf_bytes_equal_original": true,
+        "extraction_equals_original": true,
+        "status": "same_text"
+      }
+    },
+    {
+      "document_id": "DOC13",
+      "source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf",
+      "verified_source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010%20Network%20Admin%20080624.pdf",
+      "original_text_sha256": "d4a1d98141609444310a912188f1ab8e1a8185a9174e6a6c871180fe4a15631b",
+      "revised_text_sha256": "318105a0bacb8c12306f1f25e3e36861a67fcf123870d7f7e686d14fd1bcdf2c",
+      "source_pdf_sha256": "c17af26e0d0766d10933884de9f44ba92b456949409a88c4b467afb504c9d7b3",
+      "operations": {
+        "changed": true,
+        "operations": {
+          "repeated_running_headers_removed": 4,
+          "prose_line_breaks_joined": 74
+        }
+      },
+      "review_required": true,
+      "unresolved": "Running headers and clause prose reflow corrected; front matter/contact layout retained. Full visual source review pending.",
+      "source_evidence": {
+        "format": "original_local_pdf",
+        "pages": 5,
+        "extraction_equals_original": true,
+        "page_anchors": {
+          "revision_2024": {
+            "page": 1,
+            "present": true
+          },
+          "wifi_clause": {
+            "page": 3,
+            "present": true
+          },
+          "contacts": {
+            "page": 5,
+            "present": true
+          }
+        },
+        "visual_layout_certified": false
+      },
+      "current_source": {
+        "checked_at_utc": "2026-11-05T13:17:29.617197+00:00",
+        "robots": "robots.txt tersedia",
+        "final_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010_university_network_administration_policy.pdf",
+        "content_type": "application/pdf",
+        "downloaded_sha256": "644ceec501643b6bf4a3babaab05473f81e8922c445be3f3dce18cc6aba201d7",
+        "snapshot": ".local/corpus-review-v2-current/DOC13.pdf",
+        "pdf_bytes_equal_original": false,
+        "extraction_equals_original": false,
+        "status": "upstream_changed_review_required",
+        "canonical_provenance": {
+          "landing_url": "https://policy.oregonstate.edu/UPSM/08-010_university_network_administration",
+          "landing_sha256": "33cc25392ec696bd66a1c4b79680b1cea77700a5a00569326f752af0fb0957b9",
+          "verified_source_url": "https://policy.oregonstate.edu/sites/policy.oregonstate.edu/files/08-010%20Network%20Admin%20080624.pdf",
+          "pdf_sha256": "c17af26e0d0766d10933884de9f44ba92b456949409a88c4b467afb504c9d7b3",
+          "pdf_bytes_equal_original": true,
+          "extraction_equals_original": true,
+          "note": "Historical URL serves 2016; official landing page links the 2024 revision used by the frozen corpus. Original source_url retained as historical provenance, not a current-version guarantee."
+        }
+      }
+    }
+  ]
+}

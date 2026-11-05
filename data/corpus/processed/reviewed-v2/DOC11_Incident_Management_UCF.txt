@@ -1,0 +1,548 @@
+# UCF IT Incident Management Policy & Procedure
+
+University of Central Florida
+Information Technology (UCF IT)
+Title: Effective: 12/15/2016 UCF IT Incident Management Policy & Procedure
+Revised: 01/19/2022
+Approved By: Matthew Hall, VP of IT and CIO
+Revision History
+Revision (Rev) Date of Rev Owner Summary of Changes
+Section I. (alpha); Incident
+Closure – Canceling Incidents 03/02/2017 Scott Baron Added Section I. Cancel incidents procedure
+Added Section I. Document
+Control 04/25/2018 Scott Baron Added Section I. Document Control
+Added Table of Contents 04/25/2018 Scott Baron Added Table of Contents to top of document
+Section III; Updated UCF IT
+definition 05/15/2018 Scott Baron Updated UCF IT members definition as of May 2018
+Section IV & Section V. 07/13/2018 Scott Baron Consolidated email and phone number into one. Removed Live Chat as a contact
+Section III; Updated 07/13/2018 Scott Baron Added SLA and SLT definitions
+Section I; Updated title & body 10/31/2018 Scott Baron Updated title and paragraph body verbiage
+Section III; UCF IT 03/21/2019 Scott Baron Revised UCF IT definition as of March 2019
+Section V.; D. 11/08/2019 Scott Baron Added Awaiting Administrative Time Scenario
+Section V.; G. & H. 11/08/2019 Scott Baron
+Updated/revised verbiage in UCF IT Blanket Email
+for Incident Closure – Resolved & UCF IT Blanket
+Email for Incident Closure – Awaiting User Info
+Section V.; G. 11/08/2019 Scott Baron Updated State of Awaiting User Confirmation Process – Automated email accept/reject
+Section III; UCF IT 11/08/2019 Scott Baron Revised UCF IT definition as of Oct 2019
+Section V.; D. 11/08/2019 Scott Baron Added “Canceled” definition as State
+Section I.; c & d 11/08/2019 Scott Baron Added sub sections c. & d. for canceling incidents
+Section V.; B. a. 12/20/2019 Scott Baron AG manager’s manager can modify incident priority
+All sections requiring updates 01/19/2022 Scott Baron Pertinent updates required to bring doc current; change of New Call to Interaction
+I. DOCUMENT CONTROL AND APPROVALS ................................................................. 1
+II. OBJECTIVES ...................................................................................................................... 2
+III. DEFINITIONS ..................................................................................................................... 2
+IV. POLICY ............................................................................................................................... 4
+V. PROCEDURES.................................................................................................................... 4
+VI. ADDITIONAL CONSIDERATIONS ............................................................................... 11
+VII. APPENDIX ........................................................................................................................ 12
+I. DOCUMENT CONTROL AND APPROVALS
+This document is authored, managed and governed by UCF IT Strategy and Planning. Final
+published versions have been approved by the VP of IT & CIO and ITSM Governance
+Committee members. No other parties have the authority to modify or distribute a modified
+copy of this document. For any questions related to the content of this document, please
+contact the UCF IT Performance and Service Management department.
+
+II. OBJECTIVES
+The goal of UCF IT Incident Management is to establish process in order to resolve UCF
+IT Support Center incidents as quickly as possible in a prioritized fashion with minimum
+disruption to university information systems, thus ensuring that the best achievable levels
+of availability and service are maintained. Incident Management will work together with
+Problem and Change Management to ensure that an incident is dealt with in the most
+effective and efficient way possible.
+The Incident Management policy and procedure document provides structure and
+guidance to effectively and efficiently resolve issues involving ALL components of the
+IT supported infrastructure.
+The scope of this process is limited to one type of ticket within the IT Service
+Management (ITSM) application (ServiceNow): Class Name = “Incident”.
+III. DEFINITIONS
+Incident: Implies something is broken or functioning in a degraded manner. Request
+from a user to fix something that is broken, not working or needs repair. Also known as a
+break/fix issue.
+Service Request: Request (defined as a Class Name = “Requested Item” within
+ServiceNow) from a user for creating, modifying, adding, moving, or removing some or
+all service functionality, access, or infrastructure components.
+Service Level Agreement (SLA): An agreement between an IT service provider and a
+customer. A service level agreement describes the IT service, documents service level
+targets (SLTs), and specifies the responsibilities of the IT service provider and the
+customer.
+Service Level Target (SLT): A commitment that is documented in a service level
+agreement. Service level targets are based on service level requirements and are needed to
+ensure that the IT service is able to meet business objectives. They should be SMART
+and are usually based on key performance indicators (KPIs).
+Problem: Is the unknown underlying cause of one or more incidents.
+Known Error: The root cause of the problem is established and the affected asset is
+identified.
+Work Around: A temporary resolution to a problem pending identification and
+verification of the root cause.
+Incident Manager - The Tier 1 manager of the UCF IT Support Center will serve as
+UCF IT's designated Incident Manager. In this role, they will be ultimately responsible
+
+for ensuring that incidents are properly categorized/prioritized, tracked, escalated, and
+managed through resolution. The Incident Manager serves the purpose of incident
+governance and is NOT responsible for the actual resolution of the issue.
+User: The field within ServiceNow which identifies the individual requesting assistance
+with an incident or service request. This is the customer (User).
+Opened By: The field within ServiceNow which identifies the individual that actually
+creates (submits) the ticket.
+Work Notes: A field within ServiceNow used to document activities associated with the
+incident. This field is internally facing to ServiceNow fulfillers.
+Activity Log: A field within ServiceNow that is systematically logged which captures all
+activities of a ticket such as email notifications sent, work notes updates, additional
+comments added or changes to any fields.
+IT Service Management (ITSM) application: This is the application (ServiceNow)
+used by UCF IT to record incidents, problems, requests and changes.
+VIP - When a ticket is created using VIP affiliated job positions, an identifier of VIP on
+the ticket is populated. The User (customer) or on behalf of will drive the ticket to either
+be Yes or No for a VIP status. See Appendix A for the current job position listings.
+First Call Resolution (FCR) – Is defined as an incident resolved on the initial call from
+the customer including warm transfers or additional tier support while the customer is
+still on the phone.
+
+IV. POLICY
+UCF IT staff members will record and document within the ITSM application ALL user
+requests for assistance in regard to break/fix issues. UCF IT staff members will follow
+the Incident Management procedures to review, follow up and resolve these tickets in a
+timely manner. All incidents are expected to be resolved within the targeted Service
+Level Agreement (SLA); Reference Figure 1.1 for current service level targets (SLTs) &
+definitions.
+The UCF IT Support Center is the primary point of contact for all customers and will be
+available by multiple methods, including Web, Email or Telephone to facilitate incident
+or service request submissions.
+• Web – via self-service portal page: https://ucf.service-now.com/ucfit
+• Email – itsupport@ucf.edu
+• Telephone – 407-823-5117
+Requests for assistance for something broken or functioning in a degraded manner will be
+recorded as incidents in the ITSM application (ServiceNow) and will be subject to SLA
+measurements and reporting.
+V. PROCEDURES
+A. Service Desk Ticket Registration
+There are currently three ways for a user to contact the UCF IT Support Center and
+request assistance:
+• Web
+A UCF IT Support Center agent creates and triages (if applicable) the
+web request (either an incident or service request) from the “interaction”
+queue
+OR
+The customer directly submits a service request through the service
+catalog, which is systematically triaged to the service owner
+• Email – A UCF IT Support Center agent converts the email request into a
+ServiceNow ticket (either an incident or service request)
+• Telephone – A UCF IT Support Center agent captures all required information
+and creates a ServiceNow ticket (either an incident or service request)
+The customer (User) is sent an automated acknowledgement email when the ticket is
+created within ServiceNow.
+
+B. Incident Categorization and Prioritization
+No matter if the incident can be resolved at the point of call or point of contact, the
+UCF IT Support Center agent and/or UCF IT staff member must properly
+categorize/prioritize the incident and assign to the correct UCF IT group/staff
+member for resolution if needed.
+a. Incident Priority Codes
+Upon creation of an incident, the ticket must be prioritized by the UCF IT Support
+Center into one of three priority categories (Critical, High and Normal) per the
+matrix defined in Figure 1.1.
+Escalation of an incident DOES NOT change the Priority code. See section F. for
+Escalation procedures.
+If the Priority code was incorrectly set after ticket creation, the ServiceNow
+Assignment Group manager, Assignment Group manager’s manager or Service
+Desk Assignment Group member will have access rights within ServiceNow to
+update the Priority code.
+Figure 1.1
+Priority Business Impact Urgency Response Resolution
+Time
+Critical Prevents ability to perform job
+function
+- Impacts an instructor led
+Classroom
+Immediate resolution required
+- No work around (at a job
+function standstill)
+- Unable to perform
+limited/other job duties
+All immediate and
+sustained effort using
+ALL required
+resources until
+resolved
+1 hour
+Prevents ability to perform job
+function
+- Impacts the entire
+University, entire
+building or delivery of
+patient care
+Immediate resolution required
+- No work around (at a job
+function standstill)
+- Unable to perform
+limited/other job duties
+All immediate and
+sustained effort using
+ALL required
+resources until
+resolved
+4 hours
+High Prevents ability to perform job
+function
+- Impacts one or multiple
+users
+Priority to resolve as soon as
+possible post mitigation of
+higher prioritized issues
+- No work around (at a job
+function standstill)
+- Unable to perform
+limited/other job duties
+- VIP (or on behalf of)
+Assess the situation,
+may interrupt other
+resources working
+lower priority issues
+for assistance
+1 business day
+Normal Reduces job productivity
+and/or capacity
+- Impacts University, an
+entire building or one or
+multiple users
+Immediate resolution NOT
+required
+- Still able to perform
+limited/other job duties
+Respond using
+standard procedures
+and operating within
+normal supervisory
+management
+structures.
+3 business days
+
+% Breach Hour Notification workflow % Breach Hour Notification workflow % Breach Hour Notification workflow
+0% Created UCFDG-OIR-Incident 0% Created Service Desk AG 44% 4 AG Manager/Director
+25% 1 *AG Manager 67% 6 AG Manager/Director
+50% 2 AG Manager/**Director
+100% 4 AG Manager/Director
+*AG - Assignment Group in ServiceNow
+**Director - Assignment Group's 2nd-level Manager
+HIGHCRITICALCRITICAL - INSTRUCTOR LED CLASSROOM
+C. Incident Tracking
+The Incident Manager will monitor open incidents and administer they are resolved
+based on SLA guidelines. The SLA pre-breach e-mail notifications (auto-generated
+by ServiceNow) will alert the ticket assignee and his/her Manager/Director at various
+points during the life of an incident for Critical and High priority tickets (reference
+Figure 1.2). It is up to each UCF IT department leader to ensure the SLA is met, not
+the Incident Manager.
+Figure 1.2
+D. Incident State Codes/Stopping the Clock for SLA targets
+There are nine State codes that can be chosen during the lifecycle of an incident from
+create to close. The State codes below are defined and also reflect when the SLA
+clock starts and stops (pauses).
+• New - The incident is logged and is either sitting unassigned in a team’s
+queue or is assigned to a particular individual. Work to resolve the incident
+has not begun and the SLA clock IS running.
+• Active – Work to resolve the issue has begun and the incident is assigned to a
+particular individual. The SLA clock IS running.
+• Pending (Paused): An incident can ONLY be put into a Pending (Paused)
+state following these four scenarios. Each of these four scenarios
+indented/underlined is a State within ServiceNow.
+▪ Awaiting User Info - If there is not enough information on the ticket from
+the customer, the ticket should be changed to a State of Awaiting User
+Info. Once additional information is received from the customer, the
+ticket should be placed back into an Active State. The work notes should
+be updated routinely with this type of scenario. The SLA clock stops
+(pauses) while the ticket is in Awaiting User Info.
+▪ Awaiting Vendor - If an incident is opened and the resolution cannot be
+met due to influences out of UCF IT's control, then the incident should be
+changed to a State of Awaiting Vendor. The work notes should be
+updated routinely with this type of scenario. If a Problem ticket is
+dependent on vendor resolution, then the Awaiting Vendor State should
+be selected for the associated Incidents. The SLA clock stops (pauses)
+while the ticket is in a State of Awaiting Vendor.
+
+▪ Awaiting User Confirmation - If the assignee of the incident believes the
+issue is Resolved, then the ticket should be changed to a State of
+Awaiting User Confirmation. The assignee of the incident is responsible
+to follow the incident closure procedure (Section G). The SLA clock
+stops (pauses) while the ticket is in an Awaiting User Confirmation State.
+▪ Awaiting Administrative Time – Per University or UCF IT directive,
+normal operations conclude earlier than normal business hours due
+planned or unplanned events (i.e. weekday home football game, UCF IT
+department wide events (picnics, sporting events), unplanned campus
+closure, etc.) If the incident assignee is impacted and is unable to work on
+the incident, the incident should be changed to a State of Awaiting
+Administrative Time when the event time approaches. The following
+business day, the incident assignee is responsible to put the incident back
+in its previous State. The SLA clock stops (pauses) while the ticket is in
+an Awaiting Administrative Time State.
+• Awaiting Problem - When the incident is placed in an Awaiting Problem
+State, then this means the Problem is being worked. If the Problem resolution
+is not dependent on influences outside of UCF IT’s control, then the SLA
+clock will continue to run. Once the Problem has been resolved, all
+associated Incidents may be resolved and should follow the incident closure
+procedure (Section G.).
+• Resolved – The assignee of the incident receives confirmation from the
+customer that their issue is resolved, or the assignee of the incident reached
+out to the customer three different times (Section G.) and did not receive an
+answer. The SLA clock stops (pauses) while the ticket is in a Resolved status.
+• Closed – The customer has confirmed their issue has been resolved or the
+assignee of incident was unsuccessful in contacting the customer upon three
+different attempts to confirm issue resolution. This State is systematically
+driven within ServiceNow and is auto-set three business days after a ticket is
+changed to a Resolved State.
+• Canceled - Unable to reach customer with limited information on incident
+record (most likely due to the incident being raised in error/prematurely by
+customer), incident no longer required per confirmation from customer,
+remove duplicate ticket(s) or incorrectly submitted incident convert to service
+request.
+E. Incident First Call Resolution (FCR)
+a. UCF IT Support Center Incident FCR
+If a UCF IT Support Center agent submits an interaction with a contact Type of
+Phone through the Interaction form within ServiceNow, the submitter (Opened
+By) of the incident is required to identify if the ticket was First Call Resolution
+(FCR).
+If the contact Type is Phone and Reason is Incident, then once the ticket is
+submitted a dialog box will appear asking “WAS THIS ISSUE RESOLVED
+
+POINT OF CALL?” If marked OK, then the check box will be checked
+automatically on the New Call form and the related incident record will also have
+the checkbox marked.
+If the ticket does not qualify for FCR, then Cancel should be selected from the
+dialog box and the incident should be triaged to a specific IT group/staff member
+for he/she to review the ticket information and determine how it should be
+resolved. Non FCR tickets would follow the full life cycle of an incident from
+assignment to resolution. Once the assigned individual on the incident believes
+they resolved the issue, they should put the ticket in an Awaiting User
+Confirmation State and then follow the incident closure procedure (Section G).
+F. Incident Escalation
+Incidents should only be escalated through verbal or written communication.
+Escalation DOES NOT change the Priority of the incident.
+G. Incident Closure – State of Awaiting User Confirmation
+After the incident is set to an Awaiting User Confirmation State, it is
+MANDATORY the assignee of the incident contact the customer to confirm the
+issue is resolved before the incident can be changed to Resolved.
+The customer will also receive an automated email upon the incident assignee setting
+the incident state to Awaiting User Confirmation which will allow the customer to
+accept the proposed solution to their issue. The automated email DOES NOT negate
+the assignee of the incident to reach out to the customer to confirm their issue is
+resolved. The automated email only serves the purpose of allowing the customer to
+confirm their issue is resolved through another medium. If the customer does accept
+the solution proposed to the incident through the automated email, then the assignee
+of the incident no longer needs to attempt to contact the customer. The incident will
+be changed to Resolved systematically.
+While monitoring the incident solution being accepted through the automated email
+(or via through the self-service portal), the assignee of the incident should continue
+to contact the customer to confirm their issue is resolved. If the assignee of the ticket
+is unable to speak with the customer upon the first contact, the assignee should leave
+a voicemail (if available) message for the customer containing their name, phone
+number and the ticket number.
+The assignee of the ticket must make two more attempts using one other method of
+communication (ex. email or Teams) on two subsequent business days, preferably at
+different hours each day (e.g., do not attempt all three calls at 9 AM in case your
+customer will never be available at that time of the day). If an out of office (OOO)
+email is received, the assignee of the ticket must wait until the customer returns to
+contact a third time. The work notes must be updated with each contact attempt.
+
+If after three attempts of trying to contact the customer with no success (and the
+customer does not accept the solution through the automated email), the assignee is
+permitted to close the ticket by changing its state to Resolved and note in the work
+notes that multiple attempts have been made with no customer contact.
+Upon moving the incident to Resolved, the assignee of the ticket will be responsible
+to send out the blanket email (Figure 1.3) notifying the customer their ticket is going
+to be closed due to multiple attempts to contact with no response.
+Figure 1.3
+UCF IT Blanket Email for Incident Closure – Resolved
+Dear "Name of Customer"
+Thank you for contacting the UCF IT Support Center. To the best of our knowledge,
+your incident “INC#” has been resolved. However, after multiple attempts, we have
+been unsuccessful in getting a response to confirm. We would like to inform you that
+we will be marking your ticket resolved assuming you are having no further issues.
+You will receive an automated email from the UCF Support Center that gives you
+the option to reopen your issue within three business days. After the third business
+day, your incident will auto-close. If for any reason you have questions and/or
+concerns, please contact the UCF IT Support Center at 407-823-5117.
+Sincerely,
+UCF IT Support Center
+H. Incident Closure – State of Awaiting User Info
+Per Section D; Pending of this policy, an incident qualifies to be put in a state of
+Awaiting User Info if the assignee of the ticket needs additional information from the
+customer to work the issue. If the assignee of the ticket is unable to speak with the
+customer upon the first contact to get the additional information, the assignee should
+leave a voicemail (if available) message for the customer containing their name,
+phone number and the ticket number.
+The assignee of the ticket must make two more attempts using one other method of
+communication (ex. email or Teams) on two subsequent business days, preferably at
+different hours each day (e.g., do not attempt all three calls at 9 AM in case your
+customer will never be available at that time of the day). If an out of office (OOO)
+
+email is received, the assignee of the ticket must wait until the customer returns to
+contact a third time. The work notes must be updated with each contact attempt.
+If after three attempts of trying to contact the customer with no success, the assignee
+is permitted to close the ticket by changing its status to Resolved and note in the
+work notes that multiple attempts have been made with no customer contact.
+Upon moving the incident to Resolved, the assignee of the ticket will be responsible
+to send out the blanket email (Figure 1.4) notifying the customer their ticket is going
+to be closed due to multiple attempts to contact with no response.
+Figure 1.4
+UCF IT Blanket Email for Incident Closure – Awaiting User Info
+Dear "Name of Customer"
+Thank you for contacting the UCF IT Support Center. There is additional
+information needed in order for our technicians to complete this ticket. We have tried
+multiple times to contact you in regards to incident "INC#" that you opened with the
+UCF IT Support Center. Unfortunately, we have been unsuccessful in getting a
+response. We would like to inform you that we will be marking your ticket resolved
+assuming you are having no further issues.
+You will receive an automated email from the UCF Support Center that gives you
+the option to reopen your issue within three business days. After the third business
+day, your incident will auto-close. If for any reason you have questions and/or
+concerns, please contact the UCF IT Support Center at 407-823-5117.
+Sincerely,
+UCF IT Support Center
+I. Incident Closure – Canceling Incidents
+a. Converting an incident to a service request
+If upon receiving an incident within ServiceNow and it is determined the
+customer inquiry is in fact a service request, then the incident assignee is allowed
+to cancel the incident within ServiceNow. Before canceling the incident, it is
+MANDATORY the incident assignee opens a service request on behalf of the
+customer to ensure the customer’s request is logged within ServiceNow.
+The incident assignee is also required to update the Additional comments
+(Customer visible) field of the incident record to notify the customer of what their
+
+new RITM number (service request number) is and that they (the incident
+assignee) will be canceling the incident.
+An automated email will be sent from ServiceNow notifying the customer that
+their incident has been canceled and they will also receive an email notification
+for their new service request that was opened on their behalf.
+b. Customer request to cancel incident
+If the customer indicates to the incident assignee that their inquiry is no longer
+needed, the incident assignee is allowed to cancel the incident. This should only
+be executed if the customer communicates to the assignee of the incident that they
+no longer have an issue and troubleshooting and resolution is no longer required.
+c. Duplicate records (incidents) for same issue/same customer
+If there are multiple incident records for the same issue/same customer, the
+incident assignee is permitted to cancel all but one of the incident records. Before
+canceling the incident(s), it is MANDATORY the incident assignee attempts to
+contact the customer letting them know they are canceling all but one record.
+d. Inadvertent or premature incident record raised by customer
+If an incident record contains little to no information (incident record appears to
+be raised on error or prematurely) and the incident assignee is unable to reach the
+customer, then the incident assignee is permitted to cancel the incident record.
+Before canceling the incident, it is MANDATORY the incident assignee attempts
+to contact the customer letting them know they are canceling the record.
+VI. ADDITIONAL CONSIDERATIONS
+• All existing and new staff members of IT are expected to be familiar with the
+intent and the contents of the incident management policy and procedure.
+• All violations to the incident management policy will be monitored, staff
+members of IT will be coached by the respective management and repeat offences
+could lead to additional disciplinary action.
+
+VII. APPENDIX
+Appendix A: VIP Job Positions
+C1 Chairperson
+C2 Associate Chairperson
+C3 Assistant Chairperson
+C4 Center Director
+D1 Dean
+D2 Associate Dean
+D3 Assistant Dean
+D4 Dean of Faculties
+H1 Department Head
+H2 Associate Department Head
+H3 Assistant Department Head
+J1 Vice Pres., Graduate Studies
+J2 Associate VP, Graduate Studies
+J3 Assistant VP, Graduate Studies
+L1 Director, University Libraries
+L2 Assoc. Dir., Univ. Libraries
+L3 Assist. Dir., Univ. Libraries
+M1 Vice Pres., Medical Affairs
+M2 Associate VP, Medical Affairs
+M3 Assistant VP, Medical Affairs
+O1 Vice President, Research
+O2 Associate Vice Pres., Research
+O3 Assistant Vice Pres., Research
+P0 President
+P1 Provost
+P2 Associate Provost
+P3 Assistant Provost
+P4 Vice Provost
+R1 District Director
+R2 Associate District Director
+R3 Assistant District Director
+T1 Director
+T2 Associate Director
+T3 Assistant Director
+T4 School Director
+U1 Director, University School
+U2 Assoc. Director, Univ. School
+U3 Assist. Director, Univ. School
+U4 Principal, University School
+U5 Assist Principal, Univ. School
+V1 Vice Pres., Academic Affairs
+V2 Associate VP, Academic Affairs
+
+V3 Assistant VP, Academic Affairs
+V4 Vice President
+V5 Associate Vice President
+V6 Assistant Vice President
+Y1 General Counsel
+Y2 Associate General Counsel
+Y3 Assistant General Counsel
+Z0 Chancellor
+Z1 Vice Chancellor
+Z2 Associate Vice Chancellor
+Z3 Assistant Vice Chancellor
+Z4 Executive Vice Chancellor
+Appendix B: Task SLA within ServiceNow
+Within ServiceNow, the SLA definition (Critical, High or Normal) is attached to the
+incident within the Task SLA section/tabbed form view. Per Figure 1.1 above, the SLA
+definition attached to the incident will be driven off the Priority of the incident.
+Tabbed form view
+Section view
+In order to reflect accurate data within this section/tabbed form view, only certain column
+list attributes should be selected. To personalize your list columns, select the gear icon.
+
+A pop up window will appear and you should select the available attributes in the
+Selected column view below.
+The definitions of each Selected column attribute in this view are as follows:
+• SLA definition – Will reflect Critical (1 or 4 hr. SLA), High (1 business day
+(9 hr.) SLA) or Normal (3 business days (27 hr.) SLA)
+• Stage – Will show Completed (once the incident is moved to a Resolved
+State), In progress (incident is not sitting in a Pending State) or Paused
+(incident is sitting in a Pending State). Reference Section D. above for
+Pending States
+• Has breached – Will show true (if breached) or false (if not breached)
+• Start time – When the SLA clock starts. This is the create date and time of
+the incident
+• Original breach time – If the incident is NEVER put into a Pending State,
+Original breach time will reflect end date and time of when the incident will
+breach
+• Breach time – If the incident is put into a Pending State at any point, this
+field will reflect the updated breach time of the incident. If the incident is
+never put into a Pending State, then this field will equal the Original breach
+time field
+
+• Business elapsed percentage – (Total business time elapsed minus Pending
+time) / SLA (whether 1, 4, 9 or 27 hours).
+The Business elapsed percentage field calculates automatically (from 8:00
+AM to 5:00 PM; Monday - Friday excluding holidays) within ServiceNow at
+different points of the incident lifecycle:
+If incident is to breach within 10 min: every minute
+If incident is to breach within 1 hour: every 10 min (XX:X5:00) between 8:00 AM and 5:00 PM
+If incident is to breach within 1 day (9 hours): every hour (XX:30:00) between 8:00 AM and 5:00 PM
+If incident has already breached: every day at 8:00 AM
+If incident is to breach within 30 days and > 1 day: every day at 8:00 AM
+OR
+If SLA pre-breach email notification are system generated at the specified time intervals identified
+within Figure 1.2. Normal SLA system generated email notifications are sent out at 50%, 75% and
+100%
+• Business pause duration – Reflects total actual time the incident was sitting
+in a Pending State. This field does not convert to business days and hours. An
+example would be if an incident is sitting in a Pending State 10 hours, this
+field will show 10 hours and not 1 business day and 1 hour.
+
+Appendix C: Creating Task SLA Dashboard on “My Homepage” within
+ServiceNow
+Click on Add content
+Select Reports/Task SLA and then you can choose per the Reports reflected on the far
+right side. Recommendation: Add My Active SLAs by clicking Add here.

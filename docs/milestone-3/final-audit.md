@@ -1,5 +1,9 @@
 # Finalisasi kode Milestone 3 (T03)
 
+> Laporan ini merekam audit historis v1. Tindak lanjut lima dokumen berflag,
+> temuan URL DOC-13, benchmark 75 kueri, dan hasil eksperimen yang tidak diadopsi
+> tersedia dalam [laporan peningkatan v2](./directed-improvement-v2.md).
+
 Audit dilakukan pada branch `feature/milestone-3-vector-db` dengan korpus dan
 indeks yang sudah ada. Prototipe ini hanya mencakup ingestion, chunking,
 embedding, ChromaDB persisten, retrieval, dan evaluasi. Tidak ada perubahan

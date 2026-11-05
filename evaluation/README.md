@@ -1,5 +1,33 @@
 # Hasil validasi dan persiapan korpus Milestone 3
 
+## Studi terarah v2 (5 November 2026)
+
+[Laporan before/after](../docs/milestone-3/directed-improvement-v2.md) menggabungkan
+audit lima sumber, alasan konfigurasi, 75 kueri pada lima arm, evaluasi OOD,
+ketidakpastian, dan alasan menolak kandidat intent. Default semantic dan indeks
+final v1 tetap dipertahankan karena peningkatan belum meyakinkan.
+
+- [Korpus v2](./reviewed_corpus_v2.json) dan [audit sumber](./source_review_v2.json)
+  mencatat koreksi aman, DRAFT, hash, serta URL DOC-13 yang berbeda versi.
+- [Label tambahan](./retrieval_study_labels_v2.json) dan
+  [protokol beku](./retrieval_study_protocol_v2.json) memisahkan 30 kueri
+  development dari 30 kueri evaluation; 15 kueri lama tetap baseline.
+- [Hasil lengkap](./retrieval_study_results_v2.json) memuat ranking, Recall/Precision
+  @1/3/5, MRR, FAR/FRR, kurva threshold development, dan paired bootstrap.
+- [Verifikasi proses terpisah](./retrieval_study_verification_v2.json) memeriksa
+  baseline, chunk deterministik, isi indeks, model, dan aritmetika evaluasi.
+
+Reproduksi berurutan dari root: `build_reviewed_corpus.py`,
+`audit_sources_v2.py --refresh`, `retrieval_study.py`, lalu
+`audit_retrieval_study.py`, masing-masing dengan
+`uv run --frozen --no-sync python evaluation/<skrip>`.
+Jangan menulis ulang label/protokol setelah melihat hasil. Untuk mengulang
+benchmark lama tanpa menimpa JSON historis, gunakan audit v2; ia memanggil
+fungsi benchmark dalam memori. Perintah lama di bagian historis berikut
+mendokumentasikan pembuatan artefak awal, bukan instruksi menimpa baseline beku.
+
+## Arsip laporan awal
+
 Validasi ulang pada branch `feature/milestone-3-vector-db` menggunakan environment
 `uv` yang ada. Detail per halaman, SHA-256, dan waktu eksekusi tersedia di
 [pdf_validation.json](./pdf_validation.json) dan [pdf_validation.csv](./pdf_validation.csv).

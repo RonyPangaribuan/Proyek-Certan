@@ -1,0 +1,207 @@
+{
+  "generated_at_utc": "2026-11-05T13:19:03.321665+00:00",
+  "baseline_integrity": {
+    "source_documents": 15,
+    "raw_pdf_hashes_verified": true,
+    "txt_hashes_verified": true,
+    "local_pdf_extraction_verified": [
+      "DOC11",
+      "DOC13"
+    ],
+    "deterministic_chunks_and_source_coverage_verified": true,
+    "baseline_report_hash_matches": true,
+    "profiles": {
+      "baseline": {
+        "chunks": 130,
+        "documents": 15,
+        "max_tokens_including_specials": null,
+        "persistent_index_verified": true
+      },
+      "t120_w12": {
+        "chunks": 374,
+        "documents": 15,
+        "max_tokens_including_specials": 120,
+        "persistent_index_verified": true
+      },
+      "t96_w10": {
+        "chunks": 484,
+        "documents": 15,
+        "max_tokens_including_specials": 96,
+        "persistent_index_verified": true
+      },
+      "final_t96_w10": {
+        "chunks": 484,
+        "documents": 15,
+        "max_tokens_including_specials": 96,
+        "persistent_index_verified": true
+      }
+    },
+    "review_required_documents": [
+      "DOC06",
+      "DOC09",
+      "DOC10",
+      "DOC11",
+      "DOC13"
+    ]
+  },
+  "legacy_benchmark_rerun_summaries_per_query_metrics_and_top5_identical": true,
+  "legacy_document_rank_variations_beyond_top5": [
+    {
+      "profile": "t96_w10",
+      "query_id": "ood_weather",
+      "frozen_ranking": [
+        "DOC09",
+        "DOC07",
+        "DOC10",
+        "DOC11",
+        "DOC13",
+        "DOC14",
+        "DOC03",
+        "DOC05",
+        "DOC12",
+        "DOC15",
+        "DOC02",
+        "DOC08",
+        "DOC01",
+        "DOC06"
+      ],
+      "rerun_ranking": [
+        "DOC09",
+        "DOC07",
+        "DOC10",
+        "DOC11",
+        "DOC13",
+        "DOC14",
+        "DOC03",
+        "DOC05",
+        "DOC12",
+        "DOC15",
+        "DOC02",
+        "DOC01",
+        "DOC08"
+      ]
+    }
+  ],
+  "legacy_output_not_rewritten": true,
+  "frozen_labels_and_protocol_verified": true,
+  "all_saved_metric_arithmetic_verified": true,
+  "source_revisions_and_word_coverage_verified": true,
+  "source_audit_sha256": "c7d838cb5413581d403d61772c43d20060e0a0bc26cdbecf93775968ffefc8ab",
+  "indexes": {
+    "v2_t96_w10": {
+      "chunk_count": 486,
+      "database_path": ".local/chroma-corpus-m3-v2_t96_w10-provenance",
+      "configuration": {
+        "hnsw": {
+          "space": "cosine",
+          "ef_construction": 100,
+          "ef_search": 100,
+          "max_neighbors": 16,
+          "resize_factor": 1.2,
+          "sync_threshold": 1000
+        },
+        "spann": null,
+        "embedding_function": {
+          "type": "legacy"
+        }
+      },
+      "collection_metadata": {
+        "certan_embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+      },
+      "telemetry_enabled": false,
+      "independent_process_persistence_verified": true,
+      "stored_embedding_dimension": 384,
+      "stored_embeddings_finite_and_normalized": true,
+      "provenance_reindex_check": {
+        "initial_database_path": ".local/chroma-corpus-m3-v2_t96_w10",
+        "text_and_ids_identical": true,
+        "maximum_embedding_absolute_difference": 0.0
+      }
+    },
+    "v2_t120_w12": {
+      "chunk_count": 378,
+      "database_path": ".local/chroma-corpus-m3-v2_t120_w12-provenance",
+      "configuration": {
+        "hnsw": {
+          "space": "cosine",
+          "ef_construction": 100,
+          "ef_search": 100,
+          "max_neighbors": 16,
+          "resize_factor": 1.2,
+          "sync_threshold": 1000
+        },
+        "spann": null,
+        "embedding_function": {
+          "type": "legacy"
+        }
+      },
+      "collection_metadata": {
+        "certan_embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+      },
+      "telemetry_enabled": false,
+      "independent_process_persistence_verified": true,
+      "stored_embedding_dimension": 384,
+      "stored_embeddings_finite_and_normalized": true,
+      "provenance_reindex_check": {
+        "initial_database_path": ".local/chroma-corpus-m3-v2_t120_w12",
+        "text_and_ids_identical": true,
+        "maximum_embedding_absolute_difference": 0.0
+      }
+    },
+    "v2_t96_w0": {
+      "chunk_count": 412,
+      "database_path": ".local/chroma-corpus-m3-v2_t96_w0-provenance",
+      "configuration": {
+        "hnsw": {
+          "space": "cosine",
+          "ef_construction": 100,
+          "ef_search": 100,
+          "max_neighbors": 16,
+          "resize_factor": 1.2,
+          "sync_threshold": 1000
+        },
+        "spann": null,
+        "embedding_function": {
+          "type": "legacy"
+        }
+      },
+      "collection_metadata": {
+        "certan_embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+      },
+      "telemetry_enabled": false,
+      "independent_process_persistence_verified": true,
+      "stored_embedding_dimension": 384,
+      "stored_embeddings_finite_and_normalized": true,
+      "provenance_reindex_check": {
+        "initial_database_path": ".local/chroma-corpus-m3-v2_t96_w0",
+        "text_and_ids_identical": true,
+        "maximum_embedding_absolute_difference": 0.0
+      }
+    }
+  },
+  "model": {
+    "name": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "cached_hub_commit": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+    "dimension": 384,
+    "max_sequence_length": 128,
+    "special_tokens": 2,
+    "artifact_sha256": {
+      "model.safetensors": "eaa086f0ffee582aeb45b36e34cdd1fe2d6de2bef61f8a559a1bbc9bd955917b",
+      "config.json": "6300193cb75e01cf80c96decef7187dfb33094d97cc1490b7ead6ff134476e4e",
+      "sentence_bert_config.json": "70f4448f31320443fe3557cacea5abf2dcc4915dda8c80646bec9f3bb0aa5a1f",
+      "modules.json": "8f4b264b80206c830bebbdcae377e137925650a433b689343a63bdc9b3145460",
+      "tokenizer.json": "2c3387be76557bd40970cec13153b3bbf80407865484b209e655e5e4729076b8",
+      "1_Pooling/config.json": "4be450dde3b0273bb9787637cfbd28fe04a7ba6ab9d36ac48e92b11e350ffc23"
+    }
+  },
+  "package_versions": {
+    "sentence-transformers": "6.2.0",
+    "transformers": "5.22.1",
+    "torch": "2.15.0",
+    "chromadb": "1.5.9",
+    "numpy": "2.4.6",
+    "pypdf": "6.21.4",
+    "pytest": "9.1.1"
+  },
+  "candidate_adopted": false
+}

@@ -1,5 +1,10 @@
 # T03: benchmark semantic retrieval pada korpus nyata
 
+> Baseline historis tetap: angka di bawah merujuk korpus v1 dan 15 kueri lama.
+> Audit sumber, korpus review terpisah, 60 kueri tambahan, split kalibrasi/evaluasi,
+> dan keputusan eksperimen tersedia pada [laporan peningkatan v2](./directed-improvement-v2.md).
+> Benchmark lama tidak ditimpa oleh evaluasi baru.
+
 ## Data dan metode
 
 Benchmark ini memakai 15 kueri Indonesia: 12 kueri bertopik korpus (relevan,

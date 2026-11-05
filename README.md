@@ -454,6 +454,14 @@ tests/
 
 ## Milestone 3: Semantic Search
 
+Audit lanjutan tersedia pada [laporan peningkatan T03 v2](docs/milestone-3/directed-improvement-v2.md):
+koreksi konservatif tiga teks, provenance lima sumber, 60 kueri tambahan dengan
+split development/evaluation, dan perbandingan before/after. Pada evaluation
+baru, korpus review memperoleh Recall@3 0,9444 dan MRR 0,8750, sama dengan v1
+pada kueri yang sama, tetapi threshold 0,5 masih salah menerima 3/12 OOD.
+Kandidat intent tidak diadopsi; indeks final lama dan default semantic tetap.
+Rincian reproduksi serta batas klaim nilai 100 ada pada laporan tersebut.
+
 Modul T03 berada di [src/proyek_certan/knowledge](src/proyek_certan/knowledge).
 CLI ini terpisah dari Milestone 1 dan 2:
 
