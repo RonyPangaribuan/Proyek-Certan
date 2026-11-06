@@ -1,0 +1,295 @@
+{
+  "split": "development",
+  "annotation": "Synthetic source-based labels, not independent human validation.",
+  "queries": [
+    {
+      "id": "development_p01",
+      "query": "Apa langkah untuk mengisolasi kegagalan asosiasi WLAN berdasarkan klien yang terdampak?",
+      "category": "wifi",
+      "relevant_documents": [
+        "DOC01"
+      ],
+      "evidence": "Step 1: affected clients and shared SSID/AP."
+    },
+    {
+      "id": "development_p02",
+      "query": "Bagaimana teknisi menguji layanan WLAN AutoConfig saat koneksi wireless gagal?",
+      "category": "wifi",
+      "relevant_documents": [
+        "DOC01"
+      ],
+      "evidence": "Step 2: restart WlanSvc."
+    },
+    {
+      "id": "development_p03",
+      "query": "Bagaimana diagnosis catatan DNS yang terhapus akibat scavenging?",
+      "category": "dns_dhcp",
+      "relevant_documents": [
+        "DOC02"
+      ],
+      "evidence": "Common issues: DNS records missing."
+    },
+    {
+      "id": "development_p04",
+      "query": "Apa prosedur mengumpulkan log DHCP di komputer client Windows?",
+      "category": "dns_dhcp",
+      "relevant_documents": [
+        "DOC03",
+        "DOC04"
+      ],
+      "evidence": "Both DHCP documents discuss client logs and collection."
+    },
+    {
+      "id": "development_p05",
+      "query": "Apa yang perlu diperiksa pada scope server DHCP sebelum investigasi network trace?",
+      "category": "dns_dhcp",
+      "relevant_documents": [
+        "DOC03"
+      ],
+      "evidence": "Server checklist: scope and available leases."
+    },
+    {
+      "id": "development_p06",
+      "query": "Mengapa native VLAN untagged dari switch fisik menyebabkan trafik balik OVS hilang?",
+      "category": "vlan_switching",
+      "relevant_documents": [
+        "DOC06"
+      ],
+      "evidence": "Native VLAN return-traffic FAQ."
+    },
+    {
+      "id": "development_p07",
+      "query": "Bagaimana OpenFlow menangani isolasi VLAN jika tidak memakai normal action?",
+      "category": "vlan_switching",
+      "relevant_documents": [
+        "DOC06"
+      ],
+      "evidence": "FAQ controller bypasses normal VLAN switching."
+    },
+    {
+      "id": "development_p08",
+      "query": "Bagaimana memulai investigasi paket terbuang memakai Packet Monitor?",
+      "category": "diagnosis_other",
+      "relevant_documents": [
+        "DOC07"
+      ],
+      "evidence": "Capture and diagnose packet loss."
+    },
+    {
+      "id": "development_p09",
+      "query": "Apa urutan ping loopback, IP lokal dan gateway dalam troubleshooting TCP/IP?",
+      "category": "diagnosis_other",
+      "relevant_documents": [
+        "DOC05"
+      ],
+      "evidence": "TCP/IP checklist."
+    },
+    {
+      "id": "development_p10",
+      "query": "Bagaimana audit log NPS membantu memeriksa kegagalan EAP 802.1X?",
+      "category": "diagnosis_other",
+      "relevant_documents": [
+        "DOC08"
+      ],
+      "evidence": "NPS audit policy and EAP certificates."
+    },
+    {
+      "id": "development_p11",
+      "query": "Menurut Western Michigan University apa larangan penggunaan alamat IP yang bukan milik pengguna?",
+      "category": "network_policy",
+      "relevant_documents": [
+        "DOC14"
+      ],
+      "evidence": "Full Policy 4.3.4."
+    },
+    {
+      "id": "development_p12",
+      "query": "Menurut Oregon State University apa persyaratan pemasangan infrastruktur Wi-Fi?",
+      "category": "network_policy",
+      "relevant_documents": [
+        "DOC13"
+      ],
+      "evidence": "Clause 5.3.1."
+    },
+    {
+      "id": "development_p13",
+      "query": "Menurut Indiana University bagaimana meminta pengecualian untuk keperluan penelitian?",
+      "category": "network_policy",
+      "relevant_documents": [
+        "DOC15"
+      ],
+      "evidence": "Exceptions, CITRIS and ServiceNow."
+    },
+    {
+      "id": "development_p14",
+      "query": "Dalam draf UHB bagaimana service desk mencatat laporan awal gangguan?",
+      "category": "incident_management",
+      "relevant_documents": [
+        "DOC09"
+      ],
+      "evidence": "OPS-01 8.1; DRAFT topical support."
+    },
+    {
+      "id": "development_p15",
+      "query": "Dalam draf prosedur insiden layanan apa isi laporan pascainsiden?",
+      "category": "incident_management",
+      "relevant_documents": [
+        "DOC10"
+      ],
+      "evidence": "INC-02 7.6; DRAFT."
+    },
+    {
+      "id": "development_p16",
+      "query": "Menurut University of Central Florida apa beda Incident dan Service Request?",
+      "category": "incident_management",
+      "relevant_documents": [
+        "DOC11"
+      ],
+      "evidence": "Definitions."
+    },
+    {
+      "id": "development_p17",
+      "query": "Dalam prosedur University of Utah siapa bertanggung jawab atas respons insiden keamanan?",
+      "category": "incident_management",
+      "relevant_documents": [
+        "DOC12"
+      ],
+      "evidence": "ISO/CISO and IRT."
+    },
+    {
+      "id": "development_p18",
+      "query": "WiFi saya putus sekarang; bagaimana langkah umum membedakan masalah AP dengan masalah klien?",
+      "category": "wifi",
+      "relevant_documents": [
+        "DOC01"
+      ],
+      "evidence": "Generic procedure is supported despite local/live context."
+    },
+    {
+      "id": "development_o01",
+      "query": "Berapa alamat IP aktif komputer saya saat ini?",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No live endpoint state."
+    },
+    {
+      "id": "development_o02",
+      "query": "Tampilkan daftar pemilik perangkat yang sedang terkoneksi di jaringan saya.",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No operational inventory."
+    },
+    {
+      "id": "development_o03",
+      "query": "Apakah tiket INC445501 sudah selesai ditangani sekarang?",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No ticket database."
+    },
+    {
+      "id": "development_o04",
+      "query": "Siapa teknisi piket malam ini untuk kampus kami?",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No personnel roster."
+    },
+    {
+      "id": "development_o05",
+      "query": "Berapa password WiFi saya yang berlaku sekarang?",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No credentials."
+    },
+    {
+      "id": "development_o06",
+      "query": "Kapan layanan ISP kampus saya yang sedang mati akan pulih?",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No monitoring or restoration estimate."
+    },
+    {
+      "id": "development_o07",
+      "query": "Apa kebijakan pemasangan router pribadi di Universitas Merdeka?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "Institution not represented."
+    },
+    {
+      "id": "development_o08",
+      "query": "Berapa SLA resmi yang telah disahkan kampus CERTAN?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "No approved CERTAN SOP."
+    },
+    {
+      "id": "development_o09",
+      "query": "Menurut Institut Sagara siapa menyetujui pengecualian kebijakan LAN?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "Institution not represented."
+    },
+    {
+      "id": "development_o10",
+      "query": "Apa sanksi penyalahgunaan Internet menurut Universitas Bintang?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "Institution not represented."
+    },
+    {
+      "id": "development_o11",
+      "query": "Apa aturan retensi log yang berlaku di Universitas Lazuardi?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "Institution not represented."
+    },
+    {
+      "id": "development_o12",
+      "query": "Apa persyaratan VPN untuk pegawai Universitas Angkasa?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "Institution not represented."
+    },
+    {
+      "id": "development_o13",
+      "query": "Bagaimana menghitung pajak penghasilan usaha kecil?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No taxation source."
+    },
+    {
+      "id": "development_o14",
+      "query": "Bagaimana cara membuat roti tanpa oven?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No cooking source."
+    },
+    {
+      "id": "development_o15",
+      "query": "Apa rekomendasi obat untuk sakit kepala?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No medical source."
+    },
+    {
+      "id": "development_o16",
+      "query": "Apa persyaratan pindah program studi mahasiswa?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No academic administration source."
+    },
+    {
+      "id": "development_o17",
+      "query": "Apa prosedur pendaftaran visa wisata Jepang?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No immigration source."
+    },
+    {
+      "id": "development_o18",
+      "query": "Bagaimana membetulkan error migrasi tabel pada PostgreSQL?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No database troubleshooting source."
+    }
+  ]
+}

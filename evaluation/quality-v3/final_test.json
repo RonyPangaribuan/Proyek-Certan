@@ -1,0 +1,391 @@
+{
+  "split": "final_test",
+  "annotation": "Post-lock synthetic source-grounded holdout; not independent human validation.",
+  "queries": [
+    {
+      "id": "final_p01",
+      "query": "Bagaimana mengisolasi perbedaan manual-connect dan auto-connect pada kegagalan WLAN?",
+      "category": "wifi",
+      "relevant_documents": [
+        "DOC01"
+      ],
+      "evidence": "Step 1 manual/auto connection."
+    },
+    {
+      "id": "final_p02",
+      "query": "Apa pemeriksaan driver NIC dan versi OS ketika hanya sebagian pengguna wireless yang terdampak?",
+      "category": "wifi",
+      "relevant_documents": [
+        "DOC01"
+      ],
+      "evidence": "Step 1 client common factors."
+    },
+    {
+      "id": "final_p03",
+      "query": "WLAN di Universitas Kencana sedang gagal; bagaimana prosedur umum diagnosis sambungan tanpa mengasumsikan SOP kampus?",
+      "category": "wifi",
+      "relevant_documents": [
+        "DOC01"
+      ],
+      "evidence": "Generic troubleshooting; no institution-specific policy requested."
+    },
+    {
+      "id": "final_p04",
+      "query": "Bagaimana langkah restart WlanSvc dan pengujian koneksi ulang untuk wireless Windows?",
+      "category": "wifi",
+      "relevant_documents": [
+        "DOC01"
+      ],
+      "evidence": "Step 2 restart WLAN Autoconfig."
+    },
+    {
+      "id": "final_p05",
+      "query": "Bagaimana menelusuri resolusi nama DNS dari sisi client dan sisi server?",
+      "category": "dns_dhcp",
+      "relevant_documents": [
+        "DOC02"
+      ],
+      "evidence": "Server-side/client-side checklist."
+    },
+    {
+      "id": "final_p06",
+      "query": "Apa penyebab catatan DNS hilang setelah IP host berganti?",
+      "category": "dns_dhcp",
+      "relevant_documents": [
+        "DOC02"
+      ],
+      "evidence": "DNS common issues, missing records/dynamic update."
+    },
+    {
+      "id": "final_p07",
+      "query": "Bagaimana prosedur mengumpulkan event log DHCP client untuk investigasi sewa alamat?",
+      "category": "dns_dhcp",
+      "relevant_documents": [
+        "DOC03",
+        "DOC04"
+      ],
+      "evidence": "Both documents support client event logs."
+    },
+    {
+      "id": "final_p08",
+      "query": "Apa pemeriksaan scope dan layanan ketika server DHCP berhenti mengalokasikan IP?",
+      "category": "dns_dhcp",
+      "relevant_documents": [
+        "DOC03"
+      ],
+      "evidence": "Server troubleshooting checklist."
+    },
+    {
+      "id": "final_p09",
+      "query": "Mengapa VLAN trunk diperlukan untuk menghubungkan beberapa switch tanpa satu kabel per VLAN?",
+      "category": "vlan_switching",
+      "relevant_documents": [
+        "DOC06"
+      ],
+      "evidence": "VLAN/trunk FAQ explanation."
+    },
+    {
+      "id": "final_p10",
+      "query": "Bagaimana menyelidiki trafik VLAN bertag yang kembali tanpa tag ke port fisik OVS?",
+      "category": "vlan_switching",
+      "relevant_documents": [
+        "DOC06"
+      ],
+      "evidence": "Native VLAN return path FAQ."
+    },
+    {
+      "id": "final_p11",
+      "query": "Mengapa aturan flow kustom pada controller OpenFlow perlu menangani VLAN sendiri?",
+      "category": "vlan_switching",
+      "relevant_documents": [
+        "DOC06"
+      ],
+      "evidence": "Normal switching action and controller FAQ."
+    },
+    {
+      "id": "final_p12",
+      "query": "Bagaimana memeriksa perbedaan konektivitas loopback, IP host sendiri, dan default gateway?",
+      "category": "diagnosis_other",
+      "relevant_documents": [
+        "DOC05"
+      ],
+      "evidence": "TCP/IP ping checklist."
+    },
+    {
+      "id": "final_p13",
+      "query": "Bagaimana menafsirkan drop lokal Pktmon ketika tidak ada socket di port UDP tujuan?",
+      "category": "diagnosis_other",
+      "relevant_documents": [
+        "DOC07"
+      ],
+      "evidence": "Packet Monitor trace example and transport endpoint."
+    },
+    {
+      "id": "final_p14",
+      "query": "Bagaimana mengaktifkan pencatatan keberhasilan dan kegagalan Network Policy Server untuk 802.1X?",
+      "category": "diagnosis_other",
+      "relevant_documents": [
+        "DOC08"
+      ],
+      "evidence": "Audit policy section."
+    },
+    {
+      "id": "final_p15",
+      "query": "Menurut Oregon State University siapa yang menyetujui dan memasang access point yang terhubung ke jaringan universitas?",
+      "category": "network_policy",
+      "relevant_documents": [
+        "DOC13"
+      ],
+      "evidence": "5.3.1 UIT NOC approval and installation."
+    },
+    {
+      "id": "final_p16",
+      "query": "Menurut Oregon State University bagaimana pengecualian kebijakan perangkat jaringan diberikan?",
+      "category": "network_policy",
+      "relevant_documents": [
+        "DOC13"
+      ],
+      "evidence": "5.5.1 Vice Provost IT & CIO."
+    },
+    {
+      "id": "final_p17",
+      "query": "Apa larangan pemalsuan identitas pengguna pada kebijakan Western Michigan University?",
+      "category": "network_policy",
+      "relevant_documents": [
+        "DOC14"
+      ],
+      "evidence": "4.3.5 misrepresentation."
+    },
+    {
+      "id": "final_p18",
+      "query": "Menurut Western Michigan University apakah pelanggaran penggunaan Internet dapat menyebabkan pemutusan koneksi?",
+      "category": "network_policy",
+      "relevant_documents": [
+        "DOC14"
+      ],
+      "evidence": "Accountability: connection termination."
+    },
+    {
+      "id": "final_p19",
+      "query": "Menurut Indiana University Bloomington apa aturan memperluas sambungan layer 2 ke ruangan lain?",
+      "category": "network_policy",
+      "relevant_documents": [
+        "DOC15"
+      ],
+      "evidence": "Network Management requirement prohibits extending beyond room."
+    },
+    {
+      "id": "final_p20",
+      "query": "Dalam contoh draf service desk UHB apa informasi yang dicatat untuk melakukan handoff eskalasi?",
+      "category": "incident_management",
+      "relevant_documents": [
+        "DOC09"
+      ],
+      "evidence": "8.1 and 8.3; DRAFT topical support."
+    },
+    {
+      "id": "final_p21",
+      "query": "Dalam draf penanganan insiden layanan bagaimana workaround dan hotfix dikendalikan saat pemulihan?",
+      "category": "incident_management",
+      "relevant_documents": [
+        "DOC10"
+      ],
+      "evidence": "7.4 recovery and RFC for configuration/code changes."
+    },
+    {
+      "id": "final_p22",
+      "query": "Menurut UCF apakah prioritas Critical, High dan Normal harus ditetapkan ketika tiket dibuat?",
+      "category": "incident_management",
+      "relevant_documents": [
+        "DOC11"
+      ],
+      "evidence": "V.B incident categorization and prioritization."
+    },
+    {
+      "id": "final_p23",
+      "query": "Menurut University of Central Florida apakah email otomatis menghapus kewajiban assignee menghubungi pelanggan?",
+      "category": "incident_management",
+      "relevant_documents": [
+        "DOC11"
+      ],
+      "evidence": "V.G closure, automated email does not negate contacting customer."
+    },
+    {
+      "id": "final_p24",
+      "query": "Menurut University of Utah ke unit mana laporan dugaan insiden keamanan informasi diteruskan?",
+      "category": "incident_management",
+      "relevant_documents": [
+        "DOC12"
+      ],
+      "evidence": "Report through help desk/ISO and response team."
+    },
+    {
+      "id": "final_o01",
+      "query": "Berapa alamat IP notebook saya yang aktif sekarang?",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No live endpoint state."
+    },
+    {
+      "id": "final_o02",
+      "query": "Tampilkan nama pemilik laptop yang sedang memakai jaringan kami.",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No inventory or identity database."
+    },
+    {
+      "id": "final_o03",
+      "query": "Apakah tiket REQ773366 sudah ditutup oleh petugas?",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No ticket records."
+    },
+    {
+      "id": "final_o04",
+      "query": "Siapa petugas jaringan yang sedang piket di kampus kami?",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No staff roster."
+    },
+    {
+      "id": "final_o05",
+      "query": "Tolong berikan kata sandi terkini untuk akun WiFi milik saya.",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No personal credentials."
+    },
+    {
+      "id": "final_o06",
+      "query": "Kapan koneksi ISP kampus kami akan pulih dari gangguan yang sedang terjadi?",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No live outage/ETA."
+    },
+    {
+      "id": "final_o07",
+      "query": "Alamat default gateway yang dipakai laptop saya sekarang apa?",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No live route/configuration data."
+    },
+    {
+      "id": "final_o08",
+      "query": "Berapa jumlah lease DHCP yang aktif di server kampus kami hari ini?",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No live DHCP server telemetry."
+    },
+    {
+      "id": "final_o09",
+      "query": "Apa aturan pemasangan access point menurut Universitas Teratai?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "Institution not represented."
+    },
+    {
+      "id": "final_o10",
+      "query": "Siapa pemberi izin instalasi kabel jaringan di Institut Cendana?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "Institution not represented."
+    },
+    {
+      "id": "final_o11",
+      "query": "Berapa batas SLA insiden P1 yang resmi berlaku di Universitas Mandiri?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "No approved local SLA/source."
+    },
+    {
+      "id": "final_o12",
+      "query": "Apa kebijakan pembuatan jaringan nirkabel sendiri menurut Universitas Pusaka?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "Institution not represented."
+    },
+    {
+      "id": "final_o13",
+      "query": "Apa sanksi akses Internet terlarang menurut Universitas Kemuning?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "Institution not represented."
+    },
+    {
+      "id": "final_o14",
+      "query": "Menurut College Aurora siapa berhak memberi pengecualian aturan LAN?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "Institution not represented."
+    },
+    {
+      "id": "final_o15",
+      "query": "apa aturan penggunaan wifi di universitas melati?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "Institution not represented; lower-case name stress test."
+    },
+    {
+      "id": "final_o16",
+      "query": "siapa yang berwenang memasang switch di institut seruni?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "Institution not represented; lower-case name stress test."
+    },
+    {
+      "id": "final_o17",
+      "query": "Apa jadwal ujian akhir semester mahasiswa sistem informasi?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No academic schedules."
+    },
+    {
+      "id": "final_o18",
+      "query": "Bagaimana mengajukan cuti akademik satu semester?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No academic administration."
+    },
+    {
+      "id": "final_o19",
+      "query": "Bagaimana memilih pupuk untuk tanaman tomat?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No agriculture source."
+    },
+    {
+      "id": "final_o20",
+      "query": "Bagaimana prosedur fisioterapi setelah cedera lutut?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No medical source."
+    },
+    {
+      "id": "final_o21",
+      "query": "Bagaimana menyusun laporan neraca usaha tahunan?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No accounting source."
+    },
+    {
+      "id": "final_o22",
+      "query": "Bagaimana cara memesan kamar hotel untuk rombongan?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No hospitality booking source."
+    },
+    {
+      "id": "final_o23",
+      "query": "Apa command Cisco IOS untuk konfigurasi port-security pada switch Catalyst?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No Cisco IOS command reference; OVS FAQ is not direct support."
+    },
+    {
+      "id": "final_o24",
+      "query": "Bagaimana mendiagnosis ImagePullBackOff di Kubernetes?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No Kubernetes/container documentation."
+    }
+  ]
+}

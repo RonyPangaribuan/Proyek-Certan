@@ -1,0 +1,10 @@
+{
+  "decided_at_utc": "2026-11-05T14:07:56.122662+00:00",
+  "guard_adopted": false,
+  "title_ranking_adopted": false,
+  "guard_config": {
+    "similarity_threshold": 0.6,
+    "support_threshold": 0.0
+  },
+  "note": "Validation and final test may veto adoption; no threshold or candidate changes from these results. Semantic chunk default remains backward-compatible; document and guard modes require explicit opt-in."
+}
