@@ -9,7 +9,13 @@ authors = [
     { name = "Rony Reynaldy Pangaribuan", email = "ronypangaribuan2505@gmail.com" }
 ]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "chromadb>=1.5.9",
+    "pypdf>=6.21.4",
+    "requests>=2.34.2",
+    "sentence-transformers>=6.2.0",
+]
 
 [dependency-groups]
 dev = [

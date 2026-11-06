@@ -1,267 +1,90 @@
-# Sistem Pendukung Keputusan Berbasis AI untuk Prioritisasi dan Penanganan Insiden Jaringan Kampus
+# CERTAN
 
-> Prototype Milestone 1 untuk membantu administrator jaringan menentukan
-> insiden yang sebaiknya ditangani lebih dahulu.
+Prototipe akademik **Sistem Pendukung Keputusan Berbasis AI untuk Prioritisasi dan Penanganan Insiden Jaringan Kampus**, mata kuliah 10S3001 Kecerdasan Buatan, Institut Teknologi Del.
 
-Proyek ini dibuat sebagai proyek akhir mata kuliah Kecerdasan Buatan (10S3001),
-Program Studi Sarjana Sistem Informasi, Institut Teknologi Del.
+CERTAN mencakup prioritisasi insiden dengan UCS/FIFO (M1), penugasan teknisi menggunakan CSP (M2), dan basis pengetahuan dengan pencarian semantik (M3). Ketiganya masih berupa CLI terpisah; hasilnya merupakan rekomendasi untuk pemeriksaan manusia.
 
-## Tentang Proyek
+## Mulai di sini
 
-Ketika beberapa gangguan jaringan terjadi bersamaan, urutan laporan masuk belum
-tentu menjadi urutan penanganan terbaik. Setiap insiden dapat memiliki urgensi,
-dampak, jumlah pengguna terdampak, dan waktu penanganan yang berbeda.
+- **Milestone 3:** [panduan dan demonstrasi](docs/milestone-3/README.md), [pipeline dan sumber](docs/milestone-3/pipeline.md), [evaluasi dan keterbatasan](docs/milestone-3/evaluation.md).
+- **Milestone 1:** [penggunaan UCS/FIFO](docs/milestone-1/usage.md).
+- **Milestone 2:** [penggunaan CSP](docs/milestone-2/usage.md).
 
-Sistem ini menilai setiap insiden, mencari urutan penanganan dengan total
-penalti terendah, lalu membandingkannya dengan antrean FIFO non-search. Hasilnya berupa
-**rekomendasi**, bukan keputusan otomatis.
+## Instalasi
 
-## Anggota Tim
+Python 3.11+ dan `uv`; jalankan dari root repository:
 
-| No. | Nama |
-|---:|---|
-| 1 | Rony Reynaldy Pangaribuan |
-| 2 | Doydenggan Simanjuntak |
-| 3 | Indah Nainggolan |
+```bash
+uv sync --locked
+```
 
-## Gambaran Cepat
+Model pertama kali memerlukan unduhan Hugging Face. Cache berada di `.cache/models/`; indeks ChromaDB berada di `.local/chroma-final-recursive/`. Kedua lokasi diabaikan Git. Versi dependency ada pada [uv.lock](uv.lock).
 
-| Bagian | Keterangan |
-|---|---|
-| Baseline Search Milestone 1 | Uniform Cost Search (UCS) |
-| Metode pembanding tambahan | First In, First Out (FIFO), non-search |
-| Input | Satu batch data insiden sintetis dalam JSON |
-| Output | Rekomendasi urutan, rincian biaya, dan perbandingan |
-| Teknologi | Python 3.11 dan Astral `uv` |
-| Lisensi | MIT |
-| Status | Milestone 1 |
+## Demonstrasi Milestone 3
 
-UCS dipilih karena seluruh biaya langkah nonnegatif dan algoritma ini dapat
-menemukan solusi optimal tanpa heuristic. A* tidak diimplementasikan pada
-Milestone 1.
+Satu korpus aktif: **15 dokumen, 503 chunk**, profil `recursive_t96_w10`.
 
-## Apa yang Dilakukan Sistem?
+```bash
+uv run --locked python -m proyek_certan.knowledge.final_cli verify
+uv run --locked python -m proyek_certan.knowledge.final_cli build
+uv run --locked python -m proyek_certan.knowledge.final_cli index
+uv run --locked python -m proyek_certan.knowledge.final_cli verify --index
+uv run --locked python -m proyek_certan.knowledge.final_cli search --query "Bagaimana diagnosis DNS pada klien?" --document-level --top-k 5
+```
 
-1. Membaca dan memvalidasi data insiden.
-2. Menghitung *importance score* setiap insiden.
-3. Mencari urutan optimal menggunakan UCS.
-4. Membentuk urutan FIFO sebagai pembanding.
-5. Menampilkan alasan prioritas dan perbandingan biaya.
+`build` mengulang ingestion teks terverifikasi, normalisasi dan chunking, lalu membandingkan hasilnya dengan korpus terdaftar. `index` mengisi database persisten; indeks campuran atau usang ditolak. Gunakan lokasi kosong melalui `--db` jika membutuhkan indeks terisolasi.
 
 ```mermaid
 flowchart LR
-    A[Data JSON] --> B[Validasi]
-    B --> C[Importance Score]
-    C --> D[UCS]
-    C --> E[FIFO]
-    D --> F[Perbandingan Hasil]
-    E --> F
+  S[PDF dan HTML resmi] --> T[15 TXT terverifikasi]
+  T --> C[Cleaning dan recursive chunking]
+  C --> E[Embedding multilingual 384 dimensi]
+  E --> V[ChromaDB persisten]
+  Q[Kueri] --> R[Semantic retrieval]
+  V --> R
 ```
 
-## Mulai Cepat
+Tiga belas TXT berasal dari HTML resmi dan dua dari PDF native. Snapshot TXT memungkinkan pembangunan ulang offline; 15 PDF asli tetap disimpan. Korpus eksternal ini belum merupakan SOP resmi kampus.
 
-### 1. Siapkan proyek
+## Evaluasi dan pengujian
 
 ```bash
-git clone https://github.com/RonyPangaribuan/Proyek-Certan.git
-cd Proyek-Certan
-uv sync
+uv run --locked python -m pytest -q
+uv run --locked python evaluation/benchmarks/final_pipeline.py
+uv run --locked python evaluation/benchmarks/final_pipeline.py --live
 ```
 
-### 2. Jalankan aplikasi
+Evaluator standar memeriksa korpus dan me-replay metrik baseline dari bukti beku. `--live` memeriksa reproduksibilitas, indeks, dan regresi kueri yang sudah pernah dilihat. Pengukuran baru dipisahkan dari final test penelitian lama. [Penjelasan evaluasi](docs/milestone-3/evaluation.md) menjelaskan hasil, threshold, dan kelemahannya.
+
+Tes model asli dapat diaktifkan di PowerShell dengan `$env:CERTAN_RUN_MODEL_TESTS = "1"` sebelum pytest; tanpa itu tes terkait model ditandai skipped.
+
+## Milestone 1 dan 2
 
 ```bash
-uv run proyek-certan --input data/sample_incidents.json
+uv run --locked proyek-certan --input data/sample_incidents.json
+uv run --locked python -m proyek_certan.constraint_solver.assignment_cli --incidents data/sample_incidents.json --technicians data/sample_technicians.json
 ```
 
-Alternatif:
+Implementasi M1/M2 dipertahankan. Data insiden/teknisi sintetis; solver CSP mencari assignment valid tanpa objective optimasi.
 
-```bash
-uv run python -m proyek_certan --input data/sample_incidents.json
-```
+## Struktur dan arsip
 
-### 3. Jalankan pengujian
-
-```bash
-uv run pytest -v
-```
-
-Jika launcher `pytest` diblokir oleh kebijakan Windows:
-
-```bash
-uv run python -m pytest -v
-```
-
-## Contoh Hasil
-
-Data contoh menghasilkan perbandingan berikut:
-
-| Metode | Weighted-minute penalty |
-|---|---:|
-| UCS | 1412.5903 |
-| FIFO | 1531.3458 |
-
-- Selisih biaya: **118.7556**
-- Pengurangan biaya: **7.75%**
-- State UCS yang diperluas: **4095**
-
-Urutan rekomendasi UCS:
-
-```text
-INC011 → INC006 → INC004 → INC003 → INC002 → INC008
-→ INC010 → INC005 → INC007 → INC001 → INC012 → INC009
-```
-
-CLI menampilkan rincian lengkap untuk setiap insiden, termasuk *importance
-score*, waktu selesai, step cost, total cost, dan statistik pencarian.
-
-## Detail Teknis
-
-<details>
-<summary><strong>Format data input</strong></summary>
-
-Input berupa array JSON nonkosong. Setiap insiden memiliki sembilan atribut:
-
-| Atribut | Aturan |
+| Lokasi | Fungsi |
 |---|---|
-| `incident_id` | string unik dengan format `INCxxx` |
-| `category` | string nonkosong |
-| `location` | string nonkosong |
-| `urgency` | integer 1–5 |
-| `impact` | integer 1–5 |
-| `affected_users` | integer ≥ 0 |
-| `service_criticality` | integer 1–5 |
-| `waiting_time_min` | integer ≥ 0 |
-| `estimated_handling_time_min` | integer > 0 |
+| [src/proyek_certan](src/proyek_certan/) | Kode M1/M2, `corpus/` untuk preprocessing, `knowledge/` untuk M3 |
+| [data/corpus/raw](data/corpus/raw/) | 15 PDF sumber |
+| [data/corpus/final](data/corpus/final/) | Satu korpus aktif dan manifest provenance |
+| [evaluation](evaluation/) | Evaluator, benchmark aktif dan bukti penelitian terpilih |
+| [tests](tests/) | Pengujian implementasi aktif |
 
-Contoh:
-
-```json
-[
-  {
-    "incident_id": "INC001",
-    "category": "wifi_slow",
-    "location": "Ruang Kelas",
-    "urgency": 2,
-    "impact": 2,
-    "affected_users": 15,
-    "service_criticality": 2,
-    "waiting_time_min": 35,
-    "estimated_handling_time_min": 20
-  }
-]
-```
-
-</details>
-
-<details>
-<summary><strong>Importance score dan bobot</strong></summary>
-
-Normalisasi dilakukan terhadap batch yang sedang diproses:
-
-```text
-normalized_urgency     = urgency / 5
-normalized_impact      = impact / 5
-normalized_criticality = service_criticality / 5
-normalized_users       = affected_users / max_affected_users
-normalized_waiting     = waiting_time_min / max_waiting_time
-```
-
-Jika maksimum jumlah pengguna atau waktu tunggu adalah nol, nilai normalisasi
-komponen tersebut menjadi nol.
-
-| Komponen | Bobot |
-|---|---:|
-| Urgency | 0.30 |
-| Impact | 0.25 |
-| Service criticality | 0.20 |
-| Affected users | 0.15 |
-| Waiting time | 0.10 |
-
-```text
-importance_score =
-    0.30 × normalized_urgency
-  + 0.25 × normalized_impact
-  + 0.20 × normalized_criticality
-  + 0.15 × normalized_users
-  + 0.10 × normalized_waiting
-```
-
-Bobot dapat dikonfigurasi, tetapi harus nonnegatif dan berjumlah `1.0`. Bobot
-baseline ini belum dikalibrasi menggunakan data operasional.
-
-Waktu tunggu menjadi mekanisme *aging* agar laporan lama tidak terus tertunda.
-`category` dan `location` hanya digunakan sebagai konteks.
-
-</details>
-
-<details>
-<summary><strong>Perhitungan path cost</strong></summary>
-
-```text
-completion_time = elapsed_time + estimated_handling_time
-step_cost       = importance_score × completion_time
-total_cost      = Σ step_cost
-```
-
-UCS mencari urutan dengan `total_cost` minimum. Nilai ini merupakan
-*weighted-minute penalty*, bukan biaya finansial. FIFO memakai fungsi biaya yang
-sama hanya sebagai metode pembanding agar hasil keduanya dapat dievaluasi secara
-adil.
-
-</details>
-
-<details>
-<summary><strong>Mengubah bobot melalui CLI</strong></summary>
+Riwayat lengkap sebelum pengurangan file tersimpan pada tag **`archive/m3-before-minimal-cleanup-20261106`**, commit `bc0c4c1a49d977236378c73e26794332b2056c54`. Buka arsip dalam worktree terpisah:
 
 ```bash
-uv run proyek-certan \
-  --input data/sample_incidents.json \
-  --weight-urgency 0.35 \
-  --weight-impact 0.25 \
-  --weight-service-criticality 0.20 \
-  --weight-affected-users 0.10 \
-  --weight-waiting-time 0.10
+git -c core.autocrlf=false worktree add ../CERTAN-M3-research archive/m3-before-minimal-cleanup-20261106
 ```
 
-</details>
+Tag bersifat lokal sampai dikirim ke remote. Saat membagikan repository, sertakan tag tersebut dengan `git push origin archive/m3-before-minimal-cleanup-20261106`. [Inventaris cleanup dan checksum bukti](evaluation/evidence.json) mencatat file yang dikeluarkan. Laporan dan eksperimen historis dibaca menurut versi asalnya.
 
-<details>
-<summary><strong>Struktur direktori</strong></summary>
+## Tim dan lisensi
 
-```text
-data/
-└── sample_incidents.json
-docs/milestone-1/
-src/proyek_certan/
-├── __init__.py
-├── __main__.py
-├── cli.py
-├── io.py
-├── models.py
-├── scoring.py
-├── validation.py
-├── baselines/
-│   └── fifo.py
-└── search/
-    └── ucs.py
-tests/
-├── test_cli.py
-├── test_fifo.py
-├── test_models.py
-├── test_scoring.py
-└── test_ucs.py
-```
-
-</details>
-
-## Batasan
-
-- Data bersifat sintetis dan tidak menggambarkan kondisi jaringan kampus
-  tertentu.
-- Sistem memproses satu snapshot dalam satu antrean berurutan.
-- UCS ditujukan untuk batch prototype kecil karena pertumbuhan state-nya
-  eksponensial.
-- Sistem tidak melakukan monitoring, diagnosis, troubleshooting, penugasan
-  teknisi, atau perbaikan jaringan.
-- Keputusan akhir tetap berada pada administrator jaringan.
+Rony Reynaldy Pangaribuan, Doydenggan Simanjuntak, dan Indah Nainggolan. Kode berlisensi [MIT](LICENSE); hak penggunaan sumber korpus dicatat terpisah pada manifest.

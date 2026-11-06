@@ -1,0 +1,27 @@
+[
+  {
+    "chunk_id": "dummy-wifi-001",
+    "text": "Jika WiFi terhubung tetapi internet tidak tersedia, periksa konfigurasi DNS dan gateway.",
+    "metadata": {"document_id": "dummy-wifi", "source": "dummy_sop_wifi.txt", "title": "Contoh SOP WiFi (sintetis)", "section": "Troubleshooting", "chunk_index": 0}
+  },
+  {
+    "chunk_id": "dummy-router-001",
+    "text": "Jika seluruh pengguna kehilangan akses internet, lakukan pemeriksaan pada router utama.",
+    "metadata": {"document_id": "dummy-router", "source": "dummy_sop_router.txt", "title": "Contoh SOP Router (sintetis)", "section": "Troubleshooting", "chunk_index": 0}
+  },
+  {
+    "chunk_id": "dummy-lan-001",
+    "text": "Jika koneksi LAN terputus, periksa kabel Ethernet dan port switch.",
+    "metadata": {"document_id": "dummy-lan", "source": "dummy_sop_lan.txt", "title": "Contoh SOP LAN (sintetis)", "section": "Troubleshooting", "chunk_index": 0}
+  },
+  {
+    "chunk_id": "dummy-escalation-001",
+    "text": "Gangguan jaringan yang memengaruhi banyak pengguna harus segera dieskalasikan kepada teknisi jaringan.",
+    "metadata": {"document_id": "dummy-escalation", "source": "dummy_sop_escalation.txt", "title": "Contoh SOP Eskalasi (sintetis)", "section": "Eskalasi", "chunk_index": 0}
+  },
+  {
+    "chunk_id": "dummy-ap-001",
+    "text": "Jika access point tidak aktif, periksa sumber daya listrik dan koneksi jaringan perangkat.",
+    "metadata": {"document_id": "dummy-ap", "source": "dummy_sop_ap.txt", "title": "Contoh SOP Access Point (sintetis)", "section": "Troubleshooting", "chunk_index": 0}
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "frozen_at_utc": "2026-11-05T14:04:29.867085+00:00",
+  "lock_file": "lock-r2.json",
+  "lock_sha256": "56da211b26d98ea63e822aa78ece2125e69fb1c71912111d19b7831df105707f",
+  "labels_sha256": "1764a726e3c8da861a6497e508dd7e87531d356fd1dbe473bf1b49a494d888dc",
+  "authoring_code_sha256": "9bc3f5f83d306a59f059d1e903ee7e40f8bc0dc573270ecdc1fdb1473b0a2a80",
+  "positive_count": 24,
+  "ood_count": 24,
+  "query_uniqueness_verified": true,
+  "ranking_outputs_read": false
+}

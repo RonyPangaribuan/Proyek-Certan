@@ -31,6 +31,7 @@
       "network_down"
     ],
     "available_slots": [
+      "SLOT_1",
       "SLOT_2",
       "SLOT_3"
     ]

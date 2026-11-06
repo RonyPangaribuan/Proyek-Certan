@@ -1,0 +1,1659 @@
+{
+  "locked_at_utc": "2026-11-05T14:02:39.918414+00:00",
+  "protocol_sha256": "5a80aa45c57a50f1bc91584a0a71a5fcf5fa2b3bae45a027332edf69817ec909",
+  "corpus_report_sha256": "a5cb40f65a0c6cf4c5315af269d799f71b98df556717a48a1a184944c0aa78e7",
+  "code_sha256": {
+    "src/proyek_certan/knowledge/documents.py": "cbc1965f83e432ced8c66c911f85b0e733c9e128fbb7b4de9b21c6aa7b4a75d5",
+    "src/proyek_certan/knowledge/scope.py": "d6f185d6fd0c323bfba92080bf138c031e0e1d632bc77f598c9fbe5f8e4e009e",
+    "src/proyek_certan/knowledge/retrieval.py": "f428fee476abb8dfda77459c7febb3a595d6a995a801bad2a921b021ea4e9ee0",
+    "src/proyek_certan/knowledge/cli.py": "21a76e6b17d23a0fb273d5223877ae3d31fa6afa93ea66e57e71a5f3faf7969e",
+    "evaluation/title_candidate_v3.py": "d5848a958f54ba6b4c444b1735ca3ca0c04d9ae1d714f4c728e4280d2595a057",
+    "evaluation/quality_v3.py": "0c32e0beb1b455635a73a9ecc35b6000230c33e36ff32db777925c4f88d794b8"
+  },
+  "development_observations_sha256": "89e36c703dd9d012248afa1624faa30c0c175fbc2f6c5e95b881677669e8555c",
+  "guard_config": {
+    "similarity_threshold": 0.6,
+    "support_threshold": 0.0
+  },
+  "title_alpha": 0.2,
+  "development_guard_grid": [
+    {
+      "config": {
+        "similarity_threshold": 0.4,
+        "support_threshold": 0.0
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 3,
+        "false_rejection_count": 0,
+        "far": 0.16666666666666666,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.05836576805861446,
+          0.39222038103915724
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.8333333333333334,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 21,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 4
+        },
+        "false_acceptance_ids": [
+          "development_o12",
+          "development_o13",
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 69.48664999981702,
+          "p95": 88.18884999982401
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.4,
+        "support_threshold": 0.15
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 2,
+        "false_rejection_count": 0,
+        "far": 0.1111111111111111,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.03101952264561239,
+          0.32799765130178804
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.8888888888888888,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 20,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 5
+        },
+        "false_acceptance_ids": [
+          "development_o12",
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.65105000004405,
+          "p95": 144.8528499997792
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.4,
+        "support_threshold": 0.2
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 2,
+        "false_rejection_count": 0,
+        "far": 0.1111111111111111,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.03101952264561239,
+          0.32799765130178804
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.8888888888888888,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 20,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 5
+        },
+        "false_acceptance_ids": [
+          "development_o12",
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.6317999998937,
+          "p95": 144.72177499987993
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.4,
+        "support_threshold": 0.25
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 2,
+        "false_rejection_count": 0,
+        "far": 0.1111111111111111,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.03101952264561239,
+          0.32799765130178804
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.8888888888888888,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 20,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 5
+        },
+        "false_acceptance_ids": [
+          "development_o12",
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.62839999947028,
+          "p95": 144.64797499999804
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.4,
+        "support_threshold": 0.3
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 2,
+        "false_rejection_count": 0,
+        "far": 0.1111111111111111,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.03101952264561239,
+          0.32799765130178804
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.8888888888888888,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 20,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 5
+        },
+        "false_acceptance_ids": [
+          "development_o12",
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.64839999987453,
+          "p95": 144.661349999069
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.45,
+        "support_threshold": 0.0
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 2,
+        "false_rejection_count": 0,
+        "far": 0.1111111111111111,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.03101952264561239,
+          0.32799765130178804
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.8888888888888888,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 20,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 5
+        },
+        "false_acceptance_ids": [
+          "development_o12",
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 69.45494999990842,
+          "p95": 88.25420000016493
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.45,
+        "support_threshold": 0.15
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 2,
+        "false_rejection_count": 0,
+        "far": 0.1111111111111111,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.03101952264561239,
+          0.32799765130178804
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.8888888888888888,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 20,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 5
+        },
+        "false_acceptance_ids": [
+          "development_o12",
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.64409999941927,
+          "p95": 144.65827499930128
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.45,
+        "support_threshold": 0.2
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 2,
+        "false_rejection_count": 0,
+        "far": 0.1111111111111111,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.03101952264561239,
+          0.32799765130178804
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.8888888888888888,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 20,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 5
+        },
+        "false_acceptance_ids": [
+          "development_o12",
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.64034999905925,
+          "p95": 144.70764999964558
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.45,
+        "support_threshold": 0.25
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 2,
+        "false_rejection_count": 0,
+        "far": 0.1111111111111111,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.03101952264561239,
+          0.32799765130178804
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.8888888888888888,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 20,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 5
+        },
+        "false_acceptance_ids": [
+          "development_o12",
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.64914999921893,
+          "p95": 144.6420499987653
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.45,
+        "support_threshold": 0.3
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 2,
+        "false_rejection_count": 0,
+        "far": 0.1111111111111111,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.03101952264561239,
+          0.32799765130178804
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.8888888888888888,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 20,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 5
+        },
+        "false_acceptance_ids": [
+          "development_o12",
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.6894499995833,
+          "p95": 144.66394999931254
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.5,
+        "support_threshold": 0.0
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 1,
+        "false_rejection_count": 0,
+        "far": 0.05555555555555555,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.009875190978303097,
+          0.25757300781872594
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.9444444444444444,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 19,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 6
+        },
+        "false_acceptance_ids": [
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 69.42195000010543,
+          "p95": 88.12412499923994
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.5,
+        "support_threshold": 0.15
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 1,
+        "false_rejection_count": 0,
+        "far": 0.05555555555555555,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.009875190978303097,
+          0.25757300781872594
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.9444444444444444,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 19,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 6
+        },
+        "false_acceptance_ids": [
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.62864999910016,
+          "p95": 144.6419999997488
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.5,
+        "support_threshold": 0.2
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 1,
+        "false_rejection_count": 0,
+        "far": 0.05555555555555555,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.009875190978303097,
+          0.25757300781872594
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.9444444444444444,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 19,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 6
+        },
+        "false_acceptance_ids": [
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.71454999925845,
+          "p95": 144.7596499986048
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.5,
+        "support_threshold": 0.25
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 1,
+        "false_rejection_count": 0,
+        "far": 0.05555555555555555,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.009875190978303097,
+          0.25757300781872594
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.9444444444444444,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 19,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 6
+        },
+        "false_acceptance_ids": [
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.70209999995495,
+          "p95": 145.2072749996205
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.5,
+        "support_threshold": 0.3
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 1,
+        "false_rejection_count": 0,
+        "far": 0.05555555555555555,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.009875190978303097,
+          0.25757300781872594
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.9444444444444444,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 19,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 6
+        },
+        "false_acceptance_ids": [
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.68099999981496,
+          "p95": 144.65887500045937
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.55,
+        "support_threshold": 0.0
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 1,
+        "false_rejection_count": 0,
+        "far": 0.05555555555555555,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.009875190978303097,
+          0.25757300781872594
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.9444444444444444,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 19,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 6
+        },
+        "false_acceptance_ids": [
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 69.4690499999524,
+          "p95": 88.13814999916758
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.55,
+        "support_threshold": 0.15
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 1,
+        "false_rejection_count": 0,
+        "far": 0.05555555555555555,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.009875190978303097,
+          0.25757300781872594
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.9444444444444444,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 19,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 6
+        },
+        "false_acceptance_ids": [
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.74204999992799,
+          "p95": 144.69127499955903
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.55,
+        "support_threshold": 0.2
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 1,
+        "false_rejection_count": 0,
+        "far": 0.05555555555555555,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.009875190978303097,
+          0.25757300781872594
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.9444444444444444,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 19,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 6
+        },
+        "false_acceptance_ids": [
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.71189999999842,
+          "p95": 144.68457499924625
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.55,
+        "support_threshold": 0.25
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 1,
+        "false_rejection_count": 0,
+        "far": 0.05555555555555555,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.009875190978303097,
+          0.25757300781872594
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.9444444444444444,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 19,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 6
+        },
+        "false_acceptance_ids": [
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.73094999999012,
+          "p95": 144.73932499981856
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.55,
+        "support_threshold": 0.3
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 1,
+        "false_rejection_count": 0,
+        "far": 0.05555555555555555,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.009875190978303097,
+          0.25757300781872594
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.9444444444444444,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 19,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 6
+        },
+        "false_acceptance_ids": [
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p14",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.71725000026345,
+          "p95": 144.7079999993548
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.6,
+        "support_threshold": 0.0
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 0,
+        "false_rejection_count": 1,
+        "far": 0.0,
+        "frr": 0.05555555555555555,
+        "far_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "frr_wilson95": [
+          0.009875190978303097,
+          0.25757300781872594
+        ],
+        "ood_rejection_rate": 1.0,
+        "positive_acceptance_rate": 0.9444444444444444,
+        "decisions": {
+          "ACCEPT": 17,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 8
+        },
+        "false_acceptance_ids": [],
+        "false_rejection_ids": [
+          "development_p14"
+        ],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 69.51229999958741,
+          "p95": 88.18002499970135
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.2962962962962962,
+          "recall@3": 0.8333333333333334,
+          "recall@5": 0.9444444444444444,
+          "mrr": 0.8055555555555556
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.6,
+        "support_threshold": 0.15
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 0,
+        "false_rejection_count": 1,
+        "far": 0.0,
+        "frr": 0.05555555555555555,
+        "far_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "frr_wilson95": [
+          0.009875190978303097,
+          0.25757300781872594
+        ],
+        "ood_rejection_rate": 1.0,
+        "positive_acceptance_rate": 0.9444444444444444,
+        "decisions": {
+          "ACCEPT": 17,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 8
+        },
+        "false_acceptance_ids": [],
+        "false_rejection_ids": [
+          "development_p14"
+        ],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.69409999997515,
+          "p95": 144.70794999920145
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.2962962962962962,
+          "recall@3": 0.8333333333333334,
+          "recall@5": 0.9444444444444444,
+          "mrr": 0.8055555555555556
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.6,
+        "support_threshold": 0.2
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 0,
+        "false_rejection_count": 1,
+        "far": 0.0,
+        "frr": 0.05555555555555555,
+        "far_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "frr_wilson95": [
+          0.009875190978303097,
+          0.25757300781872594
+        ],
+        "ood_rejection_rate": 1.0,
+        "positive_acceptance_rate": 0.9444444444444444,
+        "decisions": {
+          "ACCEPT": 17,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 8
+        },
+        "false_acceptance_ids": [],
+        "false_rejection_ids": [
+          "development_p14"
+        ],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.71244999963892,
+          "p95": 144.70694999931766
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.2962962962962962,
+          "recall@3": 0.8333333333333334,
+          "recall@5": 0.9444444444444444,
+          "mrr": 0.8055555555555556
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.6,
+        "support_threshold": 0.25
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 0,
+        "false_rejection_count": 1,
+        "far": 0.0,
+        "frr": 0.05555555555555555,
+        "far_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "frr_wilson95": [
+          0.009875190978303097,
+          0.25757300781872594
+        ],
+        "ood_rejection_rate": 1.0,
+        "positive_acceptance_rate": 0.9444444444444444,
+        "decisions": {
+          "ACCEPT": 17,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 8
+        },
+        "false_acceptance_ids": [],
+        "false_rejection_ids": [
+          "development_p14"
+        ],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.7119499999244,
+          "p95": 144.76579999927708
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.2962962962962962,
+          "recall@3": 0.8333333333333334,
+          "recall@5": 0.9444444444444444,
+          "mrr": 0.8055555555555556
+        }
+      }
+    },
+    {
+      "config": {
+        "similarity_threshold": 0.6,
+        "support_threshold": 0.3
+      },
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 0,
+        "false_rejection_count": 1,
+        "far": 0.0,
+        "frr": 0.05555555555555555,
+        "far_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "frr_wilson95": [
+          0.009875190978303097,
+          0.25757300781872594
+        ],
+        "ood_rejection_rate": 1.0,
+        "positive_acceptance_rate": 0.9444444444444444,
+        "decisions": {
+          "ACCEPT": 17,
+          "ABSTAIN": 11,
+          "LOW_CONFIDENCE": 8
+        },
+        "false_acceptance_ids": [],
+        "false_rejection_ids": [
+          "development_p14"
+        ],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p05",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.6736500002371,
+          "p95": 144.6887499987497
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.3148148148148147,
+          "recall@3": 0.8888888888888888,
+          "recall@5": 1.0,
+          "mrr": 0.8333333333333334
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.2962962962962962,
+          "recall@3": 0.8333333333333334,
+          "recall@5": 0.9444444444444444,
+          "mrr": 0.8055555555555556
+        }
+      }
+    }
+  ],
+  "development_title_grid": [
+    {
+      "alpha": 0.2,
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 7,
+        "false_rejection_count": 0,
+        "far": 0.3888888888888889,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.2030524657216362,
+          0.613809583977621
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.6111111111111112,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 25,
+          "ABSTAIN": 0,
+          "LOW_CONFIDENCE": 11
+        },
+        "false_acceptance_ids": [
+          "development_o01",
+          "development_o02",
+          "development_o03",
+          "development_o07",
+          "development_o09",
+          "development_o10",
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 114.05394999974305,
+          "p95": 144.83632499968735
+        },
+        "ungated": {
+          "precision@1": 0.8333333333333334,
+          "precision@3": 0.33333333333333326,
+          "recall@3": 0.9444444444444444,
+          "recall@5": 1.0,
+          "mrr": 0.8935185185185185
+        },
+        "gated": {
+          "precision@1": 0.8333333333333334,
+          "precision@3": 0.33333333333333326,
+          "recall@3": 0.9444444444444444,
+          "recall@5": 1.0,
+          "mrr": 0.8935185185185185
+        }
+      }
+    },
+    {
+      "alpha": 0.4,
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 7,
+        "false_rejection_count": 0,
+        "far": 0.3888888888888889,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.2030524657216362,
+          0.613809583977621
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.6111111111111112,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 25,
+          "ABSTAIN": 0,
+          "LOW_CONFIDENCE": 11
+        },
+        "false_acceptance_ids": [
+          "development_o01",
+          "development_o02",
+          "development_o03",
+          "development_o07",
+          "development_o09",
+          "development_o10",
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p13",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.72799999980998,
+          "p95": 145.17417499996554
+        },
+        "ungated": {
+          "precision@1": 0.7777777777777778,
+          "precision@3": 0.33333333333333326,
+          "recall@3": 0.9444444444444444,
+          "recall@5": 1.0,
+          "mrr": 0.8657407407407408
+        },
+        "gated": {
+          "precision@1": 0.7777777777777778,
+          "precision@3": 0.33333333333333326,
+          "recall@3": 0.9444444444444444,
+          "recall@5": 1.0,
+          "mrr": 0.8657407407407408
+        }
+      }
+    },
+    {
+      "alpha": 0.6,
+      "summary": {
+        "positive_count": 18,
+        "ood_count": 18,
+        "false_acceptance_count": 7,
+        "false_rejection_count": 0,
+        "far": 0.3888888888888889,
+        "frr": 0.0,
+        "far_wilson95": [
+          0.2030524657216362,
+          0.613809583977621
+        ],
+        "frr_wilson95": [
+          0.0,
+          0.17587922364665765
+        ],
+        "ood_rejection_rate": 0.6111111111111112,
+        "positive_acceptance_rate": 1.0,
+        "decisions": {
+          "ACCEPT": 25,
+          "ABSTAIN": 0,
+          "LOW_CONFIDENCE": 11
+        },
+        "false_acceptance_ids": [
+          "development_o01",
+          "development_o02",
+          "development_o03",
+          "development_o07",
+          "development_o09",
+          "development_o10",
+          "development_o16"
+        ],
+        "false_rejection_ids": [],
+        "wrong_top1_ids": [
+          "development_p02",
+          "development_p11",
+          "development_p13",
+          "development_p15",
+          "development_p18"
+        ],
+        "latency_ms": {
+          "median": 113.66884999961258,
+          "p95": 144.7384000002785
+        },
+        "ungated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.35185185185185175,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.8425925925925927
+        },
+        "gated": {
+          "precision@1": 0.7222222222222222,
+          "precision@3": 0.35185185185185175,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.8425925925925927
+        }
+      }
+    }
+  ]
+}
