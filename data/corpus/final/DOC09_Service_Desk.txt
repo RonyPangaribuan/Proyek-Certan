@@ -1,0 +1,107 @@
+# Service desk, eskalasi, dan komunikasi ke pengguna
+Informasi Dokumen
+Atribut | Keterangan
+Kode Dokumen | DTSI-SOP-OPS-01
+Kode LPM | LPM.UHB.SOP04.04.06.03.09
+Revisi | 1.0
+Tanggal Efektif | — (ditetapkan saat persetujuan Kepala DTSI)
+Pemilik Dokumen | Departemen Teknologi dan Sistem Informasi (DTSI), Universitas Harapan Bangsa
+Pemilik Proses | Kepala Departemen Teknologi dan Sistem Informasi (DTSI)
+Kelas | Wajib
+Status | DRAFT — siap peninjauan pimpinan
+## 1. Tujuan
+Menjamin setiap permintaan bantuan dan laporan gangguan layanan TI ditangkap secara terpusat, diklasifikasikan, ditangani sesuai prioritas, dikomunikasikan dengan jelas kepada pengguna, dan diarsipkan untuk pembelajaran serta audit—selaras ISO/IEC 20000-1 ( service desk , komunikasi dengan pelanggan).
+## 2. Ruang lingkup
+Berlaku untuk:
+- Seluruh layanan TI yang dikelola atau dioperasikan DTSI (mis. identitas & akses, jaringan kampus, email , aplikasi akademik/keuangan, hosting , laboratorium, cloud institusi).
+- Civitas dan unit kerja Universitas Harapan Bangsa serta mitra yang berkontrak menerima dukungan melalui saluran resmi DTSI.
+Di luar ruang lingkup: pengembangan fitur baru besar (masuk proyek/perubahan), pembelian aset (rujuk pengadaan), insiden murni keamanan siber yang memicu prosedur khusus (lihat DTSI-SOP-INC-01 )—namun titik masuk tetap boleh melalui service desk untuk pencatatan awal.
+## 3. Dokumen terkait
+Dokumen | Relasi
+DTSI-SOP-OPS-10 | Permintaan layanan terstandarisasi ( service request )
+DTSI-SOP-INC-02 | Insiden gangguan layanan
+DTSI-SOP-OPS-13 | Eskalasi ke problem management
+DTSI-SOP-OPS-02 | Perubahan yang timbul dari tiket
+DTSI-SOP-ADM-01 | Pengendalian rekaman
+## 4. Definisi
+Istilah | Makna
+Tiket | Rekaman kerja di sistem ITSM institusi (nomor unik, riwayat, SLA).
+Triage | Klasifikasi jenis pekerjaan, dampak, dan prioritas awal.
+L1 / L2 / L3 | Tingkat dukungan: pertama ( frontline ), spesialis, ahli/mitra.
+OLA | Perjanjian tingkat layanan internal antar tim DTSI.
+## 5. Saluran layanan resmi
+Semua kontak harus tercatat di ITSM kecuali keadaan darurat yang memerlukan panggilan telepon disusul entri tiket maksimal 30 menit setelahnya.
+Saluran | Penggunaan | Larangan
+Portal tiket / helpdesk | Utama untuk permintaan dan gangguan | Jangan mengirim kata sandi atau data rahasia penuh
+Email layanan DTSI | [Diisi institusi: alamat resmi, mis. helpdesk@uhb.ac.id] | Bukan untuk ekskalasi keamanan sensitif tanpa enkripsi
+Telepon / hotline | Prioritas tinggi, tidak bisa akses portal | Tetap buka tiket oleh agen
+Meja layanan (jika ada) | Kunjungan fisik | Tetap buat tiket
+Data sensitif: arahkan pengguna ke saluran yang memenuhi klasifikasi data (lihat DTSI-SOP-AST-02 ); jangan meminta PIN/kata sandi.
+## 6. Peran dan tanggung jawab
+Peran | Tanggung jawab utama
+Kepala DTSI | Menetapkan jam layanan, menyetujui pengecualian SLA strategis, eskalasi ke Rektorat bila dampak institusional.
+Manajer layanan / Koordinator service desk | Antrian global, shift , pelatihan agen, laporan bulanan, kualitas komunikasi.
+Agen L1 | Buka tiket, triage, penyelesaian sesuai knowledge article , eskalasi.
+Agen L2/L3 | Diagnosis mendalam, implementasi terkendali, koordinasi mitra.
+Pemilik layanan ( service owner ) | Persetujuan bisnis penutupan insiden besar, prioritas antar unit.
+RACI rinci per jenis tiket dapat dilampirkan sebagai Lampiran A setelah daftar layanan disahkan.
+## 7. Matriks prioritas (indikatif)
+Prioritas ditetapkan berdasarkan dampak (berapa banyak pengguna/fungsi kritikal) dan urgensi . Kepala DTSI menyetujui definisi final; contoh:
+Prioritas | Dampak | Contoh | Target respons pertama (indikatif)
+P1 — Kritis | Layanan utama universitas lumpuh total | SIAKAD/LMS down seluruh kampus | ≤ 15 menit
+P2 — Tinggi | Degradasi besar, banyak pengguna | Email kampus lambat massal | ≤ 1 jam
+P3 — Sedang | Bagian layanan, workaround ada | Satu gedung tanpa Wi‑Fi | ≤ 4 jam kerja
+P4 — Rendah | Permintaan standar, satu pengguna | Reset sandi, panduan | ≤ 8 jam kerja
+[Diisi institusi: ubah angka dan contoh agar selaras kebijakan resmi.]
+## 8. Prosedur operasional
+### 8.1 Penerimaan dan pencatatan
+1. Sapa pengguna, identifikasi diri agen, dan kumpulkan: nama/NIDN/NIM atau unit, kontak, gejala atau kebutuhan, waktu mulai gangguan (jika insiden).
+2. Cari tiket duplikat; jika ada, gabungkan atau tautkan sebagai child sesuai aturan ITSM.
+3. Buka tiket baru dengan judul jelas, kategori (insiden / permintaan / konsultasi), dan layanan terdampak.
+4. Untuk insiden keamanan (indikasi malware, kebocoran data, akun disalahgunakan): klasifikasikan, eskalasi paralel ke DTSI-SOP-INC-01 tanpa menunda tiket layanan.
+### 8.2 Triage dan perutean
+1. Terapkan matriks §7; set prioritas dan target resolusi di tiket.
+2. Jika permintaan layanan sesuai katalog → teruskan ke alur DTSI-SOP-OPS-10 .
+3. Jika insiden → teruskan ke alur DTSI-SOP-INC-02 (pemulihan); service desk tetap memegang komunikasi pengguna kecuali didelegasikan.
+4. Jika memerlukan perubahan konfigurasi/rilis → buka atau tautkan RFC sesuai DTSI-SOP-OPS-02 .
+### 8.3 Penanganan L1 dan eskalasi
+1. Jalankan langkah dari knowledge base ; dokumentasikan setiap tindakan dengan stempel waktu dan hasil (berhasil/gagal).
+2. Jika batas waktu L1 hampir terlampaui atau diperlukan hak istimewa teknis → eskalasi ke L2/L3 dengan ringkasan: gejala, yang sudah dicoba, log/error, kontak pengguna.
+3. Untuk P1/P2, beri pembaruan status kepada pengguna pada interval yang ditetapkan ( mis. P1 setiap 2 jam, P2 setiap 4 jam kerja )— [sesuaikan di Lampiran SLA] .
+### 8.4 Penutupan
+1. Verifikasi pemulihan bersama pengguna bila memungkinkan; catat kode penutupan (mis. terselesaikan, workaround , dibatalkan).
+2. Jika akar masalah belum diperbaiki permanen, buka atau sarankan tiket problem ( DTSI-SOP-OPS-13 ).
+3. Minta survei kepuasan singkat (opsional) sesuai kemampuan ITSM.
+4. Tutup tiket; pastikan lampiran dan rekaman lengkap untuk retensi sesuai DTSI-SOP-ADM-01 .
+### 8.5 Pelaporan
+1. Bulanan: ringkasan volume, MTTR per prioritas, tiket terbuka > SLA, top 5 jenis insiden, dan tindakan perbaikan ke Manajer layanan.
+2. Tinjauan manajemen: data diserahkan untuk agenda tinjauan SMKI/layanan TI.
+### Diagram alur — ringkasan eskalasi
+flowchart TD
+start([Kontak_masuk]) --> log[Buka_atau_gabung_tiket]
+log --> triage[Triage_prioritas]
+triage --> tipe{Jenis_pekerjaan}
+tipe -->|Permintaan| sr[Alur_OPS-10]
+tipe -->|Insiden| inc[Alur_INC-02]
+tipe -->|Keamanan| sec[Paralel_INC-01]
+inc --> l1{L1_selesai}
+l1 -->|Ya| tutup[Penutupan_dan_survei]
+l1 -->|Tidak| l23[L2_L3_dan_RFC_bila_perlu]
+l23 --> tutup
+sr --> tutup
+## 9. Rujukan ISO (indikatif)
+- ISO/IEC 20000-1:2018 — komponen layanan: incident management interface, service request, komunikasi dengan pelanggan.
+- ISO/IEC 27002:2022 — aspek keamanan dalam komunikasi operasional dan penanganan awal insiden.
+## 10. Rekaman wajib
+- Setiap tiket dengan SLA, prioritas, riwayat tindakan, dan penutupan.
+- Daftar shift dan penanggung jawab saluran (untuk audit ketersediaan).
+- Laporan bulanan service desk .
+## 11. Indikator kinerja
+Indikator | Definisi | Target (diisi institusi)
+Kepatuhan pencatatan | % kontak yang punya tiket | ≥ 98%
+Respons pertama | % tiket P1/P2 yang dapat respons dalam target §7 | [Diisi]
+Kepuasan pengguna | Skor survei rata-rata | [Diisi]
+Eskalasi berulang | % tiket L1 yang eskalasi > 2× | [Diisi]
+## 12. Tinjauan dokumen
+Dokumen ini ditinjau minimal satu kali per tahun atau setelah: perubahan besar saluran layanan, insiden reputasi, audit, atau revisi SLA universitas.
+Kontrol perubahan: perubahan isi wajib melalui DTSI-SOP-ADM-01 dan persetujuan Kepala DTSI.
