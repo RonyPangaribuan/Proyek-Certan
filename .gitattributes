@@ -1,0 +1,7 @@
+# Preserve exact bytes of hashed research artifacts across Windows/Linux checkouts.
+data/corpus/raw/*.pdf binary
+data/corpus/final/*.txt -text
+data/corpus/final/*.json -text
+evaluation/*.json -text
+evaluation/**/*.json -text
+output/pdf/*.pdf binary

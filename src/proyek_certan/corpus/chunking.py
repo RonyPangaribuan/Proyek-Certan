@@ -1,4 +1,4 @@
-"""Section-first, word-aware corpus chunking with deterministic overlap."""
+"""Recursive structure-aware splitting with word overlap and a token budget."""
 
 from __future__ import annotations
 
@@ -14,6 +14,20 @@ WORD = re.compile(r"\S+")
 MARKDOWN_HEADING = re.compile(r"^#{1,6}\s+(.+?)\s*$")
 ROMAN_HEADING = re.compile(r"^[IVX]+\.\s+([A-Z][A-Z0-9 ,/&:()\-]+)\s*$")
 NUMBERED_HEADING = re.compile(r"^\d+(?:\.\d+)*\.\s+(.+?)\s*$")
+
+
+def recursive_boundary(boundaries: list[list[int]], minimum: int, target: int, level: int = 0) -> int:
+    """Recursively try paragraph, line, sentence, then whole-word boundaries.
+
+    The caller finds a token-safe window first. A separator must leave at least
+    half the window; otherwise the oversized fragment is split at a finer level.
+    """
+    if level == len(boundaries):
+        return target
+    candidates = [end for end in boundaries[level] if minimum < end <= target]
+    if candidates:
+        return candidates[-1]
+    return recursive_boundary(boundaries, minimum, target, level + 1)
 
 
 @dataclass(frozen=True)
@@ -93,10 +107,10 @@ def chunk_section(
     if not words:
         return []
     starts = [word.start() for word in words]
-    boundaries = sorted({
-        bisect_right(starts, match.start())
-        for match in re.finditer(r"\n+", section.text)
-    })
+    boundaries = [
+        sorted({bisect_right(starts, match.start()) for match in re.finditer(pattern, section.text)})
+        for pattern in (r"\n\s*\n", r"\n+", r"(?<=[.!?])\s+")
+    ]
     chunks = []
     start = previous_end = 0
     while start < len(words):
@@ -128,11 +142,9 @@ def chunk_section(
         if target == len(words):
             end = target
         else:
-            preferred = [
-                boundary for boundary in boundaries
-                if max(previous_end, start + (target - start) // 2) < boundary <= target
-            ]
-            end = preferred[-1] if preferred else target
+            end = recursive_boundary(
+                boundaries, max(previous_end, start + (target - start) // 2), target,
+            )
         chunks.append(section.text[words[start].start():words[end - 1].end()])
         if end == len(words):
             break

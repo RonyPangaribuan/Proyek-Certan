@@ -3,17 +3,10 @@
 from __future__ import annotations
 
 from dataclasses import asdict
-import hashlib
-import json
-from pathlib import Path
-
-import pytest
-
 from proyek_certan.corpus.chunking import (
     Section, chunk_document, chunk_section, group_short_sections, split_sections,
 )
 from proyek_certan.corpus.cleaning import normalize_text
-from proyek_certan.corpus.ingestion import build_chunks, load_corpus
 from proyek_certan.knowledge.models import validate_chunks
 
 
@@ -89,36 +82,7 @@ def test_draft_status_is_flat_metadata_on_every_chunk():
     assert all(chunk.metadata["review_required"] is True for chunk in chunks)
 
 
-def test_manifest_ingestion_checks_sha_and_produces_unique_ids(tmp_path: Path):
-    processed = tmp_path / "data/corpus/processed"
-    processed.mkdir(parents=True)
-    evaluation = tmp_path / "evaluation"
-    evaluation.mkdir()
-    manifest = {"documents": []}
-    report = {"documents": []}
-    for doc_id in ("DOC01", "DOC02"):
-        path = processed / f"{doc_id}.txt"
-        text = "# Network\n" + " ".join(f"token{i}" for i in range(35)) + "\n"
-        path.write_text(text, encoding="utf-8")
-        relative = f"data/corpus/processed/{path.name}"
-        manifest["documents"].append({
-            "document_id": doc_id, "filename": f"{doc_id}.pdf", "title": "Network",
-            "source_url": f"https://example.org/{doc_id}", "text_file": relative,
-            "source_status": "processed_official_html",
-        })
-        report["documents"].append({
-            "document_id": doc_id, "text_file": relative, "status": "processed",
-            "sha256": hashlib.sha256(path.read_bytes()).hexdigest(), "character_count": len(text),
-        })
-    (tmp_path / "data/corpus/corpus_manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
-    (evaluation / "corpus_processing.json").write_text(json.dumps(report), encoding="utf-8")
-    chunks, audit = build_chunks(tmp_path, size=20, overlap=4)
-    chunks_again, _ = build_chunks(tmp_path, size=20, overlap=4)
-    assert audit["summary"]["document_count"] == 2
-    assert {chunk.metadata["document_id"] for chunk in chunks} == {"DOC01", "DOC02"}
-    assert len({chunk.chunk_id for chunk in chunks}) == len(chunks)
-    assert [chunk.chunk_id for chunk in chunks] == [chunk.chunk_id for chunk in chunks_again]
-    assert max(len(chunk.text.split()) for chunk in chunks) <= 20
-    (processed / "DOC01.txt").write_text("# Tampered\n", encoding="utf-8")
-    with pytest.raises(ValueError, match="SHA-256"):
-        load_corpus(tmp_path)
+def test_recursive_fallback_preserves_sentence_boundary_and_overlap():
+    parts = chunk_section(Section("Test", "a b c. d e f. g h i."), size=8, overlap=1)
+    assert parts[0] == "a b c. d e f."
+    assert parts[1] == "f. g h i."

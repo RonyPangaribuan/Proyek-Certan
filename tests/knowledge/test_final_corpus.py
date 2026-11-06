@@ -24,13 +24,11 @@ def copied_repository(tmp_path):
     manifest = json.loads((REPOSITORY_ROOT / MANIFEST_PATH).read_text(encoding="utf-8"))
     paths = {
         MANIFEST_PATH.as_posix(),
-        manifest["provenance_report"]["path"],
         manifest["chunks"]["path"],
-        manifest["chunks"]["origin_path"],
     }
     for document in manifest["documents"]:
         paths.update(
-            document[k] for k in ("active_text_file", "origin_text_file", "source_pdf")
+            document[k] for k in ("active_text_file", "source_pdf")
         )
     for relative in paths:
         target = tmp_path / relative
@@ -53,8 +51,8 @@ class StorageEncoder:
 
 def test_final_copy_preserves_drafts_and_all_audited_ids():
     corpus = load_final_corpus()
-    assert len(corpus.chunks) == 487
-    assert len({c.chunk_id for c in corpus.chunks}) == 487
+    assert len(corpus.chunks) == corpus.manifest["chunk_count"]
+    assert len({c.chunk_id for c in corpus.chunks}) == len(corpus.chunks)
     drafts = [
         c for c in corpus.chunks if c.metadata["document_id"] in {"DOC09", "DOC10"}
     ]
@@ -64,7 +62,7 @@ def test_final_copy_preserves_drafts_and_all_audited_ids():
 
 
 @pytest.mark.parametrize(
-    "field", ["active_text_file", "origin_text_file", "source_pdf"]
+    "field", ["active_text_file", "source_pdf"]
 )
 def test_modified_text_or_original_pdf_is_rejected(copied_repository, field):
     corpus = load_final_corpus(copied_repository)
@@ -125,7 +123,7 @@ def test_final_cli_index_reopen_and_document_search(tmp_path, capsys, monkeypatc
     monkeypatch.setattr(final_cli, "EmbeddingModel", lambda **kwargs: StorageEncoder())
     args = ["--db", str(tmp_path)]
     assert final_cli.main(["index", *args]) == 0
-    assert json.loads(capsys.readouterr().out)["indexed"] == 487
+    assert json.loads(capsys.readouterr().out)["indexed"] == len(load_final_corpus().chunks)
     assert final_cli.main(["verify", "--index", *args]) == 0
     assert json.loads(capsys.readouterr().out)["index"] == "PASS"
     assert (
@@ -137,7 +135,7 @@ def test_final_cli_index_reopen_and_document_search(tmp_path, capsys, monkeypatc
                 "DNS",
                 "--document-level",
                 "--candidate-depth",
-                "487",
+                str(len(load_final_corpus().chunks)),
                 "--top-k",
                 "5",
             ]

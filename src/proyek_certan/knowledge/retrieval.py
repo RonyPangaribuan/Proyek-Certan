@@ -5,13 +5,10 @@ from __future__ import annotations
 from collections.abc import Sequence
 import math
 
-import numpy as np
-
 from proyek_certan.knowledge.embeddings import Embedder, EmbeddingModel
 from proyek_certan.knowledge.models import ChunkInput, SearchResult, validate_chunks
 from proyek_certan.knowledge.vector_store import VectorStore
 from proyek_certan.knowledge.documents import (
-    CorpusCatalog,
     DocumentResult,
     distinct_documents,
 )
@@ -27,8 +24,6 @@ class KnowledgeRetriever:
         )
         if self.embedder.model_name != store.model_name:
             raise ValueError("Query and document embedding models must match")
-        self._catalog = None
-        self._title_vectors = None
 
     def index_chunks(self, chunks: Sequence[ChunkInput]) -> int:
         """Accept chunking output directly; an empty batch is a no-op."""
@@ -37,33 +32,7 @@ class KnowledgeRetriever:
             return 0
         embeddings = self.embedder.encode([chunk.text for chunk in batch])
         indexed = self.store.upsert(batch, embeddings)
-        self._catalog = self._title_vectors = None
         return indexed
-
-    def catalog(self) -> CorpusCatalog:
-        if self._catalog is None:
-            self._catalog = CorpusCatalog(
-                self.store.collection.get(include=["metadatas"])["metadatas"]
-            )
-        return self._catalog
-
-    def title_scores(self, query: str) -> dict[str, float]:
-        """Cosine to source titles, encoded once per source inventory."""
-        catalog = self.catalog()
-        if not catalog.documents:
-            return {}
-        if self._title_vectors is None:
-            self._title_vectors = self.embedder.encode(
-                [str(m.get("title") or m["source"]) for m in catalog.documents.values()]
-            )
-        scores = self._title_vectors @ self.embedder.encode(query)[0]
-        return dict(
-            zip(
-                catalog.documents,
-                (float(np.clip(s, -1, 1)) for s in scores),
-                strict=True,
-            )
-        )
 
     def search_documents(
         self, query: str, *, top_k: int = 5, candidate_depth: int = 100

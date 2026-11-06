@@ -1,4 +1,4 @@
-"""Offline storage-contract test using the real 130 chunks and a stub encoder."""
+"""Offline storage contract for the final corpus and a stub encoder."""
 
 import json
 from pathlib import Path
@@ -11,18 +11,19 @@ from proyek_certan.knowledge.vector_store import VectorStore
 
 
 CORPUS_CHUNKS = (
-    Path(__file__).resolve().parents[2] / "data/corpus/processed/knowledge_chunks.json"
+    Path(__file__).resolve().parents[2] / "data/corpus/final/knowledge_chunks.json"
 )
 
 
 def test_real_chunks_index_reopen_and_retrieve_with_stub(tmp_path, embedder):
     chunks = json.loads(CORPUS_CHUNKS.read_text(encoding="utf-8"))
     validated = validate_chunks(chunks)
-    assert len(validated) == 130
+    expected_count = len(validated)
+    assert expected_count > 0
     with VectorStore(tmp_path) as store:
         retriever = KnowledgeRetriever(store, embedder)
-        assert retriever.index_chunks(chunks) == 130
-        assert store.count() == 130
+        assert retriever.index_chunks(chunks) == expected_count
+        assert store.count() == expected_count
         stored = store.collection.get(include=["metadatas"])
         assert set(stored["ids"]) == {chunk.chunk_id for chunk in validated}
         assert {metadata["document_id"] for metadata in stored["metadatas"]} == {
@@ -41,7 +42,7 @@ def test_real_chunks_index_reopen_and_retrieve_with_stub(tmp_path, embedder):
         [sys.executable, "-c", code, str(tmp_path)],
         capture_output=True, text=True, check=True,
     )
-    assert reopened.stdout.strip() == "130"
+    assert reopened.stdout.strip() == str(expected_count)
     with VectorStore(tmp_path) as store:
         results = KnowledgeRetriever(store, embedder).search("VLAN", top_k=3)
         assert len(results) == 3

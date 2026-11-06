@@ -1,1 +1,1 @@
-"""Read-only corpus checks, independent of the knowledge search pipeline."""
+"""Local extraction, normalization, recursive chunking, and final-corpus ingestion."""

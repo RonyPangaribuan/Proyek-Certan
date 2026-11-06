@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from proyek_certan.corpus.chunking import Section, chunk_document, chunk_section
-from proyek_certan.corpus.token_experiment import verify_coverage
+from proyek_certan.corpus.ingestion import verify_coverage
 
 
 def count_with_specials(text: str) -> int:

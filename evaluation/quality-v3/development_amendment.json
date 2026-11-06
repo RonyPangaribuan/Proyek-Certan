@@ -1,9 +1,0 @@
-{
-  "reason": "Development uncovered the generic noun University being parsed as a separate unsupported institution in full University of ... names. Fixed generic organizational noun handling and added regression test before validation/final observations. Removed unused title encoding when support threshold is zero.",
-  "first_lock_preserved": "lock.json",
-  "first_results_preserved": "results_development.json",
-  "active_lock": "lock-r2.json",
-  "active_results": "results_development_r2.json",
-  "no_validation_or_final_results_seen": true,
-  "old_75_labels_unchanged": true
-}

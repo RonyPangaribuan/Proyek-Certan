@@ -1,19 +1,13 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "status": "ACTIVE",
-  "corpus_version": "m3-reviewed-v3",
-  "profile": "v3_t96_w10",
+  "corpus_version": "m3-final-recursive",
+  "profile": "recursive_t96_w10",
   "document_count": 15,
-  "chunk_count": 487,
-  "provenance_report": {
-    "path": "evaluation/reviewed_corpus_v3.json",
-    "sha256": "a5cb40f65a0c6cf4c5315af269d799f71b98df556717a48a1a184944c0aa78e7"
-  },
+  "chunk_count": 503,
   "chunks": {
     "path": "data/corpus/final/knowledge_chunks.json",
-    "sha256": "9abc951cbb6220ff00d4d604a1249a0ac228bf6ae0559a04f356257e679a9a7c",
-    "origin_path": "data/corpus/processed/reviewed-v3/knowledge_chunks_v3_t96_w10.json",
-    "origin_sha256": "9abc951cbb6220ff00d4d604a1249a0ac228bf6ae0559a04f356257e679a9a7c"
+    "sha256": "0b43b3e143621bfda75b3f7567e0e45a4296305e1c71e12a06437071e8826ea2"
   },
   "chunking": {
     "max_total_tokens": 96,
@@ -23,11 +17,13 @@
     "source_word_coverage_verified": true,
     "token_lengths": {
       "min": 19,
-      "median": 84,
+      "median": 81,
       "max": 96,
       "over_model_limit": 0
     },
-    "section_aware": true
+    "section_aware": true,
+    "method": "section grouping, recursive paragraph/line/sentence/word fallback, token-safe windows and word overlap",
+    "exact_page_chunks": 127
   },
   "embedding": {
     "model_name": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
@@ -35,7 +31,7 @@
     "normalize_embeddings": true
   },
   "storage": {
-    "database_path": ".local/chroma-corpus-final",
+    "database_path": ".local/chroma-final-recursive",
     "model_cache": ".cache/models",
     "collection": "certan_knowledge",
     "distance": "cosine",
@@ -51,13 +47,12 @@
     "guard_adopted": false,
     "title_reranking_adopted": false
   },
-  "copy_policy": "Byte-identical copy; no re-cleaning, re-chunking, new IDs or metadata rewrites. metadata.text_file retains historical provenance; documents.active_text_file defines the sole active text path.",
+  "copy_policy": "15 reviewed TXT snapshots and raw PDFs unchanged; final chunks rebuilt recursively. Historical provenance fields are records in the archive, not runtime dependencies.",
   "documents": [
     {
       "document_id": "DOC01",
       "active_text_file": "data/corpus/final/DOC01_WiFi.txt",
       "text_sha256": "bc0748163ea5e6488519dd08dbc9ca8958f0f40cb019ecf3db52ab402b7acab5",
-      "origin_text_file": "data/corpus/processed/reviewed-v3/DOC01_WiFi.txt",
       "source_pdf": "data/corpus/raw/DOC01_WiFi.pdf",
       "source_pdf_sha256": "1c8ccebc81c47363a4a010eda1e88ee5e51588db41189f988a9db77068d13708",
       "provenance": {
@@ -98,7 +93,6 @@
       "document_id": "DOC02",
       "active_text_file": "data/corpus/final/DOC02_DNS.txt",
       "text_sha256": "eb38ae31b76575d18ae5bcc1244ffd3fe8b600d19eb16687d32e56a712f76165",
-      "origin_text_file": "data/corpus/processed/reviewed-v3/DOC02_DNS.txt",
       "source_pdf": "data/corpus/raw/DOC02_DNS.pdf",
       "source_pdf_sha256": "673729ac208fa3e6eabe5030bb0e2a97da4ec0ff323cac5dbcc104acc460c9c1",
       "provenance": {
@@ -141,7 +135,6 @@
       "document_id": "DOC03",
       "active_text_file": "data/corpus/final/DOC03_DHCP_Server.txt",
       "text_sha256": "650ab846dd59f60663249988a6c5bf0c0fe41a836dced6b9b0a43a50fb43c841",
-      "origin_text_file": "data/corpus/processed/reviewed-v3/DOC03_DHCP_Server.txt",
       "source_pdf": "data/corpus/raw/DOC03_DHCP_Server.pdf",
       "source_pdf_sha256": "d78c706905cfebdf28ba54d713e3a538dbc1b90f9c1c1c78bb007994cde91805",
       "provenance": {
@@ -182,7 +175,6 @@
       "document_id": "DOC04",
       "active_text_file": "data/corpus/final/DOC04_DHCP_Client.txt",
       "text_sha256": "5a27b9bc955e1da495f7bd6c45d7685c14e9288d990a2ad444017e33e6ede7f4",
-      "origin_text_file": "data/corpus/processed/reviewed-v3/DOC04_DHCP_Client.txt",
       "source_pdf": "data/corpus/raw/DOC04_DHCP_Client.pdf",
       "source_pdf_sha256": "0ed9837165f2710b873f3e79aba10de00c59cb6d0b5f34607775bbad71ba1390",
       "provenance": {
@@ -223,7 +215,6 @@
       "document_id": "DOC05",
       "active_text_file": "data/corpus/final/DOC05_TCP_IP.txt",
       "text_sha256": "2154294c2de49d8887a4f263c1152413dea86301db6b99b39603dfb27c738911",
-      "origin_text_file": "data/corpus/processed/reviewed-v3/DOC05_TCP_IP.txt",
       "source_pdf": "data/corpus/raw/DOC05_TCP_IP.pdf",
       "source_pdf_sha256": "809fbf682e5fba839f282986a2110da9736a49ff609be0b3f89b591d5cdef598",
       "provenance": {
@@ -266,7 +257,6 @@
       "document_id": "DOC06",
       "active_text_file": "data/corpus/final/DOC06_LAN_Switch.txt",
       "text_sha256": "4f3698611359d3a470b4599f143d3dbdc169b69dacbfb24d8ed45f76196c7988",
-      "origin_text_file": "data/corpus/processed/reviewed-v3/DOC06_LAN_Switch.txt",
       "source_pdf": "data/corpus/raw/DOC06_LAN_Switch.pdf",
       "source_pdf_sha256": "970ae7af0b0dce2d78d7c73887b4a873d2064942d82bd70ca642317f67455222",
       "provenance": {
@@ -315,7 +305,6 @@
       "document_id": "DOC07",
       "active_text_file": "data/corpus/final/DOC07_Packet_Loss.txt",
       "text_sha256": "9afb81660495e941e8fb8b30cc9b0b8c6cd7c8d6c84dccfc5c99cab61ce0c6de",
-      "origin_text_file": "data/corpus/processed/reviewed-v3/DOC07_Packet_Loss.txt",
       "source_pdf": "data/corpus/raw/DOC07_Packet_Loss.pdf",
       "source_pdf_sha256": "04c09cf34c1b501a88fe306179882a3f55cb9e62964f3e2f64101246c461926b",
       "provenance": {
@@ -358,7 +347,6 @@
       "document_id": "DOC08",
       "active_text_file": "data/corpus/final/DOC08_Authentication.txt",
       "text_sha256": "4b15cac8363240a485e95ed940ba8d227f07fab20af7a2ffc033581f26d22940",
-      "origin_text_file": "data/corpus/processed/reviewed-v3/DOC08_Authentication.txt",
       "source_pdf": "data/corpus/raw/DOC08_Authentication.pdf",
       "source_pdf_sha256": "f910dd58532b455fc440d163631b988c53bd8623d8b7e4ce4e04734d1f2fc80c",
       "provenance": {
@@ -399,7 +387,6 @@
       "document_id": "DOC09",
       "active_text_file": "data/corpus/final/DOC09_Service_Desk.txt",
       "text_sha256": "7854d75360a290dc005d54c7f44f54358af9ea754f3aa22532229f5349e7c138",
-      "origin_text_file": "data/corpus/processed/reviewed-v3/DOC09_Service_Desk.txt",
       "source_pdf": "data/corpus/raw/DOC09_Service_Desk.pdf",
       "source_pdf_sha256": "f763b27263d158ed682d852cd7cab9780770800875321746ba01d1fb70a13028",
       "provenance": {
@@ -441,7 +428,6 @@
       "document_id": "DOC10",
       "active_text_file": "data/corpus/final/DOC10_Incident_Handling.txt",
       "text_sha256": "7e32c158abd0acdf3956717e88515c10cfd95c6c8e37ecde9e7980e0cd352159",
-      "origin_text_file": "data/corpus/processed/reviewed-v3/DOC10_Incident_Handling.txt",
       "source_pdf": "data/corpus/raw/DOC10_Incident_Handling.pdf",
       "source_pdf_sha256": "3b0d47080e5f9551544042374945bdce1887db8747eefb9e9325d52182c93b1c",
       "provenance": {
@@ -483,7 +469,6 @@
       "document_id": "DOC11",
       "active_text_file": "data/corpus/final/DOC11_Incident_Management_UCF.txt",
       "text_sha256": "a4e0c6c4087281aa8785ff4520de37c30e592c1ab3a4e6f522a6e0ad925d06dd",
-      "origin_text_file": "data/corpus/processed/reviewed-v3/DOC11_Incident_Management_UCF.txt",
       "source_pdf": "data/corpus/raw/DOC11_Incident_Management_UCF.pdf",
       "source_pdf_sha256": "ca7182adc465ec161b11f850403c478fd78980a24473f5d22fca03a33cb88e76",
       "provenance": {
@@ -527,7 +512,6 @@
       "document_id": "DOC12",
       "active_text_file": "data/corpus/final/DOC12_Security_Incident.txt",
       "text_sha256": "ccb9334315a00c769d9bac0a925aecf95740c1ec6590f4cff9425e3360321901",
-      "origin_text_file": "data/corpus/processed/reviewed-v3/DOC12_Security_Incident.txt",
       "source_pdf": "data/corpus/raw/DOC12_Security_Incident.pdf",
       "source_pdf_sha256": "b0d85534647efbfa20e21f2fcb81ebe94e5d5742f8dada1add9f764727f0f67f",
       "provenance": {
@@ -566,7 +550,6 @@
       "document_id": "DOC13",
       "active_text_file": "data/corpus/final/DOC13_Network_Administration.txt",
       "text_sha256": "10333fa61d6ac8baf6450cb56a3b2d9a594a5dda182a7ce862aac5f9efbdad4a",
-      "origin_text_file": "data/corpus/processed/reviewed-v3/DOC13_Network_Administration.txt",
       "source_pdf": "data/corpus/raw/DOC13_Network_Administration.pdf",
       "source_pdf_sha256": "c17af26e0d0766d10933884de9f44ba92b456949409a88c4b467afb504c9d7b3",
       "provenance": {
@@ -611,7 +594,6 @@
       "document_id": "DOC14",
       "active_text_file": "data/corpus/final/DOC14_Acceptable_Use.txt",
       "text_sha256": "e9b41395a00d0415507337b9f520a30aa34570920cb646fa1510ae6b59b23886",
-      "origin_text_file": "data/corpus/processed/reviewed-v3/DOC14_Acceptable_Use.txt",
       "source_pdf": "data/corpus/raw/DOC14_Acceptable_Use.pdf",
       "source_pdf_sha256": "3472c8a5651f83ce2de2598a621ed285d5316e2d201a4434bac78d1a8d88a511",
       "provenance": {
@@ -650,7 +632,6 @@
       "document_id": "DOC15",
       "active_text_file": "data/corpus/final/DOC15_Network_Management.txt",
       "text_sha256": "c6593c8ea3fc213935484b57fbe8a46c1a778d294f3218689a460737c0573394",
-      "origin_text_file": "data/corpus/processed/reviewed-v3/DOC15_Network_Management.txt",
       "source_pdf": "data/corpus/raw/DOC15_Network_Management.pdf",
       "source_pdf_sha256": "2c50d2dba260388580f2d0d98a938559274c97bfe4ed50e6dc70c954ad927f18",
       "provenance": {
@@ -687,5 +668,11 @@
         }
       }
     }
-  ]
+  ],
+  "research_archive": {
+    "tag": "archive/m3-before-minimal-cleanup-20261106",
+    "commit": "bc0c4c1a49d977236378c73e26794332b2056c54",
+    "previous_profile": "v3_t96_w10",
+    "previous_chunk_count": 487
+  }
 }

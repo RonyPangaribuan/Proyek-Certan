@@ -1,17 +1,25 @@
-"""Offline checks for provenance safeguards and structure-preserving HTML extraction."""
-
-import hashlib
-import json
-from pathlib import Path
-from types import SimpleNamespace
-
+"""Local source extraction preserves meaningful structure and refuses overwrites."""
 import pytest
+from proyek_certan.corpus.prepare import SourceUnavailable, clean_text, extract_html_text, main, exact_page_span
 
-from proyek_certan.corpus.prepare import (
-    SourceUnavailable, _origin, _reusable_text, clean_text, extract_html_text,
-    process_corpus, robots_allows,
-)
 
+def test_page_span_requires_unique_exact_source_words():
+    index = (["alpha", "beta", "gamma", "alpha"], [1, 1, 2, 2])
+    assert exact_page_span("beta gamma", "Title", index)["page_end"] == 2
+    assert exact_page_span("alpha", "Title", index) == {}
+    assert exact_page_span("invented text", "Title", index) == {}
+
+
+def test_local_ingestion_never_overwrites_existing_review(tmp_path):
+    source = tmp_path / "source.txt"
+    target = tmp_path / "review.txt"
+    source.write_text("# Network\nCheck the port.\n", encoding="utf-8")
+    args = ["--input", str(source), "--kind", "text", "--title", "Network", "--output", str(target)]
+    assert main(args) == 0
+    original = target.read_bytes()
+    with pytest.raises(SystemExit):
+        main(args)
+    assert target.read_bytes() == original
 
 def test_microsoft_body_keeps_headings_steps_code_and_table_without_chrome():
     html = b"""
@@ -83,24 +91,6 @@ def test_openvswitch_faq_keeps_questions_answers_and_commands_without_navigation
     assert "Navigation" not in text and "Copyright banner" not in text and "¶" not in text
 
 
-def test_existing_text_reused_only_with_matching_source_pdf_and_output_hash(tmp_path: Path):
-    outfile = tmp_path / "DOC01_WiFi.txt"
-    text = "# Existing output\n" + "Verified corpus text. " * 20
-    outfile.write_text(text, encoding="utf-8")
-    digest = hashlib.sha256(outfile.read_bytes()).hexdigest()
-    previous = {
-        "status": "processed", "source_url": "https://example.org/article",
-        "source_pdf_sha256": "new-raw-hash", "text_file": f"data/corpus/processed/{outfile.name}",
-        "sha256": digest, "character_count": len(text),
-    }
-    document = {"source_url": previous["source_url"]}
-    assert _reusable_text(previous, document, "new-raw-hash", outfile) == text
-    assert _reusable_text(previous, document, "old-raw-hash", outfile) is None
-    assert _reusable_text(previous, {"source_url": "https://example.org/other"}, "new-raw-hash", outfile) is None
-    outfile.write_text(text + "tampered", encoding="utf-8")
-    assert _reusable_text(previous, document, "new-raw-hash", outfile) is None
-
-
 def test_short_or_challenge_html_never_becomes_corpus_text():
     with pytest.raises(SourceUnavailable, match="terlalu pendek"):
         extract_html_text(b"<main><div class='content'><h1>Login</h1></div></main>", "Microsoft Learn")
@@ -111,67 +101,5 @@ def test_short_or_challenge_html_never_becomes_corpus_text():
         )
 
 
-def test_unapproved_http_or_host_is_rejected():
-    with pytest.raises(SourceUnavailable):
-        _origin("http://learn.microsoft.com/page")
-    with pytest.raises(SourceUnavailable):
-        _origin("https://example.invalid/page")
-    with pytest.raises(SourceUnavailable):
-        _origin("https://www.cisco.com/doc")
-
-
 def test_invisible_template_characters_are_removed():
     assert clean_text("Incident\u200c response\u200b\n") == "Incident response\n"
-
-
-def test_robots_disallow_is_respected_without_fetching_article():
-    class Response:
-        status_code = 200
-        url = "https://learn.microsoft.com/robots.txt"
-        encoding = "utf-8"
-        headers = {"Content-Type": "text/plain"}
-
-        def raise_for_status(self):
-            return None
-
-        def iter_content(self, chunk_size):
-            yield b"User-agent: *\nDisallow: /en-us/troubleshoot/\n"
-
-        def close(self):
-            return None
-
-    urls = []
-    session = SimpleNamespace(get=lambda url, **kwargs: (urls.append(url), Response())[1])
-    allowed, note = robots_allows(
-        session, "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/example", {}
-    )
-    assert allowed is False
-    assert note == "robots.txt tersedia"
-    assert urls == ["https://learn.microsoft.com/robots.txt"]
-
-
-def test_manual_document_preserves_pdf_and_preexisting_text(tmp_path: Path):
-    raw = tmp_path / "data/corpus/raw"
-    raw.mkdir(parents=True)
-    pdf = raw / "DOC06_LAN_Switch.pdf"
-    pdf.write_bytes(b"original PDF bytes")
-    original_hash = hashlib.sha256(pdf.read_bytes()).hexdigest()
-    processed = tmp_path / "data/corpus/processed"
-    processed.mkdir()
-    existing = processed / "DOC06_LAN_Switch.txt"
-    existing.write_text("manual work in progress", encoding="utf-8")
-    evaluation = tmp_path / "evaluation"
-    evaluation.mkdir()
-    (evaluation / "pdf_validation.json").write_text(json.dumps({"documents": [{
-        "filename": pdf.name, "sha256": original_hash, "extraction_status": "no_text",
-    }]}), encoding="utf-8")
-    (tmp_path / "data/corpus/corpus_manifest.json").write_text(json.dumps({"documents": [{
-        "document_id": "DOC06", "filename": pdf.name, "source_url": "https://www.cisco.com/doc",
-        "publisher": "Cisco", "automatic_extraction_allowed": False,
-        "manual_reason": "permission must be checked", "source_status": "manual_required",
-    }]}), encoding="utf-8")
-    report = process_corpus(tmp_path)
-    assert report["summary"] == {"document_count": 1, "processed_count": 0, "manual_required_count": 1}
-    assert hashlib.sha256(pdf.read_bytes()).hexdigest() == original_hash
-    assert existing.read_text(encoding="utf-8") == "manual work in progress"
-    assert report["documents"][0]["text_file"] is None

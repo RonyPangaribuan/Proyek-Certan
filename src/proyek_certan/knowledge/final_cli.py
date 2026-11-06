@@ -9,7 +9,8 @@ import json
 from pathlib import Path
 import sys
 
-from proyek_certan.knowledge.embeddings import EmbeddingModel
+from proyek_certan.knowledge.embeddings import EmbeddingModel, _load_model
+from proyek_certan.corpus.ingestion import build_chunks, chunk_bytes
 from proyek_certan.knowledge.final_corpus import load_final_corpus, verify_index
 from proyek_certan.knowledge.retrieval import KnowledgeRetriever
 from proyek_certan.knowledge.vector_store import VectorStore
@@ -18,9 +19,11 @@ from proyek_certan.knowledge.vector_store import VectorStore
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="CERTAN: one audited final corpus")
     commands = parser.add_subparsers(dest="command", required=True)
-    for name in ("verify", "index", "search"):
+    for name in ("build", "verify", "index", "search"):
         command = commands.add_parser(name)
         command.add_argument("--db", type=Path, help="isolated database override")
+        if name == "build":
+            command.add_argument("--output", type=Path, help="write a new chunk JSON; otherwise verify reproducibility")
         if name == "verify":
             command.add_argument(
                 "--index", action="store_true", help="also verify persisted index"
@@ -30,6 +33,7 @@ def build_parser() -> argparse.ArgumentParser:
             command.add_argument("--top-k", type=int, default=3)
             command.add_argument("--document-level", action="store_true")
             command.add_argument("--candidate-depth", type=int, default=100)
+            command.add_argument("--threshold", type=float, help="explicit experimental cosine rejection threshold")
     return parser
 
 
@@ -38,7 +42,18 @@ def main(argv: Sequence[str] | None = None) -> int:
     try:
         corpus = load_final_corpus()
         db = args.db.resolve() if args.db else corpus.database_path
-        if args.command == "verify" and not args.index:
+        if args.command == "build":
+            model = EmbeddingModel(cache_folder=corpus.model_cache)
+            tokenizer = _load_model(model.model_name, model.cache_folder).tokenizer
+            chunks, stats = build_chunks(corpus.root, tokenizer)
+            content = chunk_bytes(chunks)
+            if content != (corpus.root / corpus.manifest["chunks"]["path"]).read_bytes():
+                raise ValueError("Rebuilt chunks differ from the registered final corpus")
+            if args.output:
+                with args.output.open("xb") as output_file:
+                    output_file.write(content)
+            output = dict(reproducible=True, **stats)
+        elif args.command == "verify" and not args.index:
             output = {
                 "corpus": "PASS",
                 "documents": 15,
@@ -80,6 +95,15 @@ def main(argv: Sequence[str] | None = None) -> int:
                         else:
                             found = retriever.search(args.query, top_k=args.top_k)
                         output = [asdict(item) for item in found]
+                        if args.threshold is not None:
+                            import math
+                            if not math.isfinite(args.threshold) or not -1 <= args.threshold <= 1:
+                                raise ValueError("Threshold must be finite and between -1 and 1")
+                            accepted = bool(found and found[0].similarity >= args.threshold)
+                            output = dict(status="ACCEPT" if accepted else "LOW_CONFIDENCE",
+                                          threshold=args.threshold, threshold_adopted=False,
+                                          top1_similarity=found[0].similarity if found else None,
+                                          results=output if accepted else [])
         print(json.dumps(output, ensure_ascii=False, indent=2))
         return 0
     except (OSError, KeyError, TypeError, ValueError, RuntimeError) as error:
