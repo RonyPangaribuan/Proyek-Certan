@@ -1,0 +1,88 @@
+{
+  "recorded_at_utc": "2026-11-05T14:15:31.501536+00:00",
+  "renderer": "pypdfium2 5.14.0",
+  "render_scale": 1.35,
+  "reviewer": "Assistant visual inspection, not independent human/source-owner approval.",
+  "documents": [
+    {
+      "document_id": "DOC11",
+      "source_pdf_sha256": "ca7182adc465ec161b11f850403c478fd78980a24473f5d22fca03a33cb88e76",
+      "inspected_pages": [
+        1,
+        2,
+        5,
+        6,
+        9
+      ],
+      "images": [
+        {
+          "page": 1,
+          "image": ".local/quality-v3-visual/DOC11_Incident_Management_UCF-p1.png",
+          "png_sha256": "4cf58a86453126bf79334b2a645479d0b61da3fc9d71314aec302ea17deb3ba2"
+        },
+        {
+          "page": 2,
+          "image": ".local/quality-v3-visual/DOC11_Incident_Management_UCF-p2.png",
+          "png_sha256": "9f9acd450787f40b72841512c351b7a6751e8b099bbfbc92019a4c38cd827c02"
+        },
+        {
+          "page": 5,
+          "image": ".local/quality-v3-visual/DOC11_Incident_Management_UCF-p5.png",
+          "png_sha256": "d4c027d469892f9a956e09c0eef6c9c4209e02036151ca93235e430c96aa4de0"
+        },
+        {
+          "page": 6,
+          "image": ".local/quality-v3-visual/DOC11_Incident_Management_UCF-p6.png",
+          "png_sha256": "9b025a5f073d56e666c3fd37328b3d026b5731480278f504f8e0ceb2be6192dd"
+        },
+        {
+          "page": 9,
+          "image": ".local/quality-v3-visual/DOC11_Incident_Management_UCF-p9.png",
+          "png_sha256": "dae847784d662c9fc951d2d7fdfcb5aab25ecd9045b1d8a3f5b09b0ded09985d"
+        }
+      ]
+    },
+    {
+      "document_id": "DOC13",
+      "source_pdf_sha256": "c17af26e0d0766d10933884de9f44ba92b456949409a88c4b467afb504c9d7b3",
+      "inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "images": [
+        {
+          "page": 1,
+          "image": ".local/quality-v3-visual/DOC13_Network_Administration-p1.png",
+          "png_sha256": "eadb54d0bddc7e7d80a55a3de8ca850c34d64a574e8e78340c23c4e9dfdf8d92"
+        },
+        {
+          "page": 2,
+          "image": ".local/quality-v3-visual/DOC13_Network_Administration-p2.png",
+          "png_sha256": "243206d15a44c4e9163d56ff2a6e9db6c3c7db4db62a21f34e17b49127df54b7"
+        },
+        {
+          "page": 3,
+          "image": ".local/quality-v3-visual/DOC13_Network_Administration-p3.png",
+          "png_sha256": "623007023a7a7530b74615acf11a71bf1ff7ba87cdfd7cbffd8f56ee3cd8d0c6"
+        },
+        {
+          "page": 4,
+          "image": ".local/quality-v3-visual/DOC13_Network_Administration-p4.png",
+          "png_sha256": "0683cd1e28a39a40c9268ad5f8ea22a4e96fed0debd6a5637463a76db2d676d8"
+        },
+        {
+          "page": 5,
+          "image": ".local/quality-v3-visual/DOC13_Network_Administration-p5.png",
+          "png_sha256": "a8ac917542b7608eb04e69e44a2b45b4e28a1a6a28166bf68c6dcb835901e6cb"
+        }
+      ]
+    }
+  ],
+  "findings": {
+    "DOC11": "Legal notice, objectives and definitions reflow verified on pages 1/2. Tables Figure 1.1/1.2 and closure email inspected on pages 5/6/9. Flattened cell associations and diagrams remain unresolved; no semantic reconstruction attempted.",
+    "DOC13": "All five pages inspected; front title, executive role and history reflow preserve source tokens, clause numbers and contact data. Current 2024 PDF provenance preserved."
+  }
+}

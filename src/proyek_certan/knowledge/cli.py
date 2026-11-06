@@ -20,14 +20,26 @@ def build_parser() -> argparse.ArgumentParser:
     commands = parser.add_subparsers(dest="command", required=True)
     for name in ("index", "search"):
         command = commands.add_parser(name)
-        command.add_argument("--db", type=Path, default=None, help="persistent database directory")
-        command.add_argument("--model-cache", type=Path, default=None, help="model cache directory")
+        command.add_argument(
+            "--db", type=Path, default=None, help="persistent database directory"
+        )
+        command.add_argument(
+            "--model-cache", type=Path, default=None, help="model cache directory"
+        )
         if name == "index":
-            command.add_argument("--input", type=Path, required=True, help="JSON array of chunks")
+            command.add_argument(
+                "--input", type=Path, required=True, help="JSON array of chunks"
+            )
         else:
             command.add_argument("--query", required=True)
             command.add_argument("--top-k", type=int, default=3)
             command.add_argument("--relevance-threshold", type=float, default=None)
+            command.add_argument(
+                "--document-level",
+                action="store_true",
+                help="return distinct documents instead of repeated chunks",
+            )
+            command.add_argument("--candidate-depth", type=int, default=100)
     return parser
 
 
@@ -43,7 +55,23 @@ def main(argv: Sequence[str] | None = None) -> int:
                 chunks = json.loads(args.input.read_text(encoding="utf-8"))
                 if not isinstance(chunks, list):
                     raise ValueError("input must be a JSON array of chunks")
-                output = {"indexed": retriever.index_chunks(chunks), "collection_count": store.count()}
+                output = {
+                    "indexed": retriever.index_chunks(chunks),
+                    "collection_count": store.count(),
+                }
+            elif args.document_level:
+                if args.relevance_threshold is not None:
+                    raise ValueError(
+                        "document mode has no adopted abstention policy; omit --relevance-threshold or use legacy chunk search"
+                    )
+                output = [
+                    asdict(r)
+                    for r in retriever.search_documents(
+                        args.query,
+                        top_k=args.top_k,
+                        candidate_depth=args.candidate_depth,
+                    )
+                ]
             else:
                 output = [
                     asdict(result)

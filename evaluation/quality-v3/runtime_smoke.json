@@ -1,0 +1,234 @@
+{
+  "generated_at_utc": "2026-11-05T14:24:26.426811+00:00",
+  "purpose": "Unscored interface/persistence checks; no tuning or final-test rerun.",
+  "checks": [
+    {
+      "name": "runtime_documents",
+      "command_arguments": [
+        "-m",
+        "proyek_certan.knowledge.cli",
+        "search",
+        "--document-level",
+        "--top-k",
+        "5",
+        "--db",
+        ".local/chroma-corpus-m3-v3_t96_w10",
+        "--query",
+        "Bagaimana diagnosis resolusi nama DNS pada klien?"
+      ],
+      "output": [
+        {
+          "document_id": "DOC02",
+          "chunk_id": "m3-reviewed-v3-DOC02-0031",
+          "text": "first request from the DNS server to the conditional forwarder successfully resolves a name (for example, nbob1.contoso.com). After some time, name resolution stops working. An nslookup query to the conditional forwarder returns a \"nonexistent domain\" error message.",
+          "source": "DOC02_DNS.pdf",
+          "section": "Forwarded DNS name resolution fails for dual-stacked queries",
+          "similarity": 0.612365186214447,
+          "ranking_score": 0.612365186214447,
+          "metadata": {
+            "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-dns-guidance",
+            "source": "DOC02_DNS.pdf",
+            "license_url": "https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/LICENSE",
+            "section": "Forwarded DNS name resolution fails for dual-stacked queries",
+            "review_note": "Source formatting verified; topical retrieval does not confer local operational authority.",
+            "document_kind": "diagnostic",
+            "source_pdf_sha256": "673729ac208fa3e6eabe5030bb0e2a97da4ec0ff323cac5dbcc104acc460c9c1",
+            "corpus_version": "m3-reviewed-v3",
+            "extraction_method": "official_html",
+            "document_id": "DOC02",
+            "review_required": false,
+            "publisher": "Microsoft Learn",
+            "title": "DNS troubleshooting guidance",
+            "chunk_index": 31,
+            "text_file": "data/corpus/processed/reviewed-v3/DOC02_DNS.txt",
+            "text_sha256": "eb38ae31b76575d18ae5bcc1244ffd3fe8b600d19eb16687d32e56a712f76165",
+            "chunk_profile": "v3_t96_w10"
+          },
+          "ranking_reason": "Maximum cosine of retrieved chunks; one result per document.",
+          "candidate_chunk_count": 41
+        },
+        {
+          "document_id": "DOC05",
+          "chunk_id": "m3-reviewed-v3-DOC05-0043",
+          "text": "the name or the wrong IP address is being resolved.\nTo troubleshoot this issue, use the nbtstat -n command on the server to determine which names the server registered on the network. The computer name of the computer that you're trying to connect to should be on the displayed list. If the name isn't listed, try one of the other unique computer names that are displayed by nbtstat . If the name that's",
+          "source": "DOC05_TCP_IP.pdf",
+          "section": "System error 53 occurred / Can't connect to a specific server",
+          "similarity": 0.5605058670043945,
+          "ranking_score": 0.5605058670043945,
+          "metadata": {
+            "publisher": "Microsoft Learn",
+            "text_sha256": "2154294c2de49d8887a4f263c1152413dea86301db6b99b39603dfb27c738911",
+            "chunk_index": 43,
+            "document_kind": "diagnostic",
+            "title": "TCP/IP communication troubleshooting guidance",
+            "extraction_method": "official_html",
+            "source": "DOC05_TCP_IP.pdf",
+            "text_file": "data/corpus/processed/reviewed-v3/DOC05_TCP_IP.txt",
+            "source_url": "https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance",
+            "section": "System error 53 occurred / Can't connect to a specific server",
+            "source_pdf_sha256": "809fbf682e5fba839f282986a2110da9736a49ff609be0b3f89b591d5cdef598",
+            "document_id": "DOC05",
+            "license_url": "https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/LICENSE",
+            "review_note": "Source formatting verified; topical retrieval does not confer local operational authority.",
+            "corpus_version": "m3-reviewed-v3",
+            "review_required": false,
+            "chunk_profile": "v3_t96_w10"
+          },
+          "ranking_reason": "Maximum cosine of retrieved chunks; one result per document.",
+          "candidate_chunk_count": 11
+        },
+        {
+          "document_id": "DOC09",
+          "chunk_id": "m3-reviewed-v3-DOC09-0017",
+          "text": "## 8. Prosedur operasional\n### 8.1 Penerimaan dan pencatatan\n1. Sapa pengguna, identifikasi diri agen, dan kumpulkan: nama/NIDN/NIM atau unit, kontak, gejala atau kebutuhan, waktu mulai gangguan (jika insiden).\n2. Cari tiket duplikat; jika ada, gabungkan atau tautkan sebagai child sesuai aturan ITSM.",
+          "source": "DOC09_Service_Desk.pdf",
+          "section": "8. Prosedur operasional / 8.1 Penerimaan dan pencatatan / 8.2 Triage dan perutean",
+          "similarity": 0.5435781478881836,
+          "ranking_score": 0.5435781478881836,
+          "metadata": {
+            "chunk_profile": "v3_t96_w10",
+            "title": "OPS-01 Service desk, eskalasi, dan komunikasi ke pengguna",
+            "section": "8. Prosedur operasional / 8.1 Penerimaan dan pencatatan / 8.2 Triage dan perutean",
+            "source": "DOC09_Service_Desk.pdf",
+            "text_sha256": "7854d75360a290dc005d54c7f44f54358af9ea754f3aa22532229f5349e7c138",
+            "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-ops-01/",
+            "document_id": "DOC09",
+            "document_kind": "incident_procedure",
+            "review_note": "DRAFT, institutional placeholders and indicative SLA; requires source-owner approval, no local CERTAN authority.",
+            "publisher": "DTSI Universitas Harapan Bangsa",
+            "extraction_method": "official_html",
+            "publication_status": "DRAFT menurut halaman sumber",
+            "corpus_version": "m3-reviewed-v3",
+            "review_required": true,
+            "chunk_index": 17,
+            "text_file": "data/corpus/processed/reviewed-v3/DOC09_Service_Desk.txt",
+            "source_pdf_sha256": "f763b27263d158ed682d852cd7cab9780770800875321746ba01d1fb70a13028"
+          },
+          "ranking_reason": "Maximum cosine of retrieved chunks; one result per document.",
+          "candidate_chunk_count": 5
+        },
+        {
+          "document_id": "DOC15",
+          "chunk_id": "m3-reviewed-v3-DOC15-0003",
+          "text": "will include the primary DNS name in the inventory database.\n- College IT-managed devices registered for use with DHCP on the IU network will be registered using the soicmreg group account and UIPO reports of suspicious activities sent to that account will generate a help desk request to track the resolution.\n- Remote access services, including VPN servers and dial-in pools, will not be deployed.",
+          "source": "DOC15_Network_Management.pdf",
+          "section": "Network Management / About this requirement / Requirement Contact: / Date of last update: / Requirement Statement",
+          "similarity": 0.5039801001548767,
+          "ranking_score": 0.5039801001548767,
+          "metadata": {
+            "corpus_version": "m3-reviewed-v3",
+            "publisher": "Indiana University Bloomington",
+            "chunk_profile": "v3_t96_w10",
+            "source": "DOC15_Network_Management.pdf",
+            "document_id": "DOC15",
+            "text_file": "data/corpus/processed/reviewed-v3/DOC15_Network_Management.txt",
+            "source_url": "https://cispo.college.indiana.edu/it-requirements/network-management.html",
+            "chunk_index": 3,
+            "section": "Network Management / About this requirement / Requirement Contact: / Date of last update: / Requirement Statement",
+            "review_note": "Source formatting verified; topical retrieval does not confer local operational authority.",
+            "extraction_method": "official_html",
+            "source_pdf_sha256": "2c50d2dba260388580f2d0d98a938559274c97bfe4ed50e6dc70c954ad927f18",
+            "text_sha256": "c6593c8ea3fc213935484b57fbe8a46c1a778d294f3218689a460737c0573394",
+            "document_kind": "network_policy",
+            "review_required": false,
+            "title": "Network Management"
+          },
+          "ranking_reason": "Maximum cosine of retrieved chunks; one result per document.",
+          "candidate_chunk_count": 2
+        },
+        {
+          "document_id": "DOC10",
+          "chunk_id": "m3-reviewed-v3-DOC10-0009",
+          "text": "## 7. Prosedur\n### 7.1 Deteksi dan log\n1. Insiden dapat berasal dari tiket, pemantauan ( DTSI-SOP-OPS-08 ), atau proaktif tim.\n2. Buka tiket insiden terpisah jika belum ada; tautkan ke insiden induk jika massal.\n3. Catat waktu deteksi, gejala, layanan CI terdampak (untuk CMDB).\n### 7.2 Klasifikasi dan diagnosa awal",
+          "source": "DOC10_Incident_Handling.pdf",
+          "section": "7. Prosedur / 7.1 Deteksi dan log / 7.2 Klasifikasi dan diagnosa awal / 7.3 Komunikasi / 7.4 Pemulihan",
+          "similarity": 0.47320741415023804,
+          "ranking_score": 0.47320741415023804,
+          "metadata": {
+            "review_required": true,
+            "source": "DOC10_Incident_Handling.pdf",
+            "corpus_version": "m3-reviewed-v3",
+            "publication_status": "DRAFT menurut halaman sumber",
+            "text_file": "data/corpus/processed/reviewed-v3/DOC10_Incident_Handling.txt",
+            "chunk_index": 9,
+            "review_note": "DRAFT, institutional placeholders and indicative deadlines; requires source-owner approval.",
+            "chunk_profile": "v3_t96_w10",
+            "document_kind": "incident_procedure",
+            "title": "INC-02 Insiden gangguan layanan TI (operasional)",
+            "source_url": "https://docs.dtsi.uhb.ac.id/sop/layanan-ti/dtsi-sop-inc-02/",
+            "source_pdf_sha256": "3b0d47080e5f9551544042374945bdce1887db8747eefb9e9325d52182c93b1c",
+            "document_id": "DOC10",
+            "section": "7. Prosedur / 7.1 Deteksi dan log / 7.2 Klasifikasi dan diagnosa awal / 7.3 Komunikasi / 7.4 Pemulihan",
+            "text_sha256": "7e32c158abd0acdf3956717e88515c10cfd95c6c8e37ecde9e7980e0cd352159",
+            "publisher": "DTSI Universitas Harapan Bangsa",
+            "extraction_method": "official_html"
+          },
+          "ranking_reason": "Maximum cosine of retrieved chunks; one result per document.",
+          "candidate_chunk_count": 3
+        }
+      ]
+    },
+    {
+      "name": "archived_guard_ood",
+      "command_arguments": [
+        "evaluation/guard_candidate_cli_v3.py",
+        "--db",
+        ".local/chroma-corpus-m3-v3_t96_w10",
+        "--query",
+        "Tampilkan status terbaru tiket TKT991122."
+      ],
+      "output": {
+        "experiment_only": true,
+        "adopted": false,
+        "status": "ABSTAIN",
+        "scope": "operational_data",
+        "reason_codes": [
+          "operational_data"
+        ],
+        "reasons": [
+          "Korpus berisi dokumen statis; permintaan ini memerlukan data perangkat, akun, tiket, petugas, atau status layanan aktual yang tidak tersedia."
+        ],
+        "signals": {
+          "raw_top_similarity": 0.5726938247680664,
+          "title_support": null,
+          "similarity_threshold": 0.6,
+          "support_threshold": 0.0,
+          "inventory_document_count": 15
+        },
+        "warnings": [],
+        "results": []
+      }
+    },
+    {
+      "name": "archived_guard_low_confidence",
+      "command_arguments": [
+        "evaluation/guard_candidate_cli_v3.py",
+        "--db",
+        ".local/chroma-corpus-m3-v3_t96_w10",
+        "--query",
+        "Bagaimana membuat saus pasta dari tomat?"
+      ],
+      "output": {
+        "experiment_only": true,
+        "adopted": false,
+        "status": "LOW_CONFIDENCE",
+        "scope": "insufficient_evidence",
+        "reason_codes": [
+          "low_cosine"
+        ],
+        "reasons": [
+          "Kemiripan kandidat tertinggi berada di bawah ambang yang dikalibrasi."
+        ],
+        "signals": {
+          "raw_top_similarity": 0.15274620056152344,
+          "title_support": null,
+          "similarity_threshold": 0.6,
+          "support_threshold": 0.0,
+          "inventory_document_count": 15
+        },
+        "warnings": [],
+        "results": []
+      }
+    }
+  ]
+}

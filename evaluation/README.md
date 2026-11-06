@@ -1,5 +1,25 @@
 # Hasil validasi dan persiapan korpus Milestone 3
 
+## Final quality v3
+
+[Laporan A–J](../docs/milestone-3/final-quality-v3.md) memuat audit visual,
+perubahan kode/metadata, before/after, error analysis, hasil negatif dan
+keputusan **NOT READY** terhadap target semua deskriptor 100.
+[Studi v3](./quality-v3/) mempunyai 36 development, 36 validation, dan 48 final
+test baru; 75 kueri dan seluruh hasil historis tetap dibekukan.
+[Template anotasi independen](./quality-v3/independent_annotation_template.json)
+masih kosong dan tidak menjadi klaim validasi manusia.
+
+Korpus v3 dibuat melalui [builder](./build_reviewed_v3.py), sedangkan
+[audit terpisah](./audit_quality_v3.py) memeriksa 15 sumber dan ketiga indeks.
+Gunakan [hasil final](./quality-v3/results_final_test.json) serta
+[keputusan adopsi](./quality-v3/decision.json) yang sudah disimpan; jangan
+menimpa atau memilih retry berdasarkan skor. [Runner](./quality_v3.py) menjaga
+output create-once. Lock awal dan amendment development dipertahankan.
+Kandidat yang ditolak dipindahkan ke [arsip kode beku](./quality-v3/locked-code/)
+dengan hash asli; guardrail riset ada pada [modul evaluasi](./scope_candidate_v3.py),
+tanpa flag aktivasi pada CLI runtime.
+
 ## Studi terarah v2 (5 November 2026)
 
 [Laporan before/after](../docs/milestone-3/directed-improvement-v2.md) menggabungkan

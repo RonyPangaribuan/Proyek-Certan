@@ -1,0 +1,242 @@
+{
+  "generated_at_utc": "2026-11-05T14:08:33.794143+00:00",
+  "baseline_files_verified": 70,
+  "source_count": 15,
+  "source_checks": [
+    {
+      "document_id": "DOC01",
+      "source_tokens_identical": true,
+      "operations": {
+        "changed": false,
+        "line_breaks_joined": 0,
+        "source_tokens_identical": true
+      }
+    },
+    {
+      "document_id": "DOC02",
+      "source_tokens_identical": true,
+      "operations": {
+        "changed": false,
+        "line_breaks_joined": 0,
+        "source_tokens_identical": true
+      }
+    },
+    {
+      "document_id": "DOC03",
+      "source_tokens_identical": true,
+      "operations": {
+        "changed": false,
+        "line_breaks_joined": 0,
+        "source_tokens_identical": true
+      }
+    },
+    {
+      "document_id": "DOC04",
+      "source_tokens_identical": true,
+      "operations": {
+        "changed": false,
+        "line_breaks_joined": 0,
+        "source_tokens_identical": true
+      }
+    },
+    {
+      "document_id": "DOC05",
+      "source_tokens_identical": true,
+      "operations": {
+        "changed": false,
+        "line_breaks_joined": 0,
+        "source_tokens_identical": true
+      }
+    },
+    {
+      "document_id": "DOC06",
+      "source_tokens_identical": true,
+      "operations": {
+        "changed": false,
+        "line_breaks_joined": 0,
+        "source_tokens_identical": true
+      }
+    },
+    {
+      "document_id": "DOC07",
+      "source_tokens_identical": true,
+      "operations": {
+        "changed": false,
+        "line_breaks_joined": 0,
+        "source_tokens_identical": true
+      }
+    },
+    {
+      "document_id": "DOC08",
+      "source_tokens_identical": true,
+      "operations": {
+        "changed": false,
+        "line_breaks_joined": 0,
+        "source_tokens_identical": true
+      }
+    },
+    {
+      "document_id": "DOC09",
+      "source_tokens_identical": true,
+      "operations": {
+        "changed": false,
+        "line_breaks_joined": 0,
+        "source_tokens_identical": true
+      }
+    },
+    {
+      "document_id": "DOC10",
+      "source_tokens_identical": true,
+      "operations": {
+        "changed": false,
+        "line_breaks_joined": 0,
+        "source_tokens_identical": true
+      }
+    },
+    {
+      "document_id": "DOC11",
+      "source_tokens_identical": true,
+      "operations": {
+        "changed": true,
+        "line_breaks_joined": 25,
+        "source_tokens_identical": true
+      }
+    },
+    {
+      "document_id": "DOC12",
+      "source_tokens_identical": true,
+      "operations": {
+        "changed": false,
+        "line_breaks_joined": 0,
+        "source_tokens_identical": true
+      }
+    },
+    {
+      "document_id": "DOC13",
+      "source_tokens_identical": true,
+      "operations": {
+        "changed": true,
+        "line_breaks_joined": 6,
+        "source_tokens_identical": true
+      }
+    },
+    {
+      "document_id": "DOC14",
+      "source_tokens_identical": true,
+      "operations": {
+        "changed": false,
+        "line_breaks_joined": 0,
+        "source_tokens_identical": true
+      }
+    },
+    {
+      "document_id": "DOC15",
+      "source_tokens_identical": true,
+      "operations": {
+        "changed": false,
+        "line_breaks_joined": 0,
+        "source_tokens_identical": true
+      }
+    }
+  ],
+  "indexes": {
+    "v3_t96_w10": {
+      "count": 487,
+      "independent_process_reopen": true,
+      "ids_text_metadata_identical": true,
+      "stored_vector_shape": [
+        487,
+        384
+      ],
+      "stored_vectors_normalized": true,
+      "configuration": {
+        "hnsw": {
+          "space": "cosine",
+          "ef_construction": 100,
+          "ef_search": 100,
+          "max_neighbors": 16,
+          "resize_factor": 1.2,
+          "sync_threshold": 1000
+        },
+        "spann": null,
+        "embedding_function": {
+          "type": "legacy"
+        }
+      },
+      "missing_exact_page_spans": [
+        "m3-reviewed-v3-DOC11-0074"
+      ]
+    },
+    "v3_t120_w12": {
+      "count": 378,
+      "independent_process_reopen": true,
+      "ids_text_metadata_identical": true,
+      "stored_vector_shape": [
+        378,
+        384
+      ],
+      "stored_vectors_normalized": true,
+      "configuration": {
+        "hnsw": {
+          "space": "cosine",
+          "ef_construction": 100,
+          "ef_search": 100,
+          "max_neighbors": 16,
+          "resize_factor": 1.2,
+          "sync_threshold": 1000
+        },
+        "spann": null,
+        "embedding_function": {
+          "type": "legacy"
+        }
+      },
+      "missing_exact_page_spans": [
+        "m3-reviewed-v3-DOC11-0051"
+      ]
+    },
+    "v3_t96_w0": {
+      "count": 413,
+      "independent_process_reopen": true,
+      "ids_text_metadata_identical": true,
+      "stored_vector_shape": [
+        413,
+        384
+      ],
+      "stored_vectors_normalized": true,
+      "configuration": {
+        "hnsw": {
+          "space": "cosine",
+          "ef_construction": 100,
+          "ef_search": 100,
+          "max_neighbors": 16,
+          "resize_factor": 1.2,
+          "sync_threshold": 1000
+        },
+        "spann": null,
+        "embedding_function": {
+          "type": "legacy"
+        }
+      },
+      "missing_exact_page_spans": [
+        "m3-reviewed-v3-DOC11-0051",
+        "m3-reviewed-v3-DOC11-0057",
+        "m3-reviewed-v3-DOC11-0061"
+      ]
+    }
+  },
+  "model": {
+    "name": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "dimension": 384,
+    "max_seq_length": 128
+  },
+  "security_scan": {
+    "scanned_text_files": 195,
+    "scope": "Tracked and unignored new text files; cached models, databases and ignored environment files excluded.",
+    "high_confidence_token_matches": [],
+    "limitation": "Pattern scan cannot prove absence of every possible credential. Actual matched values are never printed."
+  },
+  "current_revision_code_sha256": "60b7435f0d17e26353aceebcec6830945bd74bd444694ccc83236a80f11f3a06",
+  "generation_revision_code_sha256": "e6ab87e9c87cf5ae0a6893da622e7c89673aa6f2e31bc457ac3ac6eadf5d414c",
+  "revision_code_note": "Code was formatted after corpus generation. Deterministic source text and all chunk outputs verified above against the current implementation.",
+  "corpus_report_sha256": "a5cb40f65a0c6cf4c5315af269d799f71b98df556717a48a1a184944c0aa78e7"
+}

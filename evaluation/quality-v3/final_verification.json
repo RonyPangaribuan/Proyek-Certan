@@ -1,0 +1,52 @@
+{
+  "verified_at_utc": "2026-11-05T14:24:31.911835+00:00",
+  "baseline_artifacts_unchanged": 70,
+  "archived_code": {
+    "src/proyek_certan/knowledge/documents.py": {
+      "path": "evaluation/quality-v3/locked-code/src/proyek_certan/knowledge/documents.py",
+      "sha256": "cbc1965f83e432ced8c66c911f85b0e733c9e128fbb7b4de9b21c6aa7b4a75d5"
+    },
+    "src/proyek_certan/knowledge/scope.py": {
+      "path": "evaluation/quality-v3/locked-code/src/proyek_certan/knowledge/scope.py",
+      "sha256": "d6f185d6fd0c323bfba92080bf138c031e0e1d632bc77f598c9fbe5f8e4e009e"
+    },
+    "src/proyek_certan/knowledge/retrieval.py": {
+      "path": "evaluation/quality-v3/locked-code/src/proyek_certan/knowledge/retrieval.py",
+      "sha256": "f428fee476abb8dfda77459c7febb3a595d6a995a801bad2a921b021ea4e9ee0"
+    },
+    "src/proyek_certan/knowledge/cli.py": {
+      "path": "evaluation/quality-v3/locked-code/src/proyek_certan/knowledge/cli.py",
+      "sha256": "21a76e6b17d23a0fb273d5223877ae3d31fa6afa93ea66e57e71a5f3faf7969e"
+    },
+    "evaluation/title_candidate_v3.py": {
+      "path": "evaluation/quality-v3/locked-code/evaluation/title_candidate_v3.py",
+      "sha256": "d5848a958f54ba6b4c444b1735ca3ca0c04d9ae1d714f4c728e4280d2595a057"
+    },
+    "evaluation/quality_v3.py": {
+      "path": "evaluation/quality-v3/locked-code/evaluation/quality_v3.py",
+      "sha256": "0c32e0beb1b455635a73a9ecc35b6000230c33e36ff32db777925c4f88d794b8"
+    }
+  },
+  "all_saved_decisions_and_metrics_replayed": true,
+  "bootstrap_comparisons_replayed": true,
+  "no_test_retrieval_repeated": true,
+  "final_labels_after_lock_before_observations": true,
+  "independent_human_annotations_completed": 0,
+  "guard_deployed": false,
+  "title_reranking_deployed": false,
+  "document_semantic_option_available": true,
+  "final_runtime_code_sha256": {
+    "src/proyek_certan/knowledge/retrieval.py": "4fba29e16dbc73910db2aa4868a9f05d28347aff8d4d4b34ddf626b906eea178",
+    "src/proyek_certan/knowledge/cli.py": "15dcc073193244bf8b7fdb204bc3b4afff1535601ff65d3349deddd3dd6ce264",
+    "src/proyek_certan/knowledge/documents.py": "cbc1965f83e432ced8c66c911f85b0e733c9e128fbb7b4de9b21c6aa7b4a75d5"
+  },
+  "cli_smoke_passed": true,
+  "security": {
+    "scanned_text_files": 208,
+    "scope": "Tracked and unignored new text files; cached models, databases and ignored environment files excluded.",
+    "high_confidence_token_matches": [],
+    "limitation": "Pattern scan cannot prove absence of every possible credential. Actual matched values are never printed."
+  },
+  "readiness": "NOT READY for claiming all T03 score-100 descriptors",
+  "note": "decision.json records the experimental decision; failed guard was subsequently removed from runtime. Exact measured bytes are preserved in locked-code."
+}

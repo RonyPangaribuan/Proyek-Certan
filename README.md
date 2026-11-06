@@ -454,6 +454,16 @@ tests/
 
 ## Milestone 3: Semantic Search
 
+[Final quality improvement v3](docs/milestone-3/final-quality-v3.md) menambahkan
+audit visual DOC-11/13, korpus terpisah 487 chunk, metadata halaman exact,
+opsi CLI `--document-level`, dan 120 kueri baru dengan development/validation/final
+test. Guardrail dan reranking judul **tidak diadopsi**: guard mengurangi FAR
+final dari 75% menjadi 8,33% tetapi FRR naik menjadi 29,17%; CI peningkatan
+MRR reranking melintasi nol. Kode kandidat berada di luar runtime sebagai arsip
+eksperimen. Default semantic dan indeks final lama tetap utuh. Status terhadap
+target seluruh deskriptor 100: **NOT READY**; lihat laporan dan template anotasi
+independen sebelum finalisasi.
+
 Audit lanjutan tersedia pada [laporan peningkatan T03 v2](docs/milestone-3/directed-improvement-v2.md):
 koreksi konservatif tiga teks, provenance lima sumber, 60 kueri tambahan dengan
 split development/evaluation, dan perbandingan before/after. Pada evaluation

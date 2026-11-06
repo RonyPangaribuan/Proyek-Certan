@@ -1,0 +1,7 @@
+{
+  "note": "Authoring script formatted after label freeze; all 48 rows reproduce exactly from unchanged source literals. Generation-time hash and current formatted hash recorded separately. Model code snapshots retain exact measured bytes.",
+  "generation_authoring_code_sha256": "9bc3f5f83d306a59f059d1e903ee7e40f8bc0dc573270ecdc1fdb1473b0a2a80",
+  "formatted_authoring_code_sha256": "27bb155fa838f1e675a022e511074df3e1d2d95ec2bad52c4d91ba1fb03fd98f",
+  "authoring_literals_match_frozen_labels": true,
+  "final_labels_sha256": "1764a726e3c8da861a6497e508dd7e87531d356fd1dbe473bf1b49a494d888dc"
+}

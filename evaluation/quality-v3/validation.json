@@ -1,0 +1,295 @@
+{
+  "split": "validation",
+  "annotation": "Synthetic source-based labels, not independent human validation.",
+  "queries": [
+    {
+      "id": "validation_p01",
+      "query": "Bagaimana mengelompokkan klien dengan NIC dan driver sama saat Wi-Fi tidak mau terhubung?",
+      "category": "wifi",
+      "relevant_documents": [
+        "DOC01"
+      ],
+      "evidence": "Step 1 common NIC/OS/drivers."
+    },
+    {
+      "id": "validation_p02",
+      "query": "Apa pengujian umum untuk connection manager pihak ketiga dan group policy pada wireless Windows?",
+      "category": "wifi",
+      "relevant_documents": [
+        "DOC01"
+      ],
+      "evidence": "Step 2 causes and tests."
+    },
+    {
+      "id": "validation_p03",
+      "query": "Bagaimana menelusuri kegagalan dynamic update DNS sesudah IP berubah?",
+      "category": "dns_dhcp",
+      "relevant_documents": [
+        "DOC02"
+      ],
+      "evidence": "DNS common issues."
+    },
+    {
+      "id": "validation_p04",
+      "query": "Bagaimana mengambil capture DHCP serentak di server dan endpoint?",
+      "category": "dns_dhcp",
+      "relevant_documents": [
+        "DOC03",
+        "DOC04"
+      ],
+      "evidence": "Simultaneous traces in both sources."
+    },
+    {
+      "id": "validation_p05",
+      "query": "Bagaimana memeriksa ketersediaan lease dan status layanan server DHCP?",
+      "category": "dns_dhcp",
+      "relevant_documents": [
+        "DOC03"
+      ],
+      "evidence": "DHCP server checklist."
+    },
+    {
+      "id": "validation_p06",
+      "query": "Kenapa port access OVS hanya meneruskan paket ke VLAN yang sama?",
+      "category": "vlan_switching",
+      "relevant_documents": [
+        "DOC06"
+      ],
+      "evidence": "VLAN FAQ access/trunk isolation."
+    },
+    {
+      "id": "validation_p07",
+      "query": "Apa perbedaan native-tagged dan native-untagged untuk port fisik Open vSwitch?",
+      "category": "vlan_switching",
+      "relevant_documents": [
+        "DOC06"
+      ],
+      "evidence": "Native VLAN example."
+    },
+    {
+      "id": "validation_p08",
+      "query": "Bagaimana counter discard NIC membantu menyelidiki local packet loss?",
+      "category": "diagnosis_other",
+      "relevant_documents": [
+        "DOC07"
+      ],
+      "evidence": "Get-NetAdapterStatistics discussion."
+    },
+    {
+      "id": "validation_p09",
+      "query": "Bagaimana menyelidiki host TCP/IP yang berhenti merespons melalui ping dan trace?",
+      "category": "diagnosis_other",
+      "relevant_documents": [
+        "DOC05"
+      ],
+      "evidence": "Checklist and host-stopped scenario."
+    },
+    {
+      "id": "validation_p10",
+      "query": "Bagaimana menafsirkan penolakan akses NPS dengan event 6273 dan rantai sertifikat?",
+      "category": "diagnosis_other",
+      "relevant_documents": [
+        "DOC08"
+      ],
+      "evidence": "Troubleshooting events and certificates."
+    },
+    {
+      "id": "validation_p11",
+      "query": "Menurut Western Michigan University apakah sambungan boleh dibagikan ke pihak luar?",
+      "category": "network_policy",
+      "relevant_documents": [
+        "DOC14"
+      ],
+      "evidence": "Prohibition of retransmission."
+    },
+    {
+      "id": "validation_p12",
+      "query": "Menurut Oregon State University siapa yang dapat menonaktifkan perangkat yang berisiko?",
+      "category": "network_policy",
+      "relevant_documents": [
+        "DOC13"
+      ],
+      "evidence": "5.4.2/5.4.3."
+    },
+    {
+      "id": "validation_p13",
+      "query": "Apa kewajiban inventaris MAC dan DNS statis di Indiana University Bloomington?",
+      "category": "network_policy",
+      "relevant_documents": [
+        "DOC15"
+      ],
+      "evidence": "Network Management requirements."
+    },
+    {
+      "id": "validation_p14",
+      "query": "Dalam draf service desk UHB bagaimana triage merutekan insiden keamanan?",
+      "category": "incident_management",
+      "relevant_documents": [
+        "DOC09"
+      ],
+      "evidence": "OPS-01 8.2, INC-01 parallel."
+    },
+    {
+      "id": "validation_p15",
+      "query": "Dalam draf INC-02 siapa memberikan persetujuan closure untuk gangguan P1?",
+      "category": "incident_management",
+      "relevant_documents": [
+        "DOC10"
+      ],
+      "evidence": "7.5 approval."
+    },
+    {
+      "id": "validation_p16",
+      "query": "Menurut UCF apakah eskalasi insiden otomatis mengganti prioritas?",
+      "category": "incident_management",
+      "relevant_documents": [
+        "DOC11"
+      ],
+      "evidence": "V.B.a explicitly no."
+    },
+    {
+      "id": "validation_p17",
+      "query": "Menurut University of Utah bagaimana koordinasi komunikasi dugaan insiden keamanan?",
+      "category": "incident_management",
+      "relevant_documents": [
+        "DOC12"
+      ],
+      "evidence": "ISO coordinates response and communication."
+    },
+    {
+      "id": "validation_p18",
+      "query": "Di kampus saya internet wireless gagal hari ini; bagaimana prosedur umum mengisolasi SSID yang terdampak?",
+      "category": "wifi",
+      "relevant_documents": [
+        "DOC01"
+      ],
+      "evidence": "Procedural request, not asking for a live measurement."
+    },
+    {
+      "id": "validation_o01",
+      "query": "Apa alamat MAC perangkat saya yang tersambung saat ini?",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No endpoint state."
+    },
+    {
+      "id": "validation_o02",
+      "query": "Berapa trafik Internet yang sedang dipakai gedung kami sekarang?",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No telemetry."
+    },
+    {
+      "id": "validation_o03",
+      "query": "Tolong tampilkan status terbaru tiket INC887722.",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No ticket records."
+    },
+    {
+      "id": "validation_o04",
+      "query": "Siapa yang sedang mengelola access point di lantai dua kampus saya?",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No local personnel inventory."
+    },
+    {
+      "id": "validation_o05",
+      "query": "Tampilkan kata sandi terbaru akun jaringan milik saya.",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No credentials."
+    },
+    {
+      "id": "validation_o06",
+      "query": "Kapan gangguan jaringan kampus saya selesai diperbaiki?",
+      "category": "live_data",
+      "relevant_documents": [],
+      "evidence": "No restoration ETA."
+    },
+    {
+      "id": "validation_o07",
+      "query": "Menurut Universitas Nusantara siapa berwenang memasang switch?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "No named institution source."
+    },
+    {
+      "id": "validation_o08",
+      "query": "Apa ketentuan resmi penggunaan Wi-Fi di Institut Purnama?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "No named institution source."
+    },
+    {
+      "id": "validation_o09",
+      "query": "Berapa target pemulihan P1 yang berlaku resmi untuk CERTAN?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "No approved local SLA."
+    },
+    {
+      "id": "validation_o10",
+      "query": "Apa aturan perangkat pribadi menurut Universitas Permata?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "No named institution source."
+    },
+    {
+      "id": "validation_o11",
+      "query": "Siapa pemberi persetujuan pengecualian firewall di Universitas Samudra?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "No named institution source."
+    },
+    {
+      "id": "validation_o12",
+      "query": "Apa SOP resminya Universitas Mentari untuk tiket keamanan?",
+      "category": "institution",
+      "relevant_documents": [],
+      "evidence": "No named institution source."
+    },
+    {
+      "id": "validation_o13",
+      "query": "Bagaimana mengurus penggantian kartu mahasiswa?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No student administration source."
+    },
+    {
+      "id": "validation_o14",
+      "query": "Bagaimana menanam cabai di pot?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No agriculture source."
+    },
+    {
+      "id": "validation_o15",
+      "query": "Bagaimana tata cara klaim asuransi kendaraan?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No insurance source."
+    },
+    {
+      "id": "validation_o16",
+      "query": "Apa persyaratan membuka rekening bank mahasiswa?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No banking source."
+    },
+    {
+      "id": "validation_o17",
+      "query": "Bagaimana menyusun jadwal latihan renang?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No sports training source."
+    },
+    {
+      "id": "validation_o18",
+      "query": "Bagaimana mengoptimalkan query SQL dengan indeks B-tree?",
+      "category": "outside_domain",
+      "relevant_documents": [],
+      "evidence": "No SQL performance source."
+    }
+  ]
+}
