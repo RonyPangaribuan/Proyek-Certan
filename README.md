@@ -89,7 +89,7 @@ Solver mencari assignment lengkap dan valid, tanpa objective optimasi. Detail do
 
 ## Quick start Milestone 3
 
-Satu konfigurasi resmi: `v3_t96_w10`, 487 chunk, maksimum **96 token termasuk special tokens**, overlap yang diminta **10 kata**. Input aktif selalu [korpus final](data/corpus/final/README.md). Jalur berikut memeriksa manifest, hash, isi indeks dan model sebelum digunakan:
+x`Satu konfigurasi resmi: `v3_t96_w10`, 487 chunk, maksimum **96 token termasuk special tokens**, overlap yang diminta **10 kata**. Input aktif selalu [korpus final](data/corpus/final/README.md). Jalur berikut memeriksa manifest, hash, isi indeks dan model sebelum digunakan:
 
 ```bash
 uv run --locked python -m proyek_certan.knowledge.final_cli verify
